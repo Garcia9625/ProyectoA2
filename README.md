@@ -14,6 +14,10 @@ Este sistema es capaz de mostrar todos los productos que se tiene en el inventar
 
 
 
-
+John Elizondo JohnEV1
+Ricardo García Garcia9625
+Mariana Hernández marihq61
+Luis Diego Jiménez luisdful
+Esteban Vargas estebanvg
 
 
