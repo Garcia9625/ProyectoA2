@@ -1,0 +1,35 @@
+
+Create table Usuario 
+(IdUsuario varchar(20) PRIMARY KEY NOT NULL, Username VARCHAR(20),Password Varchar(30));
+
+Create table Rol 
+(IdRol int NOT NULL IDENTITY(1,1), Rol VARCHAR(20));
+
+Create table Empleado
+( Dni varchar(30) PRIMARY KEY NOT NULL, Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), IdRol int, Celular varchar(20), 
+Telefono varchar(20), DireccionDomicilio varchar(120), SalarioMensual float, FechaContratacion Date, FechaSalida Date, Estado binary);
+
+Create table ClienteAlDetalle
+ ( Dni varchar(30) PRIMARY KEY NOT NULL, Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), Celular varchar(20), 
+Telefono varchar(20));
+
+Create table VentaAlDetalle
+ (IdVentaDetalle int NOT NULL IDENTITY(1,1), IdClienteDetalle varchar(30), IdEmpleado varchar(30), Total float);
+
+Create table DescripcionVentaAlDetalle
+ (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1), IdVentaDetalle int, IdProducto int, Cantidad int not null, PrecioUnitario float, Total float);
+
+Create table InventarioAlDetalle
+ (IdProducto int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Talla float, Descripcion varchar(120));
+
+Create table VentaAlxMayor
+ (IdVentaMayor int NOT NULL IDENTITY(1,1), IdClienteMayor varchar(30), IdEmpleado varchar(30), Total float);
+
+Create table ClienteAlxMayor
+ (IdCliente int NOT NULL IDENTITY(1,1), Nombre varchar(100), NombreSociedad varchar(50), Telefono varchar(20), cedula varchar(20), cedulaJuridica varchar(50));
+
+Create table DecripcionVentaAlxMayor
+ (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1), IdVentaMayor int, IdProducto int, Total float);
+
+Create table InventarioAlxMayor
+ (IdLote int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Descripcion varchar(120));
