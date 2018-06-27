@@ -1,13 +1,15 @@
 
 Create table Usuario 
-(IdUsuario varchar(20) PRIMARY KEY NOT NULL,IdEmpleado varchar(30), Username VARCHAR(20),Password Varchar(30),FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni));
+(IdUsuario varchar(20) PRIMARY KEY NOT NULL,IdEmpleado varchar(30), Username VARCHAR(20),Password Varchar(30), CONSTRAINT FK_Empleado FOREIGN KEY (IdEmpleado)     
+    REFERENCES Empleado (Dni));
 
 Create table Rol 
-(IdRol int NOT NULL IDENTITY(1,1), Rol VARCHAR(20));
+(IdRol int NOT NULL IDENTITY(1,1), Rol VARCHAR(20), CONSTRAINT PK_Rol PRIMARY KEY NONCLUSTERED (IdRol));
 
 Create table Empleado
 (Dni varchar(30) PRIMARY KEY NOT NULL,Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), IdRol int, Celular varchar(20), 
-Telefono varchar(20), DireccionDomicilio varchar(120), SalarioMensual float, FechaContratacion Date, FechaSalida Date, Estado binary, FOREIGN KEY (IdRol) REFERENCES Rol(IdRol));
+Telefono varchar(20), DireccionDomicilio varchar(120), SalarioMensual float, FechaContratacion Date, FechaSalida Date, Estado binary, 
+ CONSTRAINT FK_Rol FOREIGN KEY (IdRol) REFERENCES Rol (IdRol));
 
 Create table ClienteAlDetalle
  ( Dni varchar(30) PRIMARY KEY NOT NULL, Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), Celular varchar(20), 
@@ -15,26 +17,32 @@ Telefono varchar(20));
 
 Create table VentaAlDetalle
  (IdVentaDetalle int NOT NULL IDENTITY(1,1), IdClienteDetalle varchar(30), IdEmpleado varchar(30), Total float,
- FOREIGN KEY (IdClienteDetalle) REFERENCES  ClienteAlDetalle(Dni),FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni));
+ CONSTRAINT FK_VentaDetalleCliente FOREIGN KEY (IdClienteDetalle) REFERENCES  ClienteAlDetalle(Dni),
+ CONSTRAINT FK_VentaDetalleEmpleado FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni), 
+ CONSTRAINT PK_VentaDetalle PRIMARY KEY NONCLUSTERED (IdVentaDetalle));
 
 Create table DescripcionVentaAlDetalle
  (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1), IdVentaDetalle int, IdProducto int,
- Cantidad int not null, PrecioUnitario float, Total float,FOREIGN KEY (IdVentaDetalle) REFERENCES VentaAlDetalle(IdVentaDetalle),
- FOREIGN KEY (IdProducto) REFERENCES InventarioAlDetalle(IdProducto));
+ Cantidad int not null, PrecioUnitario float, Total float, FOREIGN KEY (IdVentaDetalle) REFERENCES VentaAlDetalle(IdVentaDetalle), 
+ CONSTRAINT FK_DescripcionVentaDetalleInventarioDetalle FOREIGN KEY (IdProducto) REFERENCES InventarioAlDetalle(IdProducto));
 
 Create table InventarioAlDetalle
- (IdProducto int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Talla float, Descripcion varchar(120));
+ (IdProducto int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Talla float, Descripcion varchar(120),
+ CONSTRAINT PK_InventarioDetalle PRIMARY KEY NONCLUSTERED (IdProducto));
 
 Create table VentaAlxMayor
- (IdVentaMayor int NOT NULL IDENTITY(1,1), IdClienteMayor varchar(30), IdEmpleado varchar(30), Total float, FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni),
- FOREIGN KEY (IdClienteMayor) REFERENCES  ClienteAlxMayor(IdCliente));
+ (IdVentaMayor int NOT NULL IDENTITY(1,1) primary key, IdClienteMayor varchar(30), IdEmpleado varchar(30), Total float, 
+ CONSTRAINT FK_VentaAlxMayorEmpleado FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni),
+ CONSTRAINT FK_VentaAlxMayorCliente FOREIGN KEY (IdClienteMayor) REFERENCES  ClienteAlxMayor(IdCliente));
 
 Create table ClienteAlxMayor
- (IdCliente int NOT NULL IDENTITY(1,1), Nombre varchar(100), NombreSociedad varchar(50), Telefono varchar(20), cedula varchar(20), cedulaJuridica varchar(50));
+ (IdCliente int NOT NULL IDENTITY(1,1), Nombre varchar(100), NombreSociedad varchar(50), Telefono varchar(20), cedula varchar(20), cedulaJuridica varchar(50),
+ CONSTRAINT PK_ClienteAlxMayor PRIMARY KEY NONCLUSTERED (IdCliente));
 
 Create table DecripcionVentaAlxMayor
- (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1), IdVentaMayor int, IdProducto int, Total float,
- FOREIGN KEY (IdVentaMayor) REFERENCES VentaAlxMayor(IdVentaMayor), FOREIGN KEY ( IdProducto) REFERENCES InventarioAlxMayor(IdLote));
+ (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1) primary key, IdVentaMayor int, IdProducto int, Total float,
+ CONSTRAINT FK_DecripcionVentaAlxMayorVenta FOREIGN KEY (IdVentaMayor) REFERENCES VentaAlxMayor(IdVentaMayor), 
+ CONSTRAINT FK_DecripcionVentaAlxMayorInventario FOREIGN KEY ( IdProducto) REFERENCES InventarioAlxMayor(IdLote));
 
 Create table InventarioAlxMayor
- (IdLote int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Descripcion varchar(120));
+ (IdLote int NOT NULL IDENTITY(1,1) primary key, Codigo varchar(10), Color varchar(10), Descripcion varchar(120));
