@@ -51,6 +51,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
@@ -77,6 +83,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BS.Modapie\BS.Modapie.csproj">
+      <Project>{A43DD44E-73B2-4DDD-8846-9CB751C364BE}</Project>
+      <Name>BS.Modapie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DO.Modapie\DO.Modapie.csproj">
+      <Project>{43F1AAFB-121A-47DE-BE5A-E80EDAE77E95}</Project>
+      <Name>DO.Modapie</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

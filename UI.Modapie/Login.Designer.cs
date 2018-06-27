@@ -49,7 +49,7 @@
             this.linkLabel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(306, 301);
+            this.linkLabel1.Location = new System.Drawing.Point(310, 257);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(211, 20);
             this.linkLabel1.TabIndex = 19;
@@ -62,7 +62,7 @@
             this.Horaa.BackColor = System.Drawing.Color.Transparent;
             this.Horaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Horaa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Horaa.Location = new System.Drawing.Point(234, 453);
+            this.Horaa.Location = new System.Drawing.Point(235, 374);
             this.Horaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Horaa.Name = "Horaa";
             this.Horaa.Size = new System.Drawing.Size(80, 32);
@@ -75,7 +75,7 @@
             this.Fechaa.BackColor = System.Drawing.Color.Transparent;
             this.Fechaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fechaa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Fechaa.Location = new System.Drawing.Point(234, 485);
+            this.Fechaa.Location = new System.Drawing.Point(235, 406);
             this.Fechaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Fechaa.Name = "Fechaa";
             this.Fechaa.Size = new System.Drawing.Size(99, 32);
@@ -86,7 +86,7 @@
             // 
             this.btn_apagar.BackColor = System.Drawing.Color.White;
             this.btn_apagar.Image = ((System.Drawing.Image)(resources.GetObject("btn_apagar.Image")));
-            this.btn_apagar.Location = new System.Drawing.Point(32, 464);
+            this.btn_apagar.Location = new System.Drawing.Point(14, 407);
             this.btn_apagar.Name = "btn_apagar";
             this.btn_apagar.Size = new System.Drawing.Size(49, 53);
             this.btn_apagar.TabIndex = 16;
@@ -110,7 +110,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(79, 258);
+            this.label2.Location = new System.Drawing.Point(83, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 38);
             this.label2.TabIndex = 4;
@@ -122,7 +122,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(79, 207);
+            this.label1.Location = new System.Drawing.Point(83, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 38);
             this.label1.TabIndex = 3;
@@ -130,14 +130,14 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(292, 212);
+            this.txtID.Location = new System.Drawing.Point(296, 168);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(238, 22);
             this.txtID.TabIndex = 0;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(292, 262);
+            this.txtContrasena.Location = new System.Drawing.Point(296, 218);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(238, 22);
@@ -149,11 +149,12 @@
             this.btn_Ingresar.BackColor = System.Drawing.Color.White;
             this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingresar.Image")));
-            this.btn_Ingresar.Location = new System.Drawing.Point(552, 222);
+            this.btn_Ingresar.Location = new System.Drawing.Point(556, 178);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(61, 53);
             this.btn_Ingresar.TabIndex = 2;
             this.btn_Ingresar.UseVisualStyleBackColor = false;
+            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
             // 
             // panel2
             // 
@@ -170,14 +171,14 @@
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Location = new System.Drawing.Point(-2, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(735, 575);
+            this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 532);
+            this.ClientSize = new System.Drawing.Size(725, 472);
             this.Controls.Add(this.panel2);
             this.Name = "Login";
             this.Text = "Form1";

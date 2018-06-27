@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Conexion.settings</DependentUpon>
     </Compile>
+    <Compile Include="IMantenimiento.cs" />
+    <Compile Include="Mantenimiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +56,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Conexion.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DO.Modapie\DO.Modapie.csproj">
+      <Project>{43f1aafb-121a-47de-be5a-e80edae77e95}</Project>
+      <Name>DO.Modapie</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
