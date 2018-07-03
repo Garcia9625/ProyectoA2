@@ -1,48 +1,217 @@
+USE [DBMODAPIE]
+GO
+/****** Object:  Table [dbo].[ClienteAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ClienteAlDetalle](
+	[Dni] [varchar](30) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido1] [varchar](50) NULL,
+	[Apellido2] [varchar](50) NULL,
+	[Celular] [varchar](20) NULL,
+	[Telefono] [varchar](20) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Dni] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ClienteAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ClienteAlxMayor](
+	[IdCliente] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](100) NULL,
+	[NombreSociedad] [varchar](50) NULL,
+	[Telefono] [varchar](20) NULL,
+	[cedula] [varchar](20) NULL,
+	[cedulaJuridica] [varchar](50) NULL,
+ CONSTRAINT [PK_ClienteAlxMayor] PRIMARY KEY NONCLUSTERED 
+(
+	[IdCliente] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DecripcionVentaAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DecripcionVentaAlxMayor](
+	[IdDetalleVentaDetalle] [int] IDENTITY(1,1) NOT NULL,
+	[IdVentaMayor] [int] NULL,
+	[IdProducto] [int] NULL,
+	[Total] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdDetalleVentaDetalle] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DescripcionVentaAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DescripcionVentaAlDetalle](
+	[IdDetalleVentaDetalle] [int] IDENTITY(1,1) NOT NULL,
+	[IdVentaDetalle] [int] NULL,
+	[IdProducto] [int] NULL,
+	[Cantidad] [int] NOT NULL,
+	[PrecioUnitario] [float] NULL,
+	[Total] [float] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Empleado]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Empleado](
+	[Dni] [varchar](30) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[Apellido1] [varchar](50) NULL,
+	[Apellido2] [varchar](50) NULL,
+	[Celular] [varchar](20) NULL,
+	[Telefono] [varchar](20) NULL,
+	[DireccionDomicilio] [varchar](120) NULL,
+	[SalarioMensual] [float] NULL,
+	[FechaContratacion] [date] NULL,
+	[FechaSalida] [date] NULL,
+	[Estado] [binary](1) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Dni] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InventarioAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InventarioAlDetalle](
+	[IdProducto] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](10) NULL,
+	[Color] [varchar](10) NULL,
+	[Talla] [float] NULL,
+	[Descripcion] [varchar](120) NULL,
+ CONSTRAINT [PK_InventarioDetalle] PRIMARY KEY NONCLUSTERED 
+(
+	[IdProducto] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InventarioAlxMayor](
+	[IdLote] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](10) NULL,
+	[Color] [varchar](10) NULL,
+	[Descripcion] [varchar](120) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdLote] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Usuario]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Usuario](
+	[IdUsuario] [varchar](20) NOT NULL,
+	[IdEmpleado] [varchar](30) NULL,
+	[Username] [varchar](20) NULL,
+	[Password] [varchar](30) NULL,
+	[Rol] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdUsuario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VentaAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VentaAlDetalle](
+	[IdVentaDetalle] [int] IDENTITY(1,1) NOT NULL,
+	[IdClienteDetalle] [varchar](30) NULL,
+	[IdEmpleado] [varchar](30) NULL,
+	[Total] [float] NULL,
+ CONSTRAINT [PK_VentaDetalle] PRIMARY KEY NONCLUSTERED 
+(
+	[IdVentaDetalle] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VentaAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VentaAlxMayor](
+	[IdVentaMayor] [int] IDENTITY(1,1) NOT NULL,
+	[IdClienteMayor] [int] NULL,
+	[IdEmpleado] [varchar](30) NULL,
+	[Total] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdVentaMayor] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_DecripcionVentaAlxMayorInventario] FOREIGN KEY([IdProducto])
+REFERENCES [dbo].[InventarioAlxMayor] ([IdLote])
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor] CHECK CONSTRAINT [FK_DecripcionVentaAlxMayorInventario]
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_DecripcionVentaAlxMayorVenta] FOREIGN KEY([IdVentaMayor])
+REFERENCES [dbo].[VentaAlxMayor] ([IdVentaMayor])
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor] CHECK CONSTRAINT [FK_DecripcionVentaAlxMayorVenta]
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle]  WITH CHECK ADD FOREIGN KEY([IdVentaDetalle])
+REFERENCES [dbo].[VentaAlDetalle] ([IdVentaDetalle])
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_DescripcionVentaDetalleInventarioDetalle] FOREIGN KEY([IdProducto])
+REFERENCES [dbo].[InventarioAlDetalle] ([IdProducto])
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle] CHECK CONSTRAINT [FK_DescripcionVentaDetalleInventarioDetalle]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Empleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Empleado]
+GO
+ALTER TABLE [dbo].[VentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_VentaDetalleCliente] FOREIGN KEY([IdClienteDetalle])
+REFERENCES [dbo].[ClienteAlDetalle] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleCliente]
+GO
+ALTER TABLE [dbo].[VentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_VentaDetalleEmpleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleEmpleado]
+GO
+ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorCliente] FOREIGN KEY([IdClienteMayor])
+REFERENCES [dbo].[ClienteAlxMayor] ([IdCliente])
+GO
+ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorCliente]
+GO
+ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorEmpleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
+GO
 
-Create table Usuario 
-(IdUsuario varchar(20) PRIMARY KEY NOT NULL,IdEmpleado varchar(30), Username VARCHAR(20),Password Varchar(30), CONSTRAINT FK_Empleado FOREIGN KEY (IdEmpleado)     
-    REFERENCES Empleado (Dni));
-
-Create table Rol 
-(IdRol int NOT NULL IDENTITY(1,1), Rol VARCHAR(20), CONSTRAINT PK_Rol PRIMARY KEY NONCLUSTERED (IdRol));
-
-Create table Empleado
-(Dni varchar(30) PRIMARY KEY NOT NULL,Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), IdRol int, Celular varchar(20), 
-Telefono varchar(20), DireccionDomicilio varchar(120), SalarioMensual float, FechaContratacion Date, FechaSalida Date, Estado binary, 
- CONSTRAINT FK_Rol FOREIGN KEY (IdRol) REFERENCES Rol (IdRol));
-
-Create table ClienteAlDetalle
- ( Dni varchar(30) PRIMARY KEY NOT NULL, Nombre varchar(50), Apellido1 varchar(50), Apellido2 varchar(50), Celular varchar(20), 
-Telefono varchar(20));
-
-Create table VentaAlDetalle
- (IdVentaDetalle int NOT NULL IDENTITY(1,1), IdClienteDetalle varchar(30), IdEmpleado varchar(30), Total float,
- CONSTRAINT FK_VentaDetalleCliente FOREIGN KEY (IdClienteDetalle) REFERENCES  ClienteAlDetalle(Dni),
- CONSTRAINT FK_VentaDetalleEmpleado FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni), 
- CONSTRAINT PK_VentaDetalle PRIMARY KEY NONCLUSTERED (IdVentaDetalle));
-
-Create table DescripcionVentaAlDetalle
- (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1), IdVentaDetalle int, IdProducto int,
- Cantidad int not null, PrecioUnitario float, Total float, FOREIGN KEY (IdVentaDetalle) REFERENCES VentaAlDetalle(IdVentaDetalle), 
- CONSTRAINT FK_DescripcionVentaDetalleInventarioDetalle FOREIGN KEY (IdProducto) REFERENCES InventarioAlDetalle(IdProducto));
-
-Create table InventarioAlDetalle
- (IdProducto int NOT NULL IDENTITY(1,1), Codigo varchar(10), Color varchar(10), Talla float, Descripcion varchar(120),
- CONSTRAINT PK_InventarioDetalle PRIMARY KEY NONCLUSTERED (IdProducto));
-
-Create table VentaAlxMayor
- (IdVentaMayor int NOT NULL IDENTITY(1,1) primary key, IdClienteMayor varchar(30), IdEmpleado varchar(30), Total float, 
- CONSTRAINT FK_VentaAlxMayorEmpleado FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni),
- CONSTRAINT FK_VentaAlxMayorCliente FOREIGN KEY (IdClienteMayor) REFERENCES  ClienteAlxMayor(IdCliente));
-
-Create table ClienteAlxMayor
- (IdCliente int NOT NULL IDENTITY(1,1), Nombre varchar(100), NombreSociedad varchar(50), Telefono varchar(20), cedula varchar(20), cedulaJuridica varchar(50),
- CONSTRAINT PK_ClienteAlxMayor PRIMARY KEY NONCLUSTERED (IdCliente));
-
-Create table DecripcionVentaAlxMayor
- (IdDetalleVentaDetalle int NOT NULL IDENTITY(1,1) primary key, IdVentaMayor int, IdProducto int, Total float,
- CONSTRAINT FK_DecripcionVentaAlxMayorVenta FOREIGN KEY (IdVentaMayor) REFERENCES VentaAlxMayor(IdVentaMayor), 
- CONSTRAINT FK_DecripcionVentaAlxMayorInventario FOREIGN KEY ( IdProducto) REFERENCES InventarioAlxMayor(IdLote));
-
-Create table InventarioAlxMayor
- (IdLote int NOT NULL IDENTITY(1,1) primary key, Codigo varchar(10), Color varchar(10), Descripcion varchar(120));
