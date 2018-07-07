@@ -28,12 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BTN_ImportExcel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1197, 333);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // BTN_ImportExcel
+            // 
+            this.BTN_ImportExcel.Location = new System.Drawing.Point(465, 457);
+            this.BTN_ImportExcel.Name = "BTN_ImportExcel";
+            this.BTN_ImportExcel.Size = new System.Drawing.Size(275, 97);
+            this.BTN_ImportExcel.TabIndex = 1;
+            this.BTN_ImportExcel.Text = "Importar";
+            this.BTN_ImportExcel.UseVisualStyleBackColor = true;
+            this.BTN_ImportExcel.Click += new System.EventHandler(this.BTN_ImportExcel_Click);
+            // 
+            // ImportarExcel1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1221, 639);
+            this.Controls.Add(this.BTN_ImportExcel);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "ImportarExcel1";
             this.Text = "Form1";
+          
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button BTN_ImportExcel;
     }
 }
