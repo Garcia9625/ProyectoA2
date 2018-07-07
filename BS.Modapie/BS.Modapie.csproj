@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMantenimiento.cs" />
-    <Compile Include="Mantenimiento.cs" />
+    <Compile Include="Interfaces\IMantenimiento.cs" />
+    <Compile Include="Metodos\Mantenimiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
