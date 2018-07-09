@@ -21,6 +21,7 @@ namespace UI.Modapie
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+            //Saludos rata
             int respuesta = Mantenimiento.Instancia.validarLogin(txtID.Text, txtContrasena.Text);
             try
             {
