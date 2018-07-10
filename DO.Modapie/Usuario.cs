@@ -14,6 +14,8 @@ namespace DO.Modapie
         private string Password;
         private int Rol;
 
+        //prueba de subida
+
         public int idUsuario
         {
             get { return IdUsuario; }
