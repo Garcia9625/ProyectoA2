@@ -59,12 +59,12 @@ namespace DAL.Modapie
                 DbParameter param3 = factory.CreateParameter();
 
                 //Carga de parametros
-                param1.ParameterName = "@USERNAME";
+                param1.ParameterName = "@Username";
                 param1.DbType = System.Data.DbType.String;
                 param1.Value = username;
                 param1.Direction = ParameterDirection.Input;
 
-                param2.ParameterName = "@PASSWORD";
+                param2.ParameterName = "@Password";
                 param2.DbType = System.Data.DbType.String;
                 param2.Value = password;
                 param2.Direction = ParameterDirection.Input;
@@ -79,7 +79,7 @@ namespace DAL.Modapie
 
                 //Ejecuta funcion
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "Validacion_Login";
+                comm.CommandText = "dbo.Validacion_Login";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
@@ -121,7 +121,7 @@ namespace DAL.Modapie
 
 
                 //Carga de parametros
-                param1.ParameterName = "@USERNAME";
+                param1.ParameterName = "@Username";
                 param1.DbType = System.Data.DbType.String;
                 param1.Value = username;
 
@@ -131,7 +131,7 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_ObtenerUsuarioUser";
+                comm.CommandText = "ObtenerUsuarioUser";
                 comm.Parameters.Add(param1);
 
 
@@ -143,8 +143,8 @@ namespace DAL.Modapie
                     {
                         idUsuario = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
                         idEmpleado = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
-                        username = dataReader["username"].ToString(),
-                        password = dataReader["username"].ToString()
+                        username = dataReader["Username"].ToString(),
+                        password = dataReader["Password"].ToString()
                     };
 
                 }

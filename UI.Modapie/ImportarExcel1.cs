@@ -43,5 +43,12 @@ namespace UI.Modapie
             conector.Close();
                 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form login = new Login();
+            this.Hide();
+            login.Show();
+        }
     }
 }
