@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BS.Modapie;
+using DO.Modapie;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace UI.Modapie
 {
     public partial class MenuAdmin : Form
     {
-        public MenuAdmin()
+        string Username;
+        public MenuAdmin(string username)
         {
+            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
+            this.Username = username;
             InitializeComponent();
+            lblUsername.Text = "Hola: " + usuario.username;
         }
     }
 }
