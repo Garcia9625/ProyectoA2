@@ -264,30 +264,26 @@ END
 GO
 
 
+
 USE [DBMODAPIE]
 GO
-
-/** Object:  UserDefinedFunction [dbo].[validarUser]    Script Date: 16/07/2018 23:41:02 **/
+/** Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 **/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
-CREATE FUNCTION [dbo].[validarUser] (@Username varchar(20))
-RETURNS int
-AS 
+CREATE PROCEDURE [dbo].[validarUser] 
+@Username varchar(50)
+AS
 BEGIN
-declare @value int = 0;
-
-IF EXISTS(SELECT * FROM Usuario WHERE Username = @Username)
-    Set @value = @value + 1
-ELSE 
-    Set @value = @value + 0
-
-return @value
+SET NOCOUNT ON;
+SELECT IdUsuario, IdEmpleado,Username,Password, Rol
+From Usuario
+Where Username = @Username;
 END
 GO
+
+
 
 Create Function Rol(
 @NOMBRE varchar(50)
