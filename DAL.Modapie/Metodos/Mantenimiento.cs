@@ -131,10 +131,8 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "ObtenerUsuarioUser";
+                comm.CommandText = "validarUser";
                 comm.Parameters.Add(param1);
-
-
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
@@ -142,16 +140,12 @@ namespace DAL.Modapie
                     usuario = new Usuario
                     {
                         idUsuario = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
-                        idEmpleado = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
+                        idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"].ToString()),
                         username = dataReader["Username"].ToString(),
                         password = dataReader["Password"].ToString()
                     };
-
                 }
-
                 return usuario;
-
-
             }
             catch (Exception ee)
             {
@@ -160,6 +154,61 @@ namespace DAL.Modapie
                 return null;
             }
         }
-        
+
+        public int validarRol(string username)
+        {
+            DbConnection conn = null;
+            DbCommand comm = null;
+            int respuesta = 0;
+
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+
+                //Carga de parametros
+                param1.ParameterName = "@Username";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = username;
+                param1.Direction = ParameterDirection.Input;
+                
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Direction = ParameterDirection.ReturnValue;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta funcion
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "dbo.Rol";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+
+                comm.ExecuteNonQuery();
+
+                if (param2.Value != DBNull.Value)
+                {
+                    respuesta = (Int32)param2.Value;
+                }
+                return respuesta;
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+
+                return 0;
+            }
+        }
+
     }
 }
