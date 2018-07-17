@@ -22,5 +22,18 @@ namespace UI.Modapie
             InitializeComponent();
             lblUsername.Text = "Hola: " + usuario.username;
         }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea Salir", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

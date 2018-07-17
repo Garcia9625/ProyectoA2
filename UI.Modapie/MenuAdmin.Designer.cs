@@ -81,6 +81,8 @@
             this.Controls.Add(this.btnProductos);
             this.Name = "MenuAdmin";
             this.Text = "MenuAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuAdmin_FormClosed);
+            this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
