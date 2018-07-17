@@ -71,5 +71,13 @@ namespace UI.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
             }
         }
+
+        private void btn_apagar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea Salir", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
