@@ -142,7 +142,8 @@ namespace DAL.Modapie
                         idUsuario = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
                         idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"].ToString()),
                         username = dataReader["Username"].ToString(),
-                        password = dataReader["Password"].ToString()
+                        password = dataReader["Password"].ToString(),
+                        rol = Convert.ToInt32(dataReader["Rol"])
                     };
                 }
                 return usuario;
