@@ -215,3 +215,75 @@ GO
 ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
 GO
 
+
+
+/****** PL/SQL ******/
+
+USE [DBMODAPIE]
+GO
+
+/** Object:  UserDefinedFunction [dbo].[Validacion_Login]    Script Date: 15/07/2018 22:38:30 **/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE FUNCTION [dbo].[Validacion_Login] (@Username varchar(20), @Password varchar(30))
+RETURNS int
+AS 
+BEGIN
+declare @value int = 0;
+
+IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username AND Password = @Password)
+    Set @Value = @Value + 1
+ELSE IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username AND Password != @Password)
+    Set @Value = @Value + 0
+ELSE
+    Set @Value = @Value + 2
+
+return @value
+END
+GO
+USE [DBMODAPIE]
+GO
+
+/** Object:  UserDefinedFunction [dbo].[ObtenerUsuarioUser]    Script Date: 15/07/2018 22:38:20 **/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION [dbo].[ObtenerUsuarioUser] (@Username varchar(50))
+RETURNS int
+AS 
+BEGIN
+declare @value int = 0;
+
+IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username)
+    Set @Value = @Value + 1
+ELSE 
+    Set @Value = @Value + 0
+
+return @value
+END
+GO
+
+Create Function Rol(
+@NOMBRE varchar(50)
+)
+returns int
+AS
+BEGIN
+declare @value int;
+
+SELECT @value = Rol FROM Usuario WHERE Username = @NOMBRE;
+IF (@value IS NULL)   
+        SET @value = 0;  
+    RETURN @value;
+end 
+go
+
+
