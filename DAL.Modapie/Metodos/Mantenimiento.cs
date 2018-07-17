@@ -131,10 +131,8 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "ObtenerUsuarioUser";
+                comm.CommandText = "validarUser";
                 comm.Parameters.Add(param1);
-
-
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
@@ -142,16 +140,12 @@ namespace DAL.Modapie
                     usuario = new Usuario
                     {
                         idUsuario = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
-                        idEmpleado = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
+                        idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"].ToString()),
                         username = dataReader["Username"].ToString(),
                         password = dataReader["Password"].ToString()
                     };
-
                 }
-
                 return usuario;
-
-
             }
             catch (Exception ee)
             {
@@ -159,7 +153,6 @@ namespace DAL.Modapie
 
                 return null;
             }
-        }
-        
+        }        
     }
 }
