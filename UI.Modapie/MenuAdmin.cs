@@ -35,5 +35,12 @@ namespace UI.Modapie
                 Application.Exit();
             }
         }
+
+        private void btnClientesPMa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClienteAlPorMayor cpm = new ClienteAlPorMayor();
+            cpm.Show();
+        }
     }
 }

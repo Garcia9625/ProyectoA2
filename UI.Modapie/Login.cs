@@ -79,5 +79,21 @@ namespace UI.Modapie
                 Application.Exit();
             }
         }
+
+        private void Fechaa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Fechaa.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            Horaa.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
