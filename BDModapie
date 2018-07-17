@@ -262,26 +262,28 @@ ELSE
 return @value
 END
 GO
+
+
 USE [DBMODAPIE]
 GO
 
-/** Object:  UserDefinedFunction [dbo].[ObtenerUsuarioUser]    Script Date: 15/07/2018 22:38:20 **/
+/** Object:  UserDefinedFunction [dbo].[validarUser]    Script Date: 16/07/2018 23:41:02 **/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE FUNCTION [dbo].[ObtenerUsuarioUser] (@Username varchar(50))
+CREATE FUNCTION [dbo].[validarUser] (@Username varchar(20))
 RETURNS int
 AS 
 BEGIN
 declare @value int = 0;
 
-IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username)
-    Set @Value = @Value + 1
+IF EXISTS(SELECT * FROM Usuario WHERE Username = @Username)
+    Set @value = @value + 1
 ELSE 
-    Set @Value = @Value + 0
+    Set @value = @value + 0
 
 return @value
 END
