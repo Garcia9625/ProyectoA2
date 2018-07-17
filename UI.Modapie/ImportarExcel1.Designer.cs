@@ -30,40 +30,53 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTN_ImportExcel = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 29);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1064, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(1181, 398);
             this.dataGridView1.TabIndex = 0;
             // 
             // BTN_ImportExcel
             // 
-            this.BTN_ImportExcel.Location = new System.Drawing.Point(413, 366);
+            this.BTN_ImportExcel.Location = new System.Drawing.Point(875, 480);
             this.BTN_ImportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_ImportExcel.Name = "BTN_ImportExcel";
-            this.BTN_ImportExcel.Size = new System.Drawing.Size(244, 78);
+            this.BTN_ImportExcel.Size = new System.Drawing.Size(238, 74);
             this.BTN_ImportExcel.TabIndex = 1;
             this.BTN_ImportExcel.Text = "Importar";
             this.BTN_ImportExcel.UseVisualStyleBackColor = true;
             this.BTN_ImportExcel.Click += new System.EventHandler(this.BTN_ImportExcel_Click);
             // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Location = new System.Drawing.Point(881, 585);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(232, 78);
+            this.btn_Guardar.TabIndex = 2;
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
             // ImportarExcel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 511);
+            this.ClientSize = new System.Drawing.Size(1231, 687);
+            this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.BTN_ImportExcel);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ImportarExcel1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ImportarExcel1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -73,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BTN_ImportExcel;
+        private System.Windows.Forms.Button btn_Guardar;
     }
 }
