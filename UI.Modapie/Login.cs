@@ -79,5 +79,21 @@ namespace UI.Modapie
                 Application.Exit();
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Horaa.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Fechaa.Text = DateTime.Now.ToLongDateString();
+            Horaa.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

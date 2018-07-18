@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Horaa = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,6 +177,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Login
             // 
@@ -184,6 +193,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -202,6 +212,7 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
