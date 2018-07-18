@@ -23,7 +23,7 @@ namespace UI.Modapie
 
         private void BTN_ImportExcel_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/marih/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Esteban/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -60,7 +60,7 @@ namespace UI.Modapie
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/marih/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Esteban/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -83,7 +83,7 @@ namespace UI.Modapie
 
 
             /////////////////////////////////////////////////////////////////
-            SqlConnection conexion_receptora = new SqlConnection("Data Source=MARI\\SQLEXPRESS;Initial Catalog=DBMODAPIE;Integrated Security=True");
+            SqlConnection conexion_receptora = new SqlConnection("Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True");
             conexion_receptora.Open();
             SqlBulkCopy exportar = default(SqlBulkCopy);
             exportar = new SqlBulkCopy(conexion_receptora);
@@ -92,6 +92,9 @@ namespace UI.Modapie
             exportar.WriteToServer(ds.Tables[0]);
             conexion_receptora.Close();
             MessageBox.Show("Importacion exitosa");
+
+
+
 
         }
     }

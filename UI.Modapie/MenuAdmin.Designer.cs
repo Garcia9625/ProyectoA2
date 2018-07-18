@@ -38,7 +38,7 @@
             // 
             this.btnProductos.Location = new System.Drawing.Point(214, 71);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(75, 23);
+            this.btnProductos.Size = new System.Drawing.Size(75, 26);
             this.btnProductos.TabIndex = 0;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -47,16 +47,17 @@
             // 
             this.btnClientesPMa.Location = new System.Drawing.Point(165, 130);
             this.btnClientesPMa.Name = "btnClientesPMa";
-            this.btnClientesPMa.Size = new System.Drawing.Size(178, 23);
+            this.btnClientesPMa.Size = new System.Drawing.Size(178, 27);
             this.btnClientesPMa.TabIndex = 1;
             this.btnClientesPMa.Text = "Clientes al por mayor";
             this.btnClientesPMa.UseVisualStyleBackColor = true;
+            this.btnClientesPMa.Click += new System.EventHandler(this.btnClientesPMa_Click);
             // 
             // btnInformes
             // 
             this.btnInformes.Location = new System.Drawing.Point(214, 188);
             this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Size = new System.Drawing.Size(75, 23);
+            this.btnInformes.Size = new System.Drawing.Size(75, 25);
             this.btnInformes.TabIndex = 2;
             this.btnInformes.Text = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;

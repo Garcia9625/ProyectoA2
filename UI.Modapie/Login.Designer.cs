@@ -65,7 +65,7 @@
             this.Horaa.BackColor = System.Drawing.Color.Transparent;
             this.Horaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Horaa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Horaa.Location = new System.Drawing.Point(235, 374);
+            this.Horaa.Location = new System.Drawing.Point(190, 387);
             this.Horaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Horaa.Name = "Horaa";
             this.Horaa.Size = new System.Drawing.Size(80, 32);
@@ -78,20 +78,21 @@
             this.Fechaa.BackColor = System.Drawing.Color.Transparent;
             this.Fechaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fechaa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Fechaa.Location = new System.Drawing.Point(235, 406);
+            this.Fechaa.Location = new System.Drawing.Point(190, 428);
             this.Fechaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Fechaa.Name = "Fechaa";
             this.Fechaa.Size = new System.Drawing.Size(99, 32);
             this.Fechaa.TabIndex = 8;
             this.Fechaa.Text = "Fecha";
+            this.Fechaa.Click += new System.EventHandler(this.Fechaa_Click);
             // 
             // btn_apagar
             // 
             this.btn_apagar.BackColor = System.Drawing.Color.White;
             this.btn_apagar.Image = ((System.Drawing.Image)(resources.GetObject("btn_apagar.Image")));
-            this.btn_apagar.Location = new System.Drawing.Point(14, 407);
+            this.btn_apagar.Location = new System.Drawing.Point(14, 401);
             this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(49, 53);
+            this.btn_apagar.Size = new System.Drawing.Size(60, 59);
             this.btn_apagar.TabIndex = 16;
             this.btn_apagar.UseVisualStyleBackColor = false;
             this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
@@ -114,7 +115,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(83, 214);
+            this.label2.Location = new System.Drawing.Point(74, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 38);
             this.label2.TabIndex = 4;
@@ -126,7 +127,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(83, 163);
+            this.label1.Location = new System.Drawing.Point(74, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 38);
             this.label1.TabIndex = 3;
@@ -155,7 +156,7 @@
             this.btn_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingresar.Image")));
             this.btn_Ingresar.Location = new System.Drawing.Point(556, 178);
             this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(61, 53);
+            this.btn_Ingresar.Size = new System.Drawing.Size(81, 63);
             this.btn_Ingresar.TabIndex = 2;
             this.btn_Ingresar.UseVisualStyleBackColor = false;
             this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
@@ -177,6 +178,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer1
             // 

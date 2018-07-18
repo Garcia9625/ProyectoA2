@@ -80,15 +80,20 @@ namespace UI.Modapie
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Fechaa_Click(object sender, EventArgs e)
         {
-            Horaa.Text = DateTime.Now.ToLongTimeString();
+
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Fechaa.Text = DateTime.Now.ToLongDateString();
-            Horaa.Text = DateTime.Now.ToLongTimeString();
+            Fechaa.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            Horaa.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
