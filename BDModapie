@@ -232,6 +232,57 @@ GO
 
 
 /****** PL/SQL ******/
+****Stored Procedures****
+
+USE [DBMODAPIE]
+GO
+/** Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 **/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[validarUser] 
+@Username varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdUsuario, IdEmpleado,Username,Password, Rol
+From Usuario
+Where Username = @Username;
+END
+GO
+
+
+Create PROCEDURE [dbo].[sp_InsertarCAXM] 
+@NombreJuridico varchar(100),
+@NombreFisico varchar(50),
+@NombreFantasia varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO ClienteAClienteAlxMayor (NombreJuridico,NombreFisico,NombreFantasia)
+VALUES        (@NombreJuridico,@NombreFisico,@NombreFantasia);
+END
+GO
+
+
+
+***Functions***
+Create Function Rol(
+@NOMBRE varchar(50)
+)
+returns int
+AS
+BEGIN
+declare @value int;
+
+SELECT @value = Rol FROM Usuario WHERE Username = @NOMBRE;
+IF (@value IS NULL)   
+        SET @value = 0;  
+    RETURN @value;
+end 
+go
+
 
 USE [DBMODAPIE]
 GO
@@ -260,43 +311,6 @@ ELSE
 return @value
 END
 GO
-
-
-
-USE [DBMODAPIE]
-GO
-/** Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 **/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROCEDURE [dbo].[validarUser] 
-@Username varchar(50)
-AS
-BEGIN
-SET NOCOUNT ON;
-SELECT IdUsuario, IdEmpleado,Username,Password, Rol
-From Usuario
-Where Username = @Username;
-END
-GO
-
-
-
-Create Function Rol(
-@NOMBRE varchar(50)
-)
-returns int
-AS
-BEGIN
-declare @value int;
-
-SELECT @value = Rol FROM Usuario WHERE Username = @NOMBRE;
-IF (@value IS NULL)   
-        SET @value = 0;  
-    RETURN @value;
-end 
-go
 
 
 *******Sentencias SQL para tabla Empleado y Usuario
