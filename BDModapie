@@ -25,11 +25,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ClienteAlxMayor](
 	[IdCliente] [int] IDENTITY(1,1) NOT NULL,
-	[Nombre] [varchar](100) NULL,
-	[NombreSociedad] [varchar](50) NULL,
-	[Telefono] [varchar](20) NULL,
-	[cedula] [varchar](20) NULL,
-	[cedulaJuridica] [varchar](50) NULL,
+	[NombreJuridico] [varchar](100) NULL,
+	[NombreFisico] [varchar](50) NULL,
+	[NombreFantasia] [varchar](50) NULL,
  CONSTRAINT [PK_ClienteAlxMayor] PRIMARY KEY NONCLUSTERED 
 (
 	[IdCliente] ASC
@@ -301,3 +299,8 @@ end
 go
 
 
+*******Sentencias SQL para tabla Empleado y Usuario
+
+INSERT INTO Empleado VALUES (1, 'mariana', 'hernandez', 'quesada', 54545454, 54545454, 'curri', 500000, '2015-12-17', '2020-12-17', 1);
+
+INSERT INTO Usuario VALUES (1, 1, 'mari', '123', 1);
