@@ -42,7 +42,7 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +84,6 @@
             this.Fechaa.Size = new System.Drawing.Size(99, 32);
             this.Fechaa.TabIndex = 8;
             this.Fechaa.Text = "Fecha";
-            this.Fechaa.Click += new System.EventHandler(this.Fechaa_Click);
             // 
             // btn_apagar
             // 
@@ -178,11 +177,12 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // timer1
+            // HoraFecha
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.HoraFecha.Enabled = true;
+            this.HoraFecha.Interval = 1000;
+            this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
             // Login
             // 
@@ -192,6 +192,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Login";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -210,7 +211,7 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer HoraFecha;
     }
 }
 
