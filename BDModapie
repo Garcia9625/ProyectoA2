@@ -266,6 +266,14 @@ END
 GO
 
 
+CREATE PROCEDURE [dbo].[sp_MostrarCAXM] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlxMayor];
+END
+GO
+
 
 ***Functions***
 Create Function Rol(
