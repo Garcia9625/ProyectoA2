@@ -20,7 +20,7 @@ namespace UI.Modapie
             Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
             this.Username = username;
             InitializeComponent();
-            lblUsername.Text = "Hola: " + usuario.username;
+            lblUsername.Text = "Bienvenido: " + usuario.username;
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace UI.Modapie
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (MessageBox.Show("Esta seguro que desea Salir", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -41,6 +41,13 @@ namespace UI.Modapie
             this.Hide();
             ClienteAlPorMayor cpm = new ClienteAlPorMayor();
             cpm.Show();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ImportarExcel1 PI = new ImportarExcel1();
+            PI.Show();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BS.Modapie;
+using DO.Modapie;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,61 @@ namespace UI.Modapie
 {
     public partial class ClienteAlPorMayor : Form
     {
+        Mantenimiento procesar = new Mantenimiento();
+        ClienteAlxMayor CAXM;
+        ClienteAlxMayor CAXM2;
+
         public ClienteAlPorMayor()
         {
             InitializeComponent();
+        }
+
+        private void GetValues()
+        {
+            CAXM = new ClienteAlxMayor
+            {
+                idCliente = Convert.ToInt32(txtId.Text),
+                nombreJuridico = txtJuridico.Text,
+                nombreFisico = txtFisico.Text,
+                nombreFantasia = txtFantasia.Text                 
+            };
+        }
+
+        private void GetValues2()
+        {
+            CAXM2 = new ClienteAlxMayor
+            {
+                nombreJuridico = txtJuridico.Text,
+                nombreFisico = txtFisico.Text,
+                nombreFantasia = txtFantasia.Text
+            };
+        }
+
+        private void ClienteAlPorMayor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues2();
+                procesar.InsertarCAlxMayor(CAXM2);
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        private void ClienteAlPorMayor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
