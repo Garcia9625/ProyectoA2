@@ -70,5 +70,40 @@ namespace BS.Modapie
 
             }
         }
+
+
+        public void InsertarCAlxMayor(ClienteAlxMayor CAXM)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarCAlxMayor(CAXM);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public List<ClienteAlxMayor> MostarCAXM()
+        {
+            List<ClienteAlxMayor> lista = new List<ClienteAlxMayor>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostarCAXM();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -93,6 +93,9 @@ namespace UI.Modapie
             conexion_receptora.Close();
             MessageBox.Show("Importacion exitosa");
 
+
+
+
         }
     }
 }

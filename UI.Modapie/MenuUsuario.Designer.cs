@@ -48,6 +48,7 @@
             this.Controls.Add(this.lblUsername);
             this.Name = "MenuUsuario";
             this.Text = "MenuUsuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuUsuario_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

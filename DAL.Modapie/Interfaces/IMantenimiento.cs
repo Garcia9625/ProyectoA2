@@ -12,5 +12,10 @@ namespace DAL.Modapie
         Usuario obtenerUsuarioUser(string username);
 
         int validarLogin(string username, string contrasena);
+
+
+        /*ClienteAlxMayor*/
+        void InsertarCAlxMayor(ClienteAlxMayor CAXM);
+        List<ClienteAlxMayor> MostarCAXM();
     }
 }

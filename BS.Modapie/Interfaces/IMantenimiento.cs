@@ -9,8 +9,14 @@ namespace BS.Modapie
 {
     public interface IMantenimiento
     {
+        /*login*/
         Usuario obtenerUsuarioUser(string username);
 
         int validarLogin(string username, string contrasena);
+
+
+        /*ClienteAlxMayor*/
+        void InsertarCAlxMayor(ClienteAlxMayor CAXM);
+        List<ClienteAlxMayor> MostarCAXM();
     }
 }

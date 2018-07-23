@@ -37,6 +37,7 @@ namespace DAL.Modapie
             }
         }
 
+
         public int validarLogin(string username, string password)
         {
             DbConnection conn = null;
@@ -211,5 +212,105 @@ namespace DAL.Modapie
             }
         }
 
+
+        public void InsertarCAlxMayor(ClienteAlxMayor CAXM)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param2.ParameterName = "@NombreJuridico";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = CAXM.nombreJuridico;
+
+                param3.ParameterName = "@NombreFisico";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = CAXM.nombreFisico;
+
+                param4.ParameterName = "@NombreFantasia";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXM.nombreFantasia;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarCAXM";
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public List<ClienteAlxMayor> MostarCAXM()
+        {
+            List<ClienteAlxMayor> lista = new List<ClienteAlxMayor>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_MostrarCAXM";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    ClienteAlxMayor CAXM;
+                    while (dataReader.Read())
+                    {
+                        CAXM = new ClienteAlxMayor
+                        {
+                            idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
+                            nombreJuridico = dataReader["NombreJuridico"].ToString(),
+                            nombreFisico = dataReader["NombreFisico"].ToString(),
+                            nombreFantasia = dataReader["NombreFantasia"].ToString()
+
+                        };
+                        lista.Add(CAXM);
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
     }
 }
