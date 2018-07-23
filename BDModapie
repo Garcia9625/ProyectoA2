@@ -76,6 +76,7 @@ CREATE TABLE [dbo].[Empleado](
 	[Apellido2] [varchar](50) NULL,
 	[Celular] [varchar](20) NULL,
 	[Telefono] [varchar](20) NULL,
+	[Correo][varchar](50) NULL,
 	[DireccionDomicilio] [varchar](120) NULL,
 	[SalarioMensual] [float] NULL,
 	[FechaContratacion] [date] NULL,
