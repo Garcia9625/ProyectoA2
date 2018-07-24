@@ -275,6 +275,47 @@ END
 GO
 
 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Editar] 
+@IdCliente int, 
+@NombreJuridico varchar(100),
+@NombreFisico varchar(50),
+@NombreFantasia varchar(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+UPDATE      ClienteAlxMayor
+SET          
+			NombreJuridico = @NombreJuridico,
+            NombreFisico = @NombreFisico, 
+			NombreFantasia = @NombreFantasia
+WHERE       (IdCliente = @IdCliente);
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_EliminarCAXM]
+@IdCliente int
+AS
+BEGIN
+SET NOCOUNT ON;	 
+delete FROM  ClienteAlxMayor
+WHERE        (IdCliente = @IdCliente);
+END
+GO
+
+
+
+
+
 /**Gestion de Empleado**/
 Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
 @Dni varchar(30),
