@@ -296,6 +296,18 @@ VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo,@Di
 END
 GO
 
+ CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
+@IdLote int
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos
+From InventarioAlxMayor
+Where IdLote = @IdLote;
+END
+GO
+
 
 
 
