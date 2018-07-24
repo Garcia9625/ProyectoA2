@@ -61,6 +61,12 @@
     <Compile Include="GestionEmpleado.Designer.cs">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionInventarioAlxMayor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionInventarioAlxMayor.Designer.cs">
+      <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportarExcel1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEmpleado.resx">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionInventarioAlxMayor.resx">
+      <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
