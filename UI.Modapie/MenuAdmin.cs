@@ -49,5 +49,19 @@ namespace UI.Modapie
             ImportarExcel1 PI = new ImportarExcel1();
             PI.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionInventarioAlxMayor GIAM = new GestionInventarioAlxMayor();
+            GIAM.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionEmpleado GE = new GestionEmpleado();
+            GE.Show();
+        }
     }
 }

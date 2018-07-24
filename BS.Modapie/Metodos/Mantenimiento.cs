@@ -125,6 +125,22 @@ namespace BS.Modapie
             }
         }
 
+        public void Borrar(ClientePorMayor CAXM)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.Borrar(CAXM);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
         #endregion
 
 

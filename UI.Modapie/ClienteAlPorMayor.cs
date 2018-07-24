@@ -90,5 +90,19 @@ namespace UI.Modapie
         {
 
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                Mantenimiento.Instancia.Borrar(CAXM);
+                dgvData.DataSource = Mantenimiento.Instancia.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
     }
 }

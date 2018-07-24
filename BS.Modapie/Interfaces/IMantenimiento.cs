@@ -19,6 +19,7 @@ namespace BS.Modapie
         void InsertarCAlxMayor(ClientePorMayor CAXM);
         List<ClientePorMayor> MostarCAXM();
         void Editar(ClientePorMayor CAXM);
+        void Borrar(ClientePorMayor CAXM);
 
 
         /*Gestion de Empleado*/
