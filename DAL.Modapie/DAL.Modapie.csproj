@@ -47,10 +47,8 @@
       <DependentUpon>Conexion.settings</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IMantenimiento.cs" />
-    <Compile Include="Interfaces\IProductosAlxMayor.cs" />
     <Compile Include="Metodos\Mantenimiento.cs" />
     <Compile Include="Metodos\MBase.cs" />
-    <Compile Include="Metodos\MProductosAlxMayor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,5 +23,8 @@ namespace DAL.Modapie
         void InsertarEmpleado(Empleado empleado);
 
         List<Empleado> MostrarEmpleado();
+
+        /*Gestion de Productos al x MAYOR*/
+        List<ProductosAlxMayor>MostrarProductos();
     }
 }

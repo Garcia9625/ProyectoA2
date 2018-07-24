@@ -25,5 +25,9 @@ namespace BS.Modapie
         void InsertarEmpleado(Empleado empleado);
 
         List<Empleado> MostrarEmpleado();
+
+
+        /*Gestion de productos al x Mayor*/
+        List<ProductosAlxMayor> MostrarProductos();
     }
 }

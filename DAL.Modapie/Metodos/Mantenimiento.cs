@@ -470,5 +470,76 @@ namespace DAL.Modapie
                 throw;
             }
         }
+
+
+        /*Gestion productos al x MAYOR*/
+       public List<ProductosAlxMayor> MostrarProductos()
+        {
+            List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "MostrarProductoAlxMayor1";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                   ProductosAlxMayor pro;
+                    while (dataReader.Read())
+                    {
+                        pro = new ProductosAlxMayor
+
+
+                        {
+                            IdLote = Convert.ToInt32( dataReader["IdLote"]),
+                            EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"]),
+                            Show = dataReader["Show"].ToString(),
+                            Cliente = dataReader["Cliente"].ToString(),
+                            Vendedor = Convert.ToInt32(dataReader["Vendedor"]),
+                            Zona = Convert.ToInt32(dataReader["Zona"]),
+                            Transporte = dataReader["Transporte"].ToString(),
+                            Pedido = dataReader["Pedido"].ToString(),
+                            Modelo = Convert.ToInt32(dataReader["Modelo"]),
+                            Color = Convert.ToInt32(dataReader["Color"]),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Curva = dataReader["Curva"].ToString(),
+                            Pares = Convert.ToInt32(dataReader["Pares"]),
+                            Cajas = Convert.ToInt32(dataReader["Cajas"]),
+                            Cif = Convert.ToInt32(dataReader["Cif"]),
+                            TotalCIF = Convert.ToInt32(dataReader["TotalCIF"]),
+                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"]),
+                            SubTotal = Convert.ToInt32(dataReader["SubTotal"]),
+                            TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"])
+                     
+
+                        };
+                        lista.Add(pro);
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+
+
+        }
     }
+
 }
+

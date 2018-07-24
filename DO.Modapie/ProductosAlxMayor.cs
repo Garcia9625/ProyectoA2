@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO.Modapie
 {
-    class ProductosAlxMayor
+    public class ProductosAlxMayor
     {
         public int IdLote { get; set; }
         public int EnvioOrden { get; set; }
@@ -18,7 +18,7 @@ namespace DO.Modapie
         public string Pedido { get; set; }
         public int Modelo { get; set; }
         public int Color { get; set; }
-        public string Descripcion{ get; set; }
+        public string Descripcion { get; set; }
         public string Curva { get; set; }
         public int Pares { get; set; }
         public int Cajas { get; set; }
@@ -28,7 +28,7 @@ namespace DO.Modapie
         public int SubTotal { get; set; }
         public int TotalImpuestos { get; set; }
 
-     
+
 
 
 

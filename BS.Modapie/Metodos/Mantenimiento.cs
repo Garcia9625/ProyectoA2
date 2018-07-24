@@ -139,5 +139,22 @@ namespace BS.Modapie
                 throw;
             }
         }
+        public List<ProductosAlxMayor> MostrarProducto()
+        {
+            List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarProductos();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
     }
 }
