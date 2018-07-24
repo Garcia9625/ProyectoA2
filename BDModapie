@@ -260,7 +260,7 @@ Create PROCEDURE [dbo].[sp_InsertarCAXM]
 AS
 BEGIN
 SET NOCOUNT ON;
-INSERT INTO ClienteAClienteAlxMayor (NombreJuridico,NombreFisico,NombreFantasia)
+INSERT INTO ClienteAlxMayor (NombreJuridico,NombreFisico,NombreFantasia)
 VALUES        (@NombreJuridico,@NombreFisico,@NombreFantasia);
 END
 GO
