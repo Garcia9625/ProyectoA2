@@ -61,6 +61,12 @@
     <Compile Include="EliminarProducto.Designer.cs">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmpleado.Designer.cs">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportarExcel1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ClienteAlPorMayor.resx">
       <DependentUpon>ClienteAlPorMayor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpleado.resx">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>

@@ -18,5 +18,12 @@ namespace BS.Modapie
         /*ClienteAlxMayor*/
         void InsertarCAlxMayor(ClienteAlxMayor CAXM);
         List<ClienteAlxMayor> MostarCAXM();
+
+
+        /*Gestion de Empleado*/
+
+        void InsertarEmpleado(Empleado empleado);
+
+        List<Empleado> MostrarEmpleado();
     }
 }

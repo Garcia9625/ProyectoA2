@@ -105,5 +105,39 @@ namespace BS.Modapie
                 throw;
             }
         }
+
+        public void InsertarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarEmpleado(empleado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public List<Empleado> MostrarEmpleado()
+        {
+            List<Empleado> lista = new List<Empleado>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarEmpleado();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
     }
 }
