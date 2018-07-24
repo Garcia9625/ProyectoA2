@@ -81,7 +81,7 @@ CREATE TABLE [dbo].[Empleado](
 	[SalarioMensual] [float] NULL,
 	[FechaContratacion] [date] NULL,
 	[FechaSalida] [date] NULL,
-	[Estado] [binary](1) NULL,
+	[Estado] [bit] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Dni] ASC
