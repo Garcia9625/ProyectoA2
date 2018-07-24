@@ -139,8 +139,11 @@ namespace BS.Modapie
                 throw;
             }
         }
-        public List<ProductosAlxMayor> MostrarProducto()
+        
+
+        public List<ProductosAlxMayor> MostrarProductos()
         {
+
             List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
             try
             {
