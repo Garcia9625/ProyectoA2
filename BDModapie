@@ -275,7 +275,7 @@ END
 GO
 
 
-
+/**Gestion de Empleado**/
 Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
 @Dni varchar(30),
 @Nombre varchar(50),
@@ -295,6 +295,16 @@ INSERT INTO Empleado(Dni,Nombre,Apellido1, Apellido2, Celular,Telefono,Correo,Di
 VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo,@DireccionDomicilio,@SalarioMensual,@FechaContratacion,@Estado);
 END
 GO
+
+CREATE PROCEDURE [dbo].[sp_MostrarEmpleado] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado];
+END
+GO
+
+/**Fin de Gestion de Empleado**/
 
  CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
 @IdLote int
