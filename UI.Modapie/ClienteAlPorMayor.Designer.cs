@@ -47,53 +47,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 80);
+            this.label1.Location = new System.Drawing.Point(29, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.Size = new System.Drawing.Size(107, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre jurídico";
             // 
             // txtJuridico
             // 
-            this.txtJuridico.Location = new System.Drawing.Point(212, 76);
-            this.txtJuridico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtJuridico.Location = new System.Drawing.Point(153, 84);
             this.txtJuridico.Name = "txtJuridico";
-            this.txtJuridico.Size = new System.Drawing.Size(276, 26);
+            this.txtJuridico.Size = new System.Drawing.Size(246, 22);
             this.txtJuridico.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 189);
+            this.label2.Location = new System.Drawing.Point(455, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre Fantasía";
             // 
             // txtFantasia
             // 
-            this.txtFantasia.Location = new System.Drawing.Point(212, 185);
-            this.txtFantasia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFantasia.Location = new System.Drawing.Point(598, 84);
             this.txtFantasia.Name = "txtFantasia";
-            this.txtFantasia.Size = new System.Drawing.Size(276, 26);
+            this.txtFantasia.Size = new System.Drawing.Size(246, 22);
             this.txtFantasia.TabIndex = 3;
             // 
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(36, 270);
-            this.dgvData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvData.Location = new System.Drawing.Point(12, 195);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowTemplate.Height = 24;
-            this.dgvData.Size = new System.Drawing.Size(829, 332);
+            this.dgvData.Size = new System.Drawing.Size(852, 266);
             this.dgvData.TabIndex = 4;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(565, 72);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnIngresar.Location = new System.Drawing.Point(101, 161);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(84, 35);
+            this.btnIngresar.Size = new System.Drawing.Size(117, 28);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -101,10 +98,9 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(565, 150);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditar.Location = new System.Drawing.Point(253, 161);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(84, 35);
+            this.btnEditar.Size = new System.Drawing.Size(117, 28);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -112,20 +108,18 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(754, 72);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBorrar.Location = new System.Drawing.Point(405, 161);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(84, 35);
+            this.btnBorrar.Size = new System.Drawing.Size(117, 28);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(734, 150);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(665, 161);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(132, 35);
+            this.btnActualizar.Size = new System.Drawing.Size(117, 28);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar tabla";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -133,43 +127,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 138);
+            this.label3.Location = new System.Drawing.Point(455, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Nombre físico";
             // 
             // txtFisico
             // 
-            this.txtFisico.Location = new System.Drawing.Point(212, 131);
-            this.txtFisico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFisico.Location = new System.Drawing.Point(598, 43);
             this.txtFisico.Name = "txtFisico";
-            this.txtFisico.Size = new System.Drawing.Size(276, 26);
+            this.txtFisico.Size = new System.Drawing.Size(246, 22);
             this.txtFisico.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 29);
+            this.label4.Location = new System.Drawing.Point(29, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Id Cliente";
             // 
             // txtId
             // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(212, 25);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtId.Location = new System.Drawing.Point(153, 43);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(276, 26);
+            this.txtId.Size = new System.Drawing.Size(246, 22);
             this.txtId.TabIndex = 12;
             // 
             // ClienteAlPorMayor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 630);
+            this.ClientSize = new System.Drawing.Size(876, 474);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFisico);
@@ -183,7 +174,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtJuridico);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClienteAlPorMayor";
             this.Text = "ClienteAlPorMayor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClienteAlPorMayor_FormClosed);

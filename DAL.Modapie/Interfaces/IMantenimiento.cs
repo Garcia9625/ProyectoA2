@@ -15,8 +15,9 @@ namespace DAL.Modapie
 
 
         /*ClienteAlxMayor*/
-        void InsertarCAlxMayor(ClienteAlxMayor CAXM);
-        List<ClienteAlxMayor> MostarCAXM();
+        void InsertarCAlxMayor(ClientePorMayor CAXM);
+        List<ClientePorMayor> MostarCAXM();
+        void Editar(ClientePorMayor CAXM);
 
         /*Gestion Empleado*/
 

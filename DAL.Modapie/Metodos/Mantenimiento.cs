@@ -37,7 +37,7 @@ namespace DAL.Modapie
             }
         }
 
-
+        #region Login
         public int validarLogin(string username, string password)
         {
             DbConnection conn = null;
@@ -211,9 +211,11 @@ namespace DAL.Modapie
                 return 0;
             }
         }
+        #endregion
 
 
-        public void InsertarCAlxMayor(ClienteAlxMayor CAXM)
+        #region ClienteAlxMayor
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
             DbConnection conn = null;
@@ -266,9 +268,9 @@ namespace DAL.Modapie
             }
         }
 
-        public List<ClienteAlxMayor> MostarCAXM()
+        public List<ClientePorMayor> MostarCAXM()
         {
-            List<ClienteAlxMayor> lista = new List<ClienteAlxMayor>();
+            List<ClientePorMayor> lista = new List<ClientePorMayor>();
             DbConnection conn = null;
             DbCommand comm = null;
             try
@@ -290,10 +292,10 @@ namespace DAL.Modapie
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    ClienteAlxMayor CAXM;
+                    ClientePorMayor CAXM;
                     while (dataReader.Read())
                     {
-                        CAXM = new ClienteAlxMayor
+                        CAXM = new ClientePorMayor
                         {
                             idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
                             nombreJuridico = dataReader["NombreJuridico"].ToString(),
@@ -313,6 +315,68 @@ namespace DAL.Modapie
             }
         }
 
+        public void Editar(ClientePorMayor CAXM)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+              
+
+                //Carga de Parametros
+                param1.ParameterName = "@IdCliente";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = CAXM.idCliente;
+
+                param2.ParameterName = "@NombreJuridico";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = CAXM.nombreJuridico;
+
+                param3.ParameterName = "@NombreFisico";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = CAXM.nombreFisico;
+
+                param4.ParameterName = "@NombreFantasia";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXM.nombreFantasia;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_Editar";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region Empleado
         /*Gestion Empleado*/
 
         public void InsertarEmpleado(Empleado emp)
@@ -470,10 +534,12 @@ namespace DAL.Modapie
                 throw;
             }
         }
+        #endregion
 
+        #region productosAlxMAYOR
 
         /*Gestion productos al x MAYOR*/
-       public List<ProductosAlxMayor> MostrarProductos()
+        public List<ProductosAlxMayor> MostrarProductos()
         {
             List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
             DbConnection conn = null;
@@ -536,10 +602,9 @@ namespace DAL.Modapie
             {
                 throw;
             }
-
-
         }
-    }
 
+        #endregion
+    }
 }
 

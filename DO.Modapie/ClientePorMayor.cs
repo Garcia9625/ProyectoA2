@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO.Modapie
 {
-    public class ClienteAlxMayor
+    public class ClientePorMayor
     {
         private int IdCliente;
         private string NombreJuridico;
@@ -36,7 +36,5 @@ namespace DO.Modapie
             get { return NombreFantasia; }
             set { NombreFantasia = value; }
         }
-
     }
 }
-

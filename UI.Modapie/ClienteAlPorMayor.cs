@@ -15,8 +15,8 @@ namespace UI.Modapie
     public partial class ClienteAlPorMayor : Form
     {
         Mantenimiento procesar = new Mantenimiento();
-        ClienteAlxMayor CAXM;
-        ClienteAlxMayor CAXM2;
+        ClientePorMayor CAXM;
+        ClientePorMayor CAXM2;
 
         public ClienteAlPorMayor()
         {
@@ -25,7 +25,7 @@ namespace UI.Modapie
 
         private void GetValues()
         {
-            CAXM = new ClienteAlxMayor
+            CAXM = new ClientePorMayor
             {
                 idCliente = Convert.ToInt32(txtId.Text),
                 nombreJuridico = txtJuridico.Text,
@@ -36,7 +36,7 @@ namespace UI.Modapie
 
         private void GetValues2()
         {
-            CAXM2 = new ClienteAlxMayor
+            CAXM2 = new ClientePorMayor
             {
                 nombreJuridico = txtJuridico.Text,
                 nombreFisico = txtFisico.Text,
@@ -72,6 +72,21 @@ namespace UI.Modapie
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                Mantenimiento.Instancia.Editar(CAXM);
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+
+                throw;
+            }
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -32,6 +32,7 @@ namespace BS.Modapie
             }
         }
 
+        #region Login
         public Usuario obtenerUsuarioUser(string username)
         {
             try
@@ -70,9 +71,11 @@ namespace BS.Modapie
 
             }
         }
+        #endregion
 
 
-        public void InsertarCAlxMayor(ClienteAlxMayor CAXM)
+        #region ClienteAlxMayor
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
         {
             try
             {
@@ -88,9 +91,9 @@ namespace BS.Modapie
             }
         }
 
-        public List<ClienteAlxMayor> MostarCAXM()
+        public List<ClientePorMayor> MostarCAXM()
         {
-            List<ClienteAlxMayor> lista = new List<ClienteAlxMayor>();
+            List<ClientePorMayor> lista = new List<ClientePorMayor>();
             try
             {
                 using (TransactionScope scope = new TransactionScope())
@@ -106,6 +109,26 @@ namespace BS.Modapie
             }
         }
 
+        public void Editar(ClientePorMayor CAXM)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.Editar(CAXM);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        #endregion
+
+
+        #region Empleado
         public void InsertarEmpleado(Empleado empleado)
         {
             try
@@ -139,8 +162,11 @@ namespace BS.Modapie
                 throw;
             }
         }
-        
 
+        #endregion
+
+
+        #region ProductoAlxMayor
         public List<ProductosAlxMayor> MostrarProductos()
         {
 
@@ -159,5 +185,6 @@ namespace BS.Modapie
                 throw;
             }
         }
+        #endregion
     }
 }
