@@ -79,8 +79,8 @@ CREATE TABLE [dbo].[Empleado](
 	[Correo][varchar](50) NULL,
 	[DireccionDomicilio] [varchar](120) NULL,
 	[SalarioMensual] [float] NULL,
-	[FechaContratacion] [date] NULL,
-	[FechaSalida] [date] NULL,
+	[FechaContratacion] [datetime] NULL,
+	[FechaSalida] [datetime] NULL,
 	[Estado] [bit] NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -273,6 +273,30 @@ SET NOCOUNT ON;
 SELECT * from [dbo].[ClienteAlxMayor];
 END
 GO
+
+
+
+Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
+@Dni varchar(30),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50),
+@DireccionDomicilio varchar(120),
+@SalarioMensual float,
+@FechaContratacion datetime,
+@Estado bit
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO Empleado(Dni,Nombre,Apellido1, Apellido2, Celular,Telefono,Correo,DireccionDomicilio,SalarioMensual,FechaContratacion,Estado)
+VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo,@DireccionDomicilio,@SalarioMensual,@FechaContratacion,@Estado);
+END
+GO
+
+
 
 
 ***Functions***
