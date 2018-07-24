@@ -69,6 +69,7 @@
             this.txt_TotalImpuestos = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_CodigoProducto
@@ -82,7 +83,7 @@
             // 
             // btn_ModificarProducto
             // 
-            this.btn_ModificarProducto.Location = new System.Drawing.Point(671, 130);
+            this.btn_ModificarProducto.Location = new System.Drawing.Point(682, 291);
             this.btn_ModificarProducto.Name = "btn_ModificarProducto";
             this.btn_ModificarProducto.Size = new System.Drawing.Size(177, 77);
             this.btn_ModificarProducto.TabIndex = 1;
@@ -99,7 +100,7 @@
             // 
             // btn_EliminarProdcuto
             // 
-            this.btn_EliminarProdcuto.Location = new System.Drawing.Point(671, 252);
+            this.btn_EliminarProdcuto.Location = new System.Drawing.Point(682, 393);
             this.btn_EliminarProdcuto.Name = "btn_EliminarProdcuto";
             this.btn_EliminarProdcuto.Size = new System.Drawing.Size(177, 71);
             this.btn_EliminarProdcuto.TabIndex = 3;
@@ -410,11 +411,21 @@
             this.label17.TabIndex = 40;
             this.label17.Text = "SubTotal";
             // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.Location = new System.Drawing.Point(682, 193);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(177, 77);
+            this.btn_Buscar.TabIndex = 41;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = true;
+            // 
             // MantenimientoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 585);
+            this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txt_TotalImpuestos);
@@ -507,5 +518,6 @@
         private System.Windows.Forms.TextBox txt_TotalImpuestos;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_Buscar;
     }
 }
