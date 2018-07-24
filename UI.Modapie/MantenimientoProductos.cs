@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace UI.Modapie
 {
-    public partial class EliminarProducto : Form
+    public partial class MantenimientoProductos : Form
     {
-        public EliminarProducto()
+        public MantenimientoProductos()
         {
             InitializeComponent();
+        }
+
+        private void MantenimientoProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
