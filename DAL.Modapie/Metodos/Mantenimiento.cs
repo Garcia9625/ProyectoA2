@@ -644,6 +644,75 @@ namespace DAL.Modapie
             }
         }
 
+        public ProductosAlxMayor obtenerLote(int id)
+        {
+            DbConnection conn = null;
+            DbCommand comm = null;
+            ProductosAlxMayor prod;
+
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+                DbParameter param1 = factory.CreateParameter();
+
+
+                //Carga de parametros
+                param1.ParameterName = "@IdLote";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = id;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "MostrarProductoAlxMayor1";
+                comm.Parameters.Add(param1);
+
+
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    //dataReader.Read();
+                    //prod = new ProductosAlxMayor(
+                    //       Convert.ToInt32(dataReader["IdLote"].ToString()),
+                    //       Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                    //       dataReader["Show"].ToString(),
+                    //       dataReader["Cliente"].ToString(),
+                    //       Convert.ToInt32(dataReader["Vendedor"].ToString(),
+                    //       Convert.ToInt32(dataReader["Zona"].ToString(),
+                    //       dataReader["Transporte"].ToString(),
+                    //       dataReader["Pedido"].ToString(),
+
+
+                    //       Convert.ToDateTime(dataReader["FECHA_ASIGNACION"].ToString()),
+                    //       Convert.ToDateTime(dataReader["FECHA_FINAL"].ToString()),
+                    //        dataReader["CREADOR"].ToString()
+                      // );
+
+
+                }
+
+                return prod;
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
+
+                return null;
+            }
+        }
+
+
         #endregion
     }
 }

@@ -201,6 +201,24 @@ namespace BS.Modapie
                 throw;
             }
         }
+
+        public ProductosAlxMayor obtenerLote(int id)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    ProductosAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerTarea(id);
+                    scope.Complete();
+                    return tarea;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
         #endregion
     }
 }

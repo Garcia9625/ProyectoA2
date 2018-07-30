@@ -28,5 +28,6 @@ namespace DAL.Modapie
 
         /*Gestion de Productos al x MAYOR*/
         List<ProductosAlxMayor>MostrarProductos();
+        ProductosAlxMayor obtenerLote(int id);
     }
 }

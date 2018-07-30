@@ -104,5 +104,13 @@ namespace UI.Modapie
                 throw;
             }
         }
+
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "")
+            {
+
+            }
+        }
     }
 }
