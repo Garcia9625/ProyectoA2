@@ -90,5 +90,13 @@ namespace UI.Modapie
         {
             Horaa.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea Salir", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

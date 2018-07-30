@@ -30,9 +30,11 @@ namespace UI.Modapie
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Application.Exit();
+                Login lo = new Login();
+                lo.Show();
+                this.Dispose();
             }
         }
 

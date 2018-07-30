@@ -16,5 +16,10 @@ namespace UI.Modapie
         {
             InitializeComponent();
         }
+
+        private void GestionInventarioAlxMayor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
