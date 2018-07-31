@@ -98,6 +98,7 @@ namespace UI.Modapie
             txtPrecioUnitario.Text = "";
             txtSubTotal.Text       = "";
             txtTotalImpuestos.Text = "";
+            txtLote.Text = "";
         }
     }
 }
