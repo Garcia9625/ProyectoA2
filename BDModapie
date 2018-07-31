@@ -396,6 +396,21 @@ END
 GO
 
 
+/****** Object:  StoredProcedure [dbo].[sp_EliminarCAXM]    Script Date: 31/7/2018 12:40:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_EliminarProdxMayor]
+@id int
+AS
+BEGIN
+SET NOCOUNT ON;	 
+delete FROM  InventarioAlxMayor
+Where IdLote = @id;
+END
+GO
+
 
 
 
