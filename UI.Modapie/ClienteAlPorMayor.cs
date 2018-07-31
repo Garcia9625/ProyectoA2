@@ -86,11 +86,6 @@ namespace UI.Modapie
             }
         }
 
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -105,11 +100,53 @@ namespace UI.Modapie
             }
         }
 
-        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvData_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dgvData.Columns[e.ColumnIndex].Name == "")
+            try
             {
+                if (dgvData.SelectedRows.Count > 0)
+                {
+                    int index = dgvData.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dgvData.Rows[index];
+                    txtId.Text = Convert.ToString(selectedRow.Cells[1].Value);
+                    txtJuridico.Text = Convert.ToString(selectedRow.Cells[2].Value);
+                    txtFisico.Text = Convert.ToString(selectedRow.Cells[3].Value);
+                    txtFantasia.Text = Convert.ToString(selectedRow.Cells[4].Value);
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                    DataGridViewRow dgv = dgvData.Rows[e.RowIndex];
+
+                    txtId.Text = Convert.ToString(dgv.Cells[1].Value);
+                    txtJuridico.Text = Convert.ToString(dgv.Cells[2].Value);
+                    txtFisico.Text = Convert.ToString(dgv.Cells[3].Value);
+                    txtFantasia.Text = Convert.ToString(dgv.Cells[4].Value);
+                
+            }
+            catch (Exception ee)
+            {
+                throw;
             }
         }
     }
