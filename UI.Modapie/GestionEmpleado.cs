@@ -90,9 +90,18 @@ namespace UI.Modapie
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEstado_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                GetValues();
+                procesar.ActualizarEmpleado(emp);
+                dgvData.DataSource = procesar.MostrarEmpleado();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
         }
     }
 }
