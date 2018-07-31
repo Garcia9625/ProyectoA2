@@ -291,6 +291,7 @@
             this.btnEditar.TabIndex = 26;
             this.btnEditar.Text = "Editar Empleado";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEstado
             // 
