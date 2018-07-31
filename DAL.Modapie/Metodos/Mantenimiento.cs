@@ -876,6 +876,48 @@ namespace DAL.Modapie
             }
         }
 
+        public void EliminarProdXMayor(int id)
+        {
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+                DbParameter param1 = factory.CreateParameter();
+
+                //Carga de parametros
+                param1.ParameterName = "@ID";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = id;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_EliminarProdxMayor";
+                comm.Parameters.Add(param1);
+
+
+                comm.ExecuteNonQuery();
+                DialogResult d = MessageBox.Show("Producto eliminado correctamente", "Notificacion");
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
+
+
+            }
+        }
 
         #endregion
     }

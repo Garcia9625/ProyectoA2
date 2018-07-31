@@ -56,5 +56,48 @@ namespace UI.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Se pide la confirmacion del usuario para eliminar
+                DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este producto?", "Eliminar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Mantenimiento.Instancia.EliminarProdXMayor(Convert.ToInt32(txtLote.Text));
+                    limpiar();
+                }
+            }
+            catch (Exception ee)
+            {
+
+                DialogResult d = MessageBox.Show(ee.GetBaseException().ToString(), "Error");
+            }
+        }
+
+
+        private void limpiar()
+        {
+            txtOrdenEnvio.Text = "";
+            txtShow.Text           = "";
+            txtCodigo.Text         = "";
+            txtCliente.Text        = "";
+            txtVendedor.Text       = "";
+            txtZona.Text           = "";
+            txtTransporte.Text     = "";
+            txtPedido.Text         = "";
+            txtModelo.Text         = "";
+            txtColor.Text          = "";
+            rtbDescripcion.Text    = "";
+            txtCurva.Text          = "";
+            txtPares.Text          = "";
+            txtCajas.Text          = "";
+            txtCif.Text            = "";
+            txtTotalCif.Text       = "";
+            txtPrecioUnitario.Text = "";
+            txtSubTotal.Text       = "";
+            txtTotalImpuestos.Text = "";
+        }
     }
 }
