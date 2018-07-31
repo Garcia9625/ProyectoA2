@@ -346,6 +346,15 @@ SELECT * from [dbo].[Empleado];
 END
 GO
 
+CREATE PROCEDURE [dbo].[sp_BuscarEmpleado] 
+@Dni varchar(30)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado] where Dni = @Dni;
+END
+GO
+
 /**Fin de Gestion de Empleado**/
 
  CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
