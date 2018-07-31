@@ -113,6 +113,7 @@ GO
 CREATE TABLE [dbo].[InventarioAlxMayor](
 	[IdLote] [int] NOT NULL,
 	[EnvioOrden] [int] NULL,
+	[Codigo][int] NULL,
 	[Show] [varchar](10) NULL,
 	[Cliente] [varchar](120) NULL,
 	[Vendedor] [int] NULL,
