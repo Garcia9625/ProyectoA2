@@ -558,8 +558,8 @@ namespace DAL.Modapie
                             Correo = dataReader["Correo"].ToString(),
                             DireccionDomicilio = dataReader["DireccionDomicilio"].ToString(),
                             SalarioMensual = Convert.ToDouble(dataReader["SalarioMensual"].ToString()),
-                            /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
-                            FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
+                            /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"]),
+                            FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"]),*/
                             Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
 
                         };
@@ -568,6 +568,66 @@ namespace DAL.Modapie
                 }
 
                 return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        
+        public Empleado buscarEmpleado(string dni)
+        {
+            Empleado emp= new Empleado();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@Dni";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = dni;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarEmpleado";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                        emp = new Empleado
+                        {
+                            Dni = dataReader["Dni"].ToString(),
+                            Nombre = dataReader["Nombre"].ToString(),
+                            Apellido1 = dataReader["Apellido1"].ToString(),
+                            Apellido2 = dataReader["Apellido2"].ToString(),
+                            Celular = dataReader["Celular"].ToString(),
+                            Telefono = dataReader["Telefono"].ToString(),
+                            Correo = dataReader["Correo"].ToString(),
+                            DireccionDomicilio = dataReader["DireccionDomicilio"].ToString(),
+                            SalarioMensual = Convert.ToDouble(dataReader["SalarioMensual"].ToString()),
+                            /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
+                            FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
+                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
+
+                        };
+                }
+
+                return emp;
             }
             catch (Exception ee)
             {

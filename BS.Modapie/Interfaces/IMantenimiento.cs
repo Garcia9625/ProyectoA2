@@ -28,6 +28,8 @@ namespace BS.Modapie
 
         List<Empleado> MostrarEmpleado();
 
+        Empleado BuscarEmpleado(string dni);
+
 
         /*Gestion de productos al x Mayor*/
         List<ProductosAlxMayor> MostrarProductos();
