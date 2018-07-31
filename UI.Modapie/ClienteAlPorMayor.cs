@@ -108,10 +108,10 @@ namespace UI.Modapie
                 {
                     int index = dgvData.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvData.Rows[index];
-                    txtId.Text = Convert.ToString(selectedRow.Cells[1].Value);
-                    txtJuridico.Text = Convert.ToString(selectedRow.Cells[2].Value);
-                    txtFisico.Text = Convert.ToString(selectedRow.Cells[3].Value);
-                    txtFantasia.Text = Convert.ToString(selectedRow.Cells[4].Value);
+                    txtId.Text = Convert.ToString(selectedRow.Cells["idCliente"].Value);
+                    txtJuridico.Text = Convert.ToString(selectedRow.Cells["nombreJuridico"].Value);
+                    txtFisico.Text = Convert.ToString(selectedRow.Cells["nombreFisico"].Value);
+                    txtFantasia.Text = Convert.ToString(selectedRow.Cells["nombreFantasia"].Value);
                 }
             }
             catch (Exception ee)
@@ -132,17 +132,19 @@ namespace UI.Modapie
             }
         }
 
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                if (e.RowIndex >= 0)
+                {
                     DataGridViewRow dgv = dgvData.Rows[e.RowIndex];
 
-                    txtId.Text = Convert.ToString(dgv.Cells[1].Value);
-                    txtJuridico.Text = Convert.ToString(dgv.Cells[2].Value);
-                    txtFisico.Text = Convert.ToString(dgv.Cells[3].Value);
-                    txtFantasia.Text = Convert.ToString(dgv.Cells[4].Value);
-                
+                    txtId.Text = dgv.Cells["idCliente"].Value.ToString();
+                    txtJuridico.Text = dgv.Cells["nombreJuridico"].Value.ToString();
+                    txtFisico.Text = dgv.Cells["nombreFisico"].Value.ToString();
+                    txtFantasia.Text = dgv.Cells["nombreFantasia"].Value.ToString();
+                }
             }
             catch (Exception ee)
             {
