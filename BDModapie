@@ -105,15 +105,17 @@ CREATE TABLE [dbo].[InventarioAlDetalle](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 16/07/2018 23:26:07 ******/
+/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 31/7/2018 12:20:38 ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 CREATE TABLE [dbo].[InventarioAlxMayor](
 	[IdLote] [int] NOT NULL,
 	[EnvioOrden] [int] NULL,
-	[Codigo][int] NULL,
+	[Codigo] [int] NULL,
 	[Show] [varchar](10) NULL,
 	[Cliente] [varchar](120) NULL,
 	[Vendedor] [int] NULL,
@@ -129,7 +131,7 @@ CREATE TABLE [dbo].[InventarioAlxMayor](
 	[Cif] [int] NULL,
 	[TotalCIF] [int] NULL,
 	[PrecioUnitario] [int] NULL,
-	[SubTotal] [int] IDENTITY(1,1) NOT NULL,
+	[SubTotal] [int] NULL,
 	[TotalImpuestos] [int] NULL,
  CONSTRAINT [PK__Inventar__38C4EE9063D52E8D] PRIMARY KEY CLUSTERED 
 (
@@ -378,17 +380,21 @@ GO
 
 /**Fin de Gestion de Empleado**/
 
- CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
+/****** Object:  StoredProcedure [dbo].[MostrarProductoAlxMayor1]    Script Date: 31/7/2018 12:25:31 ******/
+SET ANSI_NULLS ON
+GO
+CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
 @IdLote int
 AS
 BEGIN
 SET NOCOUNT ON;
-SELECT IdLote,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
 Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos
 From InventarioAlxMayor
 Where IdLote = @IdLote;
 END
 GO
+
 
 
 
