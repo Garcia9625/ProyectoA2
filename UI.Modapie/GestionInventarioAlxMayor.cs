@@ -30,9 +30,9 @@ namespace UI.Modapie
             {                
               ProductosAlxMayor prod = Mantenimiento.Instancia.obtenerLote(Convert.ToInt32(txtLote.Text));
 
-
-                txtOrdenEnvio.Text = Convert.ToString(prod.EnvioOrden1);
-                txtShow.Text = prod.Show1;             
+                txtOrdenEnvio.Text = prod.EnvioOrden1.ToString();
+                txtShow.Text = prod.Show1;
+                txtCodigo.Text = prod.Codigo1.ToString();
                 txtCliente.Text = prod.Cliente1;
                 txtVendedor.Text = Convert.ToString(prod.Vendedor1);
                 txtZona.Text = Convert.ToString(prod.Zona1);
@@ -46,6 +46,7 @@ namespace UI.Modapie
                 txtCajas.Text = Convert.ToString(prod.Cajas1);
                 txtCif.Text = Convert.ToString(prod.Cif1);
                 txtTotalCif.Text = Convert.ToString(prod.TotalCIF1);
+                txtPrecioUnitario.Text = prod.PrecioUnitario1.ToString();
                 txtSubTotal.Text = Convert.ToString(prod.SubTotal1);
                 txtTotalImpuestos.Text = Convert.ToString(prod.TotalImpuestos1);
             }
