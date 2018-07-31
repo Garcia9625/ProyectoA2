@@ -37,9 +37,17 @@ namespace UI.Modapie
                 txtVendedor.Text = Convert.ToString(prod.Vendedor1);
                 txtZona.Text = Convert.ToString(prod.Zona1);
                 txtTransporte.Text = Convert.ToString(prod.Transporte1);
-                //dtpFinalizacion.Value = tarea.FechaFinalizacion;
-                //txtNumTarea.Text = tarea.Codigo + "";
-
+                txtPedido.Text = prod.Pedido1;
+                txtModelo.Text = Convert.ToString(prod.Modelo1);
+                txtColor.Text = Convert.ToString(prod.Color1);
+                rtbDescripcion.Text = prod.Descripcion1;
+                txtCurva.Text = prod.Curva1;
+                txtPares.Text = Convert.ToString(prod.Pares1);
+                txtCajas.Text = Convert.ToString(prod.Cajas1);
+                txtCif.Text = Convert.ToString(prod.Cif1);
+                txtTotalCif.Text = Convert.ToString(prod.TotalCIF1);
+                txtSubTotal.Text = Convert.ToString(prod.SubTotal1);
+                txtTotalImpuestos.Text = Convert.ToString(prod.TotalImpuestos1);
             }
             catch (Exception ee)
             {
