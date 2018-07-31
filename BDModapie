@@ -355,6 +355,27 @@ SELECT * from [dbo].[Empleado] where Dni = @Dni;
 END
 GO
 
+
+Create PROCEDURE [dbo].[sp_ActualizarEmpleado] 
+@Dni varchar(30),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50),
+@DireccionDomicilio varchar(120),
+@SalarioMensual float,
+@FechaContratacion datetime,
+@Estado bit
+AS
+BEGIN
+SET NOCOUNT ON;
+Update Empleado set Nombre = @Nombre,Apellido1 = @Apellido1, Apellido2 = @Apellido2, Celular = @Celular, Telefono = @Telefono, 
+Correo = @Correo, DireccionDomicilio = @DireccionDomicilio, SalarioMensual = @SalarioMensual, FechaContratacion = @FechaContratacion, Estado = @Estado where Dni = @Dni;
+END
+GO
+
 /**Fin de Gestion de Empleado**/
 
  CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
