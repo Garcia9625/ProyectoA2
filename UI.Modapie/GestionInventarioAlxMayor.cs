@@ -31,12 +31,15 @@ namespace UI.Modapie
               ProductosAlxMayor prod = Mantenimiento.Instancia.obtenerLote(Convert.ToInt32(txtLote.Text));
 
 
-              //txtTitulo.Text = tarea.Titulo;
-              //txtDescripcion.Text = tarea.Descripcion;
-              //dtpInicio.Value = tarea.FechaInicio;
-              //dtpFinalizacion.Value = tarea.FechaFinalizacion;
-              //txtNumTarea.Text = tarea.Codigo + "";
-                
+                txtOrdenEnvio.Text = Convert.ToString(prod.EnvioOrden1);
+                txtShow.Text = prod.Show1;             
+                txtCliente.Text = prod.Cliente1;
+                txtVendedor.Text = Convert.ToString(prod.Vendedor1);
+                txtZona.Text = Convert.ToString(prod.Zona1);
+                txtTransporte.Text = Convert.ToString(prod.Transporte1);
+                //dtpFinalizacion.Value = tarea.FechaFinalizacion;
+                //txtNumTarea.Text = tarea.Codigo + "";
+
             }
             catch (Exception ee)
             {

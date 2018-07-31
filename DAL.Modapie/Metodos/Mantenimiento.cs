@@ -607,30 +607,26 @@ namespace DAL.Modapie
                     while (dataReader.Read())
                     {
                         pro = new ProductosAlxMayor
-
-
                         {
-                            IdLote = Convert.ToInt32( dataReader["IdLote"]),
-                            EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"]),
-                            Show = dataReader["Show"].ToString(),
-                            Cliente = dataReader["Cliente"].ToString(),
-                            Vendedor = Convert.ToInt32(dataReader["Vendedor"]),
-                            Zona = Convert.ToInt32(dataReader["Zona"]),
-                            Transporte = dataReader["Transporte"].ToString(),
-                            Pedido = dataReader["Pedido"].ToString(),
-                            Modelo = Convert.ToInt32(dataReader["Modelo"]),
-                            Color = Convert.ToInt32(dataReader["Color"]),
-                            Descripcion = dataReader["Descripcion"].ToString(),
-                            Curva = dataReader["Curva"].ToString(),
-                            Pares = Convert.ToInt32(dataReader["Pares"]),
-                            Cajas = Convert.ToInt32(dataReader["Cajas"]),
-                            Cif = Convert.ToInt32(dataReader["Cif"]),
-                            TotalCIF = Convert.ToInt32(dataReader["TotalCIF"]),
-                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"]),
-                            SubTotal = Convert.ToInt32(dataReader["SubTotal"]),
-                            TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"])
-                     
-
+                            IdLote1 = Convert.ToInt32( dataReader["IdLote"]),
+                            EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
+                            Show1 = dataReader["Show"].ToString(),
+                            Cliente1 = dataReader["Cliente"].ToString(),
+                            Vendedor1 = Convert.ToInt32(dataReader["Vendedor"]),
+                            Zona1 = Convert.ToInt32(dataReader["Zona"]),
+                            Transporte1 = dataReader["Transporte"].ToString(),
+                            Pedido1 = dataReader["Pedido"].ToString(),
+                            Modelo1 = Convert.ToInt32(dataReader["Modelo"]),
+                            Color1 = Convert.ToInt32(dataReader["Color"]),
+                            Descripcion1 = dataReader["Descripcion"].ToString(),
+                            Curva1 = dataReader["Curva"].ToString(),
+                            Pares1 = Convert.ToInt32(dataReader["Pares"]),
+                            Cajas1 = Convert.ToInt32(dataReader["Cajas"]),
+                            Cif1 = Convert.ToInt32(dataReader["Cif"]),
+                            TotalCIF1 = Convert.ToInt32(dataReader["TotalCIF"]),
+                            PrecioUnitario1 = Convert.ToInt32(dataReader["PrecioUnitario"]),
+                            SubTotal1 = Convert.ToInt32(dataReader["SubTotal"]),
+                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"])
                         };
                         lista.Add(pro);
                     }
@@ -682,23 +678,28 @@ namespace DAL.Modapie
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    //dataReader.Read();
-                    //prod = new ProductosAlxMayor(
-                    //       Convert.ToInt32(dataReader["IdLote"].ToString()),
-                    //       Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
-                    //       dataReader["Show"].ToString(),
-                    //       dataReader["Cliente"].ToString(),
-                    //       Convert.ToInt32(dataReader["Vendedor"].ToString(),
-                    //       Convert.ToInt32(dataReader["Zona"].ToString(),
-                    //       dataReader["Transporte"].ToString(),
-                    //       dataReader["Pedido"].ToString(),
-
-
-                    //       Convert.ToDateTime(dataReader["FECHA_ASIGNACION"].ToString()),
-                    //       Convert.ToDateTime(dataReader["FECHA_FINAL"].ToString()),
-                    //        dataReader["CREADOR"].ToString()
-                      // );
-
+                    dataReader.Read();
+                    prod = new ProductosAlxMayor(
+                           Convert.ToInt32(dataReader["IdLote"].ToString()),
+                           Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                           dataReader["Show"].ToString(),
+                           dataReader["Cliente"].ToString(),
+                           Convert.ToInt32(dataReader["Vendedor"].ToString()),
+                           Convert.ToInt32(dataReader["Zona"].ToString()),
+                           dataReader["Transporte"].ToString(),
+                           dataReader["Pedido"].ToString(),
+                           Convert.ToInt32(dataReader["Modelo"].ToString()),
+                           Convert.ToInt32(dataReader["Color"].ToString()),
+                           dataReader["Descripcion"].ToString(),
+                           dataReader["Curva"].ToString(),
+                           Convert.ToInt32(dataReader["Pares"].ToString()),
+                           Convert.ToInt32(dataReader["Cajas"].ToString()),
+                           Convert.ToInt32(dataReader["Cif"].ToString()),
+                           Convert.ToInt32(dataReader["TotalCIF"].ToString()),
+                           Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                           Convert.ToInt32(dataReader["SubTotal"].ToString()),
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString())
+                 );
 
                 }
 

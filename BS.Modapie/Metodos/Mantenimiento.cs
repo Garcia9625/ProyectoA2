@@ -208,9 +208,9 @@ namespace BS.Modapie
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    ProductosAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerTarea(id);
+                    ProductosAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerLote(id);
                     scope.Complete();
-                    return tarea;
+                    return prod;
                 }
             }
             catch (Exception ee)
