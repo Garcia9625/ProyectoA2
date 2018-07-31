@@ -30,6 +30,7 @@ namespace BS.Modapie
 
         Empleado BuscarEmpleado(string dni);
 
+        void ActualizarEmpleado(Empleado empleado);
 
         /*Gestion de productos al x Mayor*/
         List<ProductosAlxMayor> MostrarProductos();

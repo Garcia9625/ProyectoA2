@@ -200,6 +200,22 @@ namespace BS.Modapie
             }
         }
 
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.ActualizarEmpleado(empleado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
         #endregion
 
 

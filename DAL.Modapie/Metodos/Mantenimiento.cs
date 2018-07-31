@@ -634,6 +634,107 @@ namespace DAL.Modapie
                 throw;
             }
         }
+
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+                DbParameter param8 = factory.CreateParameter();
+                DbParameter param9 = factory.CreateParameter();
+                DbParameter param10 = factory.CreateParameter();
+                DbParameter param11 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@Dni";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = empleado.Dni;
+
+                param2.ParameterName = "@Nombre";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = empleado.Nombre;
+
+                param3.ParameterName = "@Apellido1";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = empleado.Apellido1;
+
+                param4.ParameterName = "@Apellido2";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = empleado.Apellido2;
+
+                param5.ParameterName = "@Celular";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = empleado.Celular;
+
+                param6.ParameterName = "@Telefono";
+                param6.DbType = System.Data.DbType.String;
+                param6.Value = empleado.Telefono;
+
+                param7.ParameterName = "@Correo";
+                param7.DbType = System.Data.DbType.String;
+                param7.Value = empleado.Correo;
+
+                param8.ParameterName = "@DireccionDomicilio";
+                param8.DbType = System.Data.DbType.String;
+                param8.Value = empleado.DireccionDomicilio;
+
+                param9.ParameterName = "@SalarioMensual";
+                param9.DbType = System.Data.DbType.Double;
+                param9.Value = empleado.SalarioMensual;
+
+                param10.ParameterName = "@FechaContratacion";
+                param10.DbType = System.Data.DbType.DateTime;
+                param10.Value = empleado.FechaContratacion;
+
+                param11.ParameterName = "@Estado";
+                param11.DbType = System.Data.DbType.Boolean;
+                param11.Value = empleado.Estado;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_ActualizarEmpleado";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.Parameters.Add(param8);
+                comm.Parameters.Add(param9);
+                comm.Parameters.Add(param10);
+                comm.Parameters.Add(param11);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
         #endregion
 
         #region productosAlxMAYOR

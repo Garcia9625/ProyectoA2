@@ -73,6 +73,21 @@ namespace UI.Modapie
             rtbDireccion.Text = emp.DireccionDomicilio;
             txtSalario.Text = emp.SalarioMensual.ToString();
             cbEstado.Text = (emp.Estado == true) ? "Activo" : "Inactivo";
+            txtDni.Enabled = false;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                procesar.ActualizarEmpleado(emp);
+                dgvData.DataSource = procesar.MostrarEmpleado();
+            }
+            catch(Exception ee)
+            {
+                throw;
+            }
         }
     }
 }
