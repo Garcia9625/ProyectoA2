@@ -26,6 +26,10 @@ namespace DAL.Modapie
 
         List<Empleado> MostrarEmpleado();
 
+        Empleado buscarEmpleado(string dni);
+
+        void ActualizarEmpleado(Empleado empleado);
+
         /*Gestion de Productos al x MAYOR*/
         List<ProductosAlxMayor>MostrarProductos();
         ProductosAlxMayor obtenerLote(int id);

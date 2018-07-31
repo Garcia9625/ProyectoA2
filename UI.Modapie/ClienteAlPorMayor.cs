@@ -86,11 +86,6 @@ namespace UI.Modapie
             }
         }
 
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -105,11 +100,55 @@ namespace UI.Modapie
             }
         }
 
+        private void dgvData_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvData.SelectedRows.Count > 0)
+                {
+                    int index = dgvData.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dgvData.Rows[index];
+                    txtId.Text = Convert.ToString(selectedRow.Cells["idCliente"].Value);
+                    txtJuridico.Text = Convert.ToString(selectedRow.Cells["nombreJuridico"].Value);
+                    txtFisico.Text = Convert.ToString(selectedRow.Cells["nombreFisico"].Value);
+                    txtFantasia.Text = Convert.ToString(selectedRow.Cells["nombreFantasia"].Value);
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.dgvData.Columns[e.ColumnIndex].Name == "")
+            try
             {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow dgv = dgvData.Rows[e.RowIndex];
 
+                    txtId.Text = dgv.Cells["idCliente"].Value.ToString();
+                    txtJuridico.Text = dgv.Cells["nombreJuridico"].Value.ToString();
+                    txtFisico.Text = dgv.Cells["nombreFisico"].Value.ToString();
+                    txtFantasia.Text = dgv.Cells["nombreFantasia"].Value.ToString();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
             }
         }
     }

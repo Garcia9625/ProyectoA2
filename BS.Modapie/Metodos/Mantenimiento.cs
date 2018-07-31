@@ -141,6 +141,8 @@ namespace BS.Modapie
             }
         }
 
+
+
         #endregion
 
 
@@ -178,6 +180,41 @@ namespace BS.Modapie
                 throw;
             }
         }
+        
+        public Empleado BuscarEmpleado(string dni)
+        {
+            Empleado empleado = new Empleado();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    empleado = DAL.Modapie.Mantenimiento.Instancia.buscarEmpleado(dni);
+                    scope.Complete();
+                    return empleado;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.ActualizarEmpleado(empleado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
 
         #endregion
 
@@ -198,7 +235,8 @@ namespace BS.Modapie
             }
             catch (Exception ee)
             {
-                throw;
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
             }
         }
 
@@ -219,6 +257,7 @@ namespace BS.Modapie
                 return null;
             }
         }
+
         #endregion
     }
 }

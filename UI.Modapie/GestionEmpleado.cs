@@ -63,7 +63,31 @@ namespace UI.Modapie
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            emp = procesar.BuscarEmpleado(txtDni.Text);
+            txtNombre.Text = emp.Nombre;
+            txtApellido1.Text = emp.Apellido1;
+            txtApellido2.Text = emp.Apellido2;
+            txtCelular.Text = emp.Celular;
+            txtTelefono.Text = emp.Telefono;
+            txtCorreo.Text = emp.Correo;
+            rtbDireccion.Text = emp.DireccionDomicilio;
+            txtSalario.Text = emp.SalarioMensual.ToString();
+            cbEstado.Text = (emp.Estado == true) ? "Activo" : "Inactivo";
+            txtDni.Enabled = false;
+        }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                procesar.ActualizarEmpleado(emp);
+                dgvData.DataSource = procesar.MostrarEmpleado();
+            }
+            catch(Exception ee)
+            {
+                throw;
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
