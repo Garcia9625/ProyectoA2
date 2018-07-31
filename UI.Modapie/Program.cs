@@ -8,7 +8,7 @@ namespace UI.Modapie
 {
     static class Program
     {
-        /// <summary>
+        /// <summary>C:\Users\ricar\source\repos\NewRepo\ProyectoA2\UI.Modapie\Program.cs
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
@@ -16,7 +16,7 @@ namespace UI.Modapie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new GestionEmpleado());
         }
     }
 }
