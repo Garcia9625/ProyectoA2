@@ -11,6 +11,7 @@ namespace DO.Modapie
         //Variables
         private int IdLote;
         private int EnvioOrden;
+        private int Codigo;
         private string Show;
         private string Cliente;
         private int Vendedor;
@@ -31,11 +32,12 @@ namespace DO.Modapie
 
 
         //Constructor
-        public ProductosAlxMayor(int Id, int Envio, string show, string cliente, int vende, int zona, string transp, string ped, int mod, int col,
+        public ProductosAlxMayor(int Id, int Envio,int codigo, string show, string cliente, int vende, int zona, string transp, string ped, int mod, int col,
             string desc, string curva, int par, int caj, int cif, int tcif, int precU, int subT, int totImp)
         {
             this.IdLote = Id;
             this.EnvioOrden = Envio;
+            this.Codigo = codigo;
             this.Show = show;
             this.Cliente = cliente;
             this.Vendedor = vende;
@@ -78,5 +80,6 @@ namespace DO.Modapie
         public int PrecioUnitario1 { get => PrecioUnitario; set => PrecioUnitario = value; }
         public int SubTotal1 { get => SubTotal; set => SubTotal = value; }
         public int TotalImpuestos1 { get => TotalImpuestos; set => TotalImpuestos = value; }
+        public int Codigo1 { get => Codigo; set => Codigo = value; }
     }
 }

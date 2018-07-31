@@ -69,6 +69,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -264,7 +266,7 @@
             // txtLote
             // 
             this.txtLote.Location = new System.Drawing.Point(160, 26);
-            this.txtLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLote.Margin = new System.Windows.Forms.Padding(4);
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(163, 22);
             this.txtLote.TabIndex = 19;
@@ -272,7 +274,7 @@
             // txtOrdenEnvio
             // 
             this.txtOrdenEnvio.Location = new System.Drawing.Point(160, 73);
-            this.txtOrdenEnvio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOrdenEnvio.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrdenEnvio.Name = "txtOrdenEnvio";
             this.txtOrdenEnvio.Size = new System.Drawing.Size(212, 22);
             this.txtOrdenEnvio.TabIndex = 20;
@@ -280,7 +282,7 @@
             // txtShow
             // 
             this.txtShow.Location = new System.Drawing.Point(472, 73);
-            this.txtShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtShow.Margin = new System.Windows.Forms.Padding(4);
             this.txtShow.Name = "txtShow";
             this.txtShow.Size = new System.Drawing.Size(184, 22);
             this.txtShow.TabIndex = 21;
@@ -288,7 +290,7 @@
             // txtCliente
             // 
             this.txtCliente.Location = new System.Drawing.Point(772, 73);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(241, 22);
             this.txtCliente.TabIndex = 22;
@@ -296,7 +298,7 @@
             // txtVendedor
             // 
             this.txtVendedor.Location = new System.Drawing.Point(160, 137);
-            this.txtVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(212, 22);
             this.txtVendedor.TabIndex = 23;
@@ -304,7 +306,7 @@
             // txtZona
             // 
             this.txtZona.Location = new System.Drawing.Point(472, 137);
-            this.txtZona.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtZona.Margin = new System.Windows.Forms.Padding(4);
             this.txtZona.Name = "txtZona";
             this.txtZona.Size = new System.Drawing.Size(184, 22);
             this.txtZona.TabIndex = 24;
@@ -312,7 +314,7 @@
             // txtTransporte
             // 
             this.txtTransporte.Location = new System.Drawing.Point(773, 137);
-            this.txtTransporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTransporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtTransporte.Name = "txtTransporte";
             this.txtTransporte.Size = new System.Drawing.Size(239, 22);
             this.txtTransporte.TabIndex = 25;
@@ -320,7 +322,7 @@
             // txtPedido
             // 
             this.txtPedido.Location = new System.Drawing.Point(160, 201);
-            this.txtPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPedido.Margin = new System.Windows.Forms.Padding(4);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(212, 22);
             this.txtPedido.TabIndex = 26;
@@ -328,7 +330,7 @@
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(472, 201);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(184, 22);
             this.txtModelo.TabIndex = 27;
@@ -336,7 +338,7 @@
             // txtColor
             // 
             this.txtColor.Location = new System.Drawing.Point(773, 201);
-            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(240, 22);
             this.txtColor.TabIndex = 28;
@@ -344,7 +346,7 @@
             // txtCurva
             // 
             this.txtCurva.Location = new System.Drawing.Point(156, 475);
-            this.txtCurva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCurva.Margin = new System.Windows.Forms.Padding(4);
             this.txtCurva.Name = "txtCurva";
             this.txtCurva.Size = new System.Drawing.Size(212, 22);
             this.txtCurva.TabIndex = 29;
@@ -352,7 +354,7 @@
             // txtPares
             // 
             this.txtPares.Location = new System.Drawing.Point(472, 475);
-            this.txtPares.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPares.Margin = new System.Windows.Forms.Padding(4);
             this.txtPares.Name = "txtPares";
             this.txtPares.Size = new System.Drawing.Size(184, 22);
             this.txtPares.TabIndex = 30;
@@ -360,7 +362,7 @@
             // txtCajas
             // 
             this.txtCajas.Location = new System.Drawing.Point(775, 475);
-            this.txtCajas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCajas.Margin = new System.Windows.Forms.Padding(4);
             this.txtCajas.Name = "txtCajas";
             this.txtCajas.Size = new System.Drawing.Size(239, 22);
             this.txtCajas.TabIndex = 31;
@@ -368,7 +370,7 @@
             // txtCif
             // 
             this.txtCif.Location = new System.Drawing.Point(156, 539);
-            this.txtCif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCif.Margin = new System.Windows.Forms.Padding(4);
             this.txtCif.Name = "txtCif";
             this.txtCif.Size = new System.Drawing.Size(212, 22);
             this.txtCif.TabIndex = 32;
@@ -376,7 +378,7 @@
             // txtTotalCif
             // 
             this.txtTotalCif.Location = new System.Drawing.Point(472, 539);
-            this.txtTotalCif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotalCif.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalCif.Name = "txtTotalCif";
             this.txtTotalCif.Size = new System.Drawing.Size(184, 22);
             this.txtTotalCif.TabIndex = 33;
@@ -384,7 +386,7 @@
             // txtPrecioUnitario
             // 
             this.txtPrecioUnitario.Location = new System.Drawing.Point(789, 539);
-            this.txtPrecioUnitario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Size = new System.Drawing.Size(224, 22);
             this.txtPrecioUnitario.TabIndex = 34;
@@ -392,7 +394,7 @@
             // txtSubTotal
             // 
             this.txtSubTotal.Location = new System.Drawing.Point(788, 601);
-            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.Size = new System.Drawing.Size(224, 22);
             this.txtSubTotal.TabIndex = 35;
@@ -400,7 +402,7 @@
             // txtTotalImpuestos
             // 
             this.txtTotalImpuestos.Location = new System.Drawing.Point(789, 655);
-            this.txtTotalImpuestos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotalImpuestos.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalImpuestos.Name = "txtTotalImpuestos";
             this.txtTotalImpuestos.Size = new System.Drawing.Size(224, 22);
             this.txtTotalImpuestos.TabIndex = 36;
@@ -408,7 +410,7 @@
             // rtbDescripcion
             // 
             this.rtbDescripcion.Location = new System.Drawing.Point(160, 258);
-            this.rtbDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.rtbDescripcion.Name = "rtbDescripcion";
             this.rtbDescripcion.Size = new System.Drawing.Size(867, 186);
             this.rtbDescripcion.TabIndex = 37;
@@ -417,7 +419,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(396, 22);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 38;
@@ -428,7 +430,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(160, 655);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 28);
             this.btnEditar.TabIndex = 39;
@@ -438,18 +440,39 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(399, 655);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(772, 29);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(163, 22);
+            this.txtCodigo.TabIndex = 42;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(688, 29);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(56, 17);
+            this.label20.TabIndex = 41;
+            this.label20.Text = "Codigo:";
             // 
             // GestionInventarioAlxMayor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 719);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
@@ -491,7 +514,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestionInventarioAlxMayor";
             this.Text = "Gestion Inventario al por mayor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionInventarioAlxMayor_FormClosed);
@@ -543,5 +566,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label20;
     }
 }

@@ -258,6 +258,22 @@ namespace BS.Modapie
             }
         }
 
+        public void EliminarProdXMayor(int id)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.EliminarProdXMayor(id);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "error");
+            }
+        }
+
         #endregion
     }
 }

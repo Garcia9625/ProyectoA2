@@ -30,9 +30,9 @@ namespace UI.Modapie
             {                
               ProductosAlxMayor prod = Mantenimiento.Instancia.obtenerLote(Convert.ToInt32(txtLote.Text));
 
-
-                txtOrdenEnvio.Text = Convert.ToString(prod.EnvioOrden1);
-                txtShow.Text = prod.Show1;             
+                txtOrdenEnvio.Text = prod.EnvioOrden1.ToString();
+                txtShow.Text = prod.Show1;
+                txtCodigo.Text = prod.Codigo1.ToString();
                 txtCliente.Text = prod.Cliente1;
                 txtVendedor.Text = Convert.ToString(prod.Vendedor1);
                 txtZona.Text = Convert.ToString(prod.Zona1);
@@ -46,6 +46,7 @@ namespace UI.Modapie
                 txtCajas.Text = Convert.ToString(prod.Cajas1);
                 txtCif.Text = Convert.ToString(prod.Cif1);
                 txtTotalCif.Text = Convert.ToString(prod.TotalCIF1);
+                txtPrecioUnitario.Text = prod.PrecioUnitario1.ToString();
                 txtSubTotal.Text = Convert.ToString(prod.SubTotal1);
                 txtTotalImpuestos.Text = Convert.ToString(prod.TotalImpuestos1);
             }
@@ -54,6 +55,49 @@ namespace UI.Modapie
 
                 DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Se pide la confirmacion del usuario para eliminar
+                DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este producto?", "Eliminar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Mantenimiento.Instancia.EliminarProdXMayor(Convert.ToInt32(txtLote.Text));
+                    limpiar();
+                }
+            }
+            catch (Exception ee)
+            {
+
+                DialogResult d = MessageBox.Show(ee.GetBaseException().ToString(), "Error");
+            }
+        }
+
+
+        private void limpiar()
+        {
+            txtOrdenEnvio.Text = "";
+            txtShow.Text           = "";
+            txtCodigo.Text         = "";
+            txtCliente.Text        = "";
+            txtVendedor.Text       = "";
+            txtZona.Text           = "";
+            txtTransporte.Text     = "";
+            txtPedido.Text         = "";
+            txtModelo.Text         = "";
+            txtColor.Text          = "";
+            rtbDescripcion.Text    = "";
+            txtCurva.Text          = "";
+            txtPares.Text          = "";
+            txtCajas.Text          = "";
+            txtCif.Text            = "";
+            txtTotalCif.Text       = "";
+            txtPrecioUnitario.Text = "";
+            txtSubTotal.Text       = "";
+            txtTotalImpuestos.Text = "";
         }
     }
 }

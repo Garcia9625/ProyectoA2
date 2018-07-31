@@ -771,6 +771,7 @@ namespace DAL.Modapie
                         {
                             IdLote1 = Convert.ToInt32( dataReader["IdLote"]),
                             EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
+                            Codigo1 = Convert.ToInt32(dataReader["Codigo"]),
                             Show1 = dataReader["Show"].ToString(),
                             Cliente1 = dataReader["Cliente"].ToString(),
                             Vendedor1 = Convert.ToInt32(dataReader["Vendedor"]),
@@ -843,6 +844,7 @@ namespace DAL.Modapie
                     prod = new ProductosAlxMayor(
                            Convert.ToInt32(dataReader["IdLote"].ToString()),
                            Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                           Convert.ToInt32(dataReader["Codigo"].ToString()),
                            dataReader["Show"].ToString(),
                            dataReader["Cliente"].ToString(),
                            Convert.ToInt32(dataReader["Vendedor"].ToString()),
@@ -874,6 +876,48 @@ namespace DAL.Modapie
             }
         }
 
+        public void EliminarProdXMayor(int id)
+        {
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+                DbParameter param1 = factory.CreateParameter();
+
+                //Carga de parametros
+                param1.ParameterName = "@ID";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = id;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_EliminarProdxMayor";
+                comm.Parameters.Add(param1);
+
+
+                comm.ExecuteNonQuery();
+                DialogResult d = MessageBox.Show("Producto eliminado correctamente", "Notificacion");
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
+
+
+            }
+        }
 
         #endregion
     }

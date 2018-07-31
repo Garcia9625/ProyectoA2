@@ -35,5 +35,7 @@ namespace BS.Modapie
         /*Gestion de productos al x Mayor*/
         List<ProductosAlxMayor> MostrarProductos();
         ProductosAlxMayor obtenerLote(int id);
+
+        void EliminarProdXMayor(int id);
     }
 }
