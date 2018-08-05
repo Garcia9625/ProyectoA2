@@ -21,7 +21,12 @@ namespace UI.Modapie
 
         private void GestionInventarioAlxMayor_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESION", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Login l = new Login();
+                l.Show();
+                this.Dispose();
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
