@@ -42,8 +42,8 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pcBInicio = new System.Windows.Forms.PictureBox();
+            this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.tltInicio = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBInicio)).BeginInit();
@@ -183,12 +183,6 @@
             this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
             // 
-            // HoraFecha
-            // 
-            this.HoraFecha.Enabled = true;
-            this.HoraFecha.Interval = 1000;
-            this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
-            // 
             // pcBInicio
             // 
             this.pcBInicio.BackColor = System.Drawing.Color.Transparent;
@@ -203,8 +197,15 @@
             this.pcBInicio.MouseLeave += new System.EventHandler(this.pcBInicio_MouseLeave);
             this.pcBInicio.MouseHover += new System.EventHandler(this.pcBInicio_MouseHover);
             // 
+            // HoraFecha
+            // 
+            this.HoraFecha.Enabled = true;
+            this.HoraFecha.Interval = 1000;
+            this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
+            // 
             // tltInicio
             // 
+            this.tltInicio.IsBalloon = true;
             this.tltInicio.ShowAlways = true;
             // 
             // Login
