@@ -39,6 +39,6 @@ namespace DAL.Modapie
 
         /*Gestion del cliente al detalle*/
 
-        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
+        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
     }
 }

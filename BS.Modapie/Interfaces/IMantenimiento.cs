@@ -41,6 +41,6 @@ namespace BS.Modapie
 
         /*Gestion de cliente al detalle*/
 
-        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
+        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
     }
 }
