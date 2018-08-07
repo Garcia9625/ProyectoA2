@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.btn_Ingresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pcBInicio = new System.Windows.Forms.PictureBox();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
@@ -151,19 +150,6 @@
             this.txtContrasena.TabIndex = 1;
             this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
-            // btn_Ingresar
-            // 
-            this.btn_Ingresar.AllowDrop = true;
-            this.btn_Ingresar.BackColor = System.Drawing.Color.White;
-            this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingresar.Image")));
-            this.btn_Ingresar.Location = new System.Drawing.Point(569, 300);
-            this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(81, 63);
-            this.btn_Ingresar.TabIndex = 2;
-            this.btn_Ingresar.UseVisualStyleBackColor = false;
-            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -175,7 +161,6 @@
             this.panel2.Controls.Add(this.btn_apagar);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btn_Ingresar);
             this.panel2.Controls.Add(this.txtContrasena);
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Location = new System.Drawing.Point(-2, 0);
@@ -205,7 +190,6 @@
             // 
             // tltInicio
             // 
-            this.tltInicio.IsBalloon = true;
             this.tltInicio.ShowAlways = true;
             // 
             // Login
@@ -238,7 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer HoraFecha;
         private System.Windows.Forms.PictureBox pcBInicio;
