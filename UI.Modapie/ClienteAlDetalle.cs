@@ -7,14 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BS.Modapie;
+using DO.Modapie;
 
 namespace UI.Modapie
 {
     public partial class ClienteAlDetalle : Form
     {
+        Mantenimiento procesar = new Mantenimiento();
+        ClienteAlDetalle cad;
+
         public ClienteAlDetalle()
         {
             InitializeComponent();
+        }
+        private void GetValues()
+        {
+            cad = new ClienteAlDetalle
+            {
+
+
+               Dni=txtCedula.Text,
+               Nombre = txtNombre.Text,
+              Apellido1= txtApellido1.Text,
+              Apellido2=txtApellido2.Text,
+              Celular=txtCelular.Text,
+              Telefono= txtTelefono.Text,
+              Correo= txtCorreo
+             
+
+                
+            };
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                procesar.InsertarClienteAlDetalle(cad);
+               dgvCAD.DataSource = procesar.MostrarEmpleado;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
