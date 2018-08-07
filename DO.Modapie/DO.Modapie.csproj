@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteAlDetalle.cs" />
     <Compile Include="ClientePorMayor.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="ProductosAlxMayor.cs" />
