@@ -35,5 +35,10 @@ namespace DAL.Modapie
         ProductosAlxMayor obtenerLote(int id);
 
         void EliminarProdXMayor(int id);
+
+
+        /*Gestion del cliente al detalle*/
+
+        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
     }
 }

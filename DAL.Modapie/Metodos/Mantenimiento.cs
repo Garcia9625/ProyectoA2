@@ -920,6 +920,87 @@ namespace DAL.Modapie
         }
 
         #endregion
+
+
+        #region ClienteAlDetalle
+
+        public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@Dni";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = clienteAlDetalle.Dni;
+
+                param2.ParameterName = "@Nombre";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = clienteAlDetalle.Nombre;
+
+                param3.ParameterName = "@Apellido1";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = clienteAlDetalle.Apellido1;
+
+                param4.ParameterName = "@Apellido2";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = clienteAlDetalle.Apellido2;
+
+                param5.ParameterName = "@Celular";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = clienteAlDetalle.Celular;
+
+                param6.ParameterName = "@Telefono";
+                param6.DbType = System.Data.DbType.String;
+                param6.Value = clienteAlDetalle.Telefono;
+
+                param7.ParameterName = "@Correo";
+                param7.DbType = System.Data.DbType.String;
+                param7.Value = clienteAlDetalle.Correo;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarCAD";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+        #endregion
     }
 }
 

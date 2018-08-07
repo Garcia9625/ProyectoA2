@@ -37,5 +37,10 @@ namespace BS.Modapie
         ProductosAlxMayor obtenerLote(int id);
 
         void EliminarProdXMayor(int id);
+
+
+        /*Gestion de cliente al detalle*/
+
+        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
     }
 }

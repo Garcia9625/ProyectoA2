@@ -275,5 +275,25 @@ namespace BS.Modapie
         }
 
         #endregion
+
+        #region ClienteAlDetalle
+
+        public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarClienteAlDetalle(clienteAlDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        #endregion
     }
 }
