@@ -12,6 +12,7 @@ CREATE TABLE [dbo].[ClienteAlDetalle](
 	[Apellido2] [varchar](50) NULL,
 	[Celular] [varchar](20) NULL,
 	[Telefono] [varchar](20) NULL,
+	[Correo] [varchar](50)NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Dni] ASC
