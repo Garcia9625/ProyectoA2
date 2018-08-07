@@ -318,7 +318,66 @@ GO
 
 
 
+/**Gestion cliente al Detalle**/
 
+
+/****** Object:  StoredProcedure [dbo].[sp_InsertarCAD]    Script Date: 07/08/2018 12:42:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+Create PROCEDURE [dbo].[sp_InsertarCAD] 
+@Dni varchar(20),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar (50)
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO ClienteAlDetalle (Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo)
+VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo);
+END
+
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 07/08/2018 12:45:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ CREATE  PROCEDURE [dbo].[MostrarCAD] 
+
+@ID int
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
+
+From ClienteAlDetalle
+
+Where @ID=Dni;
+
+END
+
+GO
+
+
+
+
+/**Final Gestio cliente al detalle**/
 
 /**Gestion de Empleado**/
 Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
