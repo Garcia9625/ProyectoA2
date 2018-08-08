@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BS.Modapie;
+using DO.Modapie;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BS.Modapie;
-using DO.Modapie;
+
 
 namespace UI.Modapie
 {
     public partial class ClienteAlDetalle : Form
     {
         Mantenimiento procesar = new Mantenimiento();
-        ClienteAlDetalle cad;
+        DO.Modapie.ClienteAlDetalle cad;
 
         public ClienteAlDetalle()
         {
@@ -23,17 +24,17 @@ namespace UI.Modapie
         }
         private void GetValues()
         {
-            cad = new ClienteAlDetalle
+            cad = new DO.Modapie.ClienteAlDetalle
             {
 
-
+                
                Dni=txtCedula.Text,
                Nombre = txtNombre.Text,
               Apellido1= txtApellido1.Text,
               Apellido2=txtApellido2.Text,
               Celular=txtCelular.Text,
               Telefono= txtTelefono.Text,
-              Correo= txtCorreo
+              Correo= txtCorreo.Text
              
 
                 
@@ -46,18 +47,28 @@ namespace UI.Modapie
             {
                 GetValues();
                 procesar.InsertarClienteAlDetalle(cad);
-               dgvCAD.DataSource = procesar.MostrarEmpleado;
+                MessageBox.Show("El cliente fue ingresado al sistema correctamente", "Cliente insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvCAD.DataSource = procesar;
             }
             catch (Exception ee)
             {
-                throw;
+                MessageBox.Show("El cliente no pudo ser ingresado al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-
+            cad = procesar.buscarCAD(txtCedula.Text);
+            
+            
+            txtNombre.Text = cad.Nombre;
+            txtApellido1.Text = cad.Apellido1;
+            txtApellido2.Text = cad.Apellido2;
+            txtCelular.Text = cad.Celular;
+            txtTelefono.Text = cad.Telefono;
+            txtCorreo.Text = cad.Correo;
+            
         }
     }
 }

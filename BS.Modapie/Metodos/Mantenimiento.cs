@@ -294,6 +294,41 @@ namespace BS.Modapie
             }
         }
 
+        public List<ClienteAlDetalle> MostrarClienteDetalle()
+        {
+            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarClienteDetalle();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        public ClienteAlDetalle buscarCAD(string dni)
+        {
+            ClienteAlDetalle cad = new ClienteAlDetalle();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    cad= DAL.Modapie.Mantenimiento.Instancia.buscarCAD(dni);
+                    scope.Complete();
+                    return cad;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
         #endregion
     }
 }

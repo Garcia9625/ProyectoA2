@@ -40,5 +40,7 @@ namespace DAL.Modapie
         /*Gestion del cliente al detalle*/
 
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
+        List<ClienteAlDetalle> MostrarClienteDetalle();
+        ClienteAlDetalle buscarCAD(string dni);
     }
 }
