@@ -32,6 +32,7 @@ namespace BS.Modapie
             }
         }
 
+        #region Login
         public Usuario obtenerUsuarioUser(string username)
         {
             try
@@ -70,9 +71,11 @@ namespace BS.Modapie
 
             }
         }
+        #endregion
 
 
-        public void InsertarCAlxMayor(ClienteAlxMayor CAXM)
+        #region ClienteAlxMayor
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
         {
             try
             {
@@ -88,9 +91,9 @@ namespace BS.Modapie
             }
         }
 
-        public List<ClienteAlxMayor> MostarCAXM()
+        public List<ClientePorMayor> MostarCAXM()
         {
-            List<ClienteAlxMayor> lista = new List<ClienteAlxMayor>();
+            List<ClientePorMayor> lista = new List<ClientePorMayor>();
             try
             {
                 using (TransactionScope scope = new TransactionScope())
@@ -105,5 +108,227 @@ namespace BS.Modapie
                 throw;
             }
         }
+
+        public void Editar(ClientePorMayor CAXM)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.Editar(CAXM);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public void Borrar(ClientePorMayor CAXM)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.Borrar(CAXM);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+
+
+        #endregion
+
+
+        #region Empleado
+        public void InsertarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarEmpleado(empleado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public List<Empleado> MostrarEmpleado()
+        {
+            List<Empleado> lista = new List<Empleado>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarEmpleado();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        
+        public Empleado BuscarEmpleado(string dni)
+        {
+            Empleado empleado = new Empleado();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    empleado = DAL.Modapie.Mantenimiento.Instancia.buscarEmpleado(dni);
+                    scope.Complete();
+                    return empleado;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.ActualizarEmpleado(empleado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        #endregion
+
+
+        #region ProductoAlxMayor
+        public List<ProductosAlxMayor> MostrarProductos()
+        {
+
+            List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarProductos();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public ProductosAlxMayor obtenerLote(int id)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    ProductosAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerLote(id);
+                    scope.Complete();
+                    return prod;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public void EliminarProdXMayor(int id)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.EliminarProdXMayor(id);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "error");
+            }
+        }
+
+        #endregion
+
+        #region ClienteAlDetalle
+
+        public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarClienteAlDetalle(clienteAlDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public List<ClienteAlDetalle> MostrarClienteDetalle()
+        {
+            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarClienteDetalle();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        public ClienteAlDetalle buscarCAD(string dni)
+        {
+            ClienteAlDetalle cad = new ClienteAlDetalle();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    cad= DAL.Modapie.Mantenimiento.Instancia.buscarCAD(dni);
+                    scope.Complete();
+                    return cad;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+        #endregion
     }
 }

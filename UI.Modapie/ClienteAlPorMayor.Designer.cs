@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 64);
+            this.label1.Location = new System.Drawing.Point(29, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 17);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // txtJuridico
             // 
-            this.txtJuridico.Location = new System.Drawing.Point(188, 61);
+            this.txtJuridico.Location = new System.Drawing.Point(153, 84);
             this.txtJuridico.Name = "txtJuridico";
             this.txtJuridico.Size = new System.Drawing.Size(246, 22);
             this.txtJuridico.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 151);
+            this.label2.Location = new System.Drawing.Point(455, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 2;
@@ -71,25 +71,30 @@
             // 
             // txtFantasia
             // 
-            this.txtFantasia.Location = new System.Drawing.Point(188, 148);
+            this.txtFantasia.Location = new System.Drawing.Point(598, 84);
             this.txtFantasia.Name = "txtFantasia";
             this.txtFantasia.Size = new System.Drawing.Size(246, 22);
             this.txtFantasia.TabIndex = 3;
             // 
             // dgvData
             // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(32, 216);
+            this.dgvData.Location = new System.Drawing.Point(12, 195);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
             this.dgvData.RowTemplate.Height = 24;
-            this.dgvData.Size = new System.Drawing.Size(737, 266);
+            this.dgvData.Size = new System.Drawing.Size(852, 266);
             this.dgvData.TabIndex = 4;
+            this.dgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellClick);
+            this.dgvData.SelectionChanged += new System.EventHandler(this.dgvData_SelectionChanged);
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(502, 58);
+            this.btnIngresar.Location = new System.Drawing.Point(101, 161);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 28);
+            this.btnIngresar.Size = new System.Drawing.Size(117, 28);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -97,35 +102,38 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(502, 120);
+            this.btnEditar.Location = new System.Drawing.Point(253, 161);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 28);
+            this.btnEditar.Size = new System.Drawing.Size(117, 28);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(670, 58);
+            this.btnBorrar.Location = new System.Drawing.Point(405, 161);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(117, 28);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(652, 120);
+            this.btnActualizar.Location = new System.Drawing.Point(665, 161);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(117, 28);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar tabla";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 110);
+            this.label3.Location = new System.Drawing.Point(455, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 9;
@@ -133,7 +141,7 @@
             // 
             // txtFisico
             // 
-            this.txtFisico.Location = new System.Drawing.Point(188, 105);
+            this.txtFisico.Location = new System.Drawing.Point(598, 43);
             this.txtFisico.Name = "txtFisico";
             this.txtFisico.Size = new System.Drawing.Size(246, 22);
             this.txtFisico.TabIndex = 10;
@@ -141,7 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 23);
+            this.label4.Location = new System.Drawing.Point(29, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
@@ -149,8 +157,7 @@
             // 
             // txtId
             // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(188, 20);
+            this.txtId.Location = new System.Drawing.Point(153, 43);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(246, 22);
             this.txtId.TabIndex = 12;
@@ -159,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 504);
+            this.ClientSize = new System.Drawing.Size(876, 474);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFisico);

@@ -30,9 +30,11 @@ namespace UI.Modapie
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR EL PROGRAMA", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Application.Exit();
+                Login lo = new Login();
+                lo.Show();
+                this.Dispose();
             }
         }
 
@@ -48,6 +50,20 @@ namespace UI.Modapie
             this.Hide();
             ImportarExcel1 PI = new ImportarExcel1();
             PI.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionInventarioAlxMayor GIAM = new GestionInventarioAlxMayor();
+            GIAM.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionEmpleado GE = new GestionEmpleado();
+            GE.Show();
         }
     }
 }

@@ -84,6 +84,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Gestion de empleados";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -102,6 +103,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Gestion de ventas al por mayor";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 

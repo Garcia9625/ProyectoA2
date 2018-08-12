@@ -40,10 +40,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.btn_Ingresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pcBInicio = new System.Windows.Forms.PictureBox();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.tltInicio = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -146,23 +148,12 @@
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(238, 22);
             this.txtContrasena.TabIndex = 1;
-            // 
-            // btn_Ingresar
-            // 
-            this.btn_Ingresar.AllowDrop = true;
-            this.btn_Ingresar.BackColor = System.Drawing.Color.White;
-            this.btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingresar.Image")));
-            this.btn_Ingresar.Location = new System.Drawing.Point(556, 178);
-            this.btn_Ingresar.Name = "btn_Ingresar";
-            this.btn_Ingresar.Size = new System.Drawing.Size(81, 63);
-            this.btn_Ingresar.TabIndex = 2;
-            this.btn_Ingresar.UseVisualStyleBackColor = false;
-            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
+            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel2.Controls.Add(this.pcBInicio);
             this.panel2.Controls.Add(this.Horaa);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.Fechaa);
@@ -170,7 +161,6 @@
             this.panel2.Controls.Add(this.btn_apagar);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btn_Ingresar);
             this.panel2.Controls.Add(this.txtContrasena);
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Location = new System.Drawing.Point(-2, 0);
@@ -178,23 +168,46 @@
             this.panel2.Size = new System.Drawing.Size(735, 479);
             this.panel2.TabIndex = 5;
             // 
+            // pcBInicio
+            // 
+            this.pcBInicio.BackColor = System.Drawing.Color.Transparent;
+            this.pcBInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcBInicio.BackgroundImage")));
+            this.pcBInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcBInicio.Location = new System.Drawing.Point(569, 168);
+            this.pcBInicio.Name = "pcBInicio";
+            this.pcBInicio.Size = new System.Drawing.Size(81, 72);
+            this.pcBInicio.TabIndex = 20;
+            this.pcBInicio.TabStop = false;
+            this.pcBInicio.Click += new System.EventHandler(this.pcBInicio_Click);
+            this.pcBInicio.MouseLeave += new System.EventHandler(this.pcBInicio_MouseLeave);
+            this.pcBInicio.MouseHover += new System.EventHandler(this.pcBInicio_MouseHover);
+            // 
             // HoraFecha
             // 
             this.HoraFecha.Enabled = true;
             this.HoraFecha.Interval = 1000;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
             // 
+            // tltInicio
+            // 
+            this.tltInicio.ShowAlways = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 472);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,9 +222,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer HoraFecha;
+        private System.Windows.Forms.PictureBox pcBInicio;
+        private System.Windows.Forms.ToolTip tltInicio;
     }
 }
 

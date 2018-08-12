@@ -49,17 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteAlDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteAlDetalle.Designer.cs">
+      <DependentUpon>ClienteAlDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteAlPorMayor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClienteAlPorMayor.Designer.cs">
       <DependentUpon>ClienteAlPorMayor.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarProducto.cs">
+    <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarProducto.Designer.cs">
-      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    <Compile Include="GestionEmpleado.Designer.cs">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionInventarioAlxMayor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionInventarioAlxMayor.Designer.cs">
+      <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportarExcel1.cs">
       <SubType>Form</SubType>
@@ -87,8 +99,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClienteAlDetalle.resx">
+      <DependentUpon>ClienteAlDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClienteAlPorMayor.resx">
       <DependentUpon>ClienteAlPorMayor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpleado.resx">
+      <DependentUpon>GestionEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionInventarioAlxMayor.resx">
+      <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
@@ -107,6 +128,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\ClienteAlxMayor.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
