@@ -1,0 +1,283 @@
+/****** PL/SQL ******/
+****Stored Procedures****
+
+USE [DBMODAPIE]
+GO
+/** Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 **/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[validarUser] 
+@Username varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdUsuario, IdEmpleado,Username,Password, Rol
+From Usuario
+Where Username = @Username;
+END
+GO
+
+
+Create PROCEDURE [dbo].[sp_InsertarCAXM] 
+@NombreJuridico varchar(100),
+@NombreFisico varchar(50),
+@NombreFantasia varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO ClienteAlxMayor (NombreJuridico,NombreFisico,NombreFantasia)
+VALUES        (@NombreJuridico,@NombreFisico,@NombreFantasia);
+END
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_MostrarCAXM] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlxMayor];
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_Editar] 
+@IdCliente int, 
+@NombreJuridico varchar(100),
+@NombreFisico varchar(50),
+@NombreFantasia varchar(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+UPDATE      ClienteAlxMayor
+SET          
+			NombreJuridico = @NombreJuridico,
+            NombreFisico = @NombreFisico, 
+			NombreFantasia = @NombreFantasia
+WHERE       (IdCliente = @IdCliente);
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_EliminarCAXM]
+@IdCliente int
+AS
+BEGIN
+SET NOCOUNT ON;	 
+delete FROM  ClienteAlxMayor
+WHERE        (IdCliente = @IdCliente);
+END
+GO
+
+
+
+/**Gestion cliente al Detalle**/
+
+
+/****** Object:  StoredProcedure [dbo].[sp_InsertarCAD]    Script Date: 07/08/2018 12:42:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+Create PROCEDURE [dbo].[sp_InsertarCAD] 
+@Dni varchar(20),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar (50)
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO ClienteAlDetalle (Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo)
+VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo);
+END
+
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 07/08/2018 12:45:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ CREATE  PROCEDURE [dbo].[MostrarCAD] 
+
+@ID int
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
+
+From ClienteAlDetalle
+
+Where @ID=Dni;
+
+END
+
+GO
+
+
+
+
+/**Final Gestio cliente al detalle**/
+
+/**Gestion de Empleado**/
+Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
+@Dni varchar(30),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50),
+@DireccionDomicilio varchar(120),
+@SalarioMensual float,
+@FechaContratacion datetime,
+@Estado bit
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO Empleado(Dni,Nombre,Apellido1, Apellido2, Celular,Telefono,Correo,DireccionDomicilio,SalarioMensual,FechaContratacion,Estado)
+VALUES        (@Dni,@Nombre,@Apellido1,@Apellido2,@Celular,@Telefono,@Correo,@DireccionDomicilio,@SalarioMensual,@FechaContratacion,@Estado);
+END
+GO
+
+CREATE PROCEDURE [dbo].[sp_MostrarEmpleado] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado];
+END
+GO
+
+CREATE PROCEDURE [dbo].[sp_BuscarEmpleado] 
+@Dni varchar(30)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado] where Dni = @Dni;
+END
+GO
+
+
+Create PROCEDURE [dbo].[sp_ActualizarEmpleado] 
+@Dni varchar(30),
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50),
+@DireccionDomicilio varchar(120),
+@SalarioMensual float,
+@FechaContratacion datetime,
+@Estado bit
+AS
+BEGIN
+SET NOCOUNT ON;
+Update Empleado set Nombre = @Nombre,Apellido1 = @Apellido1, Apellido2 = @Apellido2, Celular = @Celular, Telefono = @Telefono, 
+Correo = @Correo, DireccionDomicilio = @DireccionDomicilio, SalarioMensual = @SalarioMensual, FechaContratacion = @FechaContratacion, Estado = @Estado where Dni = @Dni;
+END
+GO
+
+/**Fin de Gestion de Empleado**/
+
+/****** Object:  StoredProcedure [dbo].[MostrarProductoAlxMayor1]    Script Date: 31/7/2018 12:25:31 ******/
+SET ANSI_NULLS ON
+GO
+CREATE  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
+@IdLote int
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos
+From InventarioAlxMayor
+Where IdLote = @IdLote;
+END
+GO
+
+
+/****** Object:  StoredProcedure [dbo].[sp_EliminarCAXM]    Script Date: 31/7/2018 12:40:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[sp_EliminarProdxMayor]
+@id int
+AS
+BEGIN
+SET NOCOUNT ON;	 
+delete FROM  InventarioAlxMayor
+Where IdLote = @id;
+END
+GO
+
+
+
+
+***Functions***
+Create Function Rol(
+@NOMBRE varchar(50)
+)
+returns int
+AS
+BEGIN
+declare @value int;
+
+SELECT @value = Rol FROM Usuario WHERE Username = @NOMBRE;
+IF (@value IS NULL)   
+        SET @value = 0;  
+    RETURN @value;
+end 
+go
+
+
+USE [DBMODAPIE]
+GO
+
+/** Object:  UserDefinedFunction [dbo].[Validacion_Login]    Script Date: 15/07/2018 22:38:30 **/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE FUNCTION [dbo].[Validacion_Login] (@Username varchar(20), @Password varchar(30))
+RETURNS int
+AS 
+BEGIN
+declare @value int = 0;
+
+IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username AND Password = @Password)
+    Set @Value = @Value + 1
+ELSE IF EXISTS(SELECT * FROM USUARIO WHERE Username = @Username AND Password != @Password)
+    Set @Value = @Value + 0
+ELSE
+    Set @Value = @Value + 2
+
+return @value
+END
+GO
