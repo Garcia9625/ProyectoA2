@@ -1,5 +1,5 @@
-# ProyectoA2
-Sistema de Inventario y Punto de venta para una importadora y distribuidora  de calzado. 
+Titulo del proyecto:
+Sistema de inventario de importaciones y distribución de ventas de la empresa ModaPie
 
 El Sistema tiene dos vistas(Ventas al mayoreo y Punto de venta).
 
@@ -12,33 +12,31 @@ Este sistema es capaz de ingresar los pedidos de  los clientes al por mayor de u
 Punto de venta.
 Este sistema es capaz de mostrar todos los productos que se tiene en el inventario, también se muestra de una forma sencilla al usuario a la hora de hacer una venta, devolución o apartados.
 
-Project Title
-Sistema de inventario de importaciones y distribución de ventas de la empresa ModaPie
 
-Prerequisites
+-Prerequisitos de instalación:
 Para que el proyecto se pueda ejecutar debería se debería tener instalado Visual Studio 2017 y Sql Server (mínimo 2014)
 
-Installing
+-Instalación:
 Instalación de Visual Studio 2017 e instalar la extensión de GitHub.
 Instalación de Sql Server 2014.
 Se debe clonar el repositorio de GitHub.
 Crear la Base con los scripts que están dentro del proyecto clonado que se encontraba en GitHub.
 Modificar la conexión de la base de datos en el proyecto.
 
-Deployment
+-Despliegue:
 Se debe:
 - Descargar el ejecutable del proyecto.
 - Hacer la conexión de la base de datos que se encuentra en la nube.
 
 
-John Elizondo JohnEV1
+John Elizondo Valverde
 
-Ricardo García Garcia9625
+Ricardo García Matamoros
 
-Mariana Hernández marihq61
+Mariana Hernández Quesada
 
-Luis Diego Jiménez luisdful
+Luis Diego Jiménez Muñoz
 
-Esteban Vargas estebanvg
+Esteban Vargas Garcia
 
 
