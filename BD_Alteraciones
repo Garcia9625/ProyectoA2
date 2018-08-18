@@ -1,0 +1,43 @@
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_DecripcionVentaAlxMayorInventario] FOREIGN KEY([IdProducto])
+REFERENCES [dbo].[InventarioAlxMayor] ([IdLote])
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor] CHECK CONSTRAINT [FK_DecripcionVentaAlxMayorInventario]
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_DecripcionVentaAlxMayorVenta] FOREIGN KEY([IdVentaMayor])
+REFERENCES [dbo].[VentaAlxMayor] ([IdVentaMayor])
+GO
+ALTER TABLE [dbo].[DecripcionVentaAlxMayor] CHECK CONSTRAINT [FK_DecripcionVentaAlxMayorVenta]
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle]  WITH CHECK ADD FOREIGN KEY([IdVentaDetalle])
+REFERENCES [dbo].[VentaAlDetalle] ([IdVentaDetalle])
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_DescripcionVentaDetalleInventarioDetalle] FOREIGN KEY([IdProducto])
+REFERENCES [dbo].[InventarioAlDetalle] ([IdProducto])
+GO
+ALTER TABLE [dbo].[DescripcionVentaAlDetalle] CHECK CONSTRAINT [FK_DescripcionVentaDetalleInventarioDetalle]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Empleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Empleado]
+GO
+ALTER TABLE [dbo].[VentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_VentaDetalleCliente] FOREIGN KEY([IdClienteDetalle])
+REFERENCES [dbo].[ClienteAlDetalle] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleCliente]
+GO
+ALTER TABLE [dbo].[VentaAlDetalle]  WITH CHECK ADD  CONSTRAINT [FK_VentaDetalleEmpleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleEmpleado]
+GO
+ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorCliente] FOREIGN KEY([IdClienteMayor])
+REFERENCES [dbo].[ClienteAlxMayor] ([IdCliente])
+GO
+ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorCliente]
+GO
+ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorEmpleado] FOREIGN KEY([IdEmpleado])
+REFERENCES [dbo].[Empleado] ([Dni])
+GO
+ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
+GO
