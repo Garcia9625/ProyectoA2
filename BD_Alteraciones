@@ -41,3 +41,4 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
 GO
+ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
