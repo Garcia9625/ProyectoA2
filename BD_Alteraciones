@@ -52,3 +52,4 @@ ALTER TABLE [dbo].VentaAlxMayor ADD TotalAbonado float;
 ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
+Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
