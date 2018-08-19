@@ -321,3 +321,24 @@ INSERT INTO DecripcionVentaAlxMayor (IdVentaMayor,IdProducto,Total)
 VALUES        (@IdVentaMayor,@IdProducto,@Total);
 END
 GO
+
+
+CREATE  PROCEDURE [dbo].[sp_MostrarIdLotes] 
+
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT IdLote
+
+From InventarioAlxMayor
+
+
+END
+
+GO
+
+
