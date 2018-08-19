@@ -26,9 +26,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ClienteAlxMayor](
 	[IdCliente] [int] IDENTITY(1,1) NOT NULL,
-	[NombreJuridico] [varchar](100) NULL,
-	[NombreFisico] [varchar](50) NULL,
-	[NombreFantasia] [varchar](50) NULL,
+	[Nombre] [varchar](100) NULL,
  CONSTRAINT [PK_ClienteAlxMayor] PRIMARY KEY NONCLUSTERED 
 (
 	[IdCliente] ASC
