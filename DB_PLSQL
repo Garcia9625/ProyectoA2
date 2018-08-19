@@ -323,7 +323,7 @@ END
 GO
 
 
-CREATE  PROCEDURE [dbo].[sp_MostrarIdLotes] 
+CREATE  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
 
 
 AS
@@ -332,7 +332,7 @@ BEGIN
 
 SET NOCOUNT ON;
 
-SELECT IdLote
+SELECT *
 
 From InventarioAlxMayor
 
