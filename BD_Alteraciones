@@ -52,3 +52,9 @@ ALTER TABLE [dbo].VentaAlxMayor ADD TotalAbonado float;
 ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;  
+
+
