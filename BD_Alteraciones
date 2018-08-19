@@ -41,3 +41,14 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
 GO
+ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
+
+ALTER TABLE [dbo].VentaAlxMayor ADD Estado bit;
+
+ALTER TABLE [dbo].VentaAlxMayor ADD SaldoPendiente float;
+
+ALTER TABLE [dbo].VentaAlxMayor ADD TotalAbonado float;
+
+ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
+
+ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;

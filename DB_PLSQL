@@ -238,6 +238,7 @@ GO
 
 
 ***Functions***
+
 Create Function Rol(
 @NOMBRE varchar(50)
 )
@@ -281,3 +282,63 @@ ELSE
 return @value
 END
 GO
+
+/*********VentaAlxMayor********/
+USE [DBMODAPIE]
+GO
+
+CREATE PROCEDURE  [dbo].[sp_InsertarVentaAlxMayor]
+
+@IdClienteMayor int,
+@IdEmpleado varchar(30),
+@Total float,
+@Estado bit,
+@SaldoPendiente float,
+@TotalAbonado float,
+@UltimoAbono float
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO VentaAlxMayor (IdClienteMayor,IdEmpleado,Total,Estado,SaldoPendiente,TotalAbonado,UltimoAbono)
+VALUES        (@IdClienteMayor,@IdEmpleado,@Total,@Estado,@SaldoPendiente,@TotalAbonado,@UltimoAbono);
+END
+GO
+
+
+USE [DBMODAPIE]
+GO
+
+CREATE PROCEDURE  [dbo].[sp_InsertarDecripcionVentaAlxMayor]
+
+
+@IdVentaMayor int,
+@IdProducto int,
+@Total float
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO DecripcionVentaAlxMayor (IdVentaMayor,IdProducto,Total)
+VALUES        (@IdVentaMayor,@IdProducto,@Total);
+END
+GO
+
+
+CREATE  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
+
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT *
+
+From InventarioAlxMayor
+
+
+END
+
+GO
+
+
