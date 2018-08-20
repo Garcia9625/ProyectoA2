@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using BS.Modapie;
+using DO.Modapie;
 namespace UI.Modapie
 {
     public partial class InfromedeVentasalxMayor : Form
