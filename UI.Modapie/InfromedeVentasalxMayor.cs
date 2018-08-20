@@ -18,7 +18,7 @@ namespace UI.Modapie
         Mantenimiento procesar = new Mantenimiento();
         public InfromedeVentasalxMayor()
         {
-            InitializeComponent();
+            llenarcomboCliente();
         }
 
         public void llenarcomboCliente()
@@ -27,7 +27,7 @@ namespace UI.Modapie
             eClientes = procesar.MostarCAXM();
             foreach (ClientePorMayor iClientes in eClientes)
             {
-                cmb_clientesAlxMayor.Items.Add(iClientes.);
+                cmb_clientesAlxMayor.Items.Add(iClientes.nombre);
 
             }
         }
