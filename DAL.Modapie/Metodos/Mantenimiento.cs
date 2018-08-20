@@ -1002,7 +1002,10 @@ namespace DAL.Modapie
         }
 
        
-
+        public void holi()
+        {
+            :v
+        }
 
         public ClienteAlDetalle buscarCAD(string dni)
         {
