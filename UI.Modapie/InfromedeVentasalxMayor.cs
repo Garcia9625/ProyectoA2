@@ -20,14 +20,24 @@ namespace UI.Modapie
         {
             InitializeComponent();
         }
-     
 
+        public void llenarcomboCliente()
+        {
+            List<ClientePorMayor> eClientes = new List<ClientePorMayor>();
+            eClientes = procesar.MostarCAXM();
+            foreach (ClientePorMayor iClientes in eClientes)
+            {
+                cmb_clientesAlxMayor.Items.Add(iClientes.);
+
+            }
+        }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
 
         private void btn_BuscarPorCliente_Click(object sender, EventArgs e)
         {
