@@ -106,7 +106,10 @@ CREATE TABLE [dbo].[InventarioAlDetalle](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 31/7/2018 12:20:38 ******/
+USE [DBMODAPIE]
+GO
+
+/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 19/08/2018 18:20:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -114,7 +117,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[InventarioAlxMayor](
-	[IdLote] [int] NOT NULL,
+	[IdLote] [int] IDENTITY(1,1) NOT NULL,
 	[EnvioOrden] [int] NULL,
 	[Codigo] [int] NULL,
 	[Show] [varchar](10) NULL,
@@ -132,7 +135,7 @@ CREATE TABLE [dbo].[InventarioAlxMayor](
 	[Cif] [int] NULL,
 	[TotalCIF] [int] NULL,
 	[PrecioUnitario] [int] NULL,
-	[SubTotal] [int] NULL,
+	[SubTotal] [int] NOT NULL,
 	[TotalImpuestos] [int] NULL,
  CONSTRAINT [PK__Inventar__38C4EE9063D52E8D] PRIMARY KEY CLUSTERED 
 (
