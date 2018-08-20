@@ -23,7 +23,7 @@ namespace UI.Modapie
 
         private void BTN_ImportExcel_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/Diego/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -60,7 +60,7 @@ namespace UI.Modapie
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/Diego/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source =C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -88,11 +88,16 @@ namespace UI.Modapie
             SqlBulkCopy exportar = default(SqlBulkCopy);
             exportar = new SqlBulkCopy(conexion_receptora);
             exportar.DestinationTableName = "InventarioAlxMayor";
-           
-            exportar.WriteToServer(ds.Tables[0]);
+
+           Boolean Estado=true;
+            consulta.CommandText = "Insert Into InventarioAlxMayor(Estado) Values (@Estado)";
+            consulta.Parameters.AddWithValue("@Estado", Estado);
+
+            exportar.WriteToServer(ds.Tables[0]); 
             conexion_receptora.Close();
             MessageBox.Show("Importacion exitosa");
 
+            
 
 
 

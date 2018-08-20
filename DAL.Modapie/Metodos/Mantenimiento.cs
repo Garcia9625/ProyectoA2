@@ -228,22 +228,12 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 DbParameter param2 = factory.CreateParameter();
-                DbParameter param3 = factory.CreateParameter();
-                DbParameter param4 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-                param2.ParameterName = "@NombreJuridico";
+                param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombreJuridico;
-
-                param3.ParameterName = "@NombreFisico";
-                param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.nombreFisico;
-
-                param4.ParameterName = "@NombreFantasia";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.nombreFantasia;
+                param2.Value = CAXM.nombre;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -253,8 +243,6 @@ namespace DAL.Modapie
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_InsertarCAXM";
                 comm.Parameters.Add(param2);
-                comm.Parameters.Add(param3);
-                comm.Parameters.Add(param4);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -298,10 +286,7 @@ namespace DAL.Modapie
                         CAXM = new ClientePorMayor
                         {
                             idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
-                            nombreJuridico = dataReader["NombreJuridico"].ToString(),
-                            nombreFisico = dataReader["NombreFisico"].ToString(),
-                            nombreFantasia = dataReader["NombreFantasia"].ToString()
-
+                            nombre = dataReader["Nombre"].ToString()
                         };
                         lista.Add(CAXM);
                     }
@@ -338,17 +323,9 @@ namespace DAL.Modapie
                 param1.DbType = System.Data.DbType.Int32;
                 param1.Value = CAXM.idCliente;
 
-                param2.ParameterName = "@NombreJuridico";
+                param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombreJuridico;
-
-                param3.ParameterName = "@NombreFisico";
-                param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.nombreFisico;
-
-                param4.ParameterName = "@NombreFantasia";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.nombreFantasia;
+                param2.Value = CAXM.nombre;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -359,8 +336,6 @@ namespace DAL.Modapie
                 comm.CommandText = "sp_Editar";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
-                comm.Parameters.Add(param3);
-                comm.Parameters.Add(param4);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -412,7 +387,55 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
-    
+
+        public ClientePorMayor buscarClienteAlxMayor(string nombre)
+        {
+            ClientePorMayor cli = new ClientePorMayor();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@Nombre";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = nombre;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarIdxN";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    cli = new ClientePorMayor
+                    {
+                        idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString())
+                    };
+                }
+
+                return cli;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
 
         #endregion
 
@@ -740,9 +763,9 @@ namespace DAL.Modapie
         #region productosAlxMAYOR
 
         /*Gestion productos al x MAYOR*/
-        public List<ProductosAlxMayor> MostrarProductos()
+        public List<InventarioAlxMayor> MostrarProductos()
         {
-            List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
+            List<InventarioAlxMayor> lista = new List<InventarioAlxMayor>();
             DbConnection conn = null;
             DbCommand comm = null;
             try
@@ -760,36 +783,58 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "MostrarProductoAlxMayor1";
+                comm.CommandText = "sp_MostrarInventarioAlxMayor";
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                   ProductosAlxMayor pro;
+                    InventarioAlxMayor pro;
                     while (dataReader.Read())
                     {
-                        pro = new ProductosAlxMayor
-                        {
-                            IdLote1 = Convert.ToInt32( dataReader["IdLote"]),
-                            EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
-                            Codigo1 = Convert.ToInt32(dataReader["Codigo"]),
-                            Show1 = dataReader["Show"].ToString(),
-                            Cliente1 = dataReader["Cliente"].ToString(),
-                            Vendedor1 = Convert.ToInt32(dataReader["Vendedor"]),
-                            Zona1 = Convert.ToInt32(dataReader["Zona"]),
-                            Transporte1 = dataReader["Transporte"].ToString(),
-                            Pedido1 = dataReader["Pedido"].ToString(),
-                            Modelo1 = Convert.ToInt32(dataReader["Modelo"]),
-                            Color1 = Convert.ToInt32(dataReader["Color"]),
-                            Descripcion1 = dataReader["Descripcion"].ToString(),
-                            Curva1 = dataReader["Curva"].ToString(),
-                            Pares1 = Convert.ToInt32(dataReader["Pares"]),
-                            Cajas1 = Convert.ToInt32(dataReader["Cajas"]),
-                            Cif1 = Convert.ToInt32(dataReader["Cif"]),
-                            TotalCIF1 = Convert.ToInt32(dataReader["TotalCIF"]),
-                            PrecioUnitario1 = Convert.ToInt32(dataReader["PrecioUnitario"]),
-                            SubTotal1 = Convert.ToInt32(dataReader["SubTotal"]),
-                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"])
-                        };
+                        pro = new InventarioAlxMayor
+                        (
+                            /*IdLote = Convert.ToInt32( dataReader["IdLote"]),
+                            EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"]),
+                            Codigo = Convert.ToInt32(dataReader["Codigo"]),
+                            Show = dataReader["Show"].ToString(),
+                            Cliente = dataReader["Cliente"].ToString(),
+                            Vendedor = Convert.ToInt32(dataReader["Vendedor"]),
+                            Zona = Convert.ToInt32(dataReader["Zona"]),
+                            Transporte = dataReader["Transporte"].ToString(),
+                            Pedido = dataReader["Pedido"].ToString(),
+                            Modelo = Convert.ToInt32(dataReader["Modelo"]),
+                            Color = Convert.ToInt32(dataReader["Color"]),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Curva = dataReader["Curva"].ToString(),
+                            Pares = Convert.ToInt32(dataReader["Pares"]),
+                            Cajas = Convert.ToInt32(dataReader["Cajas"]),
+                            Cif = Convert.ToInt32(dataReader["Cif"]),
+                            TotalCIF = Convert.ToInt32(dataReader["TotalCIF"]),
+                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"]),
+                            SubTotal = Convert.ToInt32(dataReader["SubTotal"]),
+                            TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"])*/
+                            Convert.ToInt32(dataReader["IdLote"].ToString()),
+                           Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                           Convert.ToInt32(dataReader["Codigo"].ToString()),
+                           dataReader["Show"].ToString(),
+                           dataReader["Cliente"].ToString(),
+                           Convert.ToInt32(dataReader["Vendedor"].ToString()),
+                           Convert.ToInt32(dataReader["Zona"].ToString()),
+                           dataReader["Transporte"].ToString(),
+                           dataReader["Pedido"].ToString(),
+                           Convert.ToInt32(dataReader["Modelo"].ToString()),
+                           Convert.ToInt32(dataReader["Color"].ToString()),
+                           dataReader["Descripcion"].ToString(),
+                           dataReader["Curva"].ToString(),
+                           Convert.ToInt32(dataReader["Pares"].ToString()),
+                           Convert.ToInt32(dataReader["Cajas"].ToString()),
+                           Convert.ToInt32(dataReader["Cif"].ToString()),
+                           Convert.ToInt32(dataReader["TotalCIF"].ToString()),
+                           Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                           Convert.ToInt32(dataReader["SubTotal"].ToString()),
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
+
+                        );
                         lista.Add(pro);
                     }
                 }
@@ -802,11 +847,11 @@ namespace DAL.Modapie
             }
         }
 
-        public ProductosAlxMayor obtenerLote(int id)
+        public InventarioAlxMayor obtenerLote(int id)
         {
             DbConnection conn = null;
             DbCommand comm = null;
-            ProductosAlxMayor prod;
+            InventarioAlxMayor prod;
 
             try
             {
@@ -841,7 +886,29 @@ namespace DAL.Modapie
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
                     dataReader.Read();
-                    prod = new ProductosAlxMayor(
+                    prod = new InventarioAlxMayor
+                    (
+                           /*IdLote = Convert.ToInt32(dataReader["IdLote"].ToString()),
+                           EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                           Codigo = Convert.ToInt32(dataReader["Codigo"].ToString()),
+                           Show = dataReader["Show"].ToString(),
+                           Cliente = dataReader["Cliente"].ToString(),
+                           Vendedor = Convert.ToInt32(dataReader["Vendedor"].ToString()),
+                           Zona = Convert.ToInt32(dataReader["Zona"].ToString()),
+                           Transporte = dataReader["Transporte"].ToString(),
+                           Pedido = dataReader["Pedido"].ToString(),
+                           Modelo = Convert.ToInt32(dataReader["Modelo"].ToString()),
+                           Color = Convert.ToInt32(dataReader["Color"].ToString()),
+                           Descripcion = dataReader["Descripcion"].ToString(),
+                           Curva = dataReader["Curva"].ToString(),
+                           Pares = Convert.ToInt32(dataReader["Pares"].ToString()),
+                           Cajas = Convert.ToInt32(dataReader["Cajas"].ToString()),
+                           Cif = Convert.ToInt32(dataReader["Cif"].ToString()),
+                           TotalCIF = Convert.ToInt32(dataReader["TotalCIF"].ToString()),
+                           PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                           SubTotal = Convert.ToInt32(dataReader["SubTotal"].ToString()),
+                           TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Estado = Convert.ToBoolean(dataReader["Estado"].ToString())*/
                            Convert.ToInt32(dataReader["IdLote"].ToString()),
                            Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
                            Convert.ToInt32(dataReader["Codigo"].ToString()),
@@ -861,8 +928,9 @@ namespace DAL.Modapie
                            Convert.ToInt32(dataReader["TotalCIF"].ToString()),
                            Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
                            Convert.ToInt32(dataReader["SubTotal"].ToString()),
-                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString())
-                 );
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
+                    );
 
                 }
 
@@ -1111,6 +1179,279 @@ namespace DAL.Modapie
             }
         }
 
+
+        #endregion
+
+        #region InventarioAlxMayor
+
+        public List<InventarioAlxMayor> obtenerListaInventarioAlxMayor()
+        {
+            List<InventarioAlxMayor> listaProductosAlxMayor = new List<InventarioAlxMayor>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_MostrarInventarioAlxMayor";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    InventarioAlxMayor productosAlxMayor;
+                    while (dataReader.Read())
+                    {
+                        productosAlxMayor = new InventarioAlxMayor
+                        (
+                            /*IdLote = Convert.ToInt32(dataReader["IdLote"].ToString()),
+                            EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                            Show = dataReader["Show"].ToString(),
+                            Cliente = dataReader["Cliente"].ToString(),
+                            Vendedor = Convert.ToInt32(dataReader["Vendedor"].ToString()),
+                            Zona = Convert.ToInt32(dataReader["Zona"].ToString()),
+                            Transporte = dataReader["Transporte"].ToString(),
+                            Pedido = dataReader["Pedido"].ToString(),
+                            Modelo = Convert.ToInt32(dataReader["Modelo"].ToString()),
+                            Color = Convert.ToInt32(dataReader["Color"].ToString()),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Curva = dataReader["Curva"].ToString(),
+                            Pares = Convert.ToInt32(dataReader["Pares"].ToString()),
+                            Cajas = Convert.ToInt32(dataReader["Cajas"].ToString()),
+                            Cif = Convert.ToInt32(dataReader["Cif"].ToString()),
+                            TotalCIF = Convert.ToInt32(dataReader["TotalCIF"].ToString()),
+                            SubTotal = Convert.ToInt32(dataReader["SubTotal"].ToString()),
+                            TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
+                            Codigo = Convert.ToInt32(dataReader["Codigo"].ToString())*/
+                            Convert.ToInt32(dataReader["IdLote"].ToString()),
+                           Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
+                           Convert.ToInt32(dataReader["Codigo"].ToString()),
+                           dataReader["Show"].ToString(),
+                           dataReader["Cliente"].ToString(),
+                           Convert.ToInt32(dataReader["Vendedor"].ToString()),
+                           Convert.ToInt32(dataReader["Zona"].ToString()),
+                           dataReader["Transporte"].ToString(),
+                           dataReader["Pedido"].ToString(),
+                           Convert.ToInt32(dataReader["Modelo"].ToString()),
+                           Convert.ToInt32(dataReader["Color"].ToString()),
+                           dataReader["Descripcion"].ToString(),
+                           dataReader["Curva"].ToString(),
+                           Convert.ToInt32(dataReader["Pares"].ToString()),
+                           Convert.ToInt32(dataReader["Cajas"].ToString()),
+                           Convert.ToInt32(dataReader["Cif"].ToString()),
+                           Convert.ToInt32(dataReader["TotalCIF"].ToString()),
+                           Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                           Convert.ToInt32(dataReader["SubTotal"].ToString()),
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
+                        );
+                        listaProductosAlxMayor.Add(productosAlxMayor);
+                    }
+                    return listaProductosAlxMayor;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region VentaAlxMayor
+
+        public void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+                DbParameter param8 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdClienteMayor";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = ventaAlxMayor.IdClienteMayor;
+
+                param2.ParameterName = "@IdEmpleado";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = ventaAlxMayor.IdEmpleado;
+
+                param3.ParameterName = "@Total";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = ventaAlxMayor.Total;
+
+                param4.ParameterName = "@Estado";
+                param4.DbType = System.Data.DbType.Boolean;
+                param4.Value = ventaAlxMayor.Estado;
+
+                param5.ParameterName = "@SaldoPendiente";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = ventaAlxMayor.SaldoPendiente;
+
+                param6.ParameterName = "@TotalAbonado";
+                param6.DbType = System.Data.DbType.Double;
+                param6.Value = ventaAlxMayor.TotalAbonado;
+
+                param7.ParameterName = "@UltimoAbono";
+                param7.DbType = System.Data.DbType.Double;
+                param7.Value = ventaAlxMayor.UltimoAbono;
+
+                param8.ParameterName = "@FechaVenta";
+                param8.DbType = System.Data.DbType.DateTime;
+                param8.Value = ventaAlxMayor.FechaVenta;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarVentaAlxMayor";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.Parameters.Add(param8);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public VentaAlxMayor buscarUltimaVenta()
+        {
+            VentaAlxMayor ventaAlxMayor = new VentaAlxMayor();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+                
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_UltimaVenta";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    ventaAlxMayor = new VentaAlxMayor
+                    {
+                        IdVentaMayor = Convert.ToInt32(dataReader["IDVenta"].ToString())
+                    };
+                }
+
+                return ventaAlxMayor;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        #endregion
+
+        #region DescripcionVentaAlxMayor
+
+        public void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdVentaMayor";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = descripcionVentaAlxMayor.IdVentaMayor;
+
+                param2.ParameterName = "@IdProducto";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = descripcionVentaAlxMayor.IdProducto;
+
+                param3.ParameterName = "@Total";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = descripcionVentaAlxMayor.Total;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarDecripcionVentaAlxMayor";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
 
         #endregion
     }

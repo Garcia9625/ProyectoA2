@@ -141,7 +141,24 @@ namespace BS.Modapie
             }
         }
 
-
+        public ClientePorMayor buscarClienteAlxMayor(string nombre)
+        {
+            ClientePorMayor cad = new ClientePorMayor();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    cad = DAL.Modapie.Mantenimiento.Instancia.buscarClienteAlxMayor(nombre);
+                    scope.Complete();
+                    return cad;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
 
         #endregion
 
@@ -219,11 +236,11 @@ namespace BS.Modapie
         #endregion
 
 
-        #region ProductoAlxMayor
-        public List<ProductosAlxMayor> MostrarProductos()
+        #region InventarioAlxMayor
+        public List<InventarioAlxMayor> MostrarProductos()
         {
 
-            List<ProductosAlxMayor> lista = new List<ProductosAlxMayor>();
+            List<InventarioAlxMayor> lista = new List<InventarioAlxMayor>();
             try
             {
                 using (TransactionScope scope = new TransactionScope())
@@ -240,13 +257,33 @@ namespace BS.Modapie
             }
         }
 
-        public ProductosAlxMayor obtenerLote(int id)
+        public List<InventarioAlxMayor> obtenerListaInventarioAlxMayor()
+        {
+
+            List<InventarioAlxMayor> lista = new List<InventarioAlxMayor>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.obtenerListaInventarioAlxMayor();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public InventarioAlxMayor obtenerLote(int id)
         {
             try
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    ProductosAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerLote(id);
+                    InventarioAlxMayor prod = DAL.Modapie.Mantenimiento.Instancia.obtenerLote(id);
                     scope.Complete();
                     return prod;
                 }
@@ -327,6 +364,63 @@ namespace BS.Modapie
             {
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
                 return null;
+            }
+        }
+        #endregion
+
+        #region VentaAlxMayor
+
+        public void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarVentaAlxMayor(ventaAlxMayor);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public VentaAlxMayor buscarUltimaVenta()
+        {
+            VentaAlxMayor ventaAlxMayor = new VentaAlxMayor();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    ventaAlxMayor = DAL.Modapie.Mantenimiento.Instancia.buscarUltimaVenta();
+                    scope.Complete();
+                    return ventaAlxMayor;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+        #endregion
+
+        #region DescripcionVentaAlxMayor
+
+        public void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarDescripcionVentaAlxMayor(descripcionVentaAlxMayor);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
             }
         }
         #endregion
