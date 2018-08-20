@@ -51,10 +51,10 @@ namespace DO.Modapie
         private int PrecioUnitario;
         private int SubTotal;
         private int TotalImpuestos;
-        //private bool Estado;
+        private bool Estado;
         //Constructor
          public InventarioAlxMayor(int Id, int Envio,int codigo, string show, string cliente, int vende, int zona, string transp, string ped, int mod, int col,
-              string desc, string curva, int par, int caj, int cif, int tcif, int precU, int subT, int totImp)
+              string desc, string curva, int par, int caj, int cif, int tcif, int precU, int subT, int totImp, bool est)
           {
               this.IdLote = Id;
               this.EnvioOrden = Envio;
@@ -76,7 +76,7 @@ namespace DO.Modapie
               this.PrecioUnitario = precU;
               this.SubTotal = subT;
               this.TotalImpuestos = totImp;
-              //this.Estado = est;
+              this.Estado = est;
           }
 
           public InventarioAlxMayor()
@@ -103,6 +103,6 @@ namespace DO.Modapie
           public int SubTotal1 { get => SubTotal; set => SubTotal = value; }
           public int TotalImpuestos1 { get => TotalImpuestos; set => TotalImpuestos = value; }
           public int Codigo1 { get => Codigo; set => Codigo = value; }
-          //public bool Estado1 { get => Estado; set => Estado = value; }
+          public bool Estado1 { get => Estado; set => Estado = value; }
     }
 }

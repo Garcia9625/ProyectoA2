@@ -831,8 +831,8 @@ namespace DAL.Modapie
                            Convert.ToInt32(dataReader["TotalCIF"].ToString()),
                            Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
                            Convert.ToInt32(dataReader["SubTotal"].ToString()),
-                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString())
-                           //Convert.ToBoolean(dataReader["Estado"].ToString())
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
 
                         );
                         lista.Add(pro);
@@ -928,8 +928,8 @@ namespace DAL.Modapie
                            Convert.ToInt32(dataReader["TotalCIF"].ToString()),
                            Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
                            Convert.ToInt32(dataReader["SubTotal"].ToString()),
-                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString())
-                           //Convert.ToBoolean(dataReader["Estado"].ToString())
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
                     );
 
                 }
@@ -1254,8 +1254,8 @@ namespace DAL.Modapie
                            Convert.ToInt32(dataReader["TotalCIF"].ToString()),
                            Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
                            Convert.ToInt32(dataReader["SubTotal"].ToString()),
-                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString())
-                           //Convert.ToBoolean(dataReader["Estado"].ToString())
+                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
+                           Convert.ToBoolean(dataReader["Estado"].ToString())
                         );
                         listaProductosAlxMayor.Add(productosAlxMayor);
                     }
