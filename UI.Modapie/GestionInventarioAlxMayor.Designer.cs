@@ -71,6 +71,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -450,7 +454,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(772, 29);
+            this.txtCodigo.Location = new System.Drawing.Point(75, 8);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(163, 22);
@@ -459,20 +463,48 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(688, 29);
+            this.label20.Location = new System.Drawing.Point(15, 9);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 17);
             this.label20.TabIndex = 41;
             this.label20.Text = "Codigo:";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtEstado);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.txtCodigo);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Location = new System.Drawing.Point(540, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(500, 35);
+            this.panel1.TabIndex = 43;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(322, 9);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(163, 22);
+            this.txtEstado.TabIndex = 44;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(258, 11);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(56, 17);
+            this.label21.TabIndex = 43;
+            this.label21.Text = "Estado:";
+            // 
             // GestionInventarioAlxMayor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 719);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
@@ -518,6 +550,8 @@
             this.Name = "GestionInventarioAlxMayor";
             this.Text = "Gestion Inventario al por mayor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionInventarioAlxMayor_FormClosed);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,5 +602,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Label label21;
     }
 }
