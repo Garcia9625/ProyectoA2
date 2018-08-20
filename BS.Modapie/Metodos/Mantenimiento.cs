@@ -294,23 +294,6 @@ namespace BS.Modapie
             }
         }
 
-        public List<ClienteAlDetalle> MostrarClienteDetalle()
-        {
-            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
-            try
-            {
-                using (TransactionScope scope = new TransactionScope())
-                {
-                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarClienteDetalle();
-                    scope.Complete();
-                }
-                return lista;
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
         public ClienteAlDetalle buscarCAD(string dni)
         {
             ClienteAlDetalle cad = new ClienteAlDetalle();
@@ -327,6 +310,40 @@ namespace BS.Modapie
             {
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
                 return null;
+            }
+        }
+
+        public List<ClienteAlDetalle> MostrarClienteXDetalle()
+        {
+            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarClienteXDetalle();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public void EditarCAD(ClienteAlDetalle CAD)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.EditarCAD(CAD);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
             }
         }
         #endregion

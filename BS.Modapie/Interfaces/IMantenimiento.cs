@@ -44,5 +44,6 @@ namespace BS.Modapie
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
         List<ClienteAlDetalle> MostrarClienteXDetalle();
         ClienteAlDetalle buscarCAD(string dni);
+        void EditarCAD(ClienteAlDetalle CAD);
     }
 }

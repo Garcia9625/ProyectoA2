@@ -213,7 +213,6 @@ namespace DAL.Modapie
         }
         #endregion
 
-
         #region ClienteAlxMayor
         public void InsertarCAlxMayor(ClientePorMayor CAXM)
         {
@@ -1000,9 +999,6 @@ namespace DAL.Modapie
             }
         }
 
-
-
-
         public ClienteAlDetalle buscarCAD(string dni)
         {
             ClienteAlDetalle cad = new ClienteAlDetalle();
@@ -1057,7 +1053,7 @@ namespace DAL.Modapie
             }
         }
 
-        public void Editar(ClienteAlDetalle CAXD)
+        public void EditarCAD(ClienteAlDetalle CAXD)
         {
 
             DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
@@ -1116,7 +1112,7 @@ namespace DAL.Modapie
 
                 //Ejecutar Store Procedure
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_Editar";
+                comm.CommandText = "sp_EditarCAD";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
