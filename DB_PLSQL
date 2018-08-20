@@ -337,7 +337,7 @@ END
 GO
 
 
-/*Buscar Id por Nombre*/
+/*Buscar Id por Nombre, correr los alter de cliente al x mayor de BD_Alteraciones*/
 
 CREATE PROCEDURE [dbo].[sp_BuscarIdxN] 
 @Nombre varchar(50)
