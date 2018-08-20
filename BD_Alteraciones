@@ -53,11 +53,31 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
-Alter Table [dbo].InventarioAlxMayor add Estado bit;
+AALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
 
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
 
 
 /*ultimas alteraciones*/
+
+USE [DBMODAPIE]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_InsertarCAXM]    Script Date: 19/08/2018 16:26:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[sp_InsertarCAXM] 
+@Nombre varchar(100)
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO ClienteAlxMayor (Nombre)
+VALUES        (@Nombre);
+END
+
+
+---------------------------------------------------------------------------------------------
 
 USE [DBMODAPIE]
 GO
