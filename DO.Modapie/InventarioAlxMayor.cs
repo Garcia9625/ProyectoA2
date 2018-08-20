@@ -76,7 +76,7 @@ namespace DO.Modapie
               this.PrecioUnitario = precU;
               this.SubTotal = subT;
               this.TotalImpuestos = totImp;
-              this.Estado = est;
+              this.Estado2 = est;
           }
 
           public InventarioAlxMayor()
@@ -103,6 +103,6 @@ namespace DO.Modapie
           public int SubTotal1 { get => SubTotal; set => SubTotal = value; }
           public int TotalImpuestos1 { get => TotalImpuestos; set => TotalImpuestos = value; }
           public int Codigo1 { get => Codigo; set => Codigo = value; }
-          public bool Estado1 { get => Estado; set => Estado = value; }
+        public bool Estado2 { get => Estado; set => Estado = value; }
     }
 }
