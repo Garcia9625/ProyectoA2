@@ -295,12 +295,13 @@ CREATE PROCEDURE  [dbo].[sp_InsertarVentaAlxMayor]
 @Estado bit,
 @SaldoPendiente float,
 @TotalAbonado float,
-@UltimoAbono float
+@UltimoAbono float,
+@FechaVenta datetime
 AS
 BEGIN
 SET NOCOUNT ON;
-INSERT INTO VentaAlxMayor (IdClienteMayor,IdEmpleado,Total,Estado,SaldoPendiente,TotalAbonado,UltimoAbono)
-VALUES        (@IdClienteMayor,@IdEmpleado,@Total,@Estado,@SaldoPendiente,@TotalAbonado,@UltimoAbono);
+INSERT INTO VentaAlxMayor (IdClienteMayor,IdEmpleado,Total,Estado,SaldoPendiente,TotalAbonado,UltimoAbono,FechaVenta)
+VALUES        (@IdClienteMayor,@IdEmpleado,@Total,@Estado,@SaldoPendiente,@TotalAbonado,@UltimoAbono,@FechaVenta);
 END
 GO
 
