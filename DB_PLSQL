@@ -359,3 +359,127 @@ Select MAX(IdVentaMayor) as IDVenta from VentaAlxMayor
 END
 GO
 
+
+
+
+
+
+
+/*ULtimos para agregar al cliente al detalle*/
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_Editar]    Script Date: 19/8/2018 21:36:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditarCAD] 
+@Dni varchar(30), 
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+UPDATE      ClienteAlDetalle
+SET          
+            Nombre = @Nombre, 
+			Apellido1 = @Apellido1,
+			Apellido2 = @Apellido2,
+			Celular = @Celular,
+			Telefono = @Telefono,
+			Correo = @Correo
+WHERE       (Dni = @Dni);
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarEmpleado]    Script Date: 19/8/2018 21:12:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_BuscarEmpleado] 
+@Dni varchar(30)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado] where Dni = @Dni;
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_MostrarCAXM]    Script Date: 19/8/2018 19:51:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[sp_MostrarCAXM] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlxMayor];
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 19/8/2018 19:50:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ CREATE  PROCEDURE [dbo].[sp_BuscarCAD] 
+
+@ID int
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
+
+From ClienteAlDetalle
+
+Where @ID=Dni;
+
+END
+
+GO
+
+
+
