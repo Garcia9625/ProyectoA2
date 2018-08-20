@@ -71,8 +71,8 @@ ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
 
 ALTER Table [dbo].ClienteAlxMayor ADD Nombre varchar(100);
 ALTER Table [dbo].ClienteAlxMayor ADD Cedula varchar(20);
-ALTER Table [dbo].ClienteAlxMayor ADD CedulaJuridica varchar(20);
 ALTER Table [dbo].ClienteAlxMayor ADD Telefono varchar(20);
+Alter Table [dbo].ClienteAlxMayor ADD Correo varchar(50);
 
 *****************************************************
 
