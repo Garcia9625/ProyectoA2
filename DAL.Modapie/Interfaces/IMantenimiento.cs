@@ -37,10 +37,6 @@ namespace DAL.Modapie
         void EliminarProdXMayor(int id);
 
 
-        /*Gestion del cliente al detalle*/
-
-        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
-        List<ClienteAlDetalle> MostrarClienteDetalle();
-        ClienteAlDetalle buscarCAD(string dni);
+        
     }
 }

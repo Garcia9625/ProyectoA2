@@ -1001,58 +1001,7 @@ namespace DAL.Modapie
             }
         }
 
-        public List<ClienteAlDetalle> MostrarClienteDetalle()
-        {
-            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
-            DbConnection conn = null;
-            DbCommand comm = null;
-            try
-            {
-                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                //Creacion de la connection
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                //Abrir connection
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecuta SP
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_MostrarCAD";
-
-                using (IDataReader dataReader = comm.ExecuteReader())
-                {
-                    ClienteAlDetalle cad;
-                    while (dataReader.Read())
-                    {
-                        cad = new ClienteAlDetalle
-                        {
-                            
-
-                            Dni = dataReader["Dni"].ToString(),
-                            Nombre = dataReader["Nombre"].ToString(),
-                            Apellido1 = dataReader["Apellido1"].ToString(),
-                            Apellido2 = dataReader["Apellido2"].ToString(),
-                            Celular = dataReader["Celular"].ToString(),
-                            Telefono = dataReader["Telefono"].ToString(),
-                            Correo = dataReader["Correo"].ToString(),
-                           
-
-                        };
-                        lista.Add(cad);
-                    }
-                }
-
-                return lista;
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
+       
 
 
         public ClienteAlDetalle buscarCAD(string dni)
