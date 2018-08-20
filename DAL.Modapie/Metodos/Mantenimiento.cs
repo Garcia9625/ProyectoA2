@@ -412,13 +412,7 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
-
-
-        #endregion
-
-        #region Cliente al detalle
-        
-
+    
 
         #endregion
 
@@ -927,6 +921,7 @@ namespace DAL.Modapie
 
         #endregion
 
+
         #region ClienteAlDetalle
 
         public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
@@ -1006,58 +1001,58 @@ namespace DAL.Modapie
             }
         }
 
-        //public List<ClienteAlDetalle> MostrarClienteDetalle()
-        //{
-        //    List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
-        //    DbConnection conn = null;
-        //    DbCommand comm = null;
-        //    try
-        //    {
-        //        DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+        public List<ClienteAlDetalle> MostrarClienteDetalle()
+        {
+            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
 
-        //        //Creacion de la connection
-        //        conn = factory.CreateConnection();
-        //        conn.ConnectionString = Conexion.Default.connection;
-        //        comm = factory.CreateCommand();
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
 
-        //        //Abrir connection
-        //        comm.Connection = conn;
-        //        conn.Open();
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
 
-        //        //Ejecuta SP
-        //        comm.CommandType = System.Data.CommandType.StoredProcedure;
-        //        comm.CommandText = "sp_MostrarCAD";
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_MostrarCAD";
 
-        //        using (IDataReader dataReader = comm.ExecuteReader())
-        //        {
-        //            ClienteAlDetalle cad;
-        //            while (dataReader.Read())
-        //            {
-        //                cad = new ClienteAlDetalle
-        //                {
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    ClienteAlDetalle cad;
+                    while (dataReader.Read())
+                    {
+                        cad = new ClienteAlDetalle
+                        {
                             
 
-        //                    Dni = dataReader["Dni"].ToString(),
-        //                    Nombre = dataReader["Nombre"].ToString(),
-        //                    Apellido1 = dataReader["Apellido1"].ToString(),
-        //                    Apellido2 = dataReader["Apellido2"].ToString(),
-        //                    Celular = dataReader["Celular"].ToString(),
-        //                    Telefono = dataReader["Telefono"].ToString(),
-        //                    Correo = dataReader["Correo"].ToString(),
+                            Dni = dataReader["Dni"].ToString(),
+                            Nombre = dataReader["Nombre"].ToString(),
+                            Apellido1 = dataReader["Apellido1"].ToString(),
+                            Apellido2 = dataReader["Apellido2"].ToString(),
+                            Celular = dataReader["Celular"].ToString(),
+                            Telefono = dataReader["Telefono"].ToString(),
+                            Correo = dataReader["Correo"].ToString(),
                            
 
-        //                };
-        //                lista.Add(cad);
-        //            }
-        //        }
+                        };
+                        lista.Add(cad);
+                    }
+                }
 
-        //        return lista;
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        throw;
-        //    }
-        //}
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
 
 
         public ClienteAlDetalle buscarCAD(string dni)
@@ -1116,146 +1111,8 @@ namespace DAL.Modapie
             }
         }
 
-        public void Editar(ClienteAlDetalle CAXD)
-        {
-
-            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-            DbConnection conn = null;
-            DbCommand comm = null;
-
-            try
-            {
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                DbParameter param1 = factory.CreateParameter();
-                DbParameter param2 = factory.CreateParameter();
-                DbParameter param3 = factory.CreateParameter();
-                DbParameter param4 = factory.CreateParameter();
-                DbParameter param5 = factory.CreateParameter();
-                DbParameter param6 = factory.CreateParameter();
-                DbParameter param7= factory.CreateParameter();
-
-
-
-                //Carga de Parametros
-                param1.ParameterName = "@Dni";
-                param1.DbType = System.Data.DbType.String;
-                param1.Value = CAXD.Dni;
-
-                param2.ParameterName = "@Nombre";
-                param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXD.Nombre;
-
-                param3.ParameterName = "@Apellido1";
-                param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXD.Apellido1;
-
-                param4.ParameterName = "@Apellido2";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXD.Apellido2;
-
-                param5.ParameterName = "@Celular";
-                param5.DbType = System.Data.DbType.String;
-                param5.Value = CAXD.Celular;
-
-                param6.ParameterName = "@Telefono";
-                param6.DbType = System.Data.DbType.String;
-                param6.Value = CAXD.Telefono;
-
-                param7.ParameterName = "@Correo";
-                param7.DbType = System.Data.DbType.String;
-                param7.Value = CAXD.Correo;
-
-
-                //Abrir Coneccion 
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecutar Store Procedure
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_Editar";
-                comm.Parameters.Add(param1);
-                comm.Parameters.Add(param2);
-                comm.Parameters.Add(param3);
-                comm.Parameters.Add(param4);
-                comm.Parameters.Add(param5);
-                comm.Parameters.Add(param6);
-                comm.Parameters.Add(param7);
-                comm.ExecuteNonQuery();
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-            finally
-            {
-                comm.Dispose();
-                conn.Dispose();
-            }
-        }
-
-        public List<ClienteAlDetalle> MostrarClienteDetalle()
-        {
-            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
-            DbConnection conn = null;
-            DbCommand comm = null;
-            try
-            {
-                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                //Creacion de la connection
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                //Abrir connection
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecuta SP
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_MostrarCAXD";
-
-                using (IDataReader dataReader = comm.ExecuteReader())
-                {
-                    ClienteAlDetalle CAXD;
-                    while (dataReader.Read())
-                    {
-                        CAXD = new ClienteAlDetalle
-                        {
-                            Dni = dataReader["Dni"].ToString(),
-                            Nombre = dataReader["Nombre"].ToString(),
-                            Apellido1 = dataReader["Apellido1"].ToString(),
-                            Apellido2 = dataReader["Apellido2"].ToString(),
-                            Celular = dataReader["Celular"].ToString(),
-                            Telefono = dataReader["Telefono"].ToString(),
-                            Correo = dataReader["Correo"].ToString(),
-
-                        };
-                        lista.Add(CAXD);
-                    }
-                }
-
-                return lista;
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
-
-        public List<ClienteAlDetalle> MostrarCAXD()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-        
-
 
         #endregion
     }
-
+}
 

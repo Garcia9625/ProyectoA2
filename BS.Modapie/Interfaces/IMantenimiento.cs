@@ -21,12 +21,6 @@ namespace BS.Modapie
         void Editar(ClientePorMayor CAXM);
         void Borrar(ClientePorMayor CAXM);
 
-        /*ClienteAlDetalle*/
-        List<ClienteAlDetalle> MostrarCAXD();
-        void Editar(ClienteAlDetalle CAXD);
-
-        
-
 
         /*Gestion de Empleado*/
 

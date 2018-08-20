@@ -75,10 +75,5 @@ namespace UI.Modapie
         {
 
         }
-
-        private void btnEditarCliente_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

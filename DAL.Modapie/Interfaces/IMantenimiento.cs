@@ -20,10 +20,6 @@ namespace DAL.Modapie
         void Editar(ClientePorMayor CAXM);
         void Borrar(ClientePorMayor CAXM);
 
-        /*ClienteAlxDetalle*/
-        void Editar(ClienteAlDetalle CAXD);
-        List<ClienteAlDetalle> MostrarCAXD();
-
         /*Gestion Empleado*/
 
         void InsertarEmpleado(Empleado empleado);
