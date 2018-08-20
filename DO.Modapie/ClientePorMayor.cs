@@ -9,9 +9,7 @@ namespace DO.Modapie
     public class ClientePorMayor
     {
         private int IdCliente;
-        private string NombreJuridico;
-        private string NombreFisico;
-        private string NombreFantasia;
+        private string Nombre;
 
         public int idCliente
         {
@@ -19,22 +17,10 @@ namespace DO.Modapie
             set { IdCliente = value; }
         }
 
-        public string nombreJuridico
+        public string nombre
         {
-            get { return NombreJuridico; }
-            set { NombreJuridico = value; }
-        }
-
-        public string nombreFisico
-        {
-            get { return NombreFisico; }
-            set { NombreFisico = value; }
-        }
-
-        public string nombreFantasia
-        {
-            get { return NombreFantasia; }
-            set { NombreFantasia = value; }
+            get { return Nombre; }
+            set { Nombre = value; }
         }
     }
 }

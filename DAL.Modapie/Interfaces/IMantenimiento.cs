@@ -19,6 +19,7 @@ namespace DAL.Modapie
         List<ClientePorMayor> MostarCAXM();
         void Editar(ClientePorMayor CAXM);
         void Borrar(ClientePorMayor CAXM);
+        ClientePorMayor buscarClienteAlxMayor(string nombre);
 
         /*Gestion Empleado*/
 
@@ -31,8 +32,8 @@ namespace DAL.Modapie
         void ActualizarEmpleado(Empleado empleado);
 
         /*Gestion de Productos al x MAYOR*/
-        List<ProductosAlxMayor>MostrarProductos();
-        ProductosAlxMayor obtenerLote(int id);
+        List<InventarioAlxMayor> MostrarProductos();
+        InventarioAlxMayor obtenerLote(int id);
 
         void EliminarProdXMayor(int id);
 
@@ -42,5 +43,19 @@ namespace DAL.Modapie
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
         List<ClienteAlDetalle> MostrarClienteDetalle();
         ClienteAlDetalle buscarCAD(string dni);
+
+        /*Inventario al x mayor*/
+
+        List<InventarioAlxMayor> obtenerListaInventarioAlxMayor();
+
+        /*Venta al por mayor*/
+
+        void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor);
+
+        VentaAlxMayor buscarUltimaVenta();
+
+        /*Descripcion venta al por mayor*/
+
+        void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
     }
 }
