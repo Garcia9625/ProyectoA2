@@ -157,3 +157,48 @@ GO
 
 
 
+
+
+USE [DBMODAPIE]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_MostrarInventarioAlxMayor]    Script Date: 20/08/2018 12:03:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos, Estado
+From InventarioAlxMayor
+Where Estado = 1;
+END
+
+
+
+
+
+
+
+
+USE [DBMODAPIE]
+GO
+/****** Object:  StoredProcedure [dbo].[MostrarProductoAlxMayor1]    Script Date: 20/08/2018 12:13:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
+@IdLote int
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos, Estado
+From InventarioAlxMayor
+Where IdLote = @IdLote;
+END
+
+
