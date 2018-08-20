@@ -54,3 +54,66 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
 Alter Table [dbo].InventarioAlxMayor add Estado bit;
+
+
+
+/*ultimas alteraciones*/
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarCAD]    Script Date: 19/8/2018 20:46:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ ALTER  PROCEDURE [dbo].[sp_BuscarCAD] 
+
+@Dni varchar(30)
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
+
+From ClienteAlDetalle
+
+Where Dni = @Dni;
+
+END
+
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 19/8/2018 19:48:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ ALTER  PROCEDURE [dbo].[MostrarCAD] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlDetalle];
+END
+GO
+
+
+
+
+
