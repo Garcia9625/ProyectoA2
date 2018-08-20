@@ -31,6 +31,9 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleEmpleado]
 GO
+
+
+/*venta al x mayor*/
 ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorCliente] FOREIGN KEY([IdClienteMayor])
 REFERENCES [dbo].[ClienteAlxMayor] ([IdCliente])
 GO
@@ -41,8 +44,6 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
 GO
-ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
-
 ALTER TABLE [dbo].VentaAlxMayor ADD Estado bit;
 
 ALTER TABLE [dbo].VentaAlxMayor ADD SaldoPendiente float;
@@ -51,10 +52,16 @@ ALTER TABLE [dbo].VentaAlxMayor ADD TotalAbonado float;
 
 ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
-ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
+/*fin*/
+
 AALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
+
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
+
+ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
+
+ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 
 
 *****ultimos agregados*****
