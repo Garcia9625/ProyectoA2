@@ -15,6 +15,7 @@ namespace UI.Modapie
 {
     public partial class InfromedeVentasalxMayor : Form
     {
+        Mantenimiento procesar = new Mantenimiento();
         public InfromedeVentasalxMayor()
         {
             InitializeComponent();
