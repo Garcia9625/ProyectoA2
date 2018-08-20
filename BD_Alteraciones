@@ -55,7 +55,7 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
 /*fin*/
 
-AALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
 
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
 
