@@ -324,21 +324,25 @@ GO
 
 
 CREATE  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
-
-
 AS
-
 BEGIN
-
 SET NOCOUNT ON;
-
 SELECT *
-
 From InventarioAlxMayor
-
-
 END
-
 GO
 
+
+/*Buscar Id por Nombre*/
+
+CREATE PROCEDURE [dbo].[sp_BuscarIdxN] 
+@Nombre varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdCliente
+From ClienteAlxMayor
+Where Nombre = @Nombre;
+END
+GO
 
