@@ -39,6 +39,10 @@ namespace BS.Modapie
         void EliminarProdXMayor(int id);
 
 
-        
+        /*Gestion del cliente al detalle*/
+
+        void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
+        List<ClienteAlDetalle> MostrarClienteXDetalle();
+        ClienteAlDetalle buscarCAD(string dni);
     }
 }
