@@ -55,18 +55,19 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
 /*fin*/
 
-ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
-
-ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
 
 ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
 
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 
 
-*****ultimos agregados*****
+*****ultimos agregados cliente al x mayor*****
 
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreJuridico;
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
 
 ALTER Table [dbo].ClienteAlxMayor ADD Nombre varchar(100);
 
