@@ -53,10 +53,6 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 
-ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
-
-ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;  
-
 USE [DBMODAPIE]
 GO
 /****** Object:  StoredProcedure [dbo].[sp_InsertarCAXM]    Script Date: 19/08/2018 16:26:52 ******/
