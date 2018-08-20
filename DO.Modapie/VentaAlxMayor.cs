@@ -11,7 +11,12 @@ namespace DO.Modapie
 
         public int IdVentaMayor { get; set; }
         public int IdClienteMayor{ get; set; }
-        public String IdEmpleado { get; set; }
-        public Double Total { get; set; }
+        public string IdEmpleado { get; set; }
+        public double Total { get; set; }
+        public bool Estado { get; set; }
+        public double SaldoPendiente { get; set; }
+        public double TotalAbonado { get; set; }
+        public double UltimoAbono { get; set; }
+        public DateTime FechaVenta { get; set; }
     }
 }
