@@ -54,8 +54,17 @@ ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
 Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
 AALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
-
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
+
+
+*****ultimos agregados*****
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreJuridico;
+
+ALTER Table [dbo].ClienteAlxMayor ADD Nombre varchar(100);
+
+*****************************************************
+
 
 
 /*ultimas alteraciones*/
