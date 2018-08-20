@@ -347,3 +347,15 @@ Where Nombre = @Nombre;
 END
 GO
 
+
+/*Obtener ultimo registro tabla venta al por mayor*/
+
+CREATE PROCEDURE  [dbo].[sp_UltimaVentaAlxMayor]
+
+AS
+BEGIN
+SET NOCOUNT ON;
+Select MAX(IdVentaMayor) as IDVenta from VentaAlxMayor
+END
+GO
+
