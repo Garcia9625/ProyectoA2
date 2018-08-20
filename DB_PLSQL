@@ -283,6 +283,9 @@ return @value
 END
 GO
 
+
+
+/*Correr primero las alteraciones de VentaAlxMayor en el script de BD_Alteraciones*/
 /*********VentaAlxMayor********/
 USE [DBMODAPIE]
 GO
