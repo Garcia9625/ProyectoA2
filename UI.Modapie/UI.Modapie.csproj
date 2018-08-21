@@ -125,7 +125,13 @@
       <DependentUpon>Reportes.rpt</DependentUpon>
       <SubType>Component</SubType>
 
+      <Compile Include="VentaAlxMayor.cs">
+        <SubType>Form</SubType>
+        </Compile>
+      <Compile Include="VentaAlxMayor.Designer.cs">
+         <DependentUpon>VentaAlxMayor.cs</DependentUpon>
     </Compile>
+      
     <EmbeddedResource Include="ClienteAlDetalle.resx">
       <DependentUpon>ClienteAlDetalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +177,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reportes.cs</LastGenOutput>
 
+      <EmbeddedResource Include="VentaAlxMayor.resx">
+        <DependentUpon>VentaAlxMayor.cs</DependentUpon>     
     </EmbeddedResource>
+      
+      
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
