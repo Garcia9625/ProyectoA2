@@ -56,6 +56,7 @@ namespace UI.Modapie
                     txtPrecioUnitario.Text = prod.PrecioUnitario1.ToString();
                     txtSubTotal.Text = Convert.ToString(prod.SubTotal1);
                     txtTotalImpuestos.Text = Convert.ToString(prod.TotalImpuestos1);
+                    txtEstado.Text = prod.Estado2 ? "Disponible" : "Desactivado";
                 }
                 catch (Exception ee)
                 {
