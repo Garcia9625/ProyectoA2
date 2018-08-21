@@ -13,5 +13,6 @@ namespace DO.Modapie
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
+
     }
 }

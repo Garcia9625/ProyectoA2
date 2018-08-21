@@ -486,3 +486,27 @@ GO
 
 
 
+ /**Informes VentasAlxMayor **/
+ 
+ USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarVentaMxNombreCliente]    Script Date: 20/08/2018 13:28:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure [dbo].[sp_BuscarVentaMxNombreCliente]
+@Nombre varchar(100)
+as
+begin
+SET NOCOUNT ON;
+select cm.Nombre as NombreCliente,cm.cedula,cm.Telefono,cm.correo,v.SaldoPendiente,v.TotalAbonado,v.UltimoAbono,v.Total,v.FechaVenta, e.Nombre as NombreEmpleado
+from VentaAlxMayor v 
+inner join  ClienteAlxMayor cm on cm.IdCliente=v.IdClienteMayor
+inner join Empleado e on e.Dni = v.IdEmpleado
+where cm.Nombre=@Nombre
+End
+GO

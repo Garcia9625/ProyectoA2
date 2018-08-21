@@ -32,12 +32,14 @@ namespace UI.Modapie
                 nombreFisico = txtFisico.Text,
                 nombreFantasia = txtFantasia.Text
                 */
+
             };
         }
 
         private void GetValues2()
         {
             CAXM2 = new ClientePorMayor
+
             {/*
                 nombreJuridico = txtJuridico.Text,
                 nombreFisico = txtFisico.Text,
