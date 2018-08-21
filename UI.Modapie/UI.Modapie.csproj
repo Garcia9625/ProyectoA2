@@ -173,13 +173,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
 
+      <EmbeddedResource Include="VentaAlxMayor.resx">
+        <DependentUpon>VentaAlxMayor.cs</DependentUpon>     
+    </EmbeddedResource>
+      
     <EmbeddedResource Include="Reportes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reportes.cs</LastGenOutput>
 
-      <EmbeddedResource Include="VentaAlxMayor.resx">
-        <DependentUpon>VentaAlxMayor.cs</DependentUpon>     
-    </EmbeddedResource>
+      
       
       
     <None Include="Properties\Settings.settings">
