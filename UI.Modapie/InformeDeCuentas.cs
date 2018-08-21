@@ -27,5 +27,12 @@ namespace UI.Modapie
             cxc.crystalReportViewer1.ReportSource = oRep;
             cxc.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteAlPorMayor));
             this.label1 = new System.Windows.Forms.Label();
             this.txtJuridico = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.txtFisico = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(455, 87);
+            this.label2.Location = new System.Drawing.Point(421, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 2;
@@ -71,7 +73,7 @@
             // 
             // txtFantasia
             // 
-            this.txtFantasia.Location = new System.Drawing.Point(598, 84);
+            this.txtFantasia.Location = new System.Drawing.Point(564, 84);
             this.txtFantasia.Name = "txtFantasia";
             this.txtFantasia.Size = new System.Drawing.Size(246, 22);
             this.txtFantasia.TabIndex = 3;
@@ -133,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(455, 46);
+            this.label3.Location = new System.Drawing.Point(421, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 9;
@@ -141,7 +143,7 @@
             // 
             // txtFisico
             // 
-            this.txtFisico.Location = new System.Drawing.Point(598, 43);
+            this.txtFisico.Location = new System.Drawing.Point(564, 43);
             this.txtFisico.Name = "txtFisico";
             this.txtFisico.Size = new System.Drawing.Size(246, 22);
             this.txtFisico.TabIndex = 10;
@@ -162,11 +164,22 @@
             this.txtId.Size = new System.Drawing.Size(246, 22);
             this.txtId.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(849, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 42);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ClienteAlPorMayor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 474);
+            this.ClientSize = new System.Drawing.Size(914, 474);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFisico);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.TextBox txtFisico;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button button1;
     }
 }

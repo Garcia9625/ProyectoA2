@@ -15,12 +15,12 @@ namespace UI.Modapie
     public partial class MenuAdmin : Form
     {
         string Username;
-        public MenuAdmin(string username)
+        public MenuAdmin(/*string username*/)
         {
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.Username = username;
-            InitializeComponent();
-            lblUsername.Text = "Bienvenido: " + usuario.username;
+            //Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
+            //this.Username = username;
+            //InitializeComponent();
+            //lblUsername.Text = "Bienvenido: " + usuario.username;
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)

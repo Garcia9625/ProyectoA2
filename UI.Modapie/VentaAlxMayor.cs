@@ -216,6 +216,13 @@ namespace UI.Modapie
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
+        }
+
         private void DatoSeleccionado(object sender, DataGridViewCellEventArgs e)
         {
             posicion = dgvVenta.CurrentRow.Index;
