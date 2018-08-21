@@ -72,5 +72,27 @@ namespace UI.Modapie
             ClienteAlDetalle CAD = new ClienteAlDetalle();
             CAD.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInformes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_GIAXM_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionInventarioAlxMayor GIAXM = new GestionInventarioAlxMayor();
+            GIAXM.Show();
+        }
+
+        private void btn_NuevoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
