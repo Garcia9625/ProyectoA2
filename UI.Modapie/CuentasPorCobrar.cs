@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI.Modapie
 {
-    public partial class PlantillaInformeVentasAlxMayor : Form
+    public partial class CuentasPorCobrar : Form
     {
-        public PlantillaInformeVentasAlxMayor()
+        public CuentasPorCobrar()
         {
             InitializeComponent();
         }

@@ -16,14 +16,14 @@ namespace UI.Modapie {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Reportes : ReportClass {
+    public class CuentasXCobrar : ReportClass {
         
-        public Reportes() {
+        public CuentasXCobrar() {
         }
         
         public override string ResourceName {
             get {
-                return "Reportes.rpt";
+                return "CuentasXCobrar.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace UI.Modapie {
         
         public override string FullResourceName {
             get {
-                return "UI.Modapie.Reportes.rpt";
+                return "UI.Modapie.CuentasXCobrar.rpt";
             }
             set {
                 // Do nothing
@@ -87,20 +87,12 @@ namespace UI.Modapie {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Nombre {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportes : Component, ICachedReport {
+    public class CachedCuentasXCobrar : Component, ICachedReport {
         
-        public CachedReportes() {
+        public CachedCuentasXCobrar() {
         }
         
         [Browsable(false)]
@@ -137,7 +129,7 @@ namespace UI.Modapie {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Reportes rpt = new Reportes();
+            CuentasXCobrar rpt = new CuentasXCobrar();
             rpt.Site = this.Site;
             return rpt;
         }
