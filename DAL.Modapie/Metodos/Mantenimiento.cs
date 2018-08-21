@@ -1506,7 +1506,210 @@ namespace DAL.Modapie
         }
 
         #endregion
+
+
+
+
+        #region Usuario
+
+      
+        public void InsertarUsuario(Usuario user)
+        {
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+
+
+                //Carga de parametros
+
+                param1.ParameterName = "@idUsuario";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = user.idUsuario;
+
+                param2.ParameterName = "@idEmpleado";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = user.idEmpleado;
+
+                param3.ParameterName = "@username";
+                param3.DbType = System.Data.DbType.Int32;
+                param3.Value = user.username;
+
+                param4.ParameterName = "@password";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = user.password;
+
+                param5.ParameterName = "@rol";
+                param5.DbType = System.Data.DbType.Int32;
+                param5.Value = user.rol;
+
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_AgregarUsuario";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.ExecuteNonQuery();
+
+
+                try
+                {
+                    
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+
+                DialogResult d = MessageBox.Show("Usuario agregado correctamente", "Notificacion");
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
+
+
+            }
+        }
+
+
+        public List<Usuario> MostrarUsuario()
+            {
+                List<Usuario> lista = new List<Usuario>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+                {
+                    
+                
+                    //Creacion de la connection
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    //Abrir connection
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecuta SP
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_MostrarUsuario";
+
+                    using (IDataReader dataReader = comm.ExecuteReader())
+                    {
+                        Usuario usuario;
+                        while (dataReader.Read())
+                        {
+                            usuario = new Usuario
+                            {
+                                idUsuario = Convert.ToInt32(dataReader["idUsuario"]),
+                                idEmpleado= Convert.ToInt32(dataReader["idEmpleado"]),
+                                username = dataReader["username"].ToString(),
+                                password = dataReader["password"].ToString(),
+                                rol = Convert.ToInt32(dataReader["rol"])
+
+                            };
+                            lista.Add(usuario);
+                        }
+                    }
+
+                    return lista;
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+            }
+
+        public Usuario BuscarUsuario(string idEmpleado)
+            {
+                Usuario user= new Usuario();
+                DbConnection conn = null;
+                DbCommand comm = null;
+                try
+                {
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                    //Creacion de la connection
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    //Creacion de parametros
+
+                    DbParameter param1 = factory.CreateParameter();
+
+                    param1.ParameterName = "@idUsuario";
+                    param1.DbType = System.Data.DbType.String;
+                    param1.Value = user.idUsuario;
+
+                    //Abrir connection
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecuta SP
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_BuscarUsuario";
+                    comm.Parameters.Add(param1);
+
+                    using (IDataReader dataReader = comm.ExecuteReader())
+                    {
+                        dataReader.Read();
+                        user = new Usuario
+                        {
+                            idUsuario = Convert.ToInt32(dataReader["idUsuario"]),
+                            idEmpleado = Convert.ToInt32(dataReader["idEmpleado"]),
+                            username = dataReader["username"].ToString(),
+                            password = dataReader["password"].ToString(),
+                            rol = Convert.ToInt32(dataReader["rol"])
+
+                        };
+                    
+
+                    }
+                
+                    return user;
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                
+            }
+
+            #endregion
+
+            }
+
     }
-    
+
 }
+
+
+
+
+
+
+
+
 

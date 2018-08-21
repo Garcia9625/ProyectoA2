@@ -103,5 +103,10 @@ namespace UI.Modapie
                 throw;
             }
         }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
