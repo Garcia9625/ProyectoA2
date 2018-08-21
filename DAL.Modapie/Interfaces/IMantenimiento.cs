@@ -38,11 +38,14 @@ namespace DAL.Modapie
         void EliminarProdXMayor(int id);
 
 
-        /*Gestion del cliente al detalle*/
 
+        /*Cliente al detalle*/
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
-        List<ClienteAlDetalle> MostrarClienteDetalle();
+        List<ClienteAlDetalle> MostrarClienteXDetalle();
         ClienteAlDetalle buscarCAD(string dni);
+
+        void EditarCAD(ClienteAlDetalle CAXD);
+
 
         /*Inventario al x mayor*/
 
@@ -57,5 +60,6 @@ namespace DAL.Modapie
         /*Descripcion venta al por mayor*/
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
+
     }
 }

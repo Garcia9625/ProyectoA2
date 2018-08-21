@@ -65,5 +65,12 @@ namespace UI.Modapie
             GestionEmpleado GE = new GestionEmpleado();
             GE.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClienteAlDetalle CAD = new ClienteAlDetalle();
+            CAD.Show();
+        }
     }
 }

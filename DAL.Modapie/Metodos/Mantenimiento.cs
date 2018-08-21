@@ -182,7 +182,7 @@ namespace DAL.Modapie
                 param1.DbType = System.Data.DbType.String;
                 param1.Value = username;
                 param1.Direction = ParameterDirection.Input;
-                
+
                 param2.DbType = System.Data.DbType.Int32;
                 param2.Direction = ParameterDirection.ReturnValue;
 
@@ -212,7 +212,6 @@ namespace DAL.Modapie
             }
         }
         #endregion
-
 
         #region ClienteAlxMayor
         public void InsertarCAlxMayor(ClientePorMayor CAXM)
@@ -316,7 +315,7 @@ namespace DAL.Modapie
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
-              
+
 
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
@@ -388,6 +387,7 @@ namespace DAL.Modapie
             }
         }
 
+
         public ClientePorMayor buscarClienteAlxMayor(string nombre)
         {
             ClientePorMayor cli = new ClientePorMayor();
@@ -435,6 +435,7 @@ namespace DAL.Modapie
                 throw;
             }
         }
+
 
 
         #endregion
@@ -511,7 +512,7 @@ namespace DAL.Modapie
                 param11.ParameterName = "@Estado";
                 param11.DbType = System.Data.DbType.Boolean;
                 param11.Value = emp.Estado;
-                
+
                 //Abrir Coneccion 
                 comm.Connection = conn;
                 conn.Open();
@@ -597,10 +598,10 @@ namespace DAL.Modapie
                 throw;
             }
         }
-        
+
         public Empleado buscarEmpleado(string dni)
         {
-            Empleado emp= new Empleado();
+            Empleado emp = new Empleado();
             DbConnection conn = null;
             DbCommand comm = null;
             try
@@ -632,22 +633,22 @@ namespace DAL.Modapie
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
                     dataReader.Read();
-                        emp = new Empleado
-                        {
-                            Dni = dataReader["Dni"].ToString(),
-                            Nombre = dataReader["Nombre"].ToString(),
-                            Apellido1 = dataReader["Apellido1"].ToString(),
-                            Apellido2 = dataReader["Apellido2"].ToString(),
-                            Celular = dataReader["Celular"].ToString(),
-                            Telefono = dataReader["Telefono"].ToString(),
-                            Correo = dataReader["Correo"].ToString(),
-                            DireccionDomicilio = dataReader["DireccionDomicilio"].ToString(),
-                            SalarioMensual = Convert.ToDouble(dataReader["SalarioMensual"].ToString()),
-                            /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
-                            FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
-                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
+                    emp = new Empleado
+                    {
+                        Dni = dataReader["Dni"].ToString(),
+                        Nombre = dataReader["Nombre"].ToString(),
+                        Apellido1 = dataReader["Apellido1"].ToString(),
+                        Apellido2 = dataReader["Apellido2"].ToString(),
+                        Celular = dataReader["Celular"].ToString(),
+                        Telefono = dataReader["Telefono"].ToString(),
+                        Correo = dataReader["Correo"].ToString(),
+                        DireccionDomicilio = dataReader["DireccionDomicilio"].ToString(),
+                        SalarioMensual = Convert.ToDouble(dataReader["SalarioMensual"].ToString()),
+                        /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
+                        FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
+                        Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
 
-                        };
+                    };
                 }
 
                 return emp;
@@ -787,54 +788,33 @@ namespace DAL.Modapie
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    InventarioAlxMayor pro;
+
+                    ProductosAlxMayor pro;
                     while (dataReader.Read())
                     {
-                        pro = new InventarioAlxMayor
-                        (
-                            /*IdLote = Convert.ToInt32( dataReader["IdLote"]),
-                            EnvioOrden = Convert.ToInt32(dataReader["EnvioOrden"]),
-                            Codigo = Convert.ToInt32(dataReader["Codigo"]),
-                            Show = dataReader["Show"].ToString(),
-                            Cliente = dataReader["Cliente"].ToString(),
-                            Vendedor = Convert.ToInt32(dataReader["Vendedor"]),
-                            Zona = Convert.ToInt32(dataReader["Zona"]),
-                            Transporte = dataReader["Transporte"].ToString(),
-                            Pedido = dataReader["Pedido"].ToString(),
-                            Modelo = Convert.ToInt32(dataReader["Modelo"]),
-                            Color = Convert.ToInt32(dataReader["Color"]),
-                            Descripcion = dataReader["Descripcion"].ToString(),
-                            Curva = dataReader["Curva"].ToString(),
-                            Pares = Convert.ToInt32(dataReader["Pares"]),
-                            Cajas = Convert.ToInt32(dataReader["Cajas"]),
-                            Cif = Convert.ToInt32(dataReader["Cif"]),
-                            TotalCIF = Convert.ToInt32(dataReader["TotalCIF"]),
-                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"]),
-                            SubTotal = Convert.ToInt32(dataReader["SubTotal"]),
-                            TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"])*/
-                            Convert.ToInt32(dataReader["IdLote"].ToString()),
-                           Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
-                           Convert.ToInt32(dataReader["Codigo"].ToString()),
-                           dataReader["Show"].ToString(),
-                           dataReader["Cliente"].ToString(),
-                           Convert.ToInt32(dataReader["Vendedor"].ToString()),
-                           Convert.ToInt32(dataReader["Zona"].ToString()),
-                           dataReader["Transporte"].ToString(),
-                           dataReader["Pedido"].ToString(),
-                           Convert.ToInt32(dataReader["Modelo"].ToString()),
-                           Convert.ToInt32(dataReader["Color"].ToString()),
-                           dataReader["Descripcion"].ToString(),
-                           dataReader["Curva"].ToString(),
-                           Convert.ToInt32(dataReader["Pares"].ToString()),
-                           Convert.ToInt32(dataReader["Cajas"].ToString()),
-                           Convert.ToInt32(dataReader["Cif"].ToString()),
-                           Convert.ToInt32(dataReader["TotalCIF"].ToString()),
-                           Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
-                           Convert.ToInt32(dataReader["SubTotal"].ToString()),
-                           Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
-                           Convert.ToBoolean(dataReader["Estado"].ToString())
-
-                        );
+                        pro = new ProductosAlxMayor
+                        {
+                            IdLote1 = Convert.ToInt32(dataReader["IdLote"]),
+                            EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
+                            Codigo1 = Convert.ToInt32(dataReader["Codigo"]),
+                            Show1 = dataReader["Show"].ToString(),
+                            Cliente1 = dataReader["Cliente"].ToString(),
+                            Vendedor1 = Convert.ToInt32(dataReader["Vendedor"]),
+                            Zona1 = Convert.ToInt32(dataReader["Zona"]),
+                            Transporte1 = dataReader["Transporte"].ToString(),
+                            Pedido1 = dataReader["Pedido"].ToString(),
+                            Modelo1 = Convert.ToInt32(dataReader["Modelo"]),
+                            Color1 = Convert.ToInt32(dataReader["Color"]),
+                            Descripcion1 = dataReader["Descripcion"].ToString(),
+                            Curva1 = dataReader["Curva"].ToString(),
+                            Pares1 = Convert.ToInt32(dataReader["Pares"]),
+                            Cajas1 = Convert.ToInt32(dataReader["Cajas"]),
+                            Cif1 = Convert.ToInt32(dataReader["Cif"]),
+                            TotalCIF1 = Convert.ToInt32(dataReader["TotalCIF"]),
+                            PrecioUnitario1 = Convert.ToInt32(dataReader["PrecioUnitario"]),
+                            SubTotal1 = Convert.ToInt32(dataReader["SubTotal"]),
+                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"])
+                        };
                         lista.Add(pro);
                     }
                 }
@@ -989,7 +969,6 @@ namespace DAL.Modapie
 
         #endregion
 
-
         #region ClienteAlDetalle
 
         public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
@@ -1016,31 +995,31 @@ namespace DAL.Modapie
 
                 param1.ParameterName = "@Dni";
                 param1.DbType = System.Data.DbType.String;
-                param1.Value = clienteAlDetalle.Dni;
+                param1.Value = clienteAlDetalle.Dni1;
 
                 param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = clienteAlDetalle.Nombre;
+                param2.Value = clienteAlDetalle.Nombre1;
 
                 param3.ParameterName = "@Apellido1";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value = clienteAlDetalle.Apellido1;
+                param3.Value = clienteAlDetalle.Apellido11;
 
                 param4.ParameterName = "@Apellido2";
                 param4.DbType = System.Data.DbType.String;
-                param4.Value = clienteAlDetalle.Apellido2;
+                param4.Value = clienteAlDetalle.Apellido21;
 
                 param5.ParameterName = "@Celular";
                 param5.DbType = System.Data.DbType.String;
-                param5.Value = clienteAlDetalle.Celular;
+                param5.Value = clienteAlDetalle.Celular1;
 
                 param6.ParameterName = "@Telefono";
                 param6.DbType = System.Data.DbType.String;
-                param6.Value = clienteAlDetalle.Telefono;
+                param6.Value = clienteAlDetalle.Telefono1;
 
                 param7.ParameterName = "@Correo";
                 param7.DbType = System.Data.DbType.String;
-                param7.Value = clienteAlDetalle.Correo;
+                param7.Value = clienteAlDetalle.Correo1;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -1069,63 +1048,9 @@ namespace DAL.Modapie
             }
         }
 
-        public List<ClienteAlDetalle> MostrarClienteDetalle()
-        {
-            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
-            DbConnection conn = null;
-            DbCommand comm = null;
-            try
-            {
-                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                //Creacion de la connection
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                //Abrir connection
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecuta SP
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_MostrarCAD";
-
-                using (IDataReader dataReader = comm.ExecuteReader())
-                {
-                    ClienteAlDetalle cad;
-                    while (dataReader.Read())
-                    {
-                        cad = new ClienteAlDetalle
-                        {
-                            
-
-                            Dni = dataReader["Dni"].ToString(),
-                            Nombre = dataReader["Nombre"].ToString(),
-                            Apellido1 = dataReader["Apellido1"].ToString(),
-                            Apellido2 = dataReader["Apellido2"].ToString(),
-                            Celular = dataReader["Celular"].ToString(),
-                            Telefono = dataReader["Telefono"].ToString(),
-                            Correo = dataReader["Correo"].ToString(),
-                           
-
-                        };
-                        lista.Add(cad);
-                    }
-                }
-
-                return lista;
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
-
-
         public ClienteAlDetalle buscarCAD(string dni)
         {
-            ClienteAlDetalle cad= new ClienteAlDetalle();
+            ClienteAlDetalle cad = new ClienteAlDetalle();
             DbConnection conn = null;
             DbCommand comm = null;
             try
@@ -1159,15 +1084,13 @@ namespace DAL.Modapie
                     dataReader.Read();
                     cad = new ClienteAlDetalle
                     {
-                        Dni = dataReader["Dni"].ToString(),
-                        Nombre = dataReader["Nombre"].ToString(),
-                        Apellido1 = dataReader["Apellido1"].ToString(),
-                        Apellido2 = dataReader["Apellido2"].ToString(),
-                        Celular = dataReader["Celular"].ToString(),
-                        Telefono = dataReader["Telefono"].ToString(),
-                        Correo = dataReader["Correo"].ToString(),
-
-
+                        Dni1 = dataReader["Dni"].ToString(),
+                        Nombre1 = dataReader["Nombre"].ToString(),
+                        Apellido11 = dataReader["Apellido1"].ToString(),
+                        Apellido21 = dataReader["Apellido2"].ToString(),
+                        Celular1 = dataReader["Celular"].ToString(),
+                        Telefono1 = dataReader["Telefono"].ToString(),
+                        Correo1 = dataReader["Correo"].ToString(),
                     };
                 }
 
@@ -1179,6 +1102,133 @@ namespace DAL.Modapie
             }
         }
 
+        public void EditarCAD(ClienteAlDetalle CAXD)
+        {
+
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+
+
+
+                //Carga de Parametros
+                param1.ParameterName = "@Dni";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = CAXD.Dni1;
+
+                param2.ParameterName = "@Nombre";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = CAXD.Nombre1;
+
+                param3.ParameterName = "@Apellido1";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = CAXD.Apellido11;
+
+                param4.ParameterName = "@Apellido2";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXD.Apellido21;
+
+                param5.ParameterName = "@Celular";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = CAXD.Celular1;
+
+                param6.ParameterName = "@Telefono";
+                param6.DbType = System.Data.DbType.String;
+                param6.Value = CAXD.Telefono1;
+
+                param7.ParameterName = "@Correo";
+                param7.DbType = System.Data.DbType.String;
+                param7.Value = CAXD.Correo1;
+
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_EditarCAD";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public List<ClienteAlDetalle> MostrarClienteXDetalle()
+        {
+            List<ClienteAlDetalle> lista = new List<ClienteAlDetalle>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "MostrarCAD";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    ClienteAlDetalle cad;
+                    while (dataReader.Read())
+                    {
+                        cad = new ClienteAlDetalle
+                        {
+                            Dni1 = dataReader["Dni"].ToString(),
+                            Nombre1 = dataReader["Nombre"].ToString(),
+                            Apellido11 = dataReader["Apellido1"].ToString(),
+                            Apellido21 = dataReader["Apellido2"].ToString(),
+                            Celular1 = dataReader["Celular"].ToString(),
+                            Telefono1 = dataReader["Telefono"].ToString(),
+                            Correo1 = dataReader["Correo"].ToString()
+                        };
+                        lista.Add(cad);
+                    }
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
 
         #endregion
 
@@ -1455,5 +1505,6 @@ namespace DAL.Modapie
 
         #endregion
     }
+    #endregion
 }
 
