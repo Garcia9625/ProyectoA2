@@ -5,3 +5,9 @@ INSERT INTO Empleado VALUES (1, 'mariana', 'hernandez', 'quesada', 54545454, 545
 INSERT INTO Usuario VALUES (1, 1, 'mari', '123', 1);
 
 insert into ClienteAlDetalle values (1, 'Mariana', 'hernandez', 'quesada', 54545454, 54545454,'marihq61@gmail.com');
+
+Insert INTO ClienteAlxMayor VALUES ('Luis Diego');
+
+INSERT INTO VentaAlxMayor VALUES (1,1,2000000,1,250000,1750000,500000,2018-6-15);
+INSERT INTO VentaAlxMayor VALUES (1,1,4000000,0,0,4000000,500000,2018-6-15);
+INSERT INTO VentaAlxMayor VALUES (1,1,3000000,1,1250000,1750000,250000,2018-6-15);
