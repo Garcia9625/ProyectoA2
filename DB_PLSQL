@@ -516,3 +516,26 @@ inner join InventarioAlxMayor im on im.IdLote=dv.IdProducto
 where cm.Nombre=@Nombre
 End
 GO
+
+
+
+/****** Object:  StoredProcedure [dbo].[CuentasPorCobrar]    Script Date: 21/8/2018 04:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE  PROCEDURE [dbo].[CuentasPorCobrar] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT        dbo.Empleado.Nombre AS NombreEmp, dbo.Empleado.Apellido1, dbo.Empleado.Apellido2, dbo.VentaAlxMayor.IdVentaMayor AS IdVenta, dbo.VentaAlxMayor.Total AS Tot, dbo.VentaAlxMayor.SaldoPendiente AS SalPen, 
+                         dbo.VentaAlxMayor.FechaVenta AS FechaVen, dbo.VentaAlxMayor.UltimoAbono AS UltA, dbo.VentaAlxMayor.TotalAbonado AS TotAb, dbo.ClienteAlxMayor.IdCliente AS IdCli, dbo.ClienteAlxMayor.Nombre AS NomCli, 
+                         dbo.VentaAlxMayor.Estado AS Est
+FROM            dbo.ClienteAlxMayor INNER JOIN
+                         dbo.VentaAlxMayor ON dbo.ClienteAlxMayor.IdCliente = dbo.VentaAlxMayor.IdClienteMayor INNER JOIN
+                         dbo.Empleado ON dbo.VentaAlxMayor.IdEmpleado = dbo.Empleado.Dni
+WHERE        (dbo.VentaAlxMayor.Estado = 1)
+END
+GO
+
+
