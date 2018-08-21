@@ -28,9 +28,7 @@ namespace UI.Modapie
             CAXM = new ClientePorMayor
             {
                 idCliente = Convert.ToInt32(txtId.Text),
-                nombreJuridico = txtJuridico.Text,
-                nombreFisico = txtFisico.Text,
-                nombreFantasia = txtFantasia.Text                 
+                nombre = txtJuridico.Text              
             };
         }
 
@@ -38,9 +36,7 @@ namespace UI.Modapie
         {
             CAXM2 = new ClientePorMayor
             {
-                nombreJuridico = txtJuridico.Text,
-                nombreFisico = txtFisico.Text,
-                nombreFantasia = txtFantasia.Text
+                nombre = txtJuridico.Text
             };
         }
 

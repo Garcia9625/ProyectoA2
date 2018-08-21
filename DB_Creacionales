@@ -19,6 +19,8 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
 /****** Object:  Table [dbo].[ClienteAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -35,6 +37,9 @@ CREATE TABLE [dbo].[ClienteAlxMayor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[DecripcionVentaAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -51,6 +56,9 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[DescripcionVentaAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -65,6 +73,9 @@ CREATE TABLE [dbo].[DescripcionVentaAlDetalle](
 	[Total] [float] NULL
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[Empleado]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -89,6 +100,9 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[InventarioAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -106,7 +120,12 @@ CREATE TABLE [dbo].[InventarioAlDetalle](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 31/7/2018 12:20:38 ******/
+USE [DBMODAPIE]
+GO
+
+
+
+/****** Object:  Table [dbo].[InventarioAlxMayor]    Script Date: 19/08/2018 18:20:12 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -114,7 +133,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[InventarioAlxMayor](
-	[IdLote] [int] NOT NULL,
+	[IdLote] [int] IDENTITY(1,1) NOT NULL,
 	[EnvioOrden] [int] NULL,
 	[Codigo] [int] NULL,
 	[Show] [varchar](10) NULL,
@@ -132,7 +151,7 @@ CREATE TABLE [dbo].[InventarioAlxMayor](
 	[Cif] [int] NULL,
 	[TotalCIF] [int] NULL,
 	[PrecioUnitario] [int] NULL,
-	[SubTotal] [int] NULL,
+	[SubTotal] [int] NOT NULL,
 	[TotalImpuestos] [int] NULL,
  CONSTRAINT [PK__Inventar__38C4EE9063D52E8D] PRIMARY KEY CLUSTERED 
 (
@@ -140,6 +159,9 @@ CREATE TABLE [dbo].[InventarioAlxMayor](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[Usuario]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -157,6 +179,9 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[VentaAlDetalle]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
@@ -173,6 +198,9 @@ CREATE TABLE [dbo].[VentaAlDetalle](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+
 /****** Object:  Table [dbo].[VentaAlxMayor]    Script Date: 03/07/2018 16:47:03 ******/
 SET ANSI_NULLS ON
 GO
