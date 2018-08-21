@@ -488,10 +488,10 @@ GO
 
  /**Informes VentasAlxMayor **/
  
- USE [DBMODAPIE]
+USE [DBMODAPIE]
 GO
 
-/****** Object:  StoredProcedure [dbo].[sp_BuscarVentaMxNombreCliente]    Script Date: 20/08/2018 13:28:59 ******/
+/****** Object:  StoredProcedure [dbo].[sp_BuscarVentaMxNombreCliente]    Script Date: 20/08/2018 23:34:34 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -503,10 +503,16 @@ CREATE Procedure [dbo].[sp_BuscarVentaMxNombreCliente]
 as
 begin
 SET NOCOUNT ON;
-select cm.Nombre as NombreCliente,cm.cedula,cm.Telefono,cm.correo,v.SaldoPendiente,v.TotalAbonado,v.UltimoAbono,v.Total,v.FechaVenta, e.Nombre as NombreEmpleado
+select cm.Nombre as NombreCliente,cm.cedula,cm.Telefono,cm.correo,v.SaldoPendiente,v.TotalAbonado,
+v.UltimoAbono,v.Total,v.FechaVenta, e.Nombre as NombreEmpleado, im.Cajas,im.Descripcion,im.Codigo,
+im.Color,im.Curva,im.Pedido,im.Transporte,dv.Total as TotalDescrip,im.Show,im.TotalCIF,im.Vendedor,
+im.Cliente,im.Zona,im.TotalImpuestos,im.Estado,im.EnvioOrden,im.Cif,im.SubTotal as SubInvenatrio,
+im.Pares,im.Modelo,v.IdVentaMayor as NumeroFactura
 from VentaAlxMayor v 
 inner join  ClienteAlxMayor cm on cm.IdCliente=v.IdClienteMayor
 inner join Empleado e on e.Dni = v.IdEmpleado
+inner join DecripcionVentaAlxMayor dv on dv.IdVentaMayor=v.IdVentaMayor
+inner join InventarioAlxMayor im on im.IdLote=dv.IdProducto
 where cm.Nombre=@Nombre
 End
 GO

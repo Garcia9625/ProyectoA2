@@ -227,27 +227,12 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 DbParameter param2 = factory.CreateParameter();
-                DbParameter param3 = factory.CreateParameter();
-                DbParameter param4 = factory.CreateParameter();
-                DbParameter param5 = factory.CreateParameter();
 
                 //Carga de Parametros
 
                 param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.Nombre;
-
-                param3.ParameterName = "@Cedula";
-                param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.Cedula;
-
-                param4.ParameterName = "@Telefono";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.Telefono;
-
-                param5.ParameterName = "@Correo";
-                param5.DbType = System.Data.DbType.String;
-                param5.Value = CAXM.Correo;
+                param2.Value = CAXM.nombre;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -299,12 +284,8 @@ namespace DAL.Modapie
                     {
                         CAXM = new ClientePorMayor
                         {
-                            IdCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
-                            Nombre = dataReader["Nombre"].ToString(),
-                            Cedula = dataReader["Cedula"].ToString(),
-                            Telefono = dataReader["Telefono"].ToString(),
-                            Correo = dataReader["Correo"].ToString()
-                        
+                            idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
+                            nombre = dataReader["Nombre"].ToString()
                         };
                         lista.Add(CAXM);
                     }
@@ -334,28 +315,16 @@ namespace DAL.Modapie
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
-                DbParameter param5 = factory.CreateParameter();
+
 
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
-                param1.Value = CAXM.IdCliente;
+                param1.Value = CAXM.idCliente;
 
                 param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.Nombre;
-
-                param3.ParameterName = "Cedula";
-                param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.Cedula;
-
-                param4.ParameterName = "@Telefono";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.Telefono;
-
-                param5.ParameterName = "@Correo";
-                param5.DbType = System.Data.DbType.String;
-                param5.Value = CAXM.Correo;
+                param2.Value = CAXM.nombre;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -396,7 +365,7 @@ namespace DAL.Modapie
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
-                param1.Value = CAXM.IdCliente;
+                param1.Value = CAXM.idCliente;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -820,10 +789,10 @@ namespace DAL.Modapie
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
 
-                    ProductosAlxMayor pro;
+                    InventarioAlxMayor pro;
                     while (dataReader.Read())
                     {
-                        pro = new ProductosAlxMayor
+                        pro = new InventarioAlxMayor
                         {
                             IdLote1 = Convert.ToInt32(dataReader["IdLote"]),
                             EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
@@ -844,7 +813,8 @@ namespace DAL.Modapie
                             TotalCIF1 = Convert.ToInt32(dataReader["TotalCIF"]),
                             PrecioUnitario1 = Convert.ToInt32(dataReader["PrecioUnitario"]),
                             SubTotal1 = Convert.ToInt32(dataReader["SubTotal"]),
-                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"])
+                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"]),
+                            Estado2 = Convert.ToBoolean(dataReader["Estado"])
                         };
                         lista.Add(pro);
                     }
