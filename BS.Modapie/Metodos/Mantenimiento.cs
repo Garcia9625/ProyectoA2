@@ -483,14 +483,14 @@ namespace BS.Modapie
         public Usuario BuscarUsuario(string idEmpleado)
         {
 
-            Usuario empleado = new Usuario();
+            Usuario usuario = new Usuario();
             try
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    empleado = DAL.Modapie.Mantenimiento.Instancia.buscarEmpleado(dni);
+                    usuario = DAL.Modapie.Mantenimiento.Instancia.BuscarUsuario(idEmpleado);
                     scope.Complete();
-                    return empleado;
+                    return usuario;
                 }
             }
             catch (Exception ee)

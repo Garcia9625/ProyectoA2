@@ -1509,10 +1509,8 @@ namespace DAL.Modapie
 
 
 
-
         #region Usuario
 
-      
         public void InsertarUsuario(Usuario user)
         {
             DbConnection conn = null;
@@ -1537,23 +1535,23 @@ namespace DAL.Modapie
 
                 //Carga de parametros
 
-                param1.ParameterName = "@idUsuario";
+                param1.ParameterName = "@IdUsuario";
                 param1.DbType = System.Data.DbType.String;
                 param1.Value = user.idUsuario;
 
-                param2.ParameterName = "@idEmpleado";
+                param2.ParameterName = "@IdEmpleado";
                 param2.DbType = System.Data.DbType.String;
                 param2.Value = user.idEmpleado;
 
-                param3.ParameterName = "@username";
+                param3.ParameterName = "@Username";
                 param3.DbType = System.Data.DbType.Int32;
                 param3.Value = user.username;
 
-                param4.ParameterName = "@password";
+                param4.ParameterName = "@Password";
                 param4.DbType = System.Data.DbType.String;
                 param4.Value = user.password;
 
-                param5.ParameterName = "@rol";
+                param5.ParameterName = "@Rol";
                 param5.DbType = System.Data.DbType.Int32;
                 param5.Value = user.rol;
 
@@ -1592,17 +1590,16 @@ namespace DAL.Modapie
             }
         }
 
-
         public List<Usuario> MostrarUsuario()
             {
                 List<Usuario> lista = new List<Usuario>();
-            DbConnection conn = null;
-            DbCommand comm = null;
+                DbConnection conn = null;
+                DbCommand comm = null;
 
             try
                 {
-                    
-                
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
                     //Creacion de la connection
                     conn = factory.CreateConnection();
                     conn.ConnectionString = Conexion.Default.connection;
@@ -1623,11 +1620,11 @@ namespace DAL.Modapie
                         {
                             usuario = new Usuario
                             {
-                                idUsuario = Convert.ToInt32(dataReader["idUsuario"]),
-                                idEmpleado= Convert.ToInt32(dataReader["idEmpleado"]),
-                                username = dataReader["username"].ToString(),
-                                password = dataReader["password"].ToString(),
-                                rol = Convert.ToInt32(dataReader["rol"])
+                                idUsuario = Convert.ToInt32(dataReader["IdUsuario"]),
+                                idEmpleado= Convert.ToInt32(dataReader["IdEmpleado"]),
+                                username = dataReader["Username"].ToString(),
+                                password = dataReader["Password"].ToString(),
+                                rol = Convert.ToInt32(dataReader["Rol"])
 
                             };
                             lista.Add(usuario);
@@ -1643,7 +1640,7 @@ namespace DAL.Modapie
             }
 
         public Usuario BuscarUsuario(string idEmpleado)
-            {
+         {
                 Usuario user= new Usuario();
                 DbConnection conn = null;
                 DbCommand comm = null;
@@ -1660,9 +1657,9 @@ namespace DAL.Modapie
 
                     DbParameter param1 = factory.CreateParameter();
 
-                    param1.ParameterName = "@idUsuario";
+                    param1.ParameterName = "@IdUsuario";
                     param1.DbType = System.Data.DbType.String;
-                    param1.Value = user.idUsuario;
+                    param1.Value = idEmpleado;
 
                     //Abrir connection
                     comm.Connection = conn;
@@ -1678,11 +1675,11 @@ namespace DAL.Modapie
                         dataReader.Read();
                         user = new Usuario
                         {
-                            idUsuario = Convert.ToInt32(dataReader["idUsuario"]),
-                            idEmpleado = Convert.ToInt32(dataReader["idEmpleado"]),
-                            username = dataReader["username"].ToString(),
-                            password = dataReader["password"].ToString(),
-                            rol = Convert.ToInt32(dataReader["rol"])
+                            idUsuario = Convert.ToInt32(dataReader["IdUsuario"]),
+                            idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"]),
+                            username = dataReader["Username"].ToString(),
+                            password = dataReader["Password"].ToString(),
+                            rol = Convert.ToInt32(dataReader["Rol"])
 
                         };
                     
@@ -1695,12 +1692,11 @@ namespace DAL.Modapie
                 {
                     throw;
                 
-            }
+                }
 
-            #endregion
+        }        
 
-            }
-
+        #endregion
     }
 
 }
