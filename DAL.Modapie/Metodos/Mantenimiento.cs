@@ -227,12 +227,27 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
 
                 //Carga de Parametros
 
                 param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombre;
+                param2.Value = CAXM.Nombre;
+
+                param3.ParameterName = "@Cedula";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = CAXM.Cedula;
+
+                param4.ParameterName = "@Telefono";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXM.Telefono;
+
+                param5.ParameterName = "@Correo";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = CAXM.Correo;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -284,8 +299,12 @@ namespace DAL.Modapie
                     {
                         CAXM = new ClientePorMayor
                         {
-                            idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
-                            nombre = dataReader["Nombre"].ToString()
+                            IdCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
+                            Nombre = dataReader["Nombre"].ToString(),
+                            Cedula = dataReader["Cedula"].ToString(),
+                            Telefono = dataReader["Telefono"].ToString(),
+                            Correo = dataReader["Correo"].ToString()
+                        
                         };
                         lista.Add(CAXM);
                     }
@@ -315,16 +334,28 @@ namespace DAL.Modapie
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
-
+                DbParameter param5 = factory.CreateParameter();
 
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
-                param1.Value = CAXM.idCliente;
+                param1.Value = CAXM.IdCliente;
 
                 param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombre;
+                param2.Value = CAXM.Nombre;
+
+                param3.ParameterName = "Cedula";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = CAXM.Cedula;
+
+                param4.ParameterName = "@Telefono";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXM.Telefono;
+
+                param5.ParameterName = "@Correo";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = CAXM.Correo;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -365,7 +396,7 @@ namespace DAL.Modapie
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
-                param1.Value = CAXM.idCliente;
+                param1.Value = CAXM.IdCliente;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
