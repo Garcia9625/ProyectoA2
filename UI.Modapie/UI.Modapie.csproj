@@ -99,29 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
-
-    <Compile Include="Reportes.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reportes.rpt</DependentUpon>
-      <SubType>Component</SubType>
- </Compile>
-    
     <Compile Include="VentaAlxMayor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentaAlxMayor.Designer.cs">
       <DependentUpon>VentaAlxMayor.cs</DependentUpon>
     </Compile>
-    
-      <Compile Include="VentaAlxMayor.cs">
-        <SubType>Form</SubType>
-        </Compile>
-      <Compile Include="VentaAlxMayor.Designer.cs">
-         <DependentUpon>VentaAlxMayor.cs</DependentUpon>
-    </Compile>
-      
     <EmbeddedResource Include="ClienteAlDetalle.resx">
       <DependentUpon>ClienteAlDetalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,18 +139,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-
-
-    <EmbeddedResource Include="Reportes.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Reportes.cs</LastGenOutput>
-</EmbeddedResource>
-    
-      <EmbeddedResource Include="VentaAlxMayor.resx">
-        <DependentUpon>VentaAlxMayor.cs</DependentUpon>     
+    <EmbeddedResource Include="VentaAlxMayor.resx">
+      <DependentUpon>VentaAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
-      
-      
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
