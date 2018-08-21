@@ -544,7 +544,7 @@ GO
 
 
 
-Create PROCEDURE [dbo].[sp_InsertarEmpleado] 
+Create PROCEDURE [dbo].[sp_InsertarUsuario] 
 @IdUsuario varchar(30),
 @IdEmpleado varchar(30),
 @Username varchar(30),
