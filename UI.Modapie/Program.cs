@@ -16,7 +16,7 @@ namespace UI.Modapie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentaAlxMayor());
+            Application.Run(new InfromedeVentasalxMayor());
         }
     }
 }

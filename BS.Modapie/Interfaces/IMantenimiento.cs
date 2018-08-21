@@ -40,12 +40,14 @@ namespace BS.Modapie
         void EliminarProdXMayor(int id);
 
 
-        /*Gestion de cliente al detalle*/
+        /*Gestion del cliente al detalle*/
 
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
-
-        List<ClienteAlDetalle> MostrarClienteDetalle();
+        List<ClienteAlDetalle> MostrarClienteXDetalle();
         ClienteAlDetalle buscarCAD(string dni);
+
+        void EditarCAD(ClienteAlDetalle CAD);
+
 
         /*Inventario al x mayor*/
 
@@ -60,5 +62,6 @@ namespace BS.Modapie
         /*Descripcion venta al por mayor*/
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
+
     }
 }

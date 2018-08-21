@@ -46,7 +46,7 @@
             this.dgvCAD = new System.Windows.Forms.DataGridView();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnEditarCliente = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMostrarCAD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(139, 78);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(225, 22);
             this.txtCedula.TabIndex = 1;
@@ -71,7 +71,7 @@
             // btn_Buscar
             // 
             this.btn_Buscar.Location = new System.Drawing.Point(412, 75);
-            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(100, 28);
             this.btn_Buscar.TabIndex = 2;
@@ -132,7 +132,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(139, 162);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(225, 22);
             this.txtNombre.TabIndex = 9;
@@ -140,7 +140,7 @@
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(498, 162);
-            this.txtApellido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido1.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(225, 22);
             this.txtApellido1.TabIndex = 10;
@@ -148,7 +148,7 @@
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(876, 162);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(225, 22);
             this.txtApellido2.TabIndex = 11;
@@ -156,7 +156,7 @@
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(141, 258);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(4);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(223, 22);
             this.txtCelular.TabIndex = 12;
@@ -174,7 +174,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(498, 258);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(225, 22);
             this.txtTelefono.TabIndex = 14;
@@ -182,7 +182,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(876, 258);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(225, 22);
             this.txtCorreo.TabIndex = 15;
@@ -191,7 +191,7 @@
             // 
             this.dgvCAD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCAD.Location = new System.Drawing.Point(77, 388);
-            this.dgvCAD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCAD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCAD.Name = "dgvCAD";
             this.dgvCAD.Size = new System.Drawing.Size(1024, 185);
             this.dgvCAD.TabIndex = 16;
@@ -199,7 +199,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(613, 346);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(144, 28);
             this.btnIngresar.TabIndex = 17;
@@ -210,30 +210,31 @@
             // btnEditarCliente
             // 
             this.btnEditarCliente.Location = new System.Drawing.Point(788, 346);
-            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(144, 28);
             this.btnEditarCliente.TabIndex = 18;
             this.btnEditarCliente.Text = "Editar Cliente";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
-            // button3
+            // btnMostrarCAD
             // 
-            this.button3.Location = new System.Drawing.Point(958, 346);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 28);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Mostrar Clientes";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnMostrarCAD.Location = new System.Drawing.Point(958, 346);
+            this.btnMostrarCAD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostrarCAD.Name = "btnMostrarCAD";
+            this.btnMostrarCAD.Size = new System.Drawing.Size(144, 28);
+            this.btnMostrarCAD.TabIndex = 19;
+            this.btnMostrarCAD.Text = "Mostrar Clientes";
+            this.btnMostrarCAD.UseVisualStyleBackColor = true;
+            this.btnMostrarCAD.Click += new System.EventHandler(this.button3_Click);
             // 
             // ClienteAlDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 636);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnMostrarCAD);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.dgvCAD);
@@ -252,7 +253,7 @@
             this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClienteAlDetalle";
             this.Text = "Gestión Cliente al Detalle";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).EndInit();
@@ -281,6 +282,6 @@
         private System.Windows.Forms.DataGridView dgvCAD;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnEditarCliente;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMostrarCAD;
     }
 }
