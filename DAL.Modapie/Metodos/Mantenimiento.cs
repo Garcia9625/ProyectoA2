@@ -1562,7 +1562,7 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_AgregarUsuario";
+                comm.CommandText = "sp_InsertarUsuario";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
