@@ -124,7 +124,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reportes.rpt</DependentUpon>
       <SubType>Component</SubType>
-
+    </Compile>
+    
       <Compile Include="VentaAlxMayor.cs">
         <SubType>Form</SubType>
         </Compile>
@@ -176,7 +177,8 @@
     <EmbeddedResource Include="Reportes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reportes.cs</LastGenOutput>
-
+</EmbeddedResource>
+    
       <EmbeddedResource Include="VentaAlxMayor.resx">
         <DependentUpon>VentaAlxMayor.cs</DependentUpon>     
     </EmbeddedResource>
