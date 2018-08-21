@@ -31,6 +31,9 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlDetalle] CHECK CONSTRAINT [FK_VentaDetalleEmpleado]
 GO
+
+
+/*venta al x mayor*/
 ALTER TABLE [dbo].[VentaAlxMayor]  WITH CHECK ADD  CONSTRAINT [FK_VentaAlxMayorCliente] FOREIGN KEY([IdClienteMayor])
 REFERENCES [dbo].[ClienteAlxMayor] ([IdCliente])
 GO
@@ -41,8 +44,6 @@ REFERENCES [dbo].[Empleado] ([Dni])
 GO
 ALTER TABLE [dbo].[VentaAlxMayor] CHECK CONSTRAINT [FK_VentaAlxMayorEmpleado]
 GO
-ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
-
 ALTER TABLE [dbo].VentaAlxMayor ADD Estado bit;
 
 ALTER TABLE [dbo].VentaAlxMayor ADD SaldoPendiente float;
@@ -51,11 +52,33 @@ ALTER TABLE [dbo].VentaAlxMayor ADD TotalAbonado float;
 
 ALTER TABLE [dbo].VentaAlxMayor ADD UltimoAbono float;
 
+Alter Table [dbo].VentaAlxMayor ADD FechaVenta datetime;
+/*fin*/
+
+
+ALTER TABLE [dbo].InventarioAlDetalle ADD Cantidad int;
+
 ALTER TABLE [dbo].InventarioAlxMayor ADD Estado bit;
+
+
+*****ultimos agregados cliente al x mayor*****
+
+ALTER TABLE ClienteAlxMayor DROP COLUMN NombreJuridico;
 
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFisico;
 
 ALTER TABLE ClienteAlxMayor DROP COLUMN NombreFantasia;
+
+ALTER Table [dbo].ClienteAlxMayor ADD Nombre varchar(100);
+ALTER Table [dbo].ClienteAlxMayor ADD Cedula varchar(20);
+ALTER Table [dbo].ClienteAlxMayor ADD Telefono varchar(20);
+Alter Table [dbo].ClienteAlxMayor ADD Correo varchar(50);
+
+*****************************************************
+
+
+
+/*ultimas alteraciones*/
 
 USE [DBMODAPIE]
 GO
@@ -71,5 +94,109 @@ BEGIN
 SET NOCOUNT ON;
 INSERT INTO ClienteAlxMayor (Nombre)
 VALUES        (@Nombre);
+END
+
+---------------------------------------------------------------------------------------------
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarCAD]    Script Date: 19/8/2018 20:46:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ ALTER  PROCEDURE [dbo].[sp_BuscarCAD] 
+
+@Dni varchar(30)
+
+AS
+
+BEGIN
+
+SET NOCOUNT ON;
+
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
+
+From ClienteAlDetalle
+
+Where Dni = @Dni;
+
+END
+
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 19/8/2018 19:48:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ ALTER  PROCEDURE [dbo].[MostrarCAD] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlDetalle];
+END
+GO
+
+
+
+
+
+
+
+USE [DBMODAPIE]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_MostrarInventarioAlxMayor]    Script Date: 20/08/2018 12:03:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos, Estado
+From InventarioAlxMayor
+Where Estado = 1;
+END
+
+
+
+
+
+
+
+
+USE [DBMODAPIE]
+GO
+/****** Object:  StoredProcedure [dbo].[MostrarProductoAlxMayor1]    Script Date: 20/08/2018 12:13:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER  PROCEDURE [dbo].[MostrarProductoAlxMayor1] 
+@IdLote int
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdLote,EnvioOrden,Codigo,Show,Cliente,Vendedor,Zona,Transporte,Pedido,Modelo,Color,
+Descripcion,Curva,Pares,Cajas,Cif,TotalCIF,PrecioUnitario,SubTotal,TotalImpuestos, Estado
+From InventarioAlxMayor
+Where IdLote = @IdLote;
 END
 

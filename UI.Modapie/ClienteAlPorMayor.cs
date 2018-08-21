@@ -26,21 +26,25 @@ namespace UI.Modapie
         private void GetValues()
         {
             CAXM = new ClientePorMayor
-            {
+            {/*
                 idCliente = Convert.ToInt32(txtId.Text),
                 nombreJuridico = txtJuridico.Text,
                 nombreFisico = txtFisico.Text,
-                nombreFantasia = txtFantasia.Text                 
+                nombreFantasia = txtFantasia.Text
+                */
+
             };
         }
 
         private void GetValues2()
         {
             CAXM2 = new ClientePorMayor
-            {
+
+            {/*
                 nombreJuridico = txtJuridico.Text,
                 nombreFisico = txtFisico.Text,
                 nombreFantasia = txtFantasia.Text
+                */
             };
         }
 

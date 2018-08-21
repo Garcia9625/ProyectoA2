@@ -283,6 +283,9 @@ return @value
 END
 GO
 
+
+
+/*Correr primero las alteraciones de VentaAlxMayor en el script de BD_Alteraciones*/
 /*********VentaAlxMayor********/
 USE [DBMODAPIE]
 GO
@@ -295,12 +298,13 @@ CREATE PROCEDURE  [dbo].[sp_InsertarVentaAlxMayor]
 @Estado bit,
 @SaldoPendiente float,
 @TotalAbonado float,
-@UltimoAbono float
+@UltimoAbono float,
+@FechaVenta datetime
 AS
 BEGIN
 SET NOCOUNT ON;
-INSERT INTO VentaAlxMayor (IdClienteMayor,IdEmpleado,Total,Estado,SaldoPendiente,TotalAbonado,UltimoAbono)
-VALUES        (@IdClienteMayor,@IdEmpleado,@Total,@Estado,@SaldoPendiente,@TotalAbonado,@UltimoAbono);
+INSERT INTO VentaAlxMayor (IdClienteMayor,IdEmpleado,Total,Estado,SaldoPendiente,TotalAbonado,UltimoAbono,FechaVenta)
+VALUES        (@IdClienteMayor,@IdEmpleado,@Total,@Estado,@SaldoPendiente,@TotalAbonado,@UltimoAbono,@FechaVenta);
 END
 GO
 
@@ -324,7 +328,145 @@ GO
 
 
 CREATE  PROCEDURE [dbo].[sp_MostrarInventarioAlxMayor] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT *
+From InventarioAlxMayor
+END
+GO
 
+
+/*Buscar Id por Nombre, correr los alter de cliente al x mayor de BD_Alteraciones*/
+
+CREATE PROCEDURE [dbo].[sp_BuscarIdxN] 
+@Nombre varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdCliente
+From ClienteAlxMayor
+Where Nombre = @Nombre;
+END
+GO
+
+
+/*Obtener ultimo registro tabla venta al por mayor*/
+
+CREATE PROCEDURE  [dbo].[sp_UltimaVentaAlxMayor]
+
+AS
+BEGIN
+SET NOCOUNT ON;
+Select MAX(IdVentaMayor) as IDVenta from VentaAlxMayor
+END
+GO
+
+
+
+
+
+
+
+/*ULtimos para agregar al cliente al detalle*/
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_Editar]    Script Date: 19/8/2018 21:36:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_EditarCAD] 
+@Dni varchar(30), 
+@Nombre varchar(50),
+@Apellido1 varchar(50),
+@Apellido2 varchar(50),
+@Celular varchar(20),
+@Telefono varchar(20),
+@Correo varchar(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+UPDATE      ClienteAlDetalle
+SET          
+            Nombre = @Nombre, 
+			Apellido1 = @Apellido1,
+			Apellido2 = @Apellido2,
+			Celular = @Celular,
+			Telefono = @Telefono,
+			Correo = @Correo
+WHERE       (Dni = @Dni);
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarEmpleado]    Script Date: 19/8/2018 21:12:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_BuscarEmpleado] 
+@Dni varchar(30)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Empleado] where Dni = @Dni;
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_MostrarCAXM]    Script Date: 19/8/2018 19:51:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[sp_MostrarCAXM] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[ClienteAlxMayor];
+END
+GO
+
+
+
+
+USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MostrarCAD]    Script Date: 19/8/2018 19:50:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ CREATE  PROCEDURE [dbo].[sp_BuscarCAD] 
+
+@ID int
 
 AS
 
@@ -332,13 +474,39 @@ BEGIN
 
 SET NOCOUNT ON;
 
-SELECT *
+SELECT Dni,Nombre,Apellido1,Apellido2,Celular,Telefono,Correo
 
-From InventarioAlxMayor
+From ClienteAlDetalle
 
+Where @ID=Dni;
 
 END
 
 GO
 
 
+
+ /**Informes VentasAlxMayor **/
+ 
+ USE [DBMODAPIE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_BuscarVentaMxNombreCliente]    Script Date: 20/08/2018 13:28:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure [dbo].[sp_BuscarVentaMxNombreCliente]
+@Nombre varchar(100)
+as
+begin
+SET NOCOUNT ON;
+select cm.Nombre as NombreCliente,cm.cedula,cm.Telefono,cm.correo,v.SaldoPendiente,v.TotalAbonado,v.UltimoAbono,v.Total,v.FechaVenta, e.Nombre as NombreEmpleado
+from VentaAlxMayor v 
+inner join  ClienteAlxMayor cm on cm.IdCliente=v.IdClienteMayor
+inner join Empleado e on e.Dni = v.IdEmpleado
+where cm.Nombre=@Nombre
+End
+GO

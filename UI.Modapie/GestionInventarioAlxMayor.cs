@@ -35,7 +35,7 @@ namespace UI.Modapie
             {
                 try
                 {
-                    ProductosAlxMayor prod = Mantenimiento.Instancia.obtenerLote(Convert.ToInt32(txtLote.Text));
+                    InventarioAlxMayor prod = Mantenimiento.Instancia.obtenerLote(Convert.ToInt32(txtLote.Text));
 
                     txtOrdenEnvio.Text = prod.EnvioOrden1.ToString();
                     txtShow.Text = prod.Show1;

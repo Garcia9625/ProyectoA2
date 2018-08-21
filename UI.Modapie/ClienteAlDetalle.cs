@@ -28,13 +28,13 @@ namespace UI.Modapie
             {
 
                 
-               Dni=txtCedula.Text,
-               Nombre = txtNombre.Text,
-              Apellido1= txtApellido1.Text,
-              Apellido2=txtApellido2.Text,
-              Celular=txtCelular.Text,
-              Telefono= txtTelefono.Text,
-              Correo= txtCorreo.Text
+               Dni1=txtCedula.Text,
+               Nombre1 = txtNombre.Text,
+               Apellido11= txtApellido1.Text,
+               Apellido21=txtApellido2.Text,
+               Celular1=txtCelular.Text,
+               Telefono1= txtTelefono.Text,
+               Correo1= txtCorreo.Text
              
 
                 
@@ -59,21 +59,51 @@ namespace UI.Modapie
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            cad = procesar.buscarCAD(txtCedula.Text);
-            
-            
-            txtNombre.Text = cad.Nombre;
-            txtApellido1.Text = cad.Apellido1;
-            txtApellido2.Text = cad.Apellido2;
-            txtCelular.Text = cad.Celular;
-            txtTelefono.Text = cad.Telefono;
-            txtCorreo.Text = cad.Correo;
+            try
+            {
+                cad = procesar.buscarCAD(txtCedula.Text);
+
+
+                txtNombre.Text = cad.Nombre1;
+                txtApellido1.Text = cad.Apellido11;
+                txtApellido2.Text = cad.Apellido21;
+                txtCelular.Text = cad.Celular1;
+                txtTelefono.Text = cad.Telefono1;
+                txtCorreo.Text = cad.Correo1;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("No se puede encontrar el ID digitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dgvCAD.DataSource = procesar.MostrarClienteXDetalle();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
 
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                Mantenimiento.Instancia.EditarCAD(cad);
+                dgvCAD.DataSource = procesar.MostrarClienteXDetalle();
+            }
+            catch (Exception ee)
+            {
+
+                throw;
+            }
         }
     }
 }

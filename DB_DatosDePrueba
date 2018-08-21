@@ -3,3 +3,5 @@
 INSERT INTO Empleado VALUES (1, 'mariana', 'hernandez', 'quesada', 54545454, 54545454, 'marihq61@gmail.com', 'curri', 500000, '2015-12-17', '2020-12-17', 1);
 
 INSERT INTO Usuario VALUES (1, 1, 'mari', '123', 1);
+
+insert into ClienteAlDetalle values (1, 'Mariana', 'hernandez', 'quesada', 54545454, 54545454,'marihq61@gmail.com');
