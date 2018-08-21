@@ -1286,6 +1286,7 @@ namespace DAL.Modapie
                             TotalImpuestos = Convert.ToInt32(dataReader["TotalImpuestos"].ToString()),
                             Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
                             Codigo = Convert.ToInt32(dataReader["Codigo"].ToString())*/
+
                             Convert.ToInt32(dataReader["IdLote"].ToString()),
                            Convert.ToInt32(dataReader["EnvioOrden"].ToString()),
                            Convert.ToInt32(dataReader["Codigo"].ToString()),
@@ -1428,7 +1429,7 @@ namespace DAL.Modapie
 
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_UltimaVenta";
+                comm.CommandText = "sp_UltimaVentaAlxMayor";
 
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
