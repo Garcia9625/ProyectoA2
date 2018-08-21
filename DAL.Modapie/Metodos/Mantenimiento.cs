@@ -1505,6 +1505,6 @@ namespace DAL.Modapie
 
         #endregion
     }
-    #endregion
+    
 }
 
