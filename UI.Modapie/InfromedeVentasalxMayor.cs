@@ -19,6 +19,7 @@ namespace UI.Modapie
         public InfromedeVentasalxMayor()
         {
             InitializeComponent();
+            llenarcomboCliente();
         }
 
         public void llenarcomboCliente()
@@ -27,7 +28,7 @@ namespace UI.Modapie
             eClientes = procesar.MostarCAXM();
             foreach (ClientePorMayor iClientes in eClientes)
             {
-                cmb_clientesAlxMayor.Items.Add(iClientes.nombre);
+                cmb_clientesAlxMayor.Items.Add(iClientes.Nombre);
 
             }
         }
@@ -48,10 +49,10 @@ namespace UI.Modapie
             ParameterDiscreteValue pdv = new ParameterDiscreteValue();
             pf.Name = "@Nombre";
             pfs.Add(pf);
-            pdv.Value = nombre;
+            pdv.Value = cmb_clientesAlxMayor.Text;
             pf.CurrentValues.Add(pdv);
             form.crystalReportViewer1.ParameterFieldInfo = pfs;
-            oRep.Load("@C:/Users/ricar/source/repos/NewRepo/ProyectoA2/UI.Modapie/Reportes.rpt");
+            oRep.Load("C:/Users/ricar/source/repos/NewRepo/ProyectoA2/UI.Modapie/Reportes.rpt");
             form.crystalReportViewer1.ReportSource = oRep;
             form.Show();
             oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\ricar\Desktop\Reportes\reporteAlxMayor.pdf");
