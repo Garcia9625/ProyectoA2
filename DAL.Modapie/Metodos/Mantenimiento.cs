@@ -789,10 +789,10 @@ namespace DAL.Modapie
                 using (IDataReader dataReader = comm.ExecuteReader())
                 {
 
-                    ProductosAlxMayor pro;
+                    InventarioAlxMayor pro;
                     while (dataReader.Read())
                     {
-                        pro = new ProductosAlxMayor
+                        pro = new InventarioAlxMayor
                         {
                             IdLote1 = Convert.ToInt32(dataReader["IdLote"]),
                             EnvioOrden1 = Convert.ToInt32(dataReader["EnvioOrden"]),
@@ -813,7 +813,8 @@ namespace DAL.Modapie
                             TotalCIF1 = Convert.ToInt32(dataReader["TotalCIF"]),
                             PrecioUnitario1 = Convert.ToInt32(dataReader["PrecioUnitario"]),
                             SubTotal1 = Convert.ToInt32(dataReader["SubTotal"]),
-                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"])
+                            TotalImpuestos1 = Convert.ToInt32(dataReader["TotalImpuestos"]),
+                            Estado2 = Convert.ToBoolean(dataReader["Estado"])
                         };
                         lista.Add(pro);
                     }
