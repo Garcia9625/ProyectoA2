@@ -45,5 +45,7 @@ namespace DO.Modapie
             get { return Password; }
             set { Password = value; }
         }
+       
+
     }
 }
