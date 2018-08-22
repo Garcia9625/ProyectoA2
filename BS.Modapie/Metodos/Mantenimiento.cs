@@ -441,5 +441,66 @@ namespace BS.Modapie
             }
         }
         #endregion
+
+        #region Usuario
+
+        
+
+        public void iInsertarUsuario(Usuario usuario)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarUsuario(usuario);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString(), "error");
+            }
+        }
+
+        public List<Usuario> MostrarUsuario()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarUsuario();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public Usuario BuscarUsuario(string idEmpleado)
+        {
+
+            Usuario usuario = new Usuario();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    usuario = DAL.Modapie.Mantenimiento.Instancia.BuscarUsuario(idEmpleado);
+                    scope.Complete();
+                    return usuario;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+
+
+        }
+        #endregion
     }
 }

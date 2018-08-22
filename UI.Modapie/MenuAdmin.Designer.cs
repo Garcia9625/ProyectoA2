@@ -38,6 +38,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btn_NuevoUsuario = new System.Windows.Forms.Button();
             this.btn_GIAXM = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnVentasAlXM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -139,11 +141,33 @@
             this.btn_GIAXM.UseVisualStyleBackColor = true;
             this.btn_GIAXM.Click += new System.EventHandler(this.btn_GIAXM_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(100, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Bienvenido: mari";
+            // 
+            // btnVentasAlXM
+            // 
+            this.btnVentasAlXM.Location = new System.Drawing.Point(135, 558);
+            this.btnVentasAlXM.Name = "btnVentasAlXM";
+            this.btnVentasAlXM.Size = new System.Drawing.Size(172, 26);
+            this.btnVentasAlXM.TabIndex = 11;
+            this.btnVentasAlXM.Text = "Venta al por mayor";
+            this.btnVentasAlXM.UseVisualStyleBackColor = true;
+            this.btnVentasAlXM.Click += new System.EventHandler(this.btnVentasAlXM_Click);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 557);
+            this.ClientSize = new System.Drawing.Size(465, 596);
+            this.Controls.Add(this.btnVentasAlXM);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_GIAXM);
             this.Controls.Add(this.btn_NuevoUsuario);
             this.Controls.Add(this.button4);
@@ -175,5 +199,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_NuevoUsuario;
         private System.Windows.Forms.Button btn_GIAXM;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVentasAlXM;
     }
 }

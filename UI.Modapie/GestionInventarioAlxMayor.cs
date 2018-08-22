@@ -111,5 +111,12 @@ namespace UI.Modapie
             txtTotalImpuestos.Text = "";
             txtLote.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
+        }
     }
 }

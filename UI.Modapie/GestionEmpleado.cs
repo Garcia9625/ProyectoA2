@@ -103,5 +103,17 @@ namespace UI.Modapie
                 throw;
             }
         }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
+        }
     }
 }

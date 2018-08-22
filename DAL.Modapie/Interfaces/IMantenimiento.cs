@@ -61,5 +61,10 @@ namespace DAL.Modapie
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
 
+
+        /*usuario*/
+        void InsertarUsuario(Usuario user);
+        List<Usuario> MostrarUsuario();
+        Usuario BuscarUsuario(string idEmpleado);
     }
 }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -68,6 +68,18 @@
     <Compile Include="ClienteAlPorMayor.Designer.cs">
       <DependentUpon>ClienteAlPorMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="CuentasPorCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentasPorCobrar.Designer.cs">
+      <DependentUpon>CuentasPorCobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CuentasXCobrar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuentasXCobrar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FacturaVentaAlxMayor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="ImportarExcel1.Designer.cs">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeDeCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeDeCuentas.Designer.cs">
+      <DependentUpon>InformeDeCuentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -130,6 +148,13 @@
     <EmbeddedResource Include="ClienteAlPorMayor.resx">
       <DependentUpon>ClienteAlPorMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CuentasPorCobrar.resx">
+      <DependentUpon>CuentasPorCobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuentasXCobrar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CuentasXCobrar.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaVentaAlxMayor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FacturaVentaAlxMayor.cs</LastGenOutput>
@@ -145,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeDeCuentas.resx">
+      <DependentUpon>InformeDeCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
