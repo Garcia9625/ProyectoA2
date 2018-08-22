@@ -184,20 +184,20 @@ namespace UI.Modapie
             }
             MessageBox.Show("Venta Registrada");
 
-            FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
-            ReportDocument oRep = new ReportDocument();
-            ParameterField pf = new ParameterField();
-            ParameterFields pfs = new ParameterFields();
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-            pf.Name = "@Nombre";
-            pfs.Add(pf);
-            pdv.Value =cbCliente.Text;
-            pf.CurrentValues.Add(pdv);
-            form.crystalReportViewer1.ParameterFieldInfo = pfs;
-            oRep.Load("C:/Users/ricar/source/repos/NewRepo/ProyectoA2/UI.Modapie/FacturaVentaAlxMayor.rpt");
-            form.crystalReportViewer1.ReportSource = oRep;
-            form.Show();
-            oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\ricar\Desktop\Reportes\FacturaVentaAlxMayor.pdf");
+            //FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
+            //ReportDocument oRep = new ReportDocument();
+            //ParameterField pf = new ParameterField();
+            //ParameterFields pfs = new ParameterFields();
+            //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+            //pf.Name = "@Nombre";
+            //pfs.Add(pf);
+            //pdv.Value =cbCliente.Text;
+            //pf.CurrentValues.Add(pdv);
+            //form.crystalReportViewer1.ParameterFieldInfo = pfs;
+            //oRep.Load("C:/Users/Diego/Source/Repos/ProyectoA2/UI.Modapie/FacturaVentaAlxMayor.rpt");
+            //form.crystalReportViewer1.ReportSource = oRep;
+            //form.Show();
+            //oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\Diego\Desktop\FacturaVentaAlxMayor.pdf");
 
 
         }
