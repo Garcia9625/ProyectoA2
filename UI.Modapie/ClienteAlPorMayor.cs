@@ -147,5 +147,12 @@ namespace UI.Modapie
                 throw;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
+        }
     }
 }

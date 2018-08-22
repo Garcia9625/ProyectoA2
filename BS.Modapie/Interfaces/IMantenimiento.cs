@@ -63,5 +63,11 @@ namespace BS.Modapie
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
 
+
+        /*usuario*/
+        void iInsertarUsuario(Usuario usuario);
+        List<Usuario> MostrarUsuario();
+        Usuario BuscarUsuario(string idEmpleado);
+
     }
 }

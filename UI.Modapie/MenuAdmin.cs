@@ -15,12 +15,12 @@ namespace UI.Modapie
     public partial class MenuAdmin : Form
     {
         string Username;
-        public MenuAdmin(string username)
+        public MenuAdmin(/*string username*/)
         {
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.Username = username;
+            //Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
+            //this.Username = username;
             InitializeComponent();
-            lblUsername.Text = "Bienvenido: " + usuario.username;
+            //lblUsername.Text = "Bienvenido: " + usuario.username;
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
@@ -32,43 +32,43 @@ namespace UI.Modapie
         {
             if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
+                this.Dispose();
                 Login lo = new Login();
                 lo.Show();
-                this.Dispose();
             }
         }
 
         private void btnClientesPMa_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             ClienteAlPorMayor cpm = new ClienteAlPorMayor();
             cpm.Show();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             ImportarExcel1 PI = new ImportarExcel1();
             PI.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             GestionInventarioAlxMayor GIAM = new GestionInventarioAlxMayor();
             GIAM.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             GestionEmpleado GE = new GestionEmpleado();
             GE.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             ClienteAlDetalle CAD = new ClienteAlDetalle();
             CAD.Show();
         }
@@ -80,12 +80,14 @@ namespace UI.Modapie
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
+            InformeDeCuentas info = new InformeDeCuentas();
+            info.Show();
         }
 
         private void btn_GIAXM_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             GestionInventarioAlxMayor GIAXM = new GestionInventarioAlxMayor();
             GIAXM.Show();
         }
@@ -93,6 +95,13 @@ namespace UI.Modapie
         private void btn_NuevoUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVentasAlXM_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            VentaAlxMayor ventaxMayor = new VentaAlxMayor();
+            ventaxMayor.Show();
         }
     }
 }

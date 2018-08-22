@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteAlDetalle));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnEditarCliente = new System.Windows.Forms.Button();
             this.btnMostrarCAD = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,11 +231,22 @@
             this.btnMostrarCAD.UseVisualStyleBackColor = true;
             this.btnMostrarCAD.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1079, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 42);
+            this.button1.TabIndex = 20;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ClienteAlDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 636);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMostrarCAD);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.btnIngresar);
@@ -256,6 +269,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClienteAlDetalle";
             this.Text = "Gestión Cliente al Detalle";
+            this.Load += new System.EventHandler(this.ClienteAlDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,5 +297,6 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnEditarCliente;
         private System.Windows.Forms.Button btnMostrarCAD;
+        private System.Windows.Forms.Button button1;
     }
 }

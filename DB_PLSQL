@@ -507,7 +507,7 @@ select cm.Nombre as NombreCliente,cm.cedula,cm.Telefono,cm.correo,v.SaldoPendien
 v.UltimoAbono,v.Total,v.FechaVenta, e.Nombre as NombreEmpleado, im.Cajas,im.Descripcion,im.Codigo,
 im.Color,im.Curva,im.Pedido,im.Transporte,dv.Total as TotalDescrip,im.Show,im.TotalCIF,im.Vendedor,
 im.Cliente,im.Zona,im.TotalImpuestos,im.Estado,im.EnvioOrden,im.Cif,im.SubTotal as SubInvenatrio,
-im.Pares,im.Modelo
+im.Pares,im.Modelo,v.IdVentaMayor as NumeroFactura
 from VentaAlxMayor v 
 inner join  ClienteAlxMayor cm on cm.IdCliente=v.IdClienteMayor
 inner join Empleado e on e.Dni = v.IdEmpleado
@@ -520,16 +520,33 @@ GO
 
 
 
+/****** Object:  StoredProcedure [dbo].[CuentasPorCobrar]    Script Date: 21/8/2018 04:54:36 ******/
+
+
 
 ***************ultimos para agregar********************
 
 USE [DBMODAPIE]
 GO
 /* Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 */
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
+CREATE  PROCEDURE [dbo].[CuentasPorCobrar] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT        dbo.Empleado.Nombre AS NombreEmp, dbo.Empleado.Apellido1, dbo.Empleado.Apellido2, dbo.VentaAlxMayor.IdVentaMayor AS IdVenta, dbo.VentaAlxMayor.Total AS Tot, dbo.VentaAlxMayor.SaldoPendiente AS SalPen, 
+                         dbo.VentaAlxMayor.FechaVenta AS FechaVen, dbo.VentaAlxMayor.UltimoAbono AS UltA, dbo.VentaAlxMayor.TotalAbonado AS TotAb, dbo.ClienteAlxMayor.IdCliente AS IdCli, dbo.ClienteAlxMayor.Nombre AS NomCli, 
+                         dbo.VentaAlxMayor.Estado AS Est
+FROM            dbo.ClienteAlxMayor INNER JOIN
+                         dbo.VentaAlxMayor ON dbo.ClienteAlxMayor.IdCliente = dbo.VentaAlxMayor.IdClienteMayor INNER JOIN
+                         dbo.Empleado ON dbo.VentaAlxMayor.IdEmpleado = dbo.Empleado.Dni
+WHERE        (dbo.VentaAlxMayor.Estado = 1)
+
 CREATE PROCEDURE [dbo].[validarUser] 
 @Username varchar(50)
 AS
@@ -577,6 +594,7 @@ AS
 BEGIN
 SET NOCOUNT ON;
 SELECT * from [dbo].[Usuario] where IdUsuario = @IdUsuario;
+
 END
 GO
 
@@ -594,3 +612,4 @@ SET NOCOUNT ON;
 Update Usuario set IdUsuario = @IdUsuario,IdEmpleado = @IdEmpleado,Username = @Username,Password = @Password, Rol = @Rol where IdUsuario = @IdUsuario;
 END
 GO
+

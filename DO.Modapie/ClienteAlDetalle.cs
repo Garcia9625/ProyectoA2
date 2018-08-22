@@ -12,6 +12,7 @@ namespace DO.Modapie
         private string Nombre;
         private string Apellido1;
         private string Apellido2;
+
         private string Celular;
         private string Telefono;
         private string Correo;

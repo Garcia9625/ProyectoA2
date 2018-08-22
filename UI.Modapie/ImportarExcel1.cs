@@ -23,7 +23,7 @@ namespace UI.Modapie
 
         private void BTN_ImportExcel_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/Diego/Desktop/Prueba_Proyecto.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -60,7 +60,7 @@ namespace UI.Modapie
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source =C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source =C:/Users/Diego/Desktop/Prueba_Proyecto.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
             OleDbConnection conector = default(OleDbConnection);
             conector = new OleDbConnection(conexion);
@@ -101,6 +101,13 @@ namespace UI.Modapie
 
 
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
         }
     }
 }
