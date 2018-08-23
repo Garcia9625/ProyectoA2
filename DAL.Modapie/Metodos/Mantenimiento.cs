@@ -647,7 +647,6 @@ namespace DAL.Modapie
                         /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
                         FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
                         Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
-
                     };
                 }
 
