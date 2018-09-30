@@ -46,7 +46,6 @@
             // 
             // label1
             // 
-            this.label1.Image = global::UI.Modapie.Properties.Resources.MODAPIE;
             this.label1.Location = new System.Drawing.Point(-6, -7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(959, 518);

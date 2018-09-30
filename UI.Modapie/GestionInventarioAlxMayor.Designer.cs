@@ -521,7 +521,6 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.button1);

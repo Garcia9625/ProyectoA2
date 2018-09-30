@@ -354,7 +354,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia;
             this.panel1.Controls.Add(this.lbTitulo);
             this.panel1.Controls.Add(this.txtPago);
             this.panel1.Controls.Add(this.button1);
