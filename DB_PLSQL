@@ -516,3 +516,100 @@ inner join InventarioAlxMayor im on im.IdLote=dv.IdProducto
 where cm.Nombre=@Nombre
 End
 GO
+
+
+
+
+/****** Object:  StoredProcedure [dbo].[CuentasPorCobrar]    Script Date: 21/8/2018 04:54:36 ******/
+
+
+
+***************ultimos para agregar********************
+
+USE [DBMODAPIE]
+GO
+/* Object:  StoredProcedure [dbo].[validarUser]    Script Date: 17/7/2018 12:19:50 */
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE  PROCEDURE [dbo].[CuentasPorCobrar] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT        dbo.Empleado.Nombre AS NombreEmp, dbo.Empleado.Apellido1, dbo.Empleado.Apellido2, dbo.VentaAlxMayor.IdVentaMayor AS IdVenta, dbo.VentaAlxMayor.Total AS Tot, dbo.VentaAlxMayor.SaldoPendiente AS SalPen, 
+                         dbo.VentaAlxMayor.FechaVenta AS FechaVen, dbo.VentaAlxMayor.UltimoAbono AS UltA, dbo.VentaAlxMayor.TotalAbonado AS TotAb, dbo.ClienteAlxMayor.IdCliente AS IdCli, dbo.ClienteAlxMayor.Nombre AS NomCli, 
+                         dbo.VentaAlxMayor.Estado AS Est
+FROM            dbo.ClienteAlxMayor INNER JOIN
+                         dbo.VentaAlxMayor ON dbo.ClienteAlxMayor.IdCliente = dbo.VentaAlxMayor.IdClienteMayor INNER JOIN
+                         dbo.Empleado ON dbo.VentaAlxMayor.IdEmpleado = dbo.Empleado.Dni
+WHERE        (dbo.VentaAlxMayor.Estado = 1)
+
+CREATE PROCEDURE [dbo].[validarUser] 
+@Username varchar(50)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT IdUsuario, IdEmpleado,Username,Password, Rol
+From Usuario
+Where Username = @Username;
+END
+GO
+
+
+
+
+Create PROCEDURE [dbo].[sp_InsertarUsuario] 
+@IdUsuario varchar(30),
+@IdEmpleado varchar(30),
+@Username varchar(30),
+@Password varchar(50),
+@Rol int
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO Usuario(IdUsario,IdEmpleado,Username, Password, Rol)
+VALUES        (@IdUsario,@IdEmpleado,@Username,@Password,@Rol);
+END
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[sp_MostrarUsuario] 
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Usuario];
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo].[sp_BuscarUsuario] 
+@IdUsuario varchar(30)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT * from [dbo].[Usuario] where IdUsuario = @IdUsuario;
+
+END
+GO
+
+
+
+Create PROCEDURE [dbo].[sp_ActualizarUsuario] 
+@IdUsuario varchar(30),
+@IdEmpleado varchar(30),
+@Username varchar(30),
+@Password varchar(50),
+@Rol int
+AS
+BEGIN
+SET NOCOUNT ON;
+Update Usuario set IdUsuario = @IdUsuario,IdEmpleado = @IdEmpleado,Username = @Username,Password = @Password, Rol = @Rol where IdUsuario = @IdUsuario;
+END
+GO
+
