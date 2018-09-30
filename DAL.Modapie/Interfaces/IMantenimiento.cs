@@ -66,5 +66,7 @@ namespace DAL.Modapie
         void InsertarUsuario(Usuario user);
         List<Usuario> MostrarUsuario();
         Usuario BuscarUsuario(string idEmpleado);
+        void ModificarUsuario(Usuario user);
+    
     }
 }

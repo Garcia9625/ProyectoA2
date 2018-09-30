@@ -115,5 +115,10 @@ namespace UI.Modapie
             MenuAdmin M = new MenuAdmin();
             M.Show();
         }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
