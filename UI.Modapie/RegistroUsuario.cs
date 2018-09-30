@@ -33,7 +33,7 @@ namespace UI.Modapie
                 idEmpleado = Convert.ToInt32(txtEmpleado.Text),
                 username = txtNombre.Text,
                 password = txtContrasena.Text,
-                rol = Convert.ToInt32(txtRol.Text)
+                rol = Convert.ToInt32(cmbRol.Text)
 
             }
             ;
@@ -88,7 +88,7 @@ namespace UI.Modapie
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            user = procesar.BuscarUsuario(txtUsuario.Text);
+            user = procesar.BuscarUsuario(txtEmpleado.Text);
            
 
 
@@ -97,6 +97,13 @@ namespace UI.Modapie
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuAdmin M = new MenuAdmin();
+            M.Show();
         }
     }
 }
