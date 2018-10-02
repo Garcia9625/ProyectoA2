@@ -96,7 +96,7 @@ namespace UI.Modapie
         {
             this.Dispose();
             RegistroUsuario registrousuario = new RegistroUsuario();
-            ventaxMayor.Show();
+            registrousuario.Show();
 
         }
 
