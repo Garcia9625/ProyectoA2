@@ -47,7 +47,6 @@
             this.Pares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,15 +64,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPago = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(312, 23);
+            this.lbTitulo.Location = new System.Drawing.Point(424, 43);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(265, 36);
@@ -83,7 +84,7 @@
             // lbLote
             // 
             this.lbLote.AutoSize = true;
-            this.lbLote.Location = new System.Drawing.Point(75, 98);
+            this.lbLote.Location = new System.Drawing.Point(155, 158);
             this.lbLote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLote.Name = "lbLote";
             this.lbLote.Size = new System.Drawing.Size(40, 17);
@@ -93,8 +94,8 @@
             // cbLote
             // 
             this.cbLote.FormattingEnabled = true;
-            this.cbLote.Location = new System.Drawing.Point(124, 95);
-            this.cbLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLote.Location = new System.Drawing.Point(204, 155);
+            this.cbLote.Margin = new System.Windows.Forms.Padding(4);
             this.cbLote.Name = "cbLote";
             this.cbLote.Size = new System.Drawing.Size(283, 24);
             this.cbLote.TabIndex = 2;
@@ -102,8 +103,8 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(164, 293);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(240, 362);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 3;
@@ -113,8 +114,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(321, 293);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(397, 362);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 5;
@@ -124,8 +125,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(481, 293);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(557, 362);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 6;
@@ -135,8 +136,8 @@
             // 
             // btnVaciar
             // 
-            this.btnVaciar.Location = new System.Drawing.Point(635, 293);
-            this.btnVaciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVaciar.Location = new System.Drawing.Point(711, 362);
+            this.btnVaciar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVaciar.Name = "btnVaciar";
             this.btnVaciar.Size = new System.Drawing.Size(100, 28);
             this.btnVaciar.TabIndex = 7;
@@ -157,8 +158,8 @@
             this.Descripcion,
             this.Pares,
             this.Total});
-            this.dgvVenta.Location = new System.Drawing.Point(16, 372);
-            this.dgvVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvVenta.Location = new System.Drawing.Point(92, 398);
+            this.dgvVenta.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.Size = new System.Drawing.Size(867, 215);
             this.dgvVenta.TabIndex = 8;
@@ -212,24 +213,14 @@
             // 
             // btnRegistrarVenta
             // 
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(753, 629);
-            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(831, 645);
+            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(128, 28);
             this.btnRegistrarVenta.TabIndex = 9;
             this.btnRegistrarVenta.Text = "Registrar Venta";
             this.btnRegistrarVenta.UseVisualStyleBackColor = true;
             this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(396, 731);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 28);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Volver";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // dgvDetalle
             // 
@@ -244,10 +235,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            this.dgvDetalle.Location = new System.Drawing.Point(16, 161);
-            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetalle.Location = new System.Drawing.Point(92, 206);
+            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalle.Name = "dgvDetalle";
-            this.dgvDetalle.Size = new System.Drawing.Size(867, 92);
+            this.dgvDetalle.Size = new System.Drawing.Size(867, 136);
             this.dgvDetalle.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -299,7 +290,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(473, 98);
+            this.lblCliente.Location = new System.Drawing.Point(553, 158);
             this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(55, 17);
@@ -309,8 +300,8 @@
             // cbCliente
             // 
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(537, 95);
-            this.cbCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCliente.Location = new System.Drawing.Point(617, 155);
+            this.cbCliente.Margin = new System.Windows.Forms.Padding(4);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(283, 24);
             this.cbCliente.TabIndex = 13;
@@ -318,7 +309,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 635);
+            this.label1.Location = new System.Drawing.Point(89, 651);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 17);
@@ -327,8 +318,8 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(79, 631);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Location = new System.Drawing.Point(144, 648);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(212, 22);
             this.txtTotal.TabIndex = 15;
@@ -336,7 +327,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(375, 635);
+            this.label2.Location = new System.Drawing.Point(453, 651);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
@@ -345,8 +336,8 @@
             // 
             // txtPago
             // 
-            this.txtPago.Location = new System.Drawing.Point(443, 631);
-            this.txtPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPago.Location = new System.Drawing.Point(521, 648);
+            this.txtPago.Margin = new System.Windows.Forms.Padding(4);
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(212, 22);
             this.txtPago.TabIndex = 17;
@@ -354,43 +345,52 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(830, 12);
+            this.button1.Location = new System.Drawing.Point(978, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(53, 42);
             this.button1.TabIndex = 46;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel1.Controls.Add(this.lbTitulo);
+            this.panel1.Controls.Add(this.txtPago);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cbCliente);
+            this.panel1.Controls.Add(this.txtTotal);
+            this.panel1.Controls.Add(this.lbLote);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cbLote);
+            this.panel1.Controls.Add(this.btnRegistrarVenta);
+            this.panel1.Controls.Add(this.dgvDetalle);
+            this.panel1.Controls.Add(this.dgvVenta);
+            this.panel1.Controls.Add(this.lblCliente);
+            this.panel1.Controls.Add(this.btnVaciar);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnAgregar);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Location = new System.Drawing.Point(-5, -5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1042, 728);
+            this.panel1.TabIndex = 47;
+            // 
             // VentaAlxMayor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 774);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtPago);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbCliente);
-            this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.dgvDetalle);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.btnRegistrarVenta);
-            this.Controls.Add(this.dgvVenta);
-            this.Controls.Add(this.btnVaciar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.cbLote);
-            this.Controls.Add(this.lbLote);
-            this.Controls.Add(this.lbTitulo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(1038, 685);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VentaAlxMayor";
             this.Text = "VentaAlxMayor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -405,7 +405,6 @@
         private System.Windows.Forms.Button btnVaciar;
         private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.Button btnRegistrarVenta;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lote;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
@@ -432,5 +431,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPago;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -72,7 +72,7 @@ namespace UI.Modapie
             txtCorreo.Text = emp.Correo;
             rtbDireccion.Text = emp.DireccionDomicilio;
             txtSalario.Text = emp.SalarioMensual.ToString();
-            cbEstado.Text = (emp.Estado == true) ? "Activo" : "Inactivo";
+            cbEstado.Text = emp.Estado ? "Activo" : "Inactivo";
             txtDni.Enabled = false;
         }
 
@@ -114,6 +114,11 @@ namespace UI.Modapie
             this.Hide();
             MenuAdmin M = new MenuAdmin();
             M.Show();
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

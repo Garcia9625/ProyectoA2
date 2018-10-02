@@ -55,7 +55,7 @@ namespace UI.Modapie
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            GestionInventarioAlxMayor GIAM = new GestionInventarioAlxMayor();
+            VentaAlxMayor GIAM = new VentaAlxMayor();
             GIAM.Show();
         }
 
@@ -94,6 +94,9 @@ namespace UI.Modapie
 
         private void btn_NuevoUsuario_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+            RegistroUsuario registrousuario = new RegistroUsuario();
+            registrousuario.Show();
 
         }
 

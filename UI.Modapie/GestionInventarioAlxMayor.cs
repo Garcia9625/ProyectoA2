@@ -118,5 +118,25 @@ namespace UI.Modapie
             MenuAdmin M = new MenuAdmin();
             M.Show();
         }
+
+        private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCajas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalImpuestos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSubTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

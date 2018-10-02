@@ -647,7 +647,6 @@ namespace DAL.Modapie
                         /*FechaContratacion = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),
                         FechaSalida = Convert.ToDateTime(dataReader["FechaContratacion"].ToString()),*/
                         Estado = Convert.ToBoolean(dataReader["Estado"].ToString())
-
                     };
                 }
 
@@ -1694,8 +1693,76 @@ namespace DAL.Modapie
                 
                 }
 
-        }        
+        }
 
+        public void ModificarUsuario(Usuario user)
+        {
+               DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+                DbParameter param8 = factory.CreateParameter();
+                DbParameter param9 = factory.CreateParameter();
+                DbParameter param10 = factory.CreateParameter();
+                DbParameter param11 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@Username";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = user.username;
+
+                param2.ParameterName = "@Empleado";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = user.idEmpleado;
+
+                param3.ParameterName = "@Password";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = user.password;
+
+                param4.ParameterName = "@Rol";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = user.rol;
+
+               
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_ActualizarUsuario";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+               
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
         #endregion
     }
 

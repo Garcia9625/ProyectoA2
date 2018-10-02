@@ -117,20 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MODAPIE - copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MODAPIE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MODAPIE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MODAPIE - copia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MODAPIE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA37AAAN+wELdzWbAAAAB3RJ
+        TUUH4ggVFyot8zLZ7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFaSURBVFhH
+        7da/K0VhHMfxI79KlPKjjFbTlYmB/AfCQv4Bg7oyWC0YDBaLLH5E2ciiDAzcDBYZLjJYxEYpovx4f76n
+        U+fem+08zzGcd73qPM+t+5xz7vlxg6ys/1gN9nBqoxRaxw8WbOS5eWjxTVRpwmeT0OKHqNWEz4bwhQs0
+        asJnfXjHHdo14bsz6NRfQac/aRuYQi/qUNE1tAPPeHTgA/r+6CC7UdIE9OEJ6jWRcDrqHsziFZ+YRklz
+        0E7swuXt1wn95N8Y1ES8NWgnlm3krhY84R5NmoiqxgG0EzOacNgItE7eRrEacA6dojFNOErvmzds26is
+        Vtzi0kbuKuAm3KysDQPhprP0xtWtn1q6CI/DTf91QBfhko1SaAe60Ptt5Llx6OhXbOQxPXRWocWL0C2f
+        eHru64+NHjCRRRzhBVp8C81w0ii0SLkH7GMYzutCLkZXfFbWHwXBL0ztarjVfdG6AAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
