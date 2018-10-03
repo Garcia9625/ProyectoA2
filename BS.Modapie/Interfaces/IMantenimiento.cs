@@ -17,6 +17,7 @@ namespace BS.Modapie
 
         /*ClienteAlxMayor*/
         void InsertarCAlxMayor(ClientePorMayor CAXM);
+        void InsertarClienteAlxMayor(ClientePorMayor clientealxMayor);
         List<ClientePorMayor> MostarCAXM();
         void Editar(ClientePorMayor CAXM);
         void Borrar(ClientePorMayor CAXM);

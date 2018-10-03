@@ -214,7 +214,7 @@ namespace DAL.Modapie
         #endregion
 
         #region ClienteAlxMayor
-        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        public void InsertarClienteAlxMayor(ClientePorMayor clientealxMayor)
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
             DbConnection conn = null;
@@ -225,14 +225,35 @@ namespace DAL.Modapie
                 conn = factory.CreateConnection();
                 conn.ConnectionString = Conexion.Default.connection;
                 comm = factory.CreateCommand();
-
+                DbParameter param1 = factory.CreateParameter();
                 DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-                param2.ParameterName = "@Nombre";
+
+
+                param1.ParameterName = "@Nombre";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = clientealxMayor.nombre;
+
+                param2.ParameterName = "@Telefono";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombre;
+                param2.Value = clientealxMayor.telefono;
+
+                param3.ParameterName = "@Cedula";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value = clientealxMayor.cedula;
+
+                param4.ParameterName = "@Correo";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = clientealxMayor.correo;
+
+                param5.ParameterName = "@Estado";
+                param5.DbType = System.Data.DbType.Boolean;
+                param5.Value = clientealxMayor.estado;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -241,7 +262,11 @@ namespace DAL.Modapie
                 //Ejecutar Store Procedure
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_InsertarCAXM";
+                comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -315,17 +340,32 @@ namespace DAL.Modapie
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
 
 
                 //Carga de Parametros
-                param1.ParameterName = "@IdCliente";
-                param1.DbType = System.Data.DbType.Int32;
-                param1.Value = CAXM.idCliente;
 
-                param2.ParameterName = "@Nombre";
+
+
+                param1.ParameterName = "@Nombre";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = CAXM.nombre;
+
+                param2.ParameterName = "@Telefono";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.nombre;
+                param2.Value = CAXM.telefono;
 
+                param3.ParameterName = "@Cedula";
+                param3.DbType = System.Data.DbType.String;
+                param3.Value =CAXM.cedula;
+
+                param4.ParameterName = "@Correo";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = CAXM.correo;
+
+                param5.ParameterName = "@Estado";
+                param5.DbType = System.Data.DbType.Boolean;
+                param5.Value = CAXM.estado;
                 //Abrir Coneccion 
                 comm.Connection = conn;
                 conn.Open();
@@ -335,6 +375,9 @@ namespace DAL.Modapie
                 comm.CommandText = "sp_Editar";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+               
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -1762,6 +1805,11 @@ namespace DAL.Modapie
                 comm.Dispose();
                 conn.Dispose();
             }
+        }
+
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
