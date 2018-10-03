@@ -75,13 +75,13 @@ namespace BS.Modapie
 
 
         #region ClienteAlxMayor
-        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        public void InsertarClienteAlxMayor(ClientePorMayor clientealxMayor)
         {
             try
             {
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    DAL.Modapie.Mantenimiento.Instancia.InsertarCAlxMayor(CAXM);
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarClienteAlxMayor(clientealxMayor);
                     scope.Complete();
                 }
             }
@@ -500,6 +500,11 @@ namespace BS.Modapie
             }
 
 
+        }
+
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

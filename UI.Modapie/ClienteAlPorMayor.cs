@@ -27,8 +27,11 @@ namespace UI.Modapie
         {
             CAXM = new ClientePorMayor
             {
-                idCliente = Convert.ToInt32(txtId.Text),
-                nombre = txtJuridico.Text              
+                cedula = txtCedulaClienteAlxMayor.Text,
+                nombre = txtNombreClientealxMayor.Text,
+                telefono = txtTelefonoClienteAlxMayor.Text,
+                correo = txtCorreoClienteAlxMayor.Text
+                
             };
         }
 
@@ -36,7 +39,10 @@ namespace UI.Modapie
         {
             CAXM2 = new ClientePorMayor
             {
-                nombre = txtJuridico.Text
+                nombre = textBox3.Text,
+                telefono= textBox2.Text,
+                cedula = textBox1.Text,
+                correo = txtCorreoClienteAlxMayor.Text
             };
         }
 
@@ -48,39 +54,14 @@ namespace UI.Modapie
             }
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetValues2();
-                procesar.InsertarCAlxMayor(CAXM2);
-                dgvData.DataSource = procesar.MostarCAXM();
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
+        
 
         private void ClienteAlPorMayor_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetValues();
-                Mantenimiento.Instancia.Editar(CAXM);
-                dgvData.DataSource = procesar.MostarCAXM();
-            }
-            catch (Exception ee)
-            {
-
-                throw;
-            }
-        }
+       
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -104,10 +85,10 @@ namespace UI.Modapie
                 {
                     int index = dgvData.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvData.Rows[index];
-                    txtId.Text = Convert.ToString(selectedRow.Cells["idCliente"].Value);
-                    txtJuridico.Text = Convert.ToString(selectedRow.Cells["nombreJuridico"].Value);
-                    txtFisico.Text = Convert.ToString(selectedRow.Cells["nombreFisico"].Value);
-                    txtFantasia.Text = Convert.ToString(selectedRow.Cells["nombreFantasia"].Value);
+                    txtCedulaClienteAlxMayor.Text = Convert.ToString(selectedRow.Cells["cedula"].Value);
+                    txtNombreClientealxMayor.Text = Convert.ToString(selectedRow.Cells["nombre"].Value);
+                    txtCorreoClienteAlxMayor.Text = Convert.ToString(selectedRow.Cells["correo"].Value);
+                    txtTelefonoClienteAlxMayor.Text = Convert.ToString(selectedRow.Cells["telefono"].Value);
                 }
             }
             catch (Exception ee)
@@ -135,11 +116,11 @@ namespace UI.Modapie
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow dgv = dgvData.Rows[e.RowIndex];
-
-                    txtId.Text = dgv.Cells["idCliente"].Value.ToString();
-                    txtJuridico.Text = dgv.Cells["nombreJuridico"].Value.ToString();
-                    txtFisico.Text = dgv.Cells["nombreFisico"].Value.ToString();
-                    txtFantasia.Text = dgv.Cells["nombreFantasia"].Value.ToString();
+                    
+                    txtCedulaClienteAlxMayor.Text = dgv.Cells["cedula"].Value.ToString();
+                  txtNombreClientealxMayor.Text = dgv.Cells["nombre"].Value.ToString();
+                 txtCorreoClienteAlxMayor.Text = dgv.Cells["correo"].Value.ToString();
+                    txtTelefonoClienteAlxMayor.Text = dgv.Cells["telefono"].Value.ToString();
                 }
             }
             catch (Exception ee)
@@ -153,6 +134,46 @@ namespace UI.Modapie
             this.Hide();
             MenuAdmin M = new MenuAdmin();
             M.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IngresarClienteAlxMayor (object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues2();
+                procesar.InsertarClienteAlxMayor(CAXM2);
+                MessageBox.Show("El cliente fue ingresado al sistema correctamente", "Cliente al por Mayor insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("El cliente no pudo ser ingresado al sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnCambiarEstadoCAXM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditarCAXM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                Mantenimiento.Instancia.Editar(CAXM);
+                dgvData.DataSource = procesar.MostarCAXM();
+            }
+            catch (Exception ee)
+            {
+
+                throw;
+            }
         }
     }
 }

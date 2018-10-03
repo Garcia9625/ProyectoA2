@@ -10,6 +10,10 @@ namespace DO.Modapie
     {
         private int IdCliente;
         private string Nombre;
+        private string Telefono;
+        private string Correo;
+        private string Cedula;
+        private Boolean Estado;
 
         public int idCliente
         {
@@ -22,5 +26,28 @@ namespace DO.Modapie
             get { return Nombre; }
             set { Nombre = value; }
         }
+
+        public string telefono
+        {
+            get { return Telefono; }
+            set { Telefono = value; }
+        }
+
+        public string correo
+        {
+            get { return Correo; }
+            set { Correo = value; }
+        }
+        public string cedula
+        {
+            get { return Cedula; }
+            set { Cedula = value; }
+        }
+        public Boolean estado
+        {
+            get { return Estado; }
+            set { Estado = value; }
+        }
+
     }
 }
