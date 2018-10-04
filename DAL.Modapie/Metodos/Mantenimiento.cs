@@ -1586,7 +1586,7 @@ namespace DAL.Modapie
                 param2.Value = user.idEmpleado;
 
                 param3.ParameterName = "@Username";
-                param3.DbType = System.Data.DbType.Int32;
+                param3.DbType = System.Data.DbType.String;
                 param3.Value = user.username;
 
                 param4.ParameterName = "@Password";

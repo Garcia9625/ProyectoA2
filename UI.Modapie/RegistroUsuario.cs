@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,74 +26,45 @@ namespace UI.Modapie
         }
 
 
-        public void GetValues()
-        {
-            user = new Usuario
-            {
-                
-                idEmpleado = Convert.ToInt32(txtEmpleado.Text),
-                username = txtNombre.Text,
-                password = txtContrasena.Text,
-                rol = Convert.ToInt32(cmbRol.Text)
+        
 
-            }
-            ;
-        }
-       
-
-        private void RegistroUsuario_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txtEmpleado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtContrasena_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtRol_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUsuario_Click(object sender, EventArgs e)
+        DataSet resultados = new DataSet();
+        DataView mifiltro;
+        public void leer_datos(string query, ref DataSet dstprincipal, string tabla)
         {
             try
             {
-                GetValues();
-                procesar.iInsertarUsuario(user);
-                
+                string cadena = "Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True";
+                SqlConnection cn = new SqlConnection(cadena);
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dstprincipal, tabla);
+                da.Dispose();
+                cn.Close();
             }
-            catch (Exception ee)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.Message);
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void RegistroUsuario_Load(object sender, EventArgs e)
         {
-            user = procesar.BuscarUsuario(txtEmpleado.Text);
-           
-
-
+            this.leer_datos("SELECT * FROM Usuario", ref resultados, "Usuario");
+            this.mifiltro = ((DataTable)resultados.Tables["Usuario"]).DefaultView;
+            this.dataGridView1.DataSource = mifiltro;
         }
+
+        
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            Insertar_Usuario iu = new Insertar_Usuario();
+            iu.Show();
+            this.Dispose();
+        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -104,6 +76,26 @@ namespace UI.Modapie
             this.Hide();
             MenuAdmin M = new MenuAdmin();
             M.Show();
+        }
+
+        private void txtEmpleado_KeyUp(object sender, KeyEventArgs e)
+        {
+            string salida_datos = "";
+            string[] palabras_busqueda = this.txtEmpleado.Text.Split(' ');
+
+            foreach (string palabra in palabras_busqueda)
+            {
+                if (salida_datos.Length == 0)
+                {
+                    salida_datos = "(Username LIKE '%" + palabra + "%' OR IdUsuario LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
+                }
+                else
+                {
+                    salida_datos += "AND (Username LIKE '%" + palabra + "%' OR IdUsuario LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
+                }
+            }
+
+            this.mifiltro.RowFilter = salida_datos;
         }
     }
 }

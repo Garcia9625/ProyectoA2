@@ -80,6 +80,12 @@
       <DependentUpon>CuentasXCobrar.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaVentaAlxMayor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="InformeDeCuentas.Designer.cs">
       <DependentUpon>InformeDeCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insertar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insertar_Usuario.Designer.cs">
+      <DependentUpon>Insertar_Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -180,6 +192,9 @@
     <EmbeddedResource Include="InformeDeCuentas.resx">
       <DependentUpon>InformeDeCuentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Insertar_Usuario.resx">
+      <DependentUpon>Insertar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,12 +247,17 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Aceptar.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MODAPIE - copia.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MODAPIE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
