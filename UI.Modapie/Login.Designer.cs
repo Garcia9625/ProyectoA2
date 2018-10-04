@@ -50,10 +50,12 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.ForeColor = System.Drawing.Color.Blue;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkLabel1.Location = new System.Drawing.Point(278, 323);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(211, 20);
@@ -67,7 +69,7 @@
             this.Horaa.BackColor = System.Drawing.Color.Transparent;
             this.Horaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Horaa.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Horaa.Location = new System.Drawing.Point(598, 19);
+            this.Horaa.Location = new System.Drawing.Point(556, 54);
             this.Horaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Horaa.Name = "Horaa";
             this.Horaa.Size = new System.Drawing.Size(80, 32);
@@ -80,7 +82,7 @@
             this.Fechaa.BackColor = System.Drawing.Color.Transparent;
             this.Fechaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fechaa.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Fechaa.Location = new System.Drawing.Point(598, 60);
+            this.Fechaa.Location = new System.Drawing.Point(547, 22);
             this.Fechaa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Fechaa.Name = "Fechaa";
             this.Fechaa.Size = new System.Drawing.Size(99, 32);
@@ -104,11 +106,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(184, 107);
+            this.label3.Location = new System.Drawing.Point(184, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(385, 67);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Inicio de sesion.";
+            this.label3.Text = "Inicio de sesión.";
             // 
             // label2
             // 

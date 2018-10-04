@@ -36,7 +36,7 @@ namespace UI.Modapie
         {
             tltInicio.SetToolTip(this.pcBInicio, "Iniciar Sesión");
             tltInicio.SetToolTip(this.btn_apagar, "Cerrar el Programa");
-            Fechaa.Text = DateTime.Now.ToLongDateString();
+            Fechaa.Text = DateTime.Now.ToShortDateString();
             Horaa.Text = DateTime.Now.ToLongTimeString();
         }
 
