@@ -23,7 +23,8 @@ namespace UI.Modapie
         {
             CuentasPorCobrar cxc = new CuentasPorCobrar();
             ReportDocument oRep = new ReportDocument();
-            oRep.Load(@"C:\Users\ricar\source\repos\NewRepo\ProyectoA2\UI.Modapie\CuentasXCobrar.rpt");
+            oRep.Load(Application.StartupPath + "\\CuentasXCobrar.rpt");
+            //oRep.Load(@"C:\Users\ricar\source\repos\NewRepo\ProyectoA2\UI.Modapie\CuentasXCobrar.rpt");
             cxc.crystalReportViewer1.ReportSource = oRep;
             cxc.Show();
         }
