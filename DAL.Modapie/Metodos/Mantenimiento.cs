@@ -140,8 +140,7 @@ namespace DAL.Modapie
                     dataReader.Read();
                     usuario = new Usuario
                     {
-                        idUsuario = Convert.ToInt32(dataReader["IdUsuario"].ToString()),
-                        idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"].ToString()),
+                        idEmpleado = dataReader["IdEmpleado"].ToString(),
                         username = dataReader["Username"].ToString(),
                         password = dataReader["Password"].ToString(),
                         rol = Convert.ToInt32(dataReader["Rol"])
@@ -1568,7 +1567,6 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 //Creacion de parametros
-                DbParameter param1 = factory.CreateParameter();
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
@@ -1576,10 +1574,6 @@ namespace DAL.Modapie
 
 
                 //Carga de parametros
-
-                param1.ParameterName = "@IdUsuario";
-                param1.DbType = System.Data.DbType.String;
-                param1.Value = user.idUsuario;
 
                 param2.ParameterName = "@IdEmpleado";
                 param2.DbType = System.Data.DbType.String;
@@ -1605,7 +1599,6 @@ namespace DAL.Modapie
                 //Ejecuta SP
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_InsertarUsuario";
-                comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
@@ -1662,8 +1655,7 @@ namespace DAL.Modapie
                         {
                             usuario = new Usuario
                             {
-                                idUsuario = Convert.ToInt32(dataReader["IdUsuario"]),
-                                idEmpleado= Convert.ToInt32(dataReader["IdEmpleado"]),
+                                idEmpleado= dataReader["IdEmpleado"].ToString(),
                                 username = dataReader["Username"].ToString(),
                                 password = dataReader["Password"].ToString(),
                                 rol = Convert.ToInt32(dataReader["Rol"])
@@ -1717,8 +1709,7 @@ namespace DAL.Modapie
                         dataReader.Read();
                         user = new Usuario
                         {
-                            idUsuario = Convert.ToInt32(dataReader["IdUsuario"]),
-                            idEmpleado = Convert.ToInt32(dataReader["IdEmpleado"]),
+                            idEmpleado = dataReader["IdEmpleado"].ToString(),
                             username = dataReader["Username"].ToString(),
                             password = dataReader["Password"].ToString(),
                             rol = Convert.ToInt32(dataReader["Rol"])

@@ -97,5 +97,18 @@ namespace UI.Modapie
 
             this.mifiltro.RowFilter = salida_datos;
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String empleado = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            String nomUsuario = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            String pass = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            int rol = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            
+
+            EditarUsuario edit = new EditarUsuario(empleado, nomUsuario, pass, rol);
+            edit.Show();
+            this.Dispose();
+        }
     }
 }
