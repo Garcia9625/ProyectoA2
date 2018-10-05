@@ -8,21 +8,16 @@ namespace DO.Modapie
 {
     public class Usuario
     {
-        private int IdUsuario;
-        private int IdEmpleado;
+
+        private string IdEmpleado;
         private string Username;
         private string Password;
         private int Rol;
 
         //prueba de subida
 
-        public int idUsuario
-        {
-            get { return IdUsuario; }
-            set { IdUsuario = value; }
-        }
-
-        public int idEmpleado
+        
+        public string idEmpleado
         {
             get { return IdEmpleado; }
             set { IdEmpleado = value; }
