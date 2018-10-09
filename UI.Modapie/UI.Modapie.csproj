@@ -74,23 +74,11 @@
     <Compile Include="CuentasPorCobrar.Designer.cs">
       <DependentUpon>CuentasPorCobrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CuentasXCobrar.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CuentasXCobrar.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="EditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarUsuario.Designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FacturaVentaAlxMayor.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FacturaVentaAlxMayor.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FacturaVentasAlxMayor.cs">
       <SubType>Form</SubType>
@@ -169,16 +157,8 @@
     <EmbeddedResource Include="CuentasPorCobrar.resx">
       <DependentUpon>CuentasPorCobrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CuentasXCobrar.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CuentasXCobrar.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacturaVentaAlxMayor.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>FacturaVentaAlxMayor.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaVentasAlxMayor.resx">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
