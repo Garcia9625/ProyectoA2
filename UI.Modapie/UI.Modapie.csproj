@@ -142,6 +142,7 @@
     <Compile Include="RegistroUsuario.Designer.cs">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="valida.cs" />
     <Compile Include="VentaAlxMayor.cs">
       <SubType>Form</SubType>
     </Compile>

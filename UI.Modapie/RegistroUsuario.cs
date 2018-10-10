@@ -94,7 +94,7 @@ namespace UI.Modapie
                     salida_datos += "AND (Username LIKE '%" + palabra + "%' OR IdUsuario LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
                 }
             }
-
+            
             this.mifiltro.RowFilter = salida_datos;
         }
 
