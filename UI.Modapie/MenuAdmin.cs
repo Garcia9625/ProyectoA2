@@ -14,15 +14,19 @@ namespace UI.Modapie
 {
     public partial class MenuAdmin : Form
     {
-        string Username;
-        public MenuAdmin(/*string username*/)
+        string user;
+        public MenuAdmin(string username)
         {
-            //Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            //this.Username = username;
+            InitializeComponent();
+            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
+            this.user = username;
+            //lblUsername.Text = "Bienvenido: " + usuario.username;
+        }
+        public MenuAdmin()
+        {
             InitializeComponent();
             //lblUsername.Text = "Bienvenido: " + usuario.username;
         }
-
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
 
@@ -75,7 +79,7 @@ namespace UI.Modapie
 
         private void button4_Click(object sender, EventArgs e)
         {
-            VentaDetalle vd = new VentaDetalle();
+            VentaDetalle vd = new VentaDetalle(user);
             this.Dispose();
             vd.Show();
         }

@@ -46,10 +46,13 @@
     <Compile Include="ClientePorMayor.cs" />
     <Compile Include="DescripcionVentaAlxMayor.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="InventarioAlDetalle.cs" />
     <Compile Include="InventarioAlxMayor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="VentaAlDetalle.cs" />
     <Compile Include="VentaAlxMayor.cs" />
+    <Compile Include="VentaXDetalle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

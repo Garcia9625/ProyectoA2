@@ -194,7 +194,7 @@ namespace UI.Modapie
             pdv.Value = cbCliente.Text;
             pf.CurrentValues.Add(pdv);
             form.crystalReportViewer1.ParameterFieldInfo = pfs;
-            oRep.Load("C:/Users/ricar/source/repos/NewRepo/ProyectoA2/UI.Modapie/FacturaVentaAlxMayor.rpt");
+            oRep.Load(Application.StartupPath + "\\Reportes\\FacturaVentaAlxMayor.rpt");
             form.crystalReportViewer1.ReportSource = oRep;
             form.Show();
             //oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\Diego\Desktop\FacturaVentaAlxMayor.pdf");

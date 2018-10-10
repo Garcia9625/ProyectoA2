@@ -265,7 +265,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
-                
+
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -356,7 +356,7 @@ namespace DAL.Modapie
 
                 param3.ParameterName = "@Cedula";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value =CAXM.cedula;
+                param3.Value = CAXM.cedula;
 
                 param4.ParameterName = "@Correo";
                 param4.DbType = System.Data.DbType.String;
@@ -376,7 +376,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
-               
+
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -1281,7 +1281,7 @@ namespace DAL.Modapie
             List<InventarioAlxMayor> listaProductosAlxMayor = new List<InventarioAlxMayor>();
             DbConnection conn = null;
             DbCommand comm = null;
-            
+
             try
             {
 
@@ -1463,7 +1463,7 @@ namespace DAL.Modapie
                 conn = factory.CreateConnection();
                 conn.ConnectionString = Conexion.Default.connection;
                 comm = factory.CreateCommand();
-                
+
                 //Abrir connection
                 comm.Connection = conn;
                 conn.Open();
@@ -1548,7 +1548,62 @@ namespace DAL.Modapie
 
         #endregion
 
+        #region VentaAlDetalle
+        public void InsertarVentaDetalle(VentaAlDetalle ventaDetalle)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
 
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdClienteD";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = ventaDetalle.IdClienteDetalle;
+
+                param2.ParameterName = "@IdEmpleado";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = ventaDetalle.IdEmpleado;
+
+                param3.ParameterName = "@Total";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = ventaDetalle.Total;
+               
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarVentaAlDetalle";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+
+        }
+        #endregion
 
         #region Usuario
 
@@ -1608,7 +1663,7 @@ namespace DAL.Modapie
 
                 try
                 {
-                    
+
                 }
                 catch (Exception ee)
                 {
@@ -1626,88 +1681,34 @@ namespace DAL.Modapie
         }
 
         public List<Usuario> MostrarUsuario()
-            {
-                List<Usuario> lista = new List<Usuario>();
-                DbConnection conn = null;
-                DbCommand comm = null;
+        {
+            List<Usuario> lista = new List<Usuario>();
+            DbConnection conn = null;
+            DbCommand comm = null;
 
             try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_MostrarUsuario";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                    //Creacion de la connection
-                    conn = factory.CreateConnection();
-                    conn.ConnectionString = Conexion.Default.connection;
-                    comm = factory.CreateCommand();
-
-                    //Abrir connection
-                    comm.Connection = conn;
-                    conn.Open();
-
-                    //Ejecuta SP
-                    comm.CommandType = System.Data.CommandType.StoredProcedure;
-                    comm.CommandText = "sp_MostrarUsuario";
-
-                    using (IDataReader dataReader = comm.ExecuteReader())
+                    Usuario usuario;
+                    while (dataReader.Read())
                     {
-                        Usuario usuario;
-                        while (dataReader.Read())
-                        {
-                            usuario = new Usuario
-                            {
-                                idEmpleado= dataReader["IdEmpleado"].ToString(),
-                                username = dataReader["Username"].ToString(),
-                                password = dataReader["Password"].ToString(),
-                                rol = Convert.ToInt32(dataReader["Rol"])
-
-                            };
-                            lista.Add(usuario);
-                        }
-                    }
-
-                    return lista;
-                }
-                catch (Exception ee)
-                {
-                    throw;
-                }
-            }
-
-        public Usuario BuscarUsuario(string idEmpleado)
-         {
-                Usuario user= new Usuario();
-                DbConnection conn = null;
-                DbCommand comm = null;
-                try
-                {
-                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                    //Creacion de la connection
-                    conn = factory.CreateConnection();
-                    conn.ConnectionString = Conexion.Default.connection;
-                    comm = factory.CreateCommand();
-
-                    //Creacion de parametros
-
-                    DbParameter param1 = factory.CreateParameter();
-
-                    param1.ParameterName = "@IdUsuario";
-                    param1.DbType = System.Data.DbType.String;
-                    param1.Value = idEmpleado;
-
-                    //Abrir connection
-                    comm.Connection = conn;
-                    conn.Open();
-
-                    //Ejecuta SP
-                    comm.CommandType = System.Data.CommandType.StoredProcedure;
-                    comm.CommandText = "sp_BuscarUsuario";
-                    comm.Parameters.Add(param1);
-
-                    using (IDataReader dataReader = comm.ExecuteReader())
-                    {
-                        dataReader.Read();
-                        user = new Usuario
+                        usuario = new Usuario
                         {
                             idEmpleado = dataReader["IdEmpleado"].ToString(),
                             username = dataReader["Username"].ToString(),
@@ -1715,23 +1716,77 @@ namespace DAL.Modapie
                             rol = Convert.ToInt32(dataReader["Rol"])
 
                         };
-                    
-
+                        lista.Add(usuario);
                     }
-                
-                    return user;
                 }
-                catch (Exception ee)
+
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public Usuario BuscarUsuario(string idEmpleado)
+        {
+            Usuario user = new Usuario();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@IdUsuario";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = idEmpleado;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarUsuario";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    throw;
-                
+                    dataReader.Read();
+                    user = new Usuario
+                    {
+                        idEmpleado = dataReader["IdEmpleado"].ToString(),
+                        username = dataReader["Username"].ToString(),
+                        password = dataReader["Password"].ToString(),
+                        rol = Convert.ToInt32(dataReader["Rol"])
+
+                    };
+
+
                 }
+
+                return user;
+            }
+            catch (Exception ee)
+            {
+                throw;
+
+            }
 
         }
 
         public void ModificarUsuario(Usuario user)
         {
-               DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
             DbConnection conn = null;
             DbCommand comm = null;
 
@@ -1771,7 +1826,7 @@ namespace DAL.Modapie
                 param4.DbType = System.Data.DbType.String;
                 param4.Value = user.rol;
 
-               
+
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -1784,7 +1839,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
-               
+
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)

@@ -61,6 +61,9 @@ namespace DAL.Modapie
 
         VentaAlxMayor buscarUltimaVenta();
 
+        /*Venta al detalle*/
+        void InsertarVentaDetalle(VentaAlDetalle ventaDetalle);
+
         /*Descripcion venta al por mayor*/
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);

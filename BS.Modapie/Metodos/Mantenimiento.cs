@@ -442,9 +442,27 @@ namespace BS.Modapie
         }
         #endregion
 
+        #region VentaAlDetalle
+        public void InsertarVentaDetalle(VentaAlDetalle ventaDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarVentaDetalle(ventaDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        #endregion
+
         #region Usuario
 
-        
+
 
         public void iInsertarUsuario(Usuario usuario)
         {
@@ -506,6 +524,7 @@ namespace BS.Modapie
         {
             throw new NotImplementedException();
         }
+        
         #endregion
     }
 }

@@ -75,9 +75,10 @@ namespace UI.Modapie
         {
             Program.IdProducto = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             Program.Codigo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            Program.Color = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            Program.Talla = Convert.ToDouble(dataGridView1.CurrentRow.Cells[3].Value.ToString());
-            Program.Descripcion = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            Program.Color = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            Program.Precio = Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+            Program.Talla = Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+            Program.Descripcion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             this.Close();
         }
     }
