@@ -75,7 +75,9 @@ namespace UI.Modapie
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            VentaDetalle vd = new VentaDetalle();
+            this.Dispose();
+            vd.Show();
         }
 
         private void btnInformes_Click(object sender, EventArgs e)

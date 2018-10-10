@@ -73,6 +73,16 @@ namespace UI.Modapie.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Alt_8_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Add Alt 8 32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancelar {
             get {
                 object obj = ResourceManager.GetObject("cancelar", resourceCulture);
@@ -126,6 +136,26 @@ namespace UI.Modapie.Properties {
         internal static System.Drawing.Bitmap MODAPIE2 {
             get {
                 object obj = ResourceManager.GetObject("MODAPIE2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Search 32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Undo_Red_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("Undo Red 48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
