@@ -63,6 +63,26 @@ namespace UI.Modapie.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("2 48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _38_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("38 48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aceptar {
             get {
                 object obj = ResourceManager.GetObject("Aceptar", resourceCulture);
@@ -136,6 +156,16 @@ namespace UI.Modapie.Properties {
         internal static System.Drawing.Bitmap MODAPIE2 {
             get {
                 object obj = ResourceManager.GetObject("MODAPIE2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Remove_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("Remove 48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

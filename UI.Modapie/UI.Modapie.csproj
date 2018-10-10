@@ -279,5 +279,14 @@
   <ItemGroup>
     <None Include="Resources\Undo Red 48x48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2 48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38 48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove 48x48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

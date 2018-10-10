@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -44,19 +48,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,9 +78,36 @@
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
             this.dataGridView1.Location = new System.Drawing.Point(59, 295);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(838, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(833, 192);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código del producto";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio Unitario";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 150;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 175;
             // 
             // groupBox1
             // 
@@ -102,6 +132,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
+            this.txtPrecio.Location = new System.Drawing.Point(644, 38);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 22);
+            this.txtPrecio.TabIndex = 15;
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(660, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Precio:";
+            // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(644, 94);
@@ -118,30 +169,6 @@
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "Cantidad:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(777, 74);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(125, 52);
-            this.btnAgregar.TabIndex = 9;
-            this.btnAgregar.Text = "        Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(777, 14);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(125, 54);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "     Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtCodigo
             // 
@@ -234,18 +261,6 @@
             this.txtCedula.Size = new System.Drawing.Size(185, 22);
             this.txtCedula.TabIndex = 9;
             // 
-            // button2
-            // 
-            this.button2.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(387, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 54);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "     Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -308,60 +323,84 @@
             this.lblTipo.Text = "FACTURA:";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtPrecio
+            // button4
             // 
-            this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.Enabled = false;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.ForeColor = System.Drawing.Color.Black;
-            this.txtPrecio.Location = new System.Drawing.Point(644, 38);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 22);
-            this.txtPrecio.TabIndex = 15;
-            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button4.Image = global::UI.Modapie.Properties.Resources._38_48x48;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(715, 493);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(177, 59);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "        Limpiar venta";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // button3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(660, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Precio:";
+            this.button3.Image = global::UI.Modapie.Properties.Resources._2_48x48;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(481, 493);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(179, 59);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "          Registrar Venta";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // Cantidad
+            // button1
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
+            this.button1.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(222, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 59);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "    Eliminar artículo";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // Código
+            // button2
             // 
-            this.Código.HeaderText = "Código del producto";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 150;
+            this.button2.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(387, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 54);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "     Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Precio
+            // btnAgregar
             // 
-            this.Precio.HeaderText = "Precio Unitario";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 150;
+            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(777, 74);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(125, 52);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "        Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // Total
+            // btnBuscar
             // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 175;
+            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(777, 14);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(125, 54);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "     Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // VentaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(949, 526);
+            this.ClientSize = new System.Drawing.Size(949, 564);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -410,5 +449,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
