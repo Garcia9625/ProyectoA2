@@ -54,9 +54,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnRegistro = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -323,38 +323,38 @@
             this.lblTipo.Text = "FACTURA:";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // btnLimpiar
             // 
-            this.button4.Image = global::UI.Modapie.Properties.Resources._38_48x48;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(715, 493);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 59);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "        Limpiar venta";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Image = global::UI.Modapie.Properties.Resources._38_48x48;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(715, 493);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(177, 59);
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Text = "        Limpiar venta";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRegistro
             // 
-            this.button3.Image = global::UI.Modapie.Properties.Resources._2_48x48;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(481, 493);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 59);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "          Registrar Venta";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRegistro.Image = global::UI.Modapie.Properties.Resources._2_48x48;
+            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistro.Location = new System.Drawing.Point(481, 493);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(179, 59);
+            this.btnRegistro.TabIndex = 19;
+            this.btnRegistro.Text = "          Registrar Venta";
+            this.btnRegistro.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEliminar
             // 
-            this.button1.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(222, 493);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 59);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "    Eliminar artículo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(222, 493);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(197, 59);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "    Eliminar artículo";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -398,9 +398,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 564);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnRegistro);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -449,8 +449,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
