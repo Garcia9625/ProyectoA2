@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,10 @@ namespace UI.Modapie
         string Username;
         string IdEmpleado;
         double precio;
+        SqlConnection cnn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+
         public VentaDetalle(string username)
         {
             Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
@@ -24,7 +29,30 @@ namespace UI.Modapie
             this.Username = usuario.username;
             InitializeComponent();
         }
+        private void Conexion()
+        {
+            try
+            {
+                cnn = new SqlConnection("Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True");
+                cnn.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se conecto: " + ex.ToString());
+            }
+        }
 
+        private void llenarCombo(ComboBox cb)
+        {
+            Conexion();
+            cmd = new SqlCommand("Select Nombre,Apellido1 from Empleado", cnn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr["Nombre"].ToString() +" "+ dr["Apellido1"].ToString());
+            }
+            dr.Close();
+        }
         private List<VentaXDetalle> lst = new List<VentaXDetalle>();
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -99,6 +127,11 @@ namespace UI.Modapie
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             valida.SoloNumeros(e);
+        }
+
+        private void VentaDetalle_Load(object sender, EventArgs e)
+        {
+            llenarCombo(cmbEmpleados);
         }
     }
 }

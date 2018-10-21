@@ -26,8 +26,6 @@ namespace UI.Modapie
         }
 
 
-        
-
         DataSet resultados = new DataSet();
         DataView mifiltro;
         public void leer_datos(string query, ref DataSet dstprincipal, string tabla)

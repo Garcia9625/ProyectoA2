@@ -38,6 +38,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
@@ -48,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,13 +60,14 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbEmpleados = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -170,6 +174,30 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Cantidad:";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(777, 74);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(125, 52);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "        Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(777, 14);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(125, 54);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "     Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
@@ -248,7 +276,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(550, 117);
+            this.groupBox2.Size = new System.Drawing.Size(407, 117);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
@@ -256,23 +284,35 @@
             // txtCedula
             // 
             this.txtCedula.Enabled = false;
-            this.txtCedula.Location = new System.Drawing.Point(152, 32);
+            this.txtCedula.Location = new System.Drawing.Point(81, 32);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(185, 22);
             this.txtCedula.TabIndex = 9;
+            // 
+            // button2
+            // 
+            this.button2.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(289, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 54);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "     Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(152, 71);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(360, 22);
+            this.txtNombre.Size = new System.Drawing.Size(245, 22);
             this.txtNombre.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(90, 32);
+            this.label8.Location = new System.Drawing.Point(19, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 17);
             this.label8.TabIndex = 2;
@@ -292,10 +332,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblTipo);
-            this.panel1.Location = new System.Drawing.Point(671, 13);
+            this.panel1.Location = new System.Drawing.Point(730, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 116);
+            this.panel1.Size = new System.Drawing.Size(207, 116);
             this.panel1.TabIndex = 17;
             // 
             // label6
@@ -305,7 +345,7 @@
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(264, 42);
+            this.label6.Size = new System.Drawing.Size(205, 42);
             this.label6.TabIndex = 3;
             this.label6.Text = "MODAPIE";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,7 +358,7 @@
             this.lblTipo.Location = new System.Drawing.Point(-1, 42);
             this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(266, 35);
+            this.lblTipo.Size = new System.Drawing.Size(207, 35);
             this.lblTipo.TabIndex = 0;
             this.lblTipo.Text = "FACTURA:";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,41 +396,34 @@
             this.btnEliminar.Text = "    Eliminar artículo";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // groupBox3
             // 
-            this.button2.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(387, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 54);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "     Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.groupBox3.Controls.Add(this.cmbEmpleados);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(425, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(298, 117);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Empleado que realiza la venta";
             // 
-            // btnAgregar
+            // cmbEmpleados
             // 
-            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(777, 74);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(125, 52);
-            this.btnAgregar.TabIndex = 9;
-            this.btnAgregar.Text = "        Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.cmbEmpleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpleados.FormattingEnabled = true;
+            this.cmbEmpleados.Location = new System.Drawing.Point(78, 51);
+            this.cmbEmpleados.Name = "cmbEmpleados";
+            this.cmbEmpleados.Size = new System.Drawing.Size(201, 24);
+            this.cmbEmpleados.TabIndex = 3;
             // 
-            // btnBuscar
+            // label10
             // 
-            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(777, 14);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(125, 54);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "     Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Nombre:";
             // 
             // VentaDetalle
             // 
@@ -398,6 +431,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 564);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.btnEliminar);
@@ -408,12 +442,15 @@
             this.Name = "VentaDetalle";
             this.Text = "VentaDetalle";
             this.Activated += new System.EventHandler(this.VentaDetalle_Activated);
+            this.Load += new System.EventHandler(this.VentaDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -452,5 +489,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox cmbEmpleados;
+        private System.Windows.Forms.Label label10;
     }
 }
