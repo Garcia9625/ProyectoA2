@@ -63,6 +63,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -367,20 +368,21 @@
             // 
             this.btnLimpiar.Image = global::UI.Modapie.Properties.Resources._38_48x48;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(715, 493);
+            this.btnLimpiar.Location = new System.Drawing.Point(488, 493);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(177, 59);
+            this.btnLimpiar.Size = new System.Drawing.Size(191, 59);
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Text = "        Limpiar venta";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnRegistro
             // 
+            this.btnRegistro.Enabled = false;
             this.btnRegistro.Image = global::UI.Modapie.Properties.Resources._2_48x48;
             this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistro.Location = new System.Drawing.Point(481, 493);
+            this.btnRegistro.Location = new System.Drawing.Point(271, 493);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(179, 59);
+            this.btnRegistro.Size = new System.Drawing.Size(182, 59);
             this.btnRegistro.TabIndex = 19;
             this.btnRegistro.Text = "          Registrar Venta";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -389,9 +391,9 @@
             // 
             this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(222, 493);
+            this.btnEliminar.Location = new System.Drawing.Point(59, 493);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(197, 59);
+            this.btnEliminar.Size = new System.Drawing.Size(187, 59);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "    Eliminar artículo";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -425,12 +427,25 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Nombre:";
             // 
+            // button1
+            // 
+            this.button1.Image = global::UI.Modapie.Properties.Resources.Undo_Red_48x48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(710, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 59);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "        Regresar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // VentaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(949, 564);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnRegistro);
@@ -439,7 +454,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentaDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentaDetalle";
             this.Activated += new System.EventHandler(this.VentaDetalle_Activated);
             this.Load += new System.EventHandler(this.VentaDetalle_Load);
@@ -492,5 +509,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cmbEmpleados;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
     }
 }

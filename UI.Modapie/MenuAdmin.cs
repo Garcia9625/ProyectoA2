@@ -79,7 +79,7 @@ namespace UI.Modapie
 
         private void button4_Click(object sender, EventArgs e)
         {
-            VentaDetalle vd = new VentaDetalle(user);
+            VentaDetalle vd = new VentaDetalle();
             this.Dispose();
             vd.Show();
         }

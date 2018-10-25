@@ -22,11 +22,8 @@ namespace UI.Modapie
         SqlCommand cmd;
         SqlDataReader dr;
 
-        public VentaDetalle(string username)
+        public VentaDetalle()
         {
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.IdEmpleado = usuario.idEmpleado;
-            this.Username = usuario.username;
             InitializeComponent();
         }
         private void Conexion()
@@ -108,20 +105,32 @@ namespace UI.Modapie
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtCedula.Text))
+            {
+                if (!string.IsNullOrEmpty(txtCodigo.Text))
+                {
+                    if (!string.IsNullOrEmpty(txtCantidad.Text))
+                    {
+                        btnRegistro.Enabled = true;
+                        VentaXDetalle V = new VentaXDetalle();
 
-            VentaXDetalle V = new VentaXDetalle();
-            
-            double SubTotal;
+                        double SubTotal;
 
-            //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
-            //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
-            V.Cantidad = Convert.ToInt32(txtCantidad.Text);
-            V.IdProducto = Convert.ToInt32(txtCodigo.Text);
-            V.PrecioUnitario = precio;
-            SubTotal = V.PrecioUnitario * V.Cantidad;
-            V.Total = SubTotal;
-            lst.Add(V);
-            llenarGrid();
+                        //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
+                        //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
+                        V.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                        V.IdProducto = Convert.ToInt32(txtCodigo.Text);
+                        V.PrecioUnitario = precio;
+                        SubTotal = V.PrecioUnitario * V.Cantidad;
+                        V.Total = SubTotal;
+                        lst.Add(V);
+                        llenarGrid();
+                    }
+                    else { DialogResult d = MessageBox.Show("No hay una cantidad de productos registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+                else { DialogResult d = MessageBox.Show("No hay ningún producto ingresado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else { MessageBox.Show("No se ha ingresado ningún cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,6 +141,13 @@ namespace UI.Modapie
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
             llenarCombo(cmbEmpleados);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuAdmin ma = new MenuAdmin();
+            this.Dispose();
+            ma.Show();
         }
     }
 }
