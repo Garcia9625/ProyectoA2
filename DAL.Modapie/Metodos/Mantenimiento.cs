@@ -1603,6 +1603,44 @@ namespace DAL.Modapie
             }
 
         }
+        public VentaAlDetalle buscarUltimaVentaDetalle()
+        {
+            VentaAlDetalle ventaAlDetalle = new VentaAlDetalle();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_UltimaVentaAlDetalle";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    ventaAlDetalle = new VentaAlDetalle
+                    {
+                        IdVentaDetalle = Convert.ToInt32(dataReader["IDVenta"].ToString())
+                    };
+                }
+
+                return ventaAlDetalle;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
         #endregion
 
         #region Usuario
@@ -1857,6 +1895,7 @@ namespace DAL.Modapie
         {
             throw new NotImplementedException();
         }
+
         #endregion
     }
 

@@ -48,7 +48,7 @@ namespace UI.Modapie
             }
             dr.Close();
         }
-        private List<VentaXDetalle> lst = new List<VentaXDetalle>();
+        private List<DescripcionVentaXDetalle> lst = new List<DescripcionVentaXDetalle>();
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,7 +110,7 @@ namespace UI.Modapie
                     if (!string.IsNullOrEmpty(txtCantidad.Text))
                     {
                         btnRegistro.Enabled = true;
-                        VentaXDetalle V = new VentaXDetalle();
+                        DescripcionVentaXDetalle V = new DescripcionVentaXDetalle();
 
                         double SubTotal;
 
@@ -153,7 +153,8 @@ namespace UI.Modapie
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-
+            DO.Modapie.VentaAlDetalle ventaAldDetalle;
+            DescripcionVentaAlxMayor descripcionVentaAlxMayor;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

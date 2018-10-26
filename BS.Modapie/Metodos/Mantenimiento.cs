@@ -458,6 +458,25 @@ namespace BS.Modapie
                 throw;
             }
         }
+
+        public VentaAlDetalle buscarUltimaVentaDetalle()
+        {
+            VentaAlDetalle ventaAlDetalle = new VentaAlDetalle();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    ventaAlDetalle = DAL.Modapie.Mantenimiento.Instancia.buscarUltimaVentaDetalle();
+                    scope.Complete();
+                    return ventaAlDetalle;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
         #endregion
 
         #region Usuario
