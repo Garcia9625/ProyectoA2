@@ -85,11 +85,11 @@ namespace UI.Modapie
             {
                 if (salida_datos.Length == 0)
                 {
-                    salida_datos = "(Username LIKE '%" + palabra + "%' OR IdUsuario LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
+                    salida_datos = "(Username LIKE '%" + palabra + "%' OR IdEmpleado LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
                 }
                 else
                 {
-                    salida_datos += "AND (Username LIKE '%" + palabra + "%' OR IdUsuario LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
+                    salida_datos += "AND (Username LIKE '%" + palabra + "%' OR IdEmpleado LIKE '%" + palabra + "%' OR Password LIKE '%" + palabra + "%')";
                 }
             }
             

@@ -15,8 +15,6 @@ namespace UI.Modapie
 {
     public partial class VentaDetalle : Form
     {
-        string Username;
-        string IdEmpleado;
         double precio;
         SqlConnection cnn;
         SqlCommand cmd;
@@ -119,7 +117,7 @@ namespace UI.Modapie
                         //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
                         //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
                         V.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                        V.IdProducto = Convert.ToInt32(txtCodigo.Text);
+                        V.IdProducto = Program.IdProducto;
                         V.PrecioUnitario = precio;
                         SubTotal = V.PrecioUnitario * V.Cantidad;
                         V.Total = SubTotal;
