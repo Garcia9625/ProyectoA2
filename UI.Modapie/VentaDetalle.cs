@@ -125,6 +125,7 @@ namespace UI.Modapie
                         V.Total = SubTotal;
                         lst.Add(V);
                         llenarGrid();
+                        limpiarProducto();
                     }
                     else { DialogResult d = MessageBox.Show("No hay una cantidad de productos registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
@@ -140,14 +141,90 @@ namespace UI.Modapie
 
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
-            llenarCombo(cmbEmpleados);
+           llenarCombo(cmbEmpleados);
+           dataGridView1.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            limpiar();
             MenuAdmin ma = new MenuAdmin();
             this.Dispose();
             ma.Show();
         }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Selected == true)
+                {
+                    if (Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value) != "")
+                    {
+                        dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+                        lst.RemoveAt(dataGridView1.CurrentRow.Index);
+                        llenarGrid();
+                        MessageBox.Show("Producto Eliminado del carrito de compras", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Existe Ningun Elemento en el carrito", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dataGridView1.ClearSelection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Seleccione Item a Eliminar del carrito de compras", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Existe Ningun Elemento en el carrito", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+        public void limpiar() {
+            dataGridView1.Rows.Clear();
+            btnRegistro.Enabled = false;
+            Program.IdClienteDetalle = "";
+            Program.Nombre = "";
+            Program.Apellido1 = "";
+            Program.Apellido2 = "";
+            Program.Codigo = "";
+            Program.Color = "";
+            Program.Descripcion = "";
+            Program.IdProducto = 0;
+            Program.Talla = 0;
+            Program.Precio = 0;
+            txtNombre.Text = "";
+            txtCedula.Text = "";
+            txtCodigo.Text = "";
+            txtPrecio.Text = "¢ ";
+            txtCantidad.Text = "";
+            txtTalla.Text = "";
+            txtColor.Text = "";
+            rtxDescripcion.Text = "";
+            cmbEmpleados.SelectedIndex = -1;
+        }
+
+        public void limpiarProducto()
+        {
+            rtxDescripcion.Text = "";
+            txtCodigo.Text = "";
+            txtPrecio.Text = "¢ ";
+            txtCantidad.Text = "";
+            txtTalla.Text = "";
+            txtColor.Text = "";
+        }
     }
+
 }

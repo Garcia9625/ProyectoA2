@@ -374,6 +374,7 @@
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Text = "        Limpiar venta";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnRegistro
             // 
@@ -386,6 +387,7 @@
             this.btnRegistro.TabIndex = 19;
             this.btnRegistro.Text = "          Registrar Venta";
             this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // btnEliminar
             // 
@@ -397,6 +399,7 @@
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "    Eliminar artículo";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox3
             // 
