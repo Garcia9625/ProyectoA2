@@ -197,9 +197,6 @@ namespace UI.Modapie
             oRep.Load(Application.StartupPath + "\\Reportes\\FacturaVentaAlxMayor.rpt");
             form.crystalReportViewer1.ReportSource = oRep;
             form.Show();
-            //oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\Diego\Desktop\FacturaVentaAlxMayor.pdf");
-
-
         }
 
         public bool estadoVenta()

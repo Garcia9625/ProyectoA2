@@ -26,12 +26,10 @@ namespace UI.Modapie
         {
             user = new Usuario
             {
-
                 idEmpleado = txtEmpleado.Text,
                 username = txtNombre.Text,
                 password = txtContrasena.Text,
                 rol = Convert.ToInt32(cmbRol.SelectedText)
-
             };
         }
 
