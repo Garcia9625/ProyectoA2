@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,18 +15,40 @@ namespace UI.Modapie
 {
     public partial class VentaDetalle : Form
     {
-        string Username;
-        string IdEmpleado;
         double precio;
-        public VentaDetalle(string username)
+        SqlConnection cnn;
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+        public VentaDetalle()
         {
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.IdEmpleado = usuario.idEmpleado;
-            this.Username = usuario.username;
             InitializeComponent();
         }
+        private void Conexion()
+        {
+            try
+            {
+                cnn = new SqlConnection("Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True");
+                cnn.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se conecto: " + ex.ToString());
+            }
+        }
 
-        private List<VentaXDetalle> lst = new List<VentaXDetalle>();
+        private void llenarCombo(ComboBox cb)
+        {
+            Conexion();
+            cmd = new SqlCommand("Select Nombre,Apellido1 from Empleado", cnn);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr["Nombre"].ToString() +" "+ dr["Apellido1"].ToString());
+            }
+            dr.Close();
+        }
+        private List<DescripcionVentaXDetalle> lst = new List<DescripcionVentaXDetalle>();
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -80,25 +103,127 @@ namespace UI.Modapie
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtCedula.Text))
+            {
+                if (!string.IsNullOrEmpty(txtCodigo.Text))
+                {
+                    if (!string.IsNullOrEmpty(txtCantidad.Text))
+                    {
+                        btnRegistro.Enabled = true;
+                        DescripcionVentaXDetalle V = new DescripcionVentaXDetalle();
 
-            VentaXDetalle V = new VentaXDetalle();
-            
-            double SubTotal;
+                        double SubTotal;
 
-            //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
-            //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
-            V.Cantidad = Convert.ToInt32(txtCantidad.Text);
-            V.IdProducto = Convert.ToInt32(txtCodigo.Text);
-            V.PrecioUnitario = precio;
-            SubTotal = V.PrecioUnitario * V.Cantidad;
-            V.Total = SubTotal;
-            lst.Add(V);
-            llenarGrid();
+                        //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
+                        //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
+                        V.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                        V.IdProducto = Program.IdProducto;
+                        V.PrecioUnitario = precio;
+                        SubTotal = V.PrecioUnitario * V.Cantidad;
+                        V.Total = SubTotal;
+                        lst.Add(V);
+                        llenarGrid();
+                        limpiarProducto();
+                    }
+                    else { DialogResult d = MessageBox.Show("No hay una cantidad de productos registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+                else { DialogResult d = MessageBox.Show("No hay ningún producto ingresado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else { MessageBox.Show("No se ha ingresado ningún cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             valida.SoloNumeros(e);
         }
+
+        private void VentaDetalle_Load(object sender, EventArgs e)
+        {
+           llenarCombo(cmbEmpleados);
+           dataGridView1.ClearSelection();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            MenuAdmin ma = new MenuAdmin();
+            this.Dispose();
+            ma.Show();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            DO.Modapie.VentaAlDetalle ventaAldDetalle;
+            DescripcionVentaAlxMayor descripcionVentaAlxMayor;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Selected == true)
+                {
+                    if (Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value) != "")
+                    {
+                        dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+                        lst.RemoveAt(dataGridView1.CurrentRow.Index);
+                        llenarGrid();
+                        MessageBox.Show("Producto Eliminado del carrito de compras", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Existe Ningun Elemento en el carrito", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dataGridView1.ClearSelection();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por Favor Seleccione Item a Eliminar del carrito de compras", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Existe Ningun Elemento en el carrito", "Ventas Modapie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+        public void limpiar() {
+            dataGridView1.Rows.Clear();
+            btnRegistro.Enabled = false;
+            Program.IdClienteDetalle = "";
+            Program.Nombre = "";
+            Program.Apellido1 = "";
+            Program.Apellido2 = "";
+            Program.Codigo = "";
+            Program.Color = "";
+            Program.Descripcion = "";
+            Program.IdProducto = 0;
+            Program.Talla = 0;
+            Program.Precio = 0;
+            txtNombre.Text = "";
+            txtCedula.Text = "";
+            txtCodigo.Text = "";
+            txtPrecio.Text = "¢ ";
+            txtCantidad.Text = "";
+            txtTalla.Text = "";
+            txtColor.Text = "";
+            rtxDescripcion.Text = "";
+            cmbEmpleados.SelectedIndex = -1;
+        }
+
+        public void limpiarProducto()
+        {
+            rtxDescripcion.Text = "";
+            txtCodigo.Text = "";
+            txtPrecio.Text = "¢ ";
+            txtCantidad.Text = "";
+            txtTalla.Text = "";
+            txtColor.Text = "";
+        }
     }
+
 }

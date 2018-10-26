@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO.Modapie
 {
-    public class VentaXDetalle
+    public class DescripcionVentaXDetalle
     {
         public int IdDetalleVentaDetalle { get; set; }
 

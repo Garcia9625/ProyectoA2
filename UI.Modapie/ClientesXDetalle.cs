@@ -64,6 +64,7 @@ namespace UI.Modapie
             this.leer_datos("SELECT * FROM ClienteAlDetalle", ref resultados, "ClienteAlDetalle");
             this.mifiltro = ((DataTable)resultados.Tables["ClienteAlDetalle"]).DefaultView;
             this.dataGridView1.DataSource = mifiltro;
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

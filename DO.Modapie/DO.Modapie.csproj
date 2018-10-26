@@ -52,7 +52,7 @@
     <Compile Include="Usuario.cs" />
     <Compile Include="VentaAlDetalle.cs" />
     <Compile Include="VentaAlxMayor.cs" />
-    <Compile Include="VentaXDetalle.cs" />
+    <Compile Include="DescripcionVentaXDetalle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
