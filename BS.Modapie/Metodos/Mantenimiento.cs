@@ -442,6 +442,24 @@ namespace BS.Modapie
         }
         #endregion
 
+        #region DescripcionVentaAlDetalle
+        public void InsertarDescripcionVentaAlDetalle(DescripcionVentaXDetalle descripcionVentaDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarDescripcionVentaAlDetalle(descripcionVentaDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        #endregion
+
         #region VentaAlDetalle
         public void InsertarVentaDetalle(VentaAlDetalle ventaDetalle)
         {

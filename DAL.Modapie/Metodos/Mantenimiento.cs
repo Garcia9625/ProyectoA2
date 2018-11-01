@@ -1548,6 +1548,74 @@ namespace DAL.Modapie
 
         #endregion
 
+        #region DescripcionVentaAlDetalle
+
+        public void InsertarDescripcionVentaAlDetalle(DescripcionVentaXDetalle descripcionVentaDetalle)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdVentaDetalle";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = descripcionVentaDetalle.IdVentaDetalle;
+
+                param2.ParameterName = "@IdProducto";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = descripcionVentaDetalle.IdProducto;
+
+                param3.ParameterName = "@Cantidad";
+                param3.DbType = System.Data.DbType.Int32;
+                param3.Value = descripcionVentaDetalle.Cantidad;
+
+                param4.ParameterName = "@Precio";
+                param4.DbType = System.Data.DbType.Double;
+                param4.Value = descripcionVentaDetalle.PrecioUnitario;
+
+                param5.ParameterName = "@Tot";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = descripcionVentaDetalle.Total;
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarDecripcionVentaAlDetalle";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        #endregion
+
         #region VentaAlDetalle
         public void InsertarVentaDetalle(VentaAlDetalle ventaDetalle)
         {

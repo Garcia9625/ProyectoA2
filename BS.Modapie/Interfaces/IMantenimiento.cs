@@ -64,6 +64,10 @@ namespace BS.Modapie
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
 
+        /*Descripcion venta al detalle*/
+        void InsertarDescripcionVentaAlDetalle(DescripcionVentaXDetalle descripcionVentaDetalle);
+
+
         /*Venta detalle*/
         void InsertarVentaDetalle(VentaAlDetalle ventaDetalle);
         VentaAlDetalle buscarUltimaVentaDetalle();

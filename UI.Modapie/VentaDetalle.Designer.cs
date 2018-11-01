@@ -64,6 +64,7 @@
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblNumFact = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -331,6 +332,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblNumFact);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblTipo);
             this.panel1.Location = new System.Drawing.Point(730, 13);
@@ -420,6 +422,7 @@
             this.cmbEmpleados.Name = "cmbEmpleados";
             this.cmbEmpleados.Size = new System.Drawing.Size(201, 24);
             this.cmbEmpleados.TabIndex = 3;
+            this.cmbEmpleados.SelectedIndexChanged += new System.EventHandler(this.cmbEmpleados_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -441,6 +444,16 @@
             this.button1.Text = "        Regresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblNumFact
+            // 
+            this.lblNumFact.AutoSize = true;
+            this.lblNumFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumFact.Location = new System.Drawing.Point(96, 86);
+            this.lblNumFact.Name = "lblNumFact";
+            this.lblNumFact.Size = new System.Drawing.Size(0, 20);
+            this.lblNumFact.TabIndex = 4;
+            this.lblNumFact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentaDetalle
             // 
@@ -469,6 +482,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -513,5 +527,6 @@
         private System.Windows.Forms.ComboBox cmbEmpleados;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblNumFact;
     }
 }

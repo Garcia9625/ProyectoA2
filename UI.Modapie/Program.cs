@@ -21,6 +21,7 @@ namespace UI.Modapie
         public static Double Talla;
         public static String Descripcion;
         public static Double Precio;
+        public static int Cantidad;
 
         //Datos del Cliente
         public static String IdClienteDetalle;

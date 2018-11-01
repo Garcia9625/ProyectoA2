@@ -79,6 +79,7 @@ namespace UI.Modapie
             Program.Precio = Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value.ToString());
             Program.Talla = Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value.ToString());
             Program.Descripcion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            Program.Cantidad = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString());
             this.Close();
         }
     }

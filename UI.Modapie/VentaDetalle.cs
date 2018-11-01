@@ -15,7 +15,10 @@ namespace UI.Modapie
 {
     public partial class VentaDetalle : Form
     {
-        double precio;
+        double precio; double total;
+        int idEmpledo; int numFact;
+        DO.Modapie.VentaAlDetalle venta;
+        Mantenimiento procesar = new Mantenimiento();
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader dr;
@@ -44,7 +47,7 @@ namespace UI.Modapie
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                cb.Items.Add(dr["Nombre"].ToString() +" "+ dr["Apellido1"].ToString());
+                cb.Items.Add(dr["Nombre"].ToString() /*+" "+ dr["Apellido1"].ToString()*/);
             }
             dr.Close();
         }
@@ -109,21 +112,31 @@ namespace UI.Modapie
                 {
                     if (!string.IsNullOrEmpty(txtCantidad.Text))
                     {
-                        btnRegistro.Enabled = true;
-                        DescripcionVentaXDetalle V = new DescripcionVentaXDetalle();
+                        if (Convert.ToInt32(txtCantidad.Text) > Program.Cantidad)
+                        {
+                            
+                            DialogResult d = MessageBox.Show("La cantidad de productos seleccionada es mayor a la existente en las bodegas", "No se puede agregar el producto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            btnRegistro.Enabled = true;
+                            DescripcionVentaXDetalle V = new DescripcionVentaXDetalle();
 
-                        double SubTotal;
+                            double SubTotal;
 
-                        //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
-                        //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
-                        V.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                        V.IdProducto = Program.IdProducto;
-                        V.PrecioUnitario = precio;
-                        SubTotal = V.PrecioUnitario * V.Cantidad;
-                        V.Total = SubTotal;
-                        lst.Add(V);
-                        llenarGrid();
-                        limpiarProducto();
+                            //V.IdProducto = Convert.ToInt32(txtCodigo.Text);    Hay un problema con la llave primaria para poder registrar este campo
+                            //V.IdVenta = Convert.ToInt32(txtIdVenta.Text);  Hay que decidir como se va a guardar
+                            V.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                            V.IdProducto = Program.IdProducto;
+                            V.PrecioUnitario = precio;
+                            SubTotal = V.PrecioUnitario * V.Cantidad;
+                            V.Total = SubTotal;
+                            total = V.Total;
+                            lst.Add(V);
+                            llenarGrid();
+                            limpiarProducto();
+                        }
+                        
                     }
                     else { DialogResult d = MessageBox.Show("No hay una cantidad de productos registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
@@ -139,6 +152,9 @@ namespace UI.Modapie
 
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
+            venta = procesar.buscarUltimaVentaDetalle();
+            numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+            lblNumFact.Text = numFact.ToString();
            llenarCombo(cmbEmpleados);
            dataGridView1.ClearSelection();
         }
@@ -153,8 +169,27 @@ namespace UI.Modapie
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            DO.Modapie.VentaAlDetalle ventaAldDetalle;
-            DescripcionVentaAlxMayor descripcionVentaAlxMayor;
+            try
+            {
+                DO.Modapie.VentaAlDetalle ventaDetalle;
+                DescripcionVentaAlxMayor descripcionVentaAlxMayor;
+                ventaDetalle = new DO.Modapie.VentaAlDetalle
+                {
+                    IdClienteDetalle = txtCedula.Text,
+                    IdEmpleado = idEmpledo.ToString(),
+                    Total = total
+                };
+                procesar.InsertarVentaDetalle(ventaDetalle);
+
+
+                MessageBox.Show("Compra realizada satisfactoriamente","Compra exitosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                limpiar();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -223,6 +258,18 @@ namespace UI.Modapie
             txtCantidad.Text = "";
             txtTalla.Text = "";
             txtColor.Text = "";
+        }
+
+        private void cmbEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Conexion();
+            cmd = new SqlCommand("Select Dni from Empleado Where Nombre = '" + cmbEmpleados.Text + "'", cnn);
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                idEmpledo = Convert.ToInt32(dr["Dni"].ToString());
+            }
+            dr.Close();
         }
     }
 
