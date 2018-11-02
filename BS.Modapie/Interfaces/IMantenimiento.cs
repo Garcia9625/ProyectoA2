@@ -67,6 +67,9 @@ namespace BS.Modapie
         /*Descripcion venta al detalle*/
         void InsertarDescripcionVentaAlDetalle(DescripcionVentaXDetalle descripcionVentaDetalle);
 
+        /*Inventario detalle*/
+
+        void ModificarCantidadProd(int id, int canti);
 
         /*Venta detalle*/
         void InsertarVentaDetalle(VentaAlDetalle ventaDetalle);

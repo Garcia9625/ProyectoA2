@@ -18,6 +18,7 @@ namespace UI.Modapie
         double precio; double total;
         int idEmpledo; int numFact;
         DO.Modapie.VentaAlDetalle venta;
+        InventarioAlDetalle inve;
         Mantenimiento procesar = new Mantenimiento();
         SqlConnection cnn;
         SqlCommand cmd;
@@ -102,6 +103,7 @@ namespace UI.Modapie
             
             dataGridView1.Rows[lst.Count + 2].Cells[2].Value = "     TOTAL   ¢";
             dataGridView1.Rows[lst.Count + 2].Cells[3].Value = SumaTotal;
+            total = Convert.ToDouble(SumaTotal);
             dataGridView1.ClearSelection();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -131,7 +133,6 @@ namespace UI.Modapie
                             V.PrecioUnitario = precio;
                             SubTotal = V.PrecioUnitario * V.Cantidad;
                             V.Total = SubTotal;
-                            total = V.Total;
                             lst.Add(V);
                             llenarGrid();
                             limpiarProducto();
@@ -155,8 +156,8 @@ namespace UI.Modapie
             venta = procesar.buscarUltimaVentaDetalle();
             numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
             lblNumFact.Text = numFact.ToString();
-           llenarCombo(cmbEmpleados);
-           dataGridView1.ClearSelection();
+            llenarCombo(cmbEmpleados);
+            dataGridView1.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -167,12 +168,27 @@ namespace UI.Modapie
             ma.Show();
         }
 
+        private void GuardarDetalleVenta( Int32 objIdVenta, Int32 objIdProducto, Int32 objCantidad, Double objPUnitario, Double objTotal)
+        {
+            DescripcionVentaXDetalle descripcionVentaDetalle;
+            descripcionVentaDetalle = new DescripcionVentaXDetalle
+            {
+                IdVentaDetalle = objIdVenta,
+                IdProducto = objIdProducto,
+                Cantidad = objCantidad,
+                PrecioUnitario = objPUnitario,
+                Total = objTotal
+            };
+            procesar.InsertarDescripcionVentaAlDetalle(descripcionVentaDetalle);
+            limpiar();
+        }
+
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 DO.Modapie.VentaAlDetalle ventaDetalle;
-                DescripcionVentaAlxMayor descripcionVentaAlxMayor;
                 ventaDetalle = new DO.Modapie.VentaAlDetalle
                 {
                     IdClienteDetalle = txtCedula.Text,
@@ -180,8 +196,27 @@ namespace UI.Modapie
                     Total = total
                 };
                 procesar.InsertarVentaDetalle(ventaDetalle);
-
-
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    int idVentaD = Convert.ToInt32(lblNumFact.Text);
+                    Double Tot = 0;
+                    if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) != "")
+                    {
+                        Tot += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+                        GuardarDetalleVenta(
+                        idVentaD,
+                        Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),
+                        Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                        Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
+                        Tot
+                        );
+                        
+                        //procesar.ModificarCantidadProd(Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),);
+                    }
+                    else {
+                        break;
+                    }
+                }
                 MessageBox.Show("Compra realizada satisfactoriamente","Compra exitosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 limpiar();
             }
@@ -228,6 +263,7 @@ namespace UI.Modapie
         }
         public void limpiar() {
             dataGridView1.Rows.Clear();
+            lst.Clear();
             btnRegistro.Enabled = false;
             Program.IdClienteDetalle = "";
             Program.Nombre = "";

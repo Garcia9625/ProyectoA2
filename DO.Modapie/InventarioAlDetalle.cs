@@ -22,5 +22,11 @@ namespace DO.Modapie
 
         public bool Estado { get; set; }
 
+        public void InventarioDetalle(int idP, int can)
+        {
+            IdProducto = idP;
+            Cantidad = can;
+        }
+
     }
 }

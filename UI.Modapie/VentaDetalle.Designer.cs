@@ -55,6 +55,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNumFact = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblNumFact = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -165,6 +165,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 22);
             this.txtCantidad.TabIndex = 13;
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label5
@@ -341,6 +342,16 @@
             this.panel1.Size = new System.Drawing.Size(207, 116);
             this.panel1.TabIndex = 17;
             // 
+            // lblNumFact
+            // 
+            this.lblNumFact.AutoSize = true;
+            this.lblNumFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumFact.Location = new System.Drawing.Point(96, 86);
+            this.lblNumFact.Name = "lblNumFact";
+            this.lblNumFact.Size = new System.Drawing.Size(0, 20);
+            this.lblNumFact.TabIndex = 4;
+            this.lblNumFact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -444,16 +455,6 @@
             this.button1.Text = "        Regresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblNumFact
-            // 
-            this.lblNumFact.AutoSize = true;
-            this.lblNumFact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumFact.Location = new System.Drawing.Point(96, 86);
-            this.lblNumFact.Name = "lblNumFact";
-            this.lblNumFact.Size = new System.Drawing.Size(0, 20);
-            this.lblNumFact.TabIndex = 4;
-            this.lblNumFact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentaDetalle
             // 
