@@ -308,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cancelar 32x32.png" />
+    <Content Include="Resources\MODAPIE - copia1.png" />
     <None Include="Resources\cancelar 32x321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
