@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace UI.Modapie
 {
-    public partial class ProductoDetalle : Form
+    public partial class ModificarProductoDetalle : Form
     {
-        public ProductoDetalle()
+        public ModificarProductoDetalle()
         {
             InitializeComponent();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
