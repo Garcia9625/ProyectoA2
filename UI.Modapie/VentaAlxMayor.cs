@@ -29,6 +29,7 @@ namespace UI.Modapie
             cbCliente.SelectedIndex = 0;
             limpiar();
             btnRegistrarVenta.Enabled = false;
+            cbLote.Enabled = false;
         }
 
         public void llenarcomboLote()
