@@ -73,7 +73,6 @@ namespace BS.Modapie
         }
         #endregion
 
-
         #region ClienteAlxMayor
         public void InsertarClienteAlxMayor(ClientePorMayor clientealxMayor)
         {
@@ -160,8 +159,11 @@ namespace BS.Modapie
             }
         }
 
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
-
 
         #region Empleado
         public void InsertarEmpleado(Empleado empleado)
@@ -234,7 +236,6 @@ namespace BS.Modapie
         }
 
         #endregion
-
 
         #region InventarioAlxMayor
         public List<InventarioAlxMayor> MostrarProductos()
@@ -516,9 +517,6 @@ namespace BS.Modapie
         #endregion
 
         #region Usuario
-
-
-
         public void iInsertarUsuario(Usuario usuario)
         {
             try
@@ -575,11 +573,80 @@ namespace BS.Modapie
 
         }
 
-        public void InsertarCAlxMayor(ClientePorMayor CAXM)
-        {
-            throw new NotImplementedException();
-        }
-        
         #endregion
+
+        #region ProductoDetalle
+
+        public void InsertarProductoDetalle(ProductoDetalle productoDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarProductoDetalle(productoDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public List<ProductoDetalle> MostrarproductoDetalle()
+        {
+            List<ProductoDetalle> lista = new List<ProductoDetalle>();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    lista = DAL.Modapie.Mantenimiento.Instancia.MostrarproductoDetalle();
+                    scope.Complete();
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public ProductoDetalle buscarproductoDetalle(string codigo)
+        {
+            ProductoDetalle pd = new ProductoDetalle();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    pd = DAL.Modapie.Mantenimiento.Instancia.buscarproductoDetalle(codigo);
+                    scope.Complete();
+                    return pd;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public void EditarproductoDetalle(ProductoDetalle productoDetalle)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.EditarproductoDetalle(productoDetalle);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        #endregion
+
     }
 }

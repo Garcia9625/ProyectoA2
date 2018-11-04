@@ -77,7 +77,6 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -362,7 +361,7 @@
             // 
             // txtPares
             // 
-            this.txtPares.Location = new System.Drawing.Point(530, 527);
+            this.txtPares.Location = new System.Drawing.Point(530, 533);
             this.txtPares.Margin = new System.Windows.Forms.Padding(4);
             this.txtPares.Name = "txtPares";
             this.txtPares.Size = new System.Drawing.Size(184, 22);
@@ -541,7 +540,6 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtCajas);
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.txtPares);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label4);
@@ -570,14 +568,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1184, 758);
             this.panel2.TabIndex = 45;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(530, 533);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 22);
-            this.textBox1.TabIndex = 30;
             // 
             // GestionInventarioAlxMayor
             // 
@@ -647,6 +637,5 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -122,5 +122,10 @@ namespace UI.Modapie
         {
 
         }
+
+        private void dgvCAD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

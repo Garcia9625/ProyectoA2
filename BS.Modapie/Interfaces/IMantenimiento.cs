@@ -11,7 +11,6 @@ namespace BS.Modapie
     {
         /*login*/
         Usuario obtenerUsuarioUser(string username);
-
         int validarLogin(string username, string contrasena);
 
 
@@ -25,59 +24,53 @@ namespace BS.Modapie
 
 
         /*Gestion de Empleado*/
-
         void InsertarEmpleado(Empleado empleado);
-
         List<Empleado> MostrarEmpleado();
-
         Empleado BuscarEmpleado(string dni);
-
         void ActualizarEmpleado(Empleado empleado);
 
         /*Gestion de productos al x Mayor*/
         List<InventarioAlxMayor> MostrarProductos();
         InventarioAlxMayor obtenerLote(int id);
-
         void EliminarProdXMayor(int id);
 
 
         /*Gestion del cliente al detalle*/
-
         void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle);
         List<ClienteAlDetalle> MostrarClienteXDetalle();
         ClienteAlDetalle buscarCAD(string dni);
-
         void EditarCAD(ClienteAlDetalle CAD);
 
 
         /*Inventario al x mayor*/
-
         List<InventarioAlxMayor> obtenerListaInventarioAlxMayor();
 
-
         /*Venta al por mayor*/
-
         void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor);
         VentaAlxMayor buscarUltimaVenta();
 
         /*Descripcion venta al por mayor*/
-
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
 
         /*Descripcion venta al detalle*/
         void InsertarDescripcionVentaAlDetalle(DescripcionVentaXDetalle descripcionVentaDetalle);
 
         /*Inventario detalle*/
-
         void ModificarCantidadProd(int id, int canti);
 
         /*Venta detalle*/
         void InsertarVentaDetalle(VentaAlDetalle ventaDetalle);
         VentaAlDetalle buscarUltimaVentaDetalle();
+
         /*usuario*/
         void iInsertarUsuario(Usuario usuario);
         List<Usuario> MostrarUsuario();
         Usuario BuscarUsuario(string idEmpleado);
 
+        /*Producto detalle*/
+        void InsertarProductoDetalle(ProductoDetalle productoDetalle);
+        List<ProductoDetalle> MostrarproductoDetalle();
+        ProductoDetalle buscarproductoDetalle(string codigo);
+        void EditarproductoDetalle(ProductoDetalle productoDetalle);
     }
 }

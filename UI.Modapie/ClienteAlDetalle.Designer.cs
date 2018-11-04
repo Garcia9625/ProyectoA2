@@ -199,6 +199,7 @@
             this.dgvCAD.Name = "dgvCAD";
             this.dgvCAD.Size = new System.Drawing.Size(944, 204);
             this.dgvCAD.TabIndex = 16;
+            this.dgvCAD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCAD_CellContentClick);
             // 
             // btnIngresar
             // 
