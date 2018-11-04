@@ -1366,55 +1366,6 @@ namespace DAL.Modapie
 
         #endregion
 
-        #region InventarioAlDetalle
-        public void ModificarCantidadProd(int id,int canti)
-        {
-            DbConnection conn = null;
-            DbCommand comm = null;
-            try
-            {
-
-                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                //Creacion de la connection
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                //Creacion de parametros
-                DbParameter param1 = factory.CreateParameter();
-                DbParameter param2 = factory.CreateParameter();
-
-                //Carga de parametros
-                param1.ParameterName = "@IdProd";
-                param1.DbType = System.Data.DbType.Int32;
-                param1.Value = id;
-
-                param2.ParameterName = "@Canti";
-                param2.DbType = System.Data.DbType.Int32;
-                param2.Value = canti;
-
-                //Abrir connection
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecuta SP
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_ModificarCantidad";
-                comm.Parameters.Add(param1);
-
-
-                comm.ExecuteNonQuery();
-            }
-            catch (Exception ee)
-            {
-                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
-
-
-            }
-        }
-        #endregion
-
         #region VentaAlxMayor
 
         public void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor)

@@ -209,9 +209,7 @@ namespace UI.Modapie
                         Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
                         Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
                         Tot
-                        );
-                        
-                        //procesar.ModificarCantidadProd(Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),);
+                        );                       
                     }
                     else {
                         break;
