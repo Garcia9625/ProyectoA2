@@ -12,9 +12,15 @@ namespace UI.Modapie
 {
     public partial class ModificarProductoDetalle : Form
     {
-        public ModificarProductoDetalle()
+        public ModificarProductoDetalle(string cod,double prec,string color, double talla, string desc, int canti)
         {
             InitializeComponent();
+            txtCodigo.Text = cod;
+            txtPrecio.Text = prec.ToString();
+            txtColor.Text = color;
+            txtTalla.Text = talla.ToString();
+            txtDescripcion.Text = desc;
+            txtCantidad.Text = canti.ToString();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

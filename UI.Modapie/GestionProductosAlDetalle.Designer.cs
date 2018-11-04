@@ -40,29 +40,27 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 97);
+            this.label2.Location = new System.Drawing.Point(36, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(369, 20);
+            this.label2.Size = new System.Drawing.Size(334, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Ingrese el productos por código, color y descripción";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 209);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(108, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(824, 369);
+            this.dataGridView1.Size = new System.Drawing.Size(732, 295);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(454, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(404, 73);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 26);
+            this.textBox1.Size = new System.Drawing.Size(263, 22);
             this.textBox1.TabIndex = 5;
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
@@ -72,10 +70,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::UI.Modapie.Properties.Resources.Undo_Red_48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(454, 624);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(404, 499);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 78);
+            this.button1.Size = new System.Drawing.Size(180, 62);
             this.button1.TabIndex = 8;
             this.button1.Text = "Cancelar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,25 +81,28 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(855, 64);
+            this.button2.Location = new System.Drawing.Point(760, 51);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 59);
+            this.button2.Size = new System.Drawing.Size(150, 47);
             this.button2.TabIndex = 9;
             this.button2.Text = "Ingresar Producto";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // GestionProductosAlDetalle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 771);
+            this.ClientSize = new System.Drawing.Size(964, 617);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GestionProductosAlDetalle";
             this.Text = "GestionProductosAlDetalle";
+            this.Load += new System.EventHandler(this.GestionProductosAlDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

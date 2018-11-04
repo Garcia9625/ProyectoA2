@@ -48,7 +48,12 @@ namespace UI.Modapie
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            ModificarProductoDetalle md = new ModificarProductoDetalle(dataGridView1.CurrentRow.Cells[1].Value.ToString(),
+            Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value.ToString()), dataGridView1.CurrentRow.Cells[3].Value.ToString(),
+            Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value.ToString()), dataGridView1.CurrentRow.Cells[5].Value.ToString(),
+            Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString()));
+            this.Hide();
+            md.Show();
 
         }
 
@@ -71,6 +76,12 @@ namespace UI.Modapie
 
             this.mifiltro.RowFilter = salida_datos;
         }
-        
+
+        private void GestionProductosAlDetalle_Load(object sender, EventArgs e)
+        {
+            this.leer_datos("SELECT * FROM InventarioAlDetalle", ref resultados, "InventarioAlDetalle");
+            this.mifiltro = ((DataTable)resultados.Tables["InventarioAlDetalle"]).DefaultView;
+            this.dataGridView1.DataSource = mifiltro;
+        }
     } 
 }
