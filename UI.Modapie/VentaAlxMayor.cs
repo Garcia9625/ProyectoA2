@@ -30,6 +30,7 @@ namespace UI.Modapie
             limpiar();
             btnRegistrarVenta.Enabled = false;
             cbLote.Enabled = false;
+            btnAgregar.Enabled = false;
         }
 
         public void llenarcomboLote()
@@ -70,6 +71,11 @@ namespace UI.Modapie
                 iProducto = procesar.obtenerLote(lote);
                 dgvDetalle.Rows.Add(iProducto.IdLote1, iProducto.Codigo1, iProducto.Cliente1, iProducto.Pedido1, iProducto.Modelo1,
                     iProducto.Color1, iProducto.Descripcion1, iProducto.Pares1, iProducto.TotalImpuestos1);
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
             }
         }
 
@@ -224,6 +230,18 @@ namespace UI.Modapie
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CambiaCliente(object sender, EventArgs e)
+        {
+            if (cbCliente.SelectedIndex != 0)
+            {
+                cbLote.Enabled = true;
+            }
+            else
+            {
+                cbLote.Enabled = false;
+            }
         }
 
         private void DatoSeleccionado(object sender, DataGridViewCellEventArgs e)

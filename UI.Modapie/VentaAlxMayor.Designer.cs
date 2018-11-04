@@ -310,6 +310,7 @@
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(213, 21);
             this.cbCliente.TabIndex = 13;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.CambiaCliente);
             // 
             // label1
             // 
