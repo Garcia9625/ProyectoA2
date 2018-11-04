@@ -104,6 +104,12 @@
     <Compile Include="GestionInventarioAlxMayor.Designer.cs">
       <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionProductosAlDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProductosAlDetalle.Designer.cs">
+      <DependentUpon>GestionProductosAlDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportarExcel1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,11 +146,11 @@
     <Compile Include="MenuUsuario.Designer.cs">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductoDetalle.cs">
+    <Compile Include="ModificarProductoDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductoDetalle.Designer.cs">
-      <DependentUpon>ProductoDetalle.cs</DependentUpon>
+    <Compile Include="ModificarProductoDetalle.Designer.cs">
+      <DependentUpon>ModificarProductoDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="GestionInventarioAlxMayor.resx">
       <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionProductosAlDetalle.resx">
+      <DependentUpon>GestionProductosAlDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,8 +224,8 @@
     <EmbeddedResource Include="MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductoDetalle.resx">
-      <DependentUpon>ProductoDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="ModificarProductoDetalle.resx">
+      <DependentUpon>ModificarProductoDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>

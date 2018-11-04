@@ -1,6 +1,6 @@
 ﻿namespace UI.Modapie
 {
-    partial class ProductoDetalle
+    partial class ModificarProductoDetalle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoDetalle));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarProductoDetalle));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dgvCAD = new System.Windows.Forms.DataGridView();

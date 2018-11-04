@@ -8,17 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace UI.Modapie
 {
-    public partial class Productos : Form
+    public partial class GestionProductosAlDetalle : Form
     {
-        public Productos()
+        public GestionProductosAlDetalle()
         {
             InitializeComponent();
         }
-
-        DataSet resultados = new DataSet();
+       DataSet resultados = new DataSet();
         DataView mifiltro;
         public void leer_datos(string query, ref DataSet dstprincipal, string tabla)
         {
@@ -39,11 +37,19 @@ namespace UI.Modapie
             }
         }
 
-        private void Productos_Load(object sender, EventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.leer_datos("SELECT * FROM InventarioAlDetalle", ref resultados, "InventarioAlDetalle");
-            this.mifiltro = ((DataTable)resultados.Tables["InventarioAlDetalle"]).DefaultView;
-            this.dataGridView1.DataSource = mifiltro;
+            this.Close();
+        }
+
+
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
@@ -65,37 +71,6 @@ namespace UI.Modapie
 
             this.mifiltro.RowFilter = salida_datos;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Program.IdProducto = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            Program.Codigo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            Program.Color = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            Program.Precio = Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value.ToString());
-            Program.Talla = Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-            Program.Descripcion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            Program.Cantidad = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-            this.Close();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+        
+    } 
 }
