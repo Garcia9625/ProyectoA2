@@ -52,10 +52,7 @@ namespace DAL.Modapie
         /*Inventario al x mayor*/
 
         List<InventarioAlxMayor> obtenerListaInventarioAlxMayor();
-
-        /*Inventario al detalle*/
-
-        void ModificarCantidadProd(int id, int canti);
+        
 
 
         /*Venta al por mayor*/

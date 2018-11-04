@@ -314,24 +314,6 @@ namespace BS.Modapie
 
         #endregion
 
-        #region InventarioAlDetalle
-        public void ModificarCantidadProd(int id,int canti)
-        {
-            try
-            {
-                using (TransactionScope scope = new TransactionScope())
-                {
-                    DAL.Modapie.Mantenimiento.Instancia.ModificarCantidadProd(id,canti);
-                    scope.Complete();
-                }
-            }
-            catch (Exception ee)
-            {
-                DialogResult d = MessageBox.Show(ee.Message.ToString(), "error");
-            }
-        }
-        #endregion
-
         #region ClienteAlDetalle
 
         public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
