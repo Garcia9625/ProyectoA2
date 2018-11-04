@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia;
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia;
             this.panel1.Controls.Add(this.btn_Buscar);
             this.panel1.Controls.Add(this.dgvCAD);
             this.panel1.Controls.Add(this.btnMostrarCAD);

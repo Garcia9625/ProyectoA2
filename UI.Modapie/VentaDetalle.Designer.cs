@@ -179,7 +179,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
+            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add32x32;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(777, 74);
             this.btnAgregar.Name = "btnAgregar";
@@ -191,7 +191,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.btnBuscar.Image = global::UI.Modapie.Properties.Resources.Search32x32;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(777, 14);
             this.btnBuscar.Name = "btnBuscar";
@@ -294,7 +294,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::UI.Modapie.Properties.Resources.Search_32x32;
+            this.button2.Image = global::UI.Modapie.Properties.Resources.Search32x32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(289, 13);
             this.button2.Name = "button2";
@@ -379,7 +379,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Image = global::UI.Modapie.Properties.Resources._38_48x48;
+            this.btnLimpiar.Image = global::UI.Modapie.Properties.Resources.limpiar48x48;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.Location = new System.Drawing.Point(488, 493);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -392,7 +392,7 @@
             // btnRegistro
             // 
             this.btnRegistro.Enabled = false;
-            this.btnRegistro.Image = global::UI.Modapie.Properties.Resources._2_48x48;
+            this.btnRegistro.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistro.Location = new System.Drawing.Point(271, 493);
             this.btnRegistro.Name = "btnRegistro";
@@ -404,7 +404,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
+            this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove48x48;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(59, 493);
             this.btnEliminar.Name = "btnEliminar";
@@ -446,7 +446,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::UI.Modapie.Properties.Resources.Undo_Red_48x48;
+            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(710, 493);
             this.button1.Name = "button1";

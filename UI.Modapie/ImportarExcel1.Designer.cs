@@ -82,7 +82,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.BTN_ImportExcel);

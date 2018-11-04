@@ -104,7 +104,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add_Alt_8_32x32;
+            this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add32x32;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(153, 294);
             this.btnAgregar.Name = "btnAgregar";
@@ -116,7 +116,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove_48x48;
+            this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove48x48;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(298, 294);
             this.btnEliminar.Name = "btnEliminar";
@@ -128,7 +128,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Image = global::UI.Modapie.Properties.Resources.cancelar_32x32;
+            this.btnCancelar.Image = global::UI.Modapie.Properties.Resources.cancelar32x32;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(418, 294);
             this.btnCancelar.Name = "btnCancelar";
@@ -140,7 +140,7 @@
             // 
             // btnVaciar
             // 
-            this.btnVaciar.Image = global::UI.Modapie.Properties.Resources._38_48x48;
+            this.btnVaciar.Image = global::UI.Modapie.Properties.Resources.limpiar48x48;
             this.btnVaciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVaciar.Location = new System.Drawing.Point(533, 294);
             this.btnVaciar.Name = "btnVaciar";
@@ -218,7 +218,7 @@
             // 
             // btnRegistrarVenta
             // 
-            this.btnRegistrarVenta.Image = global::UI.Modapie.Properties.Resources._2_48x48;
+            this.btnRegistrarVenta.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnRegistrarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrarVenta.Location = new System.Drawing.Point(609, 558);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
@@ -359,7 +359,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.lbTitulo);
             this.panel1.Controls.Add(this.button1);

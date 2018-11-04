@@ -186,7 +186,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dgvData);
@@ -208,7 +208,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel2.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel2.Controls.Add(this.txtCorreoClienteAlxMayor);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.button2);

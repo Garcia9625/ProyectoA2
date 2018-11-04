@@ -71,7 +71,7 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::UI.Modapie.Properties.Resources.Undo_Red_48x48;
+            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(404, 499);
             this.button1.Name = "button1";
