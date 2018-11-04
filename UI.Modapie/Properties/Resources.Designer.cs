@@ -153,6 +153,36 @@ namespace UI.Modapie.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MODAPIE___copia11 {
+            get {
+                object obj = ResourceManager.GetObject("MODAPIE - copia11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MODAPIE___copia12 {
+            get {
+                object obj = ResourceManager.GetObject("MODAPIE - copia12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MODAPIE___copia13 {
+            get {
+                object obj = ResourceManager.GetObject("MODAPIE - copia13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MODAPIE1 {
             get {
                 object obj = ResourceManager.GetObject("MODAPIE1", resourceCulture);
