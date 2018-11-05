@@ -39,9 +39,9 @@ namespace UI.Modapie
         {
             CAXM2 = new ClientePorMayor
             {
-                nombre = textBox3.Text,
-                telefono= textBox2.Text,
-                cedula = textBox1.Text,
+                nombre = txtNombreClientealxMayor.Text,
+                telefono= txtTelefonoClienteAlxMayor.Text,
+                cedula = txtCedulaClienteAlxMayor.Text,
                 correo = txtCorreoClienteAlxMayor.Text
             };
         }
@@ -174,6 +174,26 @@ namespace UI.Modapie
 
                 throw;
             }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void btnActualizarTablaCAXM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

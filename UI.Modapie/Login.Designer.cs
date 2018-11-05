@@ -155,7 +155,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
+            this.panel2.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE1;
             this.panel2.Controls.Add(this.pcBInicio);
             this.panel2.Controls.Add(this.Horaa);
             this.panel2.Controls.Add(this.linkLabel1);
