@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarProductoDetalle));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.dgvCAD = new System.Windows.Forms.DataGridView();
             this.btnMostrarCAD = new System.Windows.Forms.Button();
             this.btnEditarproducto = new System.Windows.Forms.Button();
@@ -46,7 +47,15 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).BeginInit();
             this.SuspendLayout();
@@ -78,9 +87,27 @@
             this.panel1.Size = new System.Drawing.Size(1324, 818);
             this.panel1.TabIndex = 0;
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(77, 396);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 26);
+            this.txtId.TabIndex = 41;
+            this.txtId.Visible = false;
+            // 
             // dgvCAD
             // 
             this.dgvCAD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCAD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.Codigo,
+            this.Color,
+            this.Column1,
+            this.Talla,
+            this.Descripcion,
+            this.Cantidad,
+            this.PrecioUnitario,
+            this.Estado});
             this.dgvCAD.Location = new System.Drawing.Point(97, 476);
             this.dgvCAD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCAD.Name = "dgvCAD";
@@ -228,13 +255,50 @@
             this.txtColor.Size = new System.Drawing.Size(253, 26);
             this.txtColor.TabIndex = 30;
             // 
-            // txtId
+            // IdProducto
             // 
-            this.txtId.Location = new System.Drawing.Point(77, 396);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 26);
-            this.txtId.TabIndex = 41;
-            this.txtId.Visible = false;
+            this.IdProducto.HeaderText = "Id Producto";
+            this.IdProducto.Name = "IdProducto";
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Talla
+            // 
+            this.Talla.HeaderText = "Talla";
+            this.Talla.Name = "Talla";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
             // 
             // ModificarProductoDetalle
             // 
@@ -272,5 +336,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Talla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

@@ -1975,7 +1975,7 @@ namespace DAL.Modapie
                 conn.ConnectionString = Conexion.Default.connection;
                 comm = factory.CreateCommand();
 
-                DbParameter param1 = factory.CreateParameter();
+               
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
@@ -1986,17 +1986,11 @@ namespace DAL.Modapie
 
                 //Carga de Parametros
 
-                param1.ParameterName = "@IdProducto";
-                param1.DbType = System.Data.DbType.Int32;
-                param1.Value = productoDetalle.IdProducto;
+                
 
                 param2.ParameterName = "@Codigo";
                 param2.DbType = System.Data.DbType.String;
                 param2.Value = productoDetalle.Codigo;
-
-                param3.ParameterName = "@PrecioUnitario";
-                param3.DbType = System.Data.DbType.Double;
-                param3.Value = productoDetalle.PrecioUnitario;
 
                 param4.ParameterName = "@Color";
                 param4.DbType = System.Data.DbType.String;
@@ -2005,6 +1999,10 @@ namespace DAL.Modapie
                 param5.ParameterName = "@Talla";
                 param5.DbType = System.Data.DbType.Double;
                 param5.Value = productoDetalle.Talla;
+
+                param3.ParameterName = "@PrecioUnitario";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = productoDetalle.PrecioUnitario;
 
                 param6.ParameterName = "@Descripcion";
                 param6.DbType = System.Data.DbType.String;
@@ -2025,7 +2023,7 @@ namespace DAL.Modapie
                 //Ejecutar Store Procedure
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_InsertarPD";
-                comm.Parameters.Add(param1);
+             
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);

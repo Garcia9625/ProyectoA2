@@ -16,7 +16,7 @@ namespace UI.Modapie
         {
             InitializeComponent();
         }
-       DataSet resultados = new DataSet();
+        DataSet resultados = new DataSet();
         DataView mifiltro;
         public void leer_datos(string query, ref DataSet dstprincipal, string tabla)
         {
@@ -85,5 +85,12 @@ namespace UI.Modapie
             this.dataGridView1.DataSource = mifiltro;
             dataGridView1.ClearSelection();
         }
-    } 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IngresarProductoAlDetalle ipd = new IngresarProductoAlDetalle();
+            ipd.Show();
+        }
+    }
 }
