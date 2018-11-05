@@ -41,6 +41,7 @@
             this.pcbCancelar = new System.Windows.Forms.PictureBox();
             this.pcbRegistrar = new System.Windows.Forms.PictureBox();
             this.tltUsuario = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegistrar)).BeginInit();
@@ -57,7 +58,7 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(44, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(569, 100);
             this.groupBox1.TabIndex = 59;
@@ -135,7 +136,7 @@
             // 
             this.pcbCancelar.BackgroundImage = global::UI.Modapie.Properties.Resources.cancelar;
             this.pcbCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbCancelar.Location = new System.Drawing.Point(371, 133);
+            this.pcbCancelar.Location = new System.Drawing.Point(403, 198);
             this.pcbCancelar.Name = "pcbCancelar";
             this.pcbCancelar.Size = new System.Drawing.Size(62, 59);
             this.pcbCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +150,7 @@
             // 
             this.pcbRegistrar.BackgroundImage = global::UI.Modapie.Properties.Resources.Aceptar;
             this.pcbRegistrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbRegistrar.Location = new System.Drawing.Point(152, 133);
+            this.pcbRegistrar.Location = new System.Drawing.Point(184, 198);
             this.pcbRegistrar.Name = "pcbRegistrar";
             this.pcbRegistrar.Size = new System.Drawing.Size(62, 59);
             this.pcbRegistrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,12 +160,26 @@
             this.pcbRegistrar.MouseLeave += new System.EventHandler(this.pcbRegistrar_MouseLeave);
             this.pcbRegistrar.MouseHover += new System.EventHandler(this.pcbRegistrar_MouseHover);
             // 
+            // button1
+            // 
+            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(631, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 52);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Insertar_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 220);
+            this.ClientSize = new System.Drawing.Size(786, 276);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pcbCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pcbRegistrar);
@@ -195,5 +210,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pcbCancelar;
         private System.Windows.Forms.ToolTip tltUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

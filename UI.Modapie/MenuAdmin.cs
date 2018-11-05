@@ -122,5 +122,43 @@ namespace UI.Modapie
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_xDetalle_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            ClientesXDetalle xdetalle = new ClientesXDetalle();
+            xdetalle.Show();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            //this.Dispose();
+            //EditarUsuario EU = new EditarUsuario();
+            //EU.Show();
+        }
+
+        private void InsertarUser_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Insertar_Usuario IU = new Insertar_Usuario();
+            IU.Show();
+        }
+
+        private void Productos_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Productos Pr = new Productos();
+            Pr.Show();
+        }
     }
 }

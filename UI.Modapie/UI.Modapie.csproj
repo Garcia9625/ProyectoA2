@@ -307,7 +307,22 @@
     <None Include="Resources\Remove 48x48.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\Refresh 48x48.png" />
+    <None Include="Resources\Window 48x48.png" />
+    <None Include="Resources\User 32x32.png" />
+    <None Include="Resources\Users Edit 48x48.png" />
+    <None Include="Resources\carro-de-entregas.png" />
+    <None Include="Resources\simbolo-del-dolar-americano.png" />
+    <None Include="Resources\bolsa-de-dinero.png" />
+    <None Include="Resources\Arrow Up 48x48.png" />
     <Content Include="Resources\cancelar 32x32.png" />
+    <None Include="Resources\Currency 1 256x256.png" />
+    <None Include="Resources\Edit 32x32.png" />
+    <None Include="Resources\Edit 48x48.png" />
+    <None Include="Resources\Folder 24x24.png" />
+    <None Include="Resources\Search 32.png" />
+    <None Include="Resources\User 32.png" />
     <None Include="Resources\cancelar 32x321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

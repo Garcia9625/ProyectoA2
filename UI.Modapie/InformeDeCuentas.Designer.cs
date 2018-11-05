@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformeDeCuentas));
             this.btnInfXC = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,21 +36,27 @@
             // 
             // btnInfXC
             // 
-            this.btnInfXC.Location = new System.Drawing.Point(180, 110);
+            this.btnInfXC.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
+            this.btnInfXC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfXC.Location = new System.Drawing.Point(170, 155);
             this.btnInfXC.Name = "btnInfXC";
-            this.btnInfXC.Size = new System.Drawing.Size(218, 67);
+            this.btnInfXC.Size = new System.Drawing.Size(260, 67);
             this.btnInfXC.TabIndex = 0;
             this.btnInfXC.Text = "Informe de cuentas por cobrar";
+            this.btnInfXC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInfXC.UseVisualStyleBackColor = true;
             this.btnInfXC.Click += new System.EventHandler(this.btnInfXC_Click);
             // 
             // button1
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(488, 17);
+            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(436, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 42);
+            this.button1.Size = new System.Drawing.Size(130, 54);
             this.button1.TabIndex = 46;
+            this.button1.Text = "Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -62,14 +67,14 @@
             this.panel1.Controls.Add(this.btnInfXC);
             this.panel1.Location = new System.Drawing.Point(-2, -5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(563, 198);
+            this.panel1.Size = new System.Drawing.Size(595, 279);
             this.panel1.TabIndex = 47;
             // 
             // InformeDeCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 184);
+            this.ClientSize = new System.Drawing.Size(576, 240);
             this.Controls.Add(this.panel1);
             this.Name = "InformeDeCuentas";
             this.Text = "InformeDeCuentas";
