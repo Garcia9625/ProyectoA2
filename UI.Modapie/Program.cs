@@ -34,7 +34,7 @@ namespace UI.Modapie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionProductosAlDetalle());
+            Application.Run(new Login());
         }
     }
 }
