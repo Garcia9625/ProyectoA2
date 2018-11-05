@@ -60,9 +60,10 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(61, 9);
+            this.lblUsername.Location = new System.Drawing.Point(46, 7);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(0, 29);
+            this.lblUsername.Size = new System.Drawing.Size(0, 24);
             this.lblUsername.TabIndex = 3;
             // 
             // panel1
@@ -73,9 +74,10 @@
             this.panel1.Controls.Add(this.Empleados);
             this.panel1.Controls.Add(this.Mantenimientos);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-7, -6);
+            this.panel1.Location = new System.Drawing.Point(-5, -5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1069, 689);
+            this.panel1.Size = new System.Drawing.Size(802, 560);
             this.panel1.TabIndex = 12;
             // 
             // Configuracion
@@ -83,9 +85,11 @@
             this.Configuracion.BackColor = System.Drawing.Color.White;
             this.Configuracion.Controls.Add(this.btn_NuevoUsuario);
             this.Configuracion.Controls.Add(this.button1);
-            this.Configuracion.Location = new System.Drawing.Point(431, 398);
+            this.Configuracion.Location = new System.Drawing.Point(323, 323);
+            this.Configuracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Configuracion.Name = "Configuracion";
-            this.Configuracion.Size = new System.Drawing.Size(310, 273);
+            this.Configuracion.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Configuracion.Size = new System.Drawing.Size(232, 222);
             this.Configuracion.TabIndex = 12;
             this.Configuracion.TabStop = false;
             this.Configuracion.Text = "Configuración";
@@ -94,9 +98,10 @@
             // 
             this.btn_NuevoUsuario.Image = global::UI.Modapie.Properties.Resources.User_32x32;
             this.btn_NuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NuevoUsuario.Location = new System.Drawing.Point(33, 138);
+            this.btn_NuevoUsuario.Location = new System.Drawing.Point(25, 112);
+            this.btn_NuevoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_NuevoUsuario.Name = "btn_NuevoUsuario";
-            this.btn_NuevoUsuario.Size = new System.Drawing.Size(247, 41);
+            this.btn_NuevoUsuario.Size = new System.Drawing.Size(185, 33);
             this.btn_NuevoUsuario.TabIndex = 8;
             this.btn_NuevoUsuario.Text = "Usuarios";
             this.btn_NuevoUsuario.UseVisualStyleBackColor = true;
@@ -106,9 +111,10 @@
             // 
             this.button1.Image = global::UI.Modapie.Properties.Resources.User_32x32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(33, 91);
+            this.button1.Location = new System.Drawing.Point(25, 74);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 41);
+            this.button1.Size = new System.Drawing.Size(185, 33);
             this.button1.TabIndex = 4;
             this.button1.Text = "Gestion de empleados";
             this.button1.UseVisualStyleBackColor = true;
@@ -122,9 +128,11 @@
             this.ventas.Controls.Add(this.btnInformes);
             this.ventas.Controls.Add(this.button4);
             this.ventas.Controls.Add(this.button3);
-            this.ventas.Location = new System.Drawing.Point(431, 116);
+            this.ventas.Location = new System.Drawing.Point(323, 94);
+            this.ventas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ventas.Name = "ventas";
-            this.ventas.Size = new System.Drawing.Size(310, 276);
+            this.ventas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ventas.Size = new System.Drawing.Size(232, 224);
             this.ventas.TabIndex = 12;
             this.ventas.TabStop = false;
             this.ventas.Text = "Ventas";
@@ -133,9 +141,10 @@
             // 
             this.Productos.Image = global::UI.Modapie.Properties.Resources.carro_de_entregas;
             this.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Productos.Location = new System.Drawing.Point(33, 214);
+            this.Productos.Location = new System.Drawing.Point(25, 174);
+            this.Productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Productos.Name = "Productos";
-            this.Productos.Size = new System.Drawing.Size(247, 43);
+            this.Productos.Size = new System.Drawing.Size(185, 35);
             this.Productos.TabIndex = 15;
             this.Productos.Text = "Productos";
             this.Productos.UseVisualStyleBackColor = true;
@@ -145,9 +154,10 @@
             // 
             this.btn_GIAXM.Image = global::UI.Modapie.Properties.Resources.Folder_24x24;
             this.btn_GIAXM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_GIAXM.Location = new System.Drawing.Point(33, 165);
+            this.btn_GIAXM.Location = new System.Drawing.Point(25, 134);
+            this.btn_GIAXM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_GIAXM.Name = "btn_GIAXM";
-            this.btn_GIAXM.Size = new System.Drawing.Size(247, 43);
+            this.btn_GIAXM.Size = new System.Drawing.Size(185, 35);
             this.btn_GIAXM.TabIndex = 9;
             this.btn_GIAXM.Text = "Gestion Inv. Al por mayor";
             this.btn_GIAXM.UseVisualStyleBackColor = true;
@@ -157,9 +167,10 @@
             // 
             this.btnInformes.Image = global::UI.Modapie.Properties.Resources.Edit_32x32;
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(33, 26);
+            this.btnInformes.Location = new System.Drawing.Point(25, 21);
+            this.btnInformes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Size = new System.Drawing.Size(247, 41);
+            this.btnInformes.Size = new System.Drawing.Size(185, 33);
             this.btnInformes.TabIndex = 2;
             this.btnInformes.Text = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
@@ -169,9 +180,10 @@
             // 
             this.button4.Image = global::UI.Modapie.Properties.Resources.simbolo_del_dolar_americano;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(33, 73);
+            this.button4.Location = new System.Drawing.Point(25, 59);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(247, 37);
+            this.button4.Size = new System.Drawing.Size(185, 30);
             this.button4.TabIndex = 7;
             this.button4.Text = "Gest. Ventas al detalle";
             this.button4.UseVisualStyleBackColor = true;
@@ -181,9 +193,10 @@
             // 
             this.button3.Image = global::UI.Modapie.Properties.Resources.simbolo_del_dolar_americano;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(33, 116);
+            this.button3.Location = new System.Drawing.Point(25, 94);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 43);
+            this.button3.Size = new System.Drawing.Size(185, 35);
             this.button3.TabIndex = 6;
             this.button3.Text = "Gest. Ventas al por mayor";
             this.button3.UseVisualStyleBackColor = true;
@@ -194,9 +207,11 @@
             this.Empleados.BackColor = System.Drawing.Color.White;
             this.Empleados.Controls.Add(this.InsertarUser);
             this.Empleados.Controls.Add(this.btn_editarUser);
-            this.Empleados.Location = new System.Drawing.Point(64, 398);
+            this.Empleados.Location = new System.Drawing.Point(48, 323);
+            this.Empleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Empleados.Name = "Empleados";
-            this.Empleados.Size = new System.Drawing.Size(310, 276);
+            this.Empleados.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Empleados.Size = new System.Drawing.Size(232, 224);
             this.Empleados.TabIndex = 11;
             this.Empleados.TabStop = false;
             this.Empleados.Text = "Empleados";
@@ -205,9 +220,10 @@
             // 
             this.InsertarUser.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
             this.InsertarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.InsertarUser.Location = new System.Drawing.Point(32, 138);
+            this.InsertarUser.Location = new System.Drawing.Point(24, 112);
+            this.InsertarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InsertarUser.Name = "InsertarUser";
-            this.InsertarUser.Size = new System.Drawing.Size(247, 41);
+            this.InsertarUser.Size = new System.Drawing.Size(185, 33);
             this.InsertarUser.TabIndex = 13;
             this.InsertarUser.Text = "Insertar nuevo usuario";
             this.InsertarUser.UseVisualStyleBackColor = true;
@@ -217,9 +233,10 @@
             // 
             this.btn_editarUser.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
             this.btn_editarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editarUser.Location = new System.Drawing.Point(32, 91);
+            this.btn_editarUser.Location = new System.Drawing.Point(24, 74);
+            this.btn_editarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_editarUser.Name = "btn_editarUser";
-            this.btn_editarUser.Size = new System.Drawing.Size(247, 41);
+            this.btn_editarUser.Size = new System.Drawing.Size(185, 33);
             this.btn_editarUser.TabIndex = 13;
             this.btn_editarUser.Text = "Editar usuario";
             this.btn_editarUser.UseVisualStyleBackColor = true;
@@ -233,9 +250,11 @@
             this.Mantenimientos.Controls.Add(this.button5);
             this.Mantenimientos.Controls.Add(this.btn_xDetalle);
             this.Mantenimientos.Controls.Add(this.btnProductos);
-            this.Mantenimientos.Location = new System.Drawing.Point(64, 116);
+            this.Mantenimientos.Location = new System.Drawing.Point(48, 94);
+            this.Mantenimientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Mantenimientos.Name = "Mantenimientos";
-            this.Mantenimientos.Size = new System.Drawing.Size(310, 276);
+            this.Mantenimientos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Mantenimientos.Size = new System.Drawing.Size(232, 224);
             this.Mantenimientos.TabIndex = 10;
             this.Mantenimientos.TabStop = false;
             this.Mantenimientos.Text = "Mantenimientos";
@@ -244,9 +263,10 @@
             // 
             this.button2.Image = global::UI.Modapie.Properties.Resources.User_32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(32, 26);
+            this.button2.Location = new System.Drawing.Point(24, 21);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 41);
+            this.button2.Size = new System.Drawing.Size(185, 33);
             this.button2.TabIndex = 5;
             this.button2.Text = "Clientes al detalles";
             this.button2.UseVisualStyleBackColor = true;
@@ -256,9 +276,10 @@
             // 
             this.btnClientesPMa.Image = global::UI.Modapie.Properties.Resources.User_32;
             this.btnClientesPMa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientesPMa.Location = new System.Drawing.Point(32, 73);
+            this.btnClientesPMa.Location = new System.Drawing.Point(24, 59);
+            this.btnClientesPMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClientesPMa.Name = "btnClientesPMa";
-            this.btnClientesPMa.Size = new System.Drawing.Size(247, 37);
+            this.btnClientesPMa.Size = new System.Drawing.Size(185, 30);
             this.btnClientesPMa.TabIndex = 1;
             this.btnClientesPMa.Text = "Clientes al por mayor";
             this.btnClientesPMa.UseVisualStyleBackColor = true;
@@ -268,20 +289,23 @@
             // 
             this.button5.Image = global::UI.Modapie.Properties.Resources.carro_de_entregas;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(32, 214);
+            this.button5.Location = new System.Drawing.Point(24, 174);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(247, 43);
+            this.button5.Size = new System.Drawing.Size(185, 35);
             this.button5.TabIndex = 13;
             this.button5.Text = "Mod. productos al detalle";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_2);
             // 
             // btn_xDetalle
             // 
             this.btn_xDetalle.Image = global::UI.Modapie.Properties.Resources.Search_32;
             this.btn_xDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xDetalle.Location = new System.Drawing.Point(32, 116);
+            this.btn_xDetalle.Location = new System.Drawing.Point(24, 94);
+            this.btn_xDetalle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_xDetalle.Name = "btn_xDetalle";
-            this.btn_xDetalle.Size = new System.Drawing.Size(247, 43);
+            this.btn_xDetalle.Size = new System.Drawing.Size(185, 35);
             this.btn_xDetalle.TabIndex = 14;
             this.btn_xDetalle.Text = "Busqueda cli. al detalle";
             this.btn_xDetalle.UseVisualStyleBackColor = true;
@@ -291,9 +315,10 @@
             // 
             this.btnProductos.Image = global::UI.Modapie.Properties.Resources.Folder_24x24;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(32, 165);
+            this.btnProductos.Location = new System.Drawing.Point(24, 134);
+            this.btnProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(247, 43);
+            this.btnProductos.Size = new System.Drawing.Size(185, 35);
             this.btnProductos.TabIndex = 0;
             this.btnProductos.Text = "Excel de inventario";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -303,19 +328,21 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 44);
+            this.label1.Location = new System.Drawing.Point(210, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 51);
+            this.label1.Size = new System.Drawing.Size(225, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menú principal.";
             // 
             // MenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 683);
+            this.ClientSize = new System.Drawing.Size(605, 555);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MenuAdmin";
             this.Text = "MenuAdmin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuAdmin_FormClosed);

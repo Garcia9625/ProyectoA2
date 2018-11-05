@@ -160,5 +160,12 @@ namespace UI.Modapie
             Productos Pr = new Productos();
             Pr.Show();
         }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            this.Dispose();
+            GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
+            gpd.Show();
+        }
     }
 }
