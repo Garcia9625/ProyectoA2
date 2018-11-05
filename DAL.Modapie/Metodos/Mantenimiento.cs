@@ -2075,7 +2075,7 @@ namespace DAL.Modapie
                     {
                         pd = new ProductoDetalle
                         {
-                            IdProducto = Convert.ToInt32(dataReader["Codigo"].ToString()),
+                            IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
                             Codigo = dataReader["Codigo"].ToString(),
                             PrecioUnitario = Convert.ToSByte(dataReader["PrecioUnitario"].ToString()),
                             Color = dataReader["Color"].ToString(),
