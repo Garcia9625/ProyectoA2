@@ -2095,6 +2095,58 @@ namespace DAL.Modapie
             }
         }
 
+        public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
+        {
+            ProductoDetalle pd;
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@IdProducto";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = idProducto;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "SP_MostrarPD";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    pd = new ProductoDetalle
+                        {
+                            IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
+                            Codigo = dataReader["Codigo"].ToString(),
+                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                            Color = dataReader["Color"].ToString(),
+                            Talla = Convert.ToInt32(dataReader["Talla"].ToString()),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Cantidad = Convert.ToInt32(dataReader["Cantidad"].ToString()),
+                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
+                        };
+                }
+                return pd;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
         public ProductoDetalle buscarproductoDetalle(string codigo)
         {
             ProductoDetalle pd = new ProductoDetalle();
@@ -2131,7 +2183,7 @@ namespace DAL.Modapie
                     dataReader.Read();
                     pd = new ProductoDetalle
                     {
-                        IdProducto = Convert.ToInt32(dataReader["Codigo"].ToString()),
+                        IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
                         Codigo = dataReader["Codigo"].ToString(),
                         PrecioUnitario = Convert.ToSByte(dataReader["PrecioUnitario"].ToString()),
                         Color = dataReader["Color"].ToString(),

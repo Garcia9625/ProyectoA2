@@ -48,7 +48,8 @@ namespace UI.Modapie
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ModificarProductoDetalle md = new ModificarProductoDetalle(dataGridView1.CurrentRow.Cells[1].Value.ToString(),
+            ModificarProductoDetalle md = new ModificarProductoDetalle(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()),
+                dataGridView1.CurrentRow.Cells[1].Value.ToString(),
             Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value.ToString()), dataGridView1.CurrentRow.Cells[3].Value.ToString(),
             Convert.ToDouble(dataGridView1.CurrentRow.Cells[4].Value.ToString()), dataGridView1.CurrentRow.Cells[5].Value.ToString(),
             Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString()));

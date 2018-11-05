@@ -19,9 +19,10 @@ namespace UI.Modapie
 
 
 
-        public ModificarProductoDetalle(string cod,double prec,string color, double talla, string desc, int canti)
+        public ModificarProductoDetalle(int id, string cod,double prec,string color, double talla, string desc, int canti)
         {
             InitializeComponent();
+            txtId.Text = id.ToString();
             txtCodigo.Text = cod;
             txtPrecio.Text = prec.ToString();
             txtColor.Text = color;
@@ -31,10 +32,10 @@ namespace UI.Modapie
         }
         private void GetValues()
         {
-            IAD= new DO.Modapie.ProductoDetalle
+            IAD = new DO.Modapie.ProductoDetalle
             {
-                
 
+                IdProducto = Convert.ToInt32(txtId.Text),
                 Codigo = txtCodigo.Text,
                 PrecioUnitario = Convert.ToInt32(txtPrecio.Text),
                 Color= txtColor.Text,
@@ -62,7 +63,9 @@ namespace UI.Modapie
             {
                 GetValues();
                 Mantenimiento.Instancia.EditarproductoDetalle(IAD);
-                dgvCAD.DataSource = procesar.MostrarproductoDetalle();
+                IAD = procesar.MostrarUnproductoDetalle(Convert.ToInt32(txtId.Text));
+                dgvCAD.Rows.Add(IAD.IdProducto, IAD.Codigo, IAD.Color, IAD.Talla, IAD.Descripcion,
+            IAD.Cantidad, IAD.PrecioUnitario, IAD.Estado);
                 MessageBox.Show("Se edito correctamente el producto", "Editar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ee)
@@ -70,6 +73,11 @@ namespace UI.Modapie
                 throw;
                 //MessageBox.Show("No se pudo editar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+        private void btnMostrarCAD_Click(object sender, EventArgs e)
+        {
 
         }
     }

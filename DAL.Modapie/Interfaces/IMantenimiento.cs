@@ -84,5 +84,6 @@ namespace DAL.Modapie
         List<ProductoDetalle> MostrarproductoDetalle();
         ProductoDetalle buscarproductoDetalle(string codigo);
         void EditarproductoDetalle(ProductoDetalle productoDetalle);
+        ProductoDetalle MostrarUnproductoDetalle(int idProducto);
     }
 }

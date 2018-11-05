@@ -628,6 +628,25 @@ namespace BS.Modapie
             }
         }
 
+        public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
+        {
+            ProductoDetalle pd = new ProductoDetalle();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    pd = DAL.Modapie.Mantenimiento.Instancia.MostrarUnproductoDetalle(idProducto);
+                    scope.Complete();
+                    return pd;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
         #endregion
 
     }
