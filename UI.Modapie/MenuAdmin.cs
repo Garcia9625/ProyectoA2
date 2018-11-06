@@ -32,15 +32,6 @@ namespace UI.Modapie
 
         }
 
-        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                this.Dispose();
-                Login lo = new Login();
-                lo.Show();
-            }
-        }
 
         private void btnClientesPMa_Click(object sender, EventArgs e)
         {
@@ -166,6 +157,20 @@ namespace UI.Modapie
             this.Dispose();
             GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
             gpd.Show();
+        }
+
+        private void MenuAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Dispose();
+                Login lo = new Login();
+                lo.Show();
+            }
+            else {
+                e.Cancel = true;
+            }
         }
     }
 }
