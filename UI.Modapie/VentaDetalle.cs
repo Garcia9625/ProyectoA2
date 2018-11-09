@@ -48,7 +48,7 @@ namespace UI.Modapie
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                cb.Items.Add(dr["Nombre"].ToString() /*+" "+ dr["Apellido1"].ToString()*/);
+                cb.Items.Add(dr["Nombre"].ToString() +" "+ dr["Apellido1"].ToString());
             }
             dr.Close();
         }
@@ -154,7 +154,15 @@ namespace UI.Modapie
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
             venta = procesar.buscarUltimaVentaDetalle();
-            numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+            if (venta != null)
+            {
+                numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+            }
+            else
+            {
+                numFact = 1;
+            }
+            
             lblNumFact.Text = numFact.ToString();
             llenarCombo(cmbEmpleados);
             dataGridView1.ClearSelection();
@@ -296,8 +304,11 @@ namespace UI.Modapie
 
         private void cmbEmpleados_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string nombre = cmbEmpleados.Text;
+            string[] nombreEmp = nombre.Split();
+            
             Conexion();
-            cmd = new SqlCommand("Select Dni from Empleado Where Nombre = '" + cmbEmpleados.Text + "'", cnn);
+            cmd = new SqlCommand("Select Dni from Empleado Where Nombre = '" + nombreEmp[0] + "'", cnn);
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
