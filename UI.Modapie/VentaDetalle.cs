@@ -27,6 +27,10 @@ namespace UI.Modapie
         public VentaDetalle()
         {
             InitializeComponent();
+
+            dataGridView1.ClearSelection();
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
         }
         private void Conexion()
         {
@@ -153,6 +157,7 @@ namespace UI.Modapie
 
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
+            
             venta = procesar.buscarUltimaVentaDetalle();
             if (venta != null)
             {
@@ -165,7 +170,9 @@ namespace UI.Modapie
             
             lblNumFact.Text = numFact.ToString();
             llenarCombo(cmbEmpleados);
-            dataGridView1.ClearSelection();
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.RowHeadersVisible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -74,6 +74,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -81,8 +82,10 @@
             this.Código,
             this.Precio,
             this.Total});
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
             this.dataGridView1.Location = new System.Drawing.Point(59, 295);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(833, 192);
             this.dataGridView1.TabIndex = 14;
@@ -99,21 +102,18 @@
             this.Código.HeaderText = "Código del producto";
             this.Código.Name = "Código";
             this.Código.ReadOnly = true;
-            this.Código.Width = 150;
             // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio Unitario";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 150;
             // 
             // Total
             // 
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            this.Total.Width = 175;
             // 
             // groupBox1
             // 

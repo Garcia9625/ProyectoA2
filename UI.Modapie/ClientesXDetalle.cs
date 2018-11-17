@@ -65,6 +65,7 @@ namespace UI.Modapie
             this.mifiltro = ((DataTable)resultados.Tables["ClienteAlDetalle"]).DefaultView;
             this.dataGridView1.DataSource = mifiltro;
             dataGridView1.ClearSelection();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

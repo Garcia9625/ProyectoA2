@@ -44,6 +44,7 @@ namespace UI.Modapie
             this.leer_datos("SELECT * FROM InventarioAlDetalle", ref resultados, "InventarioAlDetalle");
             this.mifiltro = ((DataTable)resultados.Tables["InventarioAlDetalle"]).DefaultView;
             this.dataGridView1.DataSource = mifiltro;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
