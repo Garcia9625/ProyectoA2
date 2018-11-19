@@ -23,25 +23,32 @@ namespace UI.Modapie
 
         private void BTN_ImportExcel_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            try
+            {
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
-            OleDbConnection conector = default(OleDbConnection);
-            conector = new OleDbConnection(conexion);
-            conector.Open();
+                OleDbConnection conector = default(OleDbConnection);
+                conector = new OleDbConnection(conexion);
+                conector.Open();
 
-            OleDbCommand consulta = default(OleDbCommand);
-            consulta = new OleDbCommand("select * from [Hoja1$]", conector);
-        
-            OleDbDataAdapter adaptador = new OleDbDataAdapter();
-            adaptador.SelectCommand = consulta;
+                OleDbCommand consulta = default(OleDbCommand);
+                consulta = new OleDbCommand("select * from [Hoja1$]", conector);
 
-            DataSet ds = new DataSet();
+                OleDbDataAdapter adaptador = new OleDbDataAdapter();
+                adaptador.SelectCommand = consulta;
 
-            adaptador.Fill(ds);
+                DataSet ds = new DataSet();
 
-            dataGridView1.DataSource = ds.Tables[0];
+                adaptador.Fill(ds);
 
-            conector.Close();
+                dataGridView1.DataSource = ds.Tables[0];
+
+                conector.Close();
+            }catch(Exception ee)
+            {
+                MessageBox.Show("Ha ocurrido un error en la importanción del excel");
+            }
+            
             
                 
         }
@@ -60,43 +67,52 @@ namespace UI.Modapie
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source =C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+            try
+            {
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source =C:/Users/ricar/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
-            OleDbConnection conector = default(OleDbConnection);
-            conector = new OleDbConnection(conexion);
-            conector.Open();
+                OleDbConnection conector = default(OleDbConnection);
+                conector = new OleDbConnection(conexion);
+                conector.Open();
 
-            OleDbCommand consulta = default(OleDbCommand);
-            consulta = new OleDbCommand("select * from [Hoja1$]", conector);
+                OleDbCommand consulta = default(OleDbCommand);
+                consulta = new OleDbCommand("select * from [Hoja1$]", conector);
 
-            OleDbDataAdapter adaptador = new OleDbDataAdapter();
-            adaptador.SelectCommand = consulta;
+                OleDbDataAdapter adaptador = new OleDbDataAdapter();
+                adaptador.SelectCommand = consulta;
 
-            DataSet ds = new DataSet();
+                DataSet ds = new DataSet();
 
-            adaptador.Fill(ds);
+                adaptador.Fill(ds);
 
-            dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.DataSource = ds.Tables[0];
 
-            conector.Close();
+                conector.Close();
 
 
 
-            /////////////////////////////////////////////////////////////////
-            SqlConnection conexion_receptora = new SqlConnection("Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True");
-            conexion_receptora.Open();
-            SqlBulkCopy exportar = default(SqlBulkCopy);
-            exportar = new SqlBulkCopy(conexion_receptora);
-            exportar.DestinationTableName = "InventarioAlxMayor";
+                /////////////////////////////////////////////////////////////////
+                SqlConnection conexion_receptora = new SqlConnection("Data Source=.;Initial Catalog=DBMODAPIE;Integrated Security=True");
+                conexion_receptora.Open();
+                SqlBulkCopy exportar = default(SqlBulkCopy);
+                exportar = new SqlBulkCopy(conexion_receptora);
+                exportar.DestinationTableName = "InventarioAlxMayor";
 
-           Boolean Estado=true;
-            consulta.CommandText = "Insert Into InventarioAlxMayor(Estado) Values (@Estado)";
-            consulta.Parameters.AddWithValue("@Estado", Estado);
+                Boolean Estado = true;
+                consulta.CommandText = "Insert Into InventarioAlxMayor(Estado) Values (@Estado)";
+                consulta.Parameters.AddWithValue("@Estado", Estado);
 
-            exportar.WriteToServer(ds.Tables[0]); 
-            conexion_receptora.Close();
-            MessageBox.Show("Importacion exitosa");
-
+                exportar.WriteToServer(ds.Tables[0]);
+                conexion_receptora.Close();
+                MessageBox.Show("Importacion exitosa");
+            }
+            catch(Exception ee)
+        
+            {
+                MessageBox.Show("No se ha importado, revise si el excel está abierto");
+            }
+           
+         
             
 
 
