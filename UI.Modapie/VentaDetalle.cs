@@ -126,6 +126,7 @@ namespace UI.Modapie
                         else
                         {
                             btnRegistro.Enabled = true;
+                            txtPago.Enabled = true;
                             DescripcionVentaXDetalle V = new DescripcionVentaXDetalle();
 
                             double SubTotal;
@@ -288,6 +289,7 @@ namespace UI.Modapie
             Program.IdProducto = 0;
             Program.Talla = 0;
             Program.Precio = 0;
+            txtPago.Enabled = false;
             txtNombre.Text = "";
             txtCedula.Text = "";
             txtCodigo.Text = "";
@@ -322,6 +324,41 @@ namespace UI.Modapie
                 idEmpledo = Convert.ToInt32(dr["Dni"].ToString());
             }
             dr.Close();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

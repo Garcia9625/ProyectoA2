@@ -41,7 +41,6 @@
             this.pcbCancelar = new System.Windows.Forms.PictureBox();
             this.pcbRegistrar = new System.Windows.Forms.PictureBox();
             this.tltUsuario = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegistrar)).BeginInit();
@@ -160,26 +159,12 @@
             this.pcbRegistrar.MouseLeave += new System.EventHandler(this.pcbRegistrar_MouseLeave);
             this.pcbRegistrar.MouseHover += new System.EventHandler(this.pcbRegistrar_MouseHover);
             // 
-            // button1
-            // 
-            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(631, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 52);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "Regresar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Insertar_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(786, 276);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(653, 276);
             this.Controls.Add(this.pcbCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pcbRegistrar);
@@ -210,6 +195,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pcbCancelar;
         private System.Windows.Forms.ToolTip tltUsuario;
-        private System.Windows.Forms.Button button1;
     }
 }

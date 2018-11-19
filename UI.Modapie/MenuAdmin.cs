@@ -130,19 +130,12 @@ namespace UI.Modapie
             ClientesXDetalle xdetalle = new ClientesXDetalle();
             xdetalle.Show();
         }
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            //this.Dispose();
-            //EditarUsuario EU = new EditarUsuario();
-            //EU.Show();
-        }
-
+        
         private void InsertarUser_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            Insertar_Usuario IU = new Insertar_Usuario();
-            IU.Show();
+            RegistroUsuario RU = new RegistroUsuario();
+            RU.Show();
         }
 
         private void Productos_Click(object sender, EventArgs e)

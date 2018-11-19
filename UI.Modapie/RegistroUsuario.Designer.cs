@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnMostraru = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@
             this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.btnMostraru);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnUsuario);
             this.panel1.Controls.Add(this.txtEmpleado);
@@ -77,19 +75,6 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnMostraru
-            // 
-            this.btnMostraru.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
-            this.btnMostraru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostraru.Location = new System.Drawing.Point(467, 197);
-            this.btnMostraru.Name = "btnMostraru";
-            this.btnMostraru.Size = new System.Drawing.Size(170, 56);
-            this.btnMostraru.TabIndex = 17;
-            this.btnMostraru.Text = "Editar Usuario";
-            this.btnMostraru.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMostraru.UseVisualStyleBackColor = true;
-            this.btnMostraru.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -104,12 +89,11 @@
             // 
             this.btnUsuario.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.Location = new System.Drawing.Point(102, 197);
+            this.btnUsuario.Location = new System.Drawing.Point(278, 197);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(170, 56);
+            this.btnUsuario.Size = new System.Drawing.Size(239, 56);
             this.btnUsuario.TabIndex = 8;
             this.btnUsuario.Text = "Insertar Usuario";
-            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuario.UseVisualStyleBackColor = true;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
@@ -144,7 +128,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtEmpleado;
-        private System.Windows.Forms.Button btnMostraru;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }

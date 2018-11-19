@@ -41,7 +41,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Empleados = new System.Windows.Forms.GroupBox();
             this.InsertarUser = new System.Windows.Forms.Button();
-            this.btn_editarUser = new System.Windows.Forms.Button();
             this.Mantenimientos = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnClientesPMa = new System.Windows.Forms.Button();
@@ -205,7 +204,6 @@
             // 
             this.Empleados.BackColor = System.Drawing.Color.White;
             this.Empleados.Controls.Add(this.InsertarUser);
-            this.Empleados.Controls.Add(this.btn_editarUser);
             this.Empleados.Location = new System.Drawing.Point(64, 398);
             this.Empleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Empleados.Name = "Empleados";
@@ -219,7 +217,7 @@
             // 
             this.InsertarUser.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
             this.InsertarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.InsertarUser.Location = new System.Drawing.Point(32, 138);
+            this.InsertarUser.Location = new System.Drawing.Point(32, 91);
             this.InsertarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InsertarUser.Name = "InsertarUser";
             this.InsertarUser.Size = new System.Drawing.Size(247, 41);
@@ -227,19 +225,6 @@
             this.InsertarUser.Text = "Insertar nuevo usuario";
             this.InsertarUser.UseVisualStyleBackColor = true;
             this.InsertarUser.Click += new System.EventHandler(this.InsertarUser_Click);
-            // 
-            // btn_editarUser
-            // 
-            this.btn_editarUser.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
-            this.btn_editarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editarUser.Location = new System.Drawing.Point(32, 91);
-            this.btn_editarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_editarUser.Name = "btn_editarUser";
-            this.btn_editarUser.Size = new System.Drawing.Size(247, 41);
-            this.btn_editarUser.TabIndex = 13;
-            this.btn_editarUser.Text = "Editar usuario";
-            this.btn_editarUser.UseVisualStyleBackColor = true;
-            this.btn_editarUser.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // Mantenimientos
             // 
@@ -373,7 +358,6 @@
         private System.Windows.Forms.GroupBox Mantenimientos;
         private System.Windows.Forms.GroupBox Configuracion;
         private System.Windows.Forms.GroupBox ventas;
-        private System.Windows.Forms.Button btn_editarUser;
         private System.Windows.Forms.Button btn_xDetalle;
         private System.Windows.Forms.Button InsertarUser;
         private System.Windows.Forms.Button button5;
