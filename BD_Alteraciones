@@ -200,3 +200,15 @@ From InventarioAlxMayor
 Where IdLote = @IdLote;
 END
 
+
+ALTER TABLE DescripcionApartados
+ADD FOREIGN KEY (IdApartado) REFERENCES Apartados(IdApartado);
+
+ALTER TABLE DescripcionApartados
+ADD FOREIGN KEY (IdProducto) REFERENCES InventarioAlDetalle(IdProducto);
+
+ALTER TABLE Apartados
+ADD FOREIGN KEY (IdClienteDetalle) REFERENCES ClienteAlDetalle(Dni);
+
+ALTER TABLE Apartados
+ADD FOREIGN KEY (IdEmpleado) REFERENCES Empleado(Dni);
