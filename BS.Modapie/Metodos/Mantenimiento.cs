@@ -551,7 +551,23 @@ namespace BS.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
                 return null;
             }
+        }
 
+            public void ModificarUsuario(Usuario user)
+            {
+                try
+                {
+                    using (TransactionScope scope = new TransactionScope())
+                    {
+                        DAL.Modapie.Mantenimiento.Instancia.ModificarUsuario(user);
+                        scope.Complete();
+                    }
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+            
 
         }
 

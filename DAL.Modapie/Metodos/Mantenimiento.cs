@@ -1906,32 +1906,24 @@ namespace DAL.Modapie
                 DbParameter param1 = factory.CreateParameter();
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
-                DbParameter param4 = factory.CreateParameter();
-                DbParameter param5 = factory.CreateParameter();
-                DbParameter param6 = factory.CreateParameter();
-                DbParameter param7 = factory.CreateParameter();
-                DbParameter param8 = factory.CreateParameter();
-                DbParameter param9 = factory.CreateParameter();
-                DbParameter param10 = factory.CreateParameter();
-                DbParameter param11 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-                param1.ParameterName = "@Username";
+
+
+                param1.ParameterName = "@Password";
                 param1.DbType = System.Data.DbType.String;
-                param1.Value = user.username;
+                param1.Value = user.password;
 
-                param2.ParameterName = "@Empleado";
-                param2.DbType = System.Data.DbType.String;
-                param2.Value = user.idEmpleado;
+                param2.ParameterName = "@Rol";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = user.rol;
 
-                param3.ParameterName = "@Password";
+                param3.ParameterName = "@IdEmpleado";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value = user.password;
+                param3.Value = user.idEmpleado;
 
-                param4.ParameterName = "@Rol";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = user.rol;
+
 
 
 
@@ -1941,12 +1933,10 @@ namespace DAL.Modapie
 
                 //Ejecutar Store Procedure
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_ActualizarUsuario";
+                comm.CommandText = "sp_ModificarUsuario";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
-                comm.Parameters.Add(param4);
-
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
