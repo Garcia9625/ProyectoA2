@@ -18,22 +18,39 @@ namespace UI.Modapie
     {
         int posicion, lote;
         Mantenimiento procesar = new Mantenimiento();
+        DO.Modapie.VentaAlxMayor ventaAlxMayor2;
+        int numFact;
         public VentaAlxMayor()
         {
             InitializeComponent();
+            cargarEnLimpio();
+            llenarcomboCliente();
+            llenarComboEmpleado();
+            limpiar();
+        }
+
+        private void cargarEnLimpio()
+        {
+            cbLote.Items.Clear();
+            cbEmpleado.Items.Clear();
+            cbCliente.Items.Clear();
             cbLote.Items.Add("Seleccione una opción");
             cbCliente.Items.Add("Seleccione una opción");
-            llenarcomboCliente();
+            cbEmpleado.Items.Add("Seleccione una opción");
             llenarcomboLote();
             cbLote.SelectedIndex = 0;
             cbCliente.SelectedIndex = 0;
-            limpiar();
+            cbEmpleado.SelectedIndex = 0;
             btnRegistrarVenta.Enabled = false;
             cbLote.Enabled = false;
             btnAgregar.Enabled = false;
-        }
+            dgvVenta.Rows.Clear();
+            txtTotal.Text = "0";
+            txtPago.Text = "";
+            buscarUltimaVenta();
 
-        public void llenarcomboLote()
+        }
+        private void llenarcomboLote()
         {
             List<InventarioAlxMayor> eProductos = new List<InventarioAlxMayor>();
             eProductos = procesar.obtenerListaInventarioAlxMayor();
@@ -44,7 +61,7 @@ namespace UI.Modapie
             }
         }
 
-        public void llenarcomboCliente()
+        private void llenarcomboCliente()
         {
             List<ClientePorMayor> eClientes = new List<ClientePorMayor>();
             eClientes = procesar.MostarCAXM();
@@ -55,7 +72,17 @@ namespace UI.Modapie
             }
         }
 
-        void limpiar()
+        private void llenarComboEmpleado()
+        {
+            List<Empleado> eEmpleado = new List<Empleado>();
+            eEmpleado = procesar.MostrarEmpleado();
+            foreach (Empleado iEmpleado in eEmpleado)
+            {
+                cbEmpleado.Items.Add(iEmpleado.Dni);
+
+            }
+        }
+        private void limpiar()
         {
             btnEliminar.Enabled = false;
             btnCancelar.Enabled = false;
@@ -84,18 +111,11 @@ namespace UI.Modapie
 
             int lote = Convert.ToInt32(cbLote.Text);
             InventarioAlxMayor iProducto = procesar.obtenerLote(lote);
-            /*if (iProducto.Stock >= cantidad)
-            {*/
             dgvVenta.Rows.Add(iProducto.IdLote1, iProducto.Codigo1, iProducto.Cliente1, iProducto.Pedido1, iProducto.Modelo1,
             iProducto.Color1, iProducto.Descripcion1, iProducto.Pares1, iProducto.TotalImpuestos1);
             cbLote.SelectedIndex = 0;
             dgvDetalle.Rows.Clear();
             obtenerTotal();
-            /*}
-            else
-            {
-                MessageBox.Show("No se cuentan con la unidades suficientes en el inventario", "Producto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
         }
 
         private void btnVaciar_Click(object sender, EventArgs e)
@@ -120,7 +140,7 @@ namespace UI.Modapie
             limpiar();
         }
 
-        public List<int> obtenerDatosDGV()
+        private List<int> obtenerDatosDGV()
         {
             List<int> listaVenta = new List<int>();
             int cantidad = dgvVenta.Rows.Count-1;
@@ -154,59 +174,78 @@ namespace UI.Modapie
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            DO.Modapie.VentaAlxMayor ventaAlxMayor;
-            DO.Modapie.VentaAlxMayor ventaAlxMayor2;
-            ClientePorMayor clientePorMayor;
-            InventarioAlxMayor inventarioAlxMayor;
-            DescripcionVentaAlxMayor descripcionVentaAlxMayor;
-            List<int> listaVenta = obtenerDatosDGV();
-            bool pago = estadoVenta();
-            clientePorMayor = procesar.buscarClienteAlxMayor(cbCliente.Text);
-            ventaAlxMayor = new DO.Modapie.VentaAlxMayor
+            try
             {
-                IdClienteMayor = clientePorMayor.idCliente,
-                IdEmpleado = "2",
-                Total = Convert.ToDouble(txtTotal.Text),
-                Estado = pago,
-                SaldoPendiente = Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPago.Text),
-                TotalAbonado = Convert.ToDouble(txtPago.Text),
-                UltimoAbono = Convert.ToDouble(txtPago.Text),
-                FechaVenta = DateTime.Now
-            };
-            procesar.InsertarVentaAlxMayor(ventaAlxMayor);
-            ventaAlxMayor2 = procesar.buscarUltimaVenta();
-            int cantidadLista = listaVenta.Count;
-            int Lote;
-            for(int i = 0; i<cantidadLista; i++)
-            {
-                Lote = listaVenta[i];
-                inventarioAlxMayor = procesar.obtenerLote(Lote);
-                descripcionVentaAlxMayor = new DescripcionVentaAlxMayor
+                if (txtPago.Text != "" && cbCliente.SelectedIndex != 0)
                 {
-                    IdVentaMayor = ventaAlxMayor2.IdVentaMayor,
-                    IdProducto = inventarioAlxMayor.IdLote1,
-                    Total = inventarioAlxMayor.TotalImpuestos1
-                };
-                procesar.InsertarDescripcionVentaAlxMayor(descripcionVentaAlxMayor);
+                    DO.Modapie.VentaAlxMayor ventaAlxMayor;
+                    ClientePorMayor clientePorMayor;
+                    InventarioAlxMayor inventarioAlxMayor;
+                    DescripcionVentaAlxMayor descripcionVentaAlxMayor;
+                    List<int> listaVenta = obtenerDatosDGV();
+                    bool pago = estadoVenta();
+                    clientePorMayor = procesar.buscarClienteAlxMayor(cbCliente.Text);
+                    ventaAlxMayor = new DO.Modapie.VentaAlxMayor
+                    {
+                        IdClienteMayor = clientePorMayor.idCliente,
+                        IdEmpleado = cbEmpleado.Text,
+                        Total = Convert.ToDouble(txtTotal.Text),
+                        Estado = pago,
+                        SaldoPendiente = Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtPago.Text),
+                        TotalAbonado = Convert.ToDouble(txtPago.Text),
+                        UltimoAbono = Convert.ToDouble(txtPago.Text),
+                        FechaVenta = DateTime.Now
+                    };
+                    procesar.InsertarVentaAlxMayor(ventaAlxMayor);
+                    int cantidadLista = listaVenta.Count;
+                    int Lote;
+                    for (int i = 0; i < cantidadLista; i++)
+                    {
+                        Lote = listaVenta[i];
+                        inventarioAlxMayor = procesar.obtenerLote(Lote);
+                        descripcionVentaAlxMayor = new DescripcionVentaAlxMayor
+                        {
+                            IdVentaMayor = Convert.ToInt32(lblNumFact.Text),
+                            IdProducto = inventarioAlxMayor.IdLote1,
+                            Total = inventarioAlxMayor.TotalImpuestos1
+                        };
+                        procesar.InsertarDescripcionVentaAlxMayor(descripcionVentaAlxMayor);
+                    }
+                    MessageBox.Show("Venta Registrada");
+                    cargarEnLimpio();
+                }
+                else
+                {
+                    MessageBox.Show("No se digitó el pago");
+                }
             }
-            MessageBox.Show("Venta Registrada");
-
-            FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
-            ReportDocument oRep = new ReportDocument();
-            ParameterField pf = new ParameterField();
-            ParameterFields pfs = new ParameterFields();
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-            pf.Name = "@Nombre";
-            pfs.Add(pf);
-            pdv.Value = cbCliente.Text;
-            pf.CurrentValues.Add(pdv);
-            form.crystalReportViewer1.ParameterFieldInfo = pfs;
-            oRep.Load(Application.StartupPath + "\\Reportes\\FacturaVentaAlxMayor.rpt");
-            form.crystalReportViewer1.ReportSource = oRep;
-            form.Show();
+            catch (Exception ee)
+            {
+                MessageBox.Show("No se pudo registrar la venta");
+            }
+            try
+            {
+                FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
+                ReportDocument oRep = new ReportDocument();
+                ParameterField pf = new ParameterField();
+                ParameterFields pfs = new ParameterFields();
+                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                pf.Name = "@Nombre";
+                pfs.Add(pf);
+                pdv.Value = cbCliente.Text;
+                pf.CurrentValues.Add(pdv);
+                form.crystalReportViewer1.ParameterFieldInfo = pfs;
+                oRep.Load(Application.StartupPath + "\\Reportes\\FacturaVentaAlxMayor.rpt");
+                form.crystalReportViewer1.ReportSource = oRep;
+                form.Show();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("No se puede mostrar la factura en este momento");
+            }  
         }
 
-        public bool estadoVenta()
+        private bool estadoVenta()
         {
             double total = Convert.ToDouble(txtTotal.Text);
             double pago = Convert.ToDouble(txtPago.Text);
@@ -242,6 +281,43 @@ namespace UI.Modapie
             {
                 cbLote.Enabled = false;
             }
+        }
+
+        private void buscarUltimaVenta()
+        {
+            ventaAlxMayor2 = procesar.buscarUltimaVenta();
+            if (ventaAlxMayor2 != null)
+            {
+                numFact = Convert.ToInt32(ventaAlxMayor2.IdVentaMayor) + 1;
+            }
+            else
+            {
+                numFact = 1;
+            }
+
+            lblNumFact.Text = numFact.ToString();
+        }
+
+        private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cambiaEmpleado(object sender, EventArgs e)
+        {
+            if (cbEmpleado.SelectedIndex != 0)
+            {
+                cbCliente.Enabled = true;
+            }
+            else
+            {
+                cbCliente.Enabled = false;
+            }
+        }
+
+        private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valida.SoloNumeros(e);
         }
 
         private void DatoSeleccionado(object sender, DataGridViewCellEventArgs e)

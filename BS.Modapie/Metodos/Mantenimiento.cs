@@ -418,7 +418,7 @@ namespace BS.Modapie
             }
             catch (Exception ee)
             {
-                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                //DialogResult d = MessageBox.Show(ee.Message.ToString());
                 return null;
             }
         }
