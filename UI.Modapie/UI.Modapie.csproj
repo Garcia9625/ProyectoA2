@@ -92,6 +92,36 @@
     <Compile Include="FacturaVentasAlxMayor.Designer.cs">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracion.Designer.cs">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientos.Designer.cs">
+      <DependentUpon>frmMantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +175,12 @@
     </Compile>
     <Compile Include="MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuInterfaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuInterfaz.designer.cs">
+      <DependentUpon>MenuInterfaz.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUsuario.cs">
       <SubType>Form</SubType>
@@ -208,6 +244,18 @@
     <EmbeddedResource Include="FacturaVentasAlxMayor.resx">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientos.resx">
+      <DependentUpon>frmMantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionEmpleado.resx">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuInterfaz.resx">
+      <DependentUpon>MenuInterfaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
@@ -316,6 +367,25 @@
     <None Include="Resources\Remove 48x48.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Cash Register 32x32.png" />
+    <Content Include="Resources\Cash Register 48x48.png" />
+    <Content Include="Resources\empleado.png" />
+    <Content Include="Resources\Folder 128x128.png" />
+    <None Include="Resources\Log Out 32x32.png" />
+    <None Include="Resources\Log Out 48x48.png" />
+    <Content Include="Resources\LogoInterfaz.png" />
+    <None Include="Resources\Post Add 48x48.png" />
+    <Content Include="Resources\Productos.png" />
+    <Content Include="Resources\Search 48x48.png" />
+    <Content Include="Resources\Settings 32.png" />
+    <Content Include="Resources\Settings 32x32.png" />
+    <Content Include="Resources\Settings 48.png" />
+    <Content Include="Resources\Settings 48x48.png" />
+    <Content Include="Resources\Shopping Cart 128x128.png" />
+    <Content Include="Resources\User 128x128.png" />
+    <None Include="Resources\User Group 48x48.png" />
+    <Content Include="Resources\VentaPorMayor.png" />
+    <Content Include="Resources\Write 48x48.png" />
     <None Include="Resources\guardar.png" />
     <None Include="Resources\Refresh 48x48.png" />
     <None Include="Resources\Window 48x48.png" />
