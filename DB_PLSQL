@@ -613,3 +613,46 @@ Update Usuario set IdUsuario = @IdUsuario,IdEmpleado = @IdEmpleado,Username = @U
 END
 GO
 
+
+
+
+
+
+
+create PROCEDURE  [dbo].[sp_InsertarApartado]
+@IdClienteD varchar(30),
+@IdEmpleado varchar(30),
+@Total float,
+@Saldo float,
+@Cancelado bit,
+@Vencimiento bit,
+@Ingreso date,
+@FechaVencimiento date
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO Apartados(IdClienteDetalle,IdEmpleado,Total, Saldo, Cancelado, Vencimiento, Ingreso, FechaVencimiento)
+VALUES        (@IdClienteD,@IdEmpleado,@Total, @Saldo, 0, 0, @Ingreso, @FechaVencimiento);
+END
+
+
+
+
+create Procedure [dbo].[sp_InsertarDescripcionApartado]
+@IdVentaDetalle int,
+@IdProducto int,
+@Cantidad int,
+@Precio float,
+@Tot float
+AS
+BEGIN
+SET NOCOUNT ON;
+INSERT INTO DescripcionVentaAlDetalle(IdVentaDetalle,IdProducto,Cantidad,PrecioUnitario,Total)
+VALUES        (@IdVentaDetalle,@IdProducto,@Cantidad,@Precio,@Tot);
+UPDATE      InventarioAlDetalle
+SET          
+Cantidad = (Cantidad-@Cantidad)
+			
+WHERE       (IdProducto = @IdProducto);
+END
+
