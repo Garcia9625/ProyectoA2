@@ -23,6 +23,8 @@ namespace UI.Modapie
         public VentaAlxMayor()
         {
             InitializeComponent();
+            cbCliente.Items.Add("Seleccione una opción");
+            cbEmpleado.Items.Add("Seleccione una opción");
             cargarEnLimpio();
             llenarcomboCliente();
             llenarComboEmpleado();
@@ -32,11 +34,7 @@ namespace UI.Modapie
         private void cargarEnLimpio()
         {
             cbLote.Items.Clear();
-            cbEmpleado.Items.Clear();
-            cbCliente.Items.Clear();
             cbLote.Items.Add("Seleccione una opción");
-            cbCliente.Items.Add("Seleccione una opción");
-            cbEmpleado.Items.Add("Seleccione una opción");
             llenarcomboLote();
             cbLote.SelectedIndex = 0;
             cbCliente.SelectedIndex = 0;
