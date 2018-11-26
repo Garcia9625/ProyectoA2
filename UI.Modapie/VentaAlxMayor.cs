@@ -172,9 +172,9 @@ namespace UI.Modapie
 
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-            try
+            if (txtPago.Text != "" && cbCliente.SelectedIndex != 0)
             {
-                if (txtPago.Text != "" && cbCliente.SelectedIndex != 0)
+                try
                 {
                     DO.Modapie.VentaAlxMayor ventaAlxMayor;
                     ClientePorMayor clientePorMayor;
@@ -211,11 +211,6 @@ namespace UI.Modapie
                     }
                     MessageBox.Show("Venta Registrada");
                     cargarEnLimpio();
-                }
-                else
-                {
-                    MessageBox.Show("No se digitó el pago");
-                }
             }
             catch (Exception ee)
             {
@@ -240,7 +235,12 @@ namespace UI.Modapie
             catch (Exception ee)
             {
                 MessageBox.Show("No se puede mostrar la factura en este momento");
-            }  
+            }
+            }
+            else
+            {
+                MessageBox.Show("No se digitó el pago");
+            }
         }
 
         private bool estadoVenta()
