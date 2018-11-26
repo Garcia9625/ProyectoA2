@@ -60,7 +60,7 @@ namespace UI.Modapie
                         Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(txtID.Text);
                         if (usuario.rol == 1)
                         {
-                            Form admin = new MenuInterfaz();//MenuAdmin(usuario.username);
+                            Form admin = new MenuAdmin();//MenuAdmin(usuario.username);
                             //Form admin = new MenuAdmin();
                             this.Hide();
                             admin.Show();
@@ -126,7 +126,7 @@ namespace UI.Modapie
                             Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(txtID.Text);
                             if (usuario.rol == 1)
                             {
-                                Form admin = new MenuAdmin(usuario.username);
+                                Form admin = new MenuAdmin();
                                 //Form admin = new MenuAdmin();
                                 this.Hide();
                                 admin.Show();

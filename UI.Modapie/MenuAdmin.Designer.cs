@@ -28,339 +28,240 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUsername = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Configuracion = new System.Windows.Forms.GroupBox();
-            this.btn_NuevoUsuario = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.ventas = new System.Windows.Forms.GroupBox();
-            this.Productos = new System.Windows.Forms.Button();
-            this.btn_GIAXM = new System.Windows.Forms.Button();
-            this.btnInformes = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.Empleados = new System.Windows.Forms.GroupBox();
-            this.InsertarUser = new System.Windows.Forms.Button();
-            this.Mantenimientos = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnClientesPMa = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btn_xDetalle = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tltCerrar = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
-            this.Configuracion.SuspendLayout();
-            this.ventas.SuspendLayout();
-            this.Empleados.SuspendLayout();
-            this.Mantenimientos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(61, 9);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(0, 29);
-            this.lblUsername.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia;
-            this.panel1.Controls.Add(this.Configuracion);
-            this.panel1.Controls.Add(this.ventas);
-            this.panel1.Controls.Add(this.Empleados);
-            this.panel1.Controls.Add(this.Mantenimientos);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-7, -6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.button12);
+            this.panel1.Controls.Add(this.button11);
+            this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1069, 689);
-            this.panel1.TabIndex = 12;
-            // 
-            // Configuracion
-            // 
-            this.Configuracion.BackColor = System.Drawing.Color.White;
-            this.Configuracion.Controls.Add(this.btn_NuevoUsuario);
-            this.Configuracion.Controls.Add(this.button1);
-            this.Configuracion.Location = new System.Drawing.Point(431, 398);
-            this.Configuracion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Configuracion.Name = "Configuracion";
-            this.Configuracion.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Configuracion.Size = new System.Drawing.Size(309, 273);
-            this.Configuracion.TabIndex = 12;
-            this.Configuracion.TabStop = false;
-            this.Configuracion.Text = "Configuración";
-            // 
-            // btn_NuevoUsuario
-            // 
-            this.btn_NuevoUsuario.Image = global::UI.Modapie.Properties.Resources.User_32x32;
-            this.btn_NuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NuevoUsuario.Location = new System.Drawing.Point(33, 138);
-            this.btn_NuevoUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_NuevoUsuario.Name = "btn_NuevoUsuario";
-            this.btn_NuevoUsuario.Size = new System.Drawing.Size(247, 41);
-            this.btn_NuevoUsuario.TabIndex = 8;
-            this.btn_NuevoUsuario.Text = "Usuarios";
-            this.btn_NuevoUsuario.UseVisualStyleBackColor = true;
-            this.btn_NuevoUsuario.Click += new System.EventHandler(this.btn_NuevoUsuario_Click);
+            this.panel1.Size = new System.Drawing.Size(219, 575);
+            this.panel1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Image = global::UI.Modapie.Properties.Resources.User_32x32;
+            this.button1.AutoEllipsis = true;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(33, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(0, 103);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Gestion de empleados";
+            this.button1.Size = new System.Drawing.Size(219, 67);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "    Reportes";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ventas
+            // button9
             // 
-            this.ventas.BackColor = System.Drawing.Color.White;
-            this.ventas.Controls.Add(this.Productos);
-            this.ventas.Controls.Add(this.btn_GIAXM);
-            this.ventas.Controls.Add(this.btnInformes);
-            this.ventas.Controls.Add(this.button4);
-            this.ventas.Controls.Add(this.button3);
-            this.ventas.Location = new System.Drawing.Point(431, 116);
-            this.ventas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ventas.Name = "ventas";
-            this.ventas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ventas.Size = new System.Drawing.Size(309, 276);
-            this.ventas.TabIndex = 12;
-            this.ventas.TabStop = false;
-            this.ventas.Text = "Ventas";
+            this.button9.AutoEllipsis = true;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::UI.Modapie.Properties.Resources.Settings_32x32;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(0, 395);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(219, 67);
+            this.button9.TabIndex = 30;
+            this.button9.Text = "             Configuración";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // Productos
+            // pictureBox13
             // 
-            this.Productos.Image = global::UI.Modapie.Properties.Resources.carro_de_entregas;
-            this.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Productos.Location = new System.Drawing.Point(33, 214);
-            this.Productos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Productos.Name = "Productos";
-            this.Productos.Size = new System.Drawing.Size(247, 43);
-            this.Productos.TabIndex = 15;
-            this.Productos.Text = "Productos";
-            this.Productos.UseVisualStyleBackColor = true;
-            this.Productos.Click += new System.EventHandler(this.Productos_Click);
+            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.pictureBox13.BackgroundImage = global::UI.Modapie.Properties.Resources.Log_Out_32x32;
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox13.Location = new System.Drawing.Point(76, 492);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(54, 54);
+            this.pictureBox13.TabIndex = 16;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            this.pictureBox13.MouseLeave += new System.EventHandler(this.pictureBox13_MouseLeave);
+            this.pictureBox13.MouseHover += new System.EventHandler(this.pictureBox13_MouseHover);
             // 
-            // btn_GIAXM
+            // pictureBox1
             // 
-            this.btn_GIAXM.Image = global::UI.Modapie.Properties.Resources.Folder_24x24;
-            this.btn_GIAXM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_GIAXM.Location = new System.Drawing.Point(33, 165);
-            this.btn_GIAXM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_GIAXM.Name = "btn_GIAXM";
-            this.btn_GIAXM.Size = new System.Drawing.Size(247, 43);
-            this.btn_GIAXM.TabIndex = 9;
-            this.btn_GIAXM.Text = "Gestion Inv. Al por mayor";
-            this.btn_GIAXM.UseVisualStyleBackColor = true;
-            this.btn_GIAXM.Click += new System.EventHandler(this.btn_GIAXM_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.pictureBox1.BackgroundImage = global::UI.Modapie.Properties.Resources.LogoInterfaz;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(219, 85);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // btnInformes
+            // button10
             // 
-            this.btnInformes.Image = global::UI.Modapie.Properties.Resources.Edit_32x32;
-            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(33, 26);
-            this.btnInformes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Size = new System.Drawing.Size(247, 41);
-            this.btnInformes.TabIndex = 2;
-            this.btnInformes.Text = "Informes";
-            this.btnInformes.UseVisualStyleBackColor = true;
-            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
+            this.button10.AutoEllipsis = true;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(0, 322);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(217, 67);
+            this.button10.TabIndex = 29;
+            this.button10.Text = "         Empleados";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button4
+            // button12
             // 
-            this.button4.Image = global::UI.Modapie.Properties.Resources.simbolo_del_dolar_americano;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(33, 73);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(247, 37);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Gest. Ventas al detalle";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button12.AutoEllipsis = true;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Image = global::UI.Modapie.Properties.Resources.Cash_Register_48x48;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(0, 176);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(219, 67);
+            this.button12.TabIndex = 27;
+            this.button12.Text = "    Ventas";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button3
+            // button11
             // 
-            this.button3.Image = global::UI.Modapie.Properties.Resources.simbolo_del_dolar_americano;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(33, 116);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 43);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Gest. Ventas al por mayor";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // Empleados
-            // 
-            this.Empleados.BackColor = System.Drawing.Color.White;
-            this.Empleados.Controls.Add(this.InsertarUser);
-            this.Empleados.Location = new System.Drawing.Point(64, 398);
-            this.Empleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Empleados.Name = "Empleados";
-            this.Empleados.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Empleados.Size = new System.Drawing.Size(309, 276);
-            this.Empleados.TabIndex = 11;
-            this.Empleados.TabStop = false;
-            this.Empleados.Text = "Empleados";
-            // 
-            // InsertarUser
-            // 
-            this.InsertarUser.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
-            this.InsertarUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.InsertarUser.Location = new System.Drawing.Point(32, 91);
-            this.InsertarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InsertarUser.Name = "InsertarUser";
-            this.InsertarUser.Size = new System.Drawing.Size(247, 41);
-            this.InsertarUser.TabIndex = 13;
-            this.InsertarUser.Text = "Insertar nuevo usuario";
-            this.InsertarUser.UseVisualStyleBackColor = true;
-            this.InsertarUser.Click += new System.EventHandler(this.InsertarUser_Click);
-            // 
-            // Mantenimientos
-            // 
-            this.Mantenimientos.BackColor = System.Drawing.Color.White;
-            this.Mantenimientos.Controls.Add(this.button2);
-            this.Mantenimientos.Controls.Add(this.btnClientesPMa);
-            this.Mantenimientos.Controls.Add(this.button5);
-            this.Mantenimientos.Controls.Add(this.btn_xDetalle);
-            this.Mantenimientos.Controls.Add(this.btnProductos);
-            this.Mantenimientos.Location = new System.Drawing.Point(64, 116);
-            this.Mantenimientos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Mantenimientos.Name = "Mantenimientos";
-            this.Mantenimientos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Mantenimientos.Size = new System.Drawing.Size(309, 276);
-            this.Mantenimientos.TabIndex = 10;
-            this.Mantenimientos.TabStop = false;
-            this.Mantenimientos.Text = "Mantenimientos";
-            // 
-            // button2
-            // 
-            this.button2.Image = global::UI.Modapie.Properties.Resources.User_32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(32, 26);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 41);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Clientes al detalles";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnClientesPMa
-            // 
-            this.btnClientesPMa.Image = global::UI.Modapie.Properties.Resources.User_32;
-            this.btnClientesPMa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientesPMa.Location = new System.Drawing.Point(32, 73);
-            this.btnClientesPMa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClientesPMa.Name = "btnClientesPMa";
-            this.btnClientesPMa.Size = new System.Drawing.Size(247, 37);
-            this.btnClientesPMa.TabIndex = 1;
-            this.btnClientesPMa.Text = "Clientes al por mayor";
-            this.btnClientesPMa.UseVisualStyleBackColor = true;
-            this.btnClientesPMa.Click += new System.EventHandler(this.btnClientesPMa_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::UI.Modapie.Properties.Resources.carro_de_entregas;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(32, 214);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(247, 43);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Mod. productos al detalle";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_2);
-            // 
-            // btn_xDetalle
-            // 
-            this.btn_xDetalle.Image = global::UI.Modapie.Properties.Resources.Search_32;
-            this.btn_xDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xDetalle.Location = new System.Drawing.Point(32, 116);
-            this.btn_xDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_xDetalle.Name = "btn_xDetalle";
-            this.btn_xDetalle.Size = new System.Drawing.Size(247, 43);
-            this.btn_xDetalle.TabIndex = 14;
-            this.btn_xDetalle.Text = "Busqueda cli. al detalle";
-            this.btn_xDetalle.UseVisualStyleBackColor = true;
-            this.btn_xDetalle.Click += new System.EventHandler(this.btn_xDetalle_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Image = global::UI.Modapie.Properties.Resources.Folder_24x24;
-            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(32, 165);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(247, 43);
-            this.btnProductos.TabIndex = 0;
-            this.btnProductos.Text = "Excel de inventario";
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            this.button11.AutoEllipsis = true;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = global::UI.Modapie.Properties.Resources.Settings_32;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(0, 249);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(219, 67);
+            this.button11.TabIndex = 28;
+            this.button11.Text = "            Mantenimientos";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 44);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(506, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 50);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(291, 50);
+            this.label1.TabIndex = 15;
             this.label1.Text = "Menú principal.";
             // 
-            // MenuAdmin
+            // panelMenu
+            // 
+            this.panelMenu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panelMenu.Location = new System.Drawing.Point(219, 83);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(798, 490);
+            this.panelMenu.TabIndex = 17;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.pictureBox2.Location = new System.Drawing.Point(219, -2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(798, 85);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tltCerrar
+            // 
+            this.tltCerrar.AutoPopDelay = 5000;
+            this.tltCerrar.InitialDelay = 100;
+            this.tltCerrar.ReshowDelay = 100;
+            // 
+            // MenuInterfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 683);
+            this.ClientSize = new System.Drawing.Size(1016, 572);
+            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblUsername);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "MenuAdmin";
-            this.Text = "MenuAdmin";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuAdmin_FormClosing);
-            this.Load += new System.EventHandler(this.MenuAdmin_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "MenuInterfaz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MenuInterfaz";
             this.panel1.ResumeLayout(false);
-            this.Configuracion.ResumeLayout(false);
-            this.ventas.ResumeLayout(false);
-            this.Empleados.ResumeLayout(false);
-            this.Mantenimientos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnClientesPMa;
-        private System.Windows.Forms.Button btnInformes;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_NuevoUsuario;
-        private System.Windows.Forms.Button btn_GIAXM;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox Empleados;
-        private System.Windows.Forms.GroupBox Mantenimientos;
-        private System.Windows.Forms.GroupBox Configuracion;
-        private System.Windows.Forms.GroupBox ventas;
-        private System.Windows.Forms.Button btn_xDetalle;
-        private System.Windows.Forms.Button InsertarUser;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button Productos;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip tltCerrar;
     }
 }

@@ -173,14 +173,8 @@
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="MenuAdmin.designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuInterfaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuInterfaz.designer.cs">
-      <DependentUpon>MenuInterfaz.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUsuario.cs">
       <SubType>Form</SubType>
@@ -282,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuInterfaz.resx">
-      <DependentUpon>MenuInterfaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
