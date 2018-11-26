@@ -309,7 +309,14 @@ namespace DAL.Modapie
                         CAXM = new ClientePorMayor
                         {
                             idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
-                            nombre = dataReader["Nombre"].ToString()
+                            nombre = dataReader["Nombre"].ToString(),
+                            telefono= dataReader["Telefono"].ToString(),
+                            cedula= dataReader["Cedula"].ToString(),
+                            correo= dataReader["Correo"].ToString(),
+                            estado= Convert.ToBoolean(dataReader["Estado"].ToString())
+                            
+
+                           
                         };
                         lista.Add(CAXM);
                     }
@@ -340,31 +347,32 @@ namespace DAL.Modapie
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
                 DbParameter param5 = factory.CreateParameter();
-
+                DbParameter param6 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-
-
-                param1.ParameterName = "@Nombre";
+                param1.ParameterName = "IdCliente";
                 param1.DbType = System.Data.DbType.String;
-                param1.Value = CAXM.nombre;
+                param1.Value = CAXM.idCliente;
 
-                param2.ParameterName = "@Telefono";
+                param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.telefono;
+                param2.Value = CAXM.nombre;
 
-                param3.ParameterName = "@Cedula";
+                param3.ParameterName = "@Telefono";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.cedula;
+                param3.Value = CAXM.telefono;
 
-                param4.ParameterName = "@Correo";
+                param4.ParameterName = "@Cedula";
                 param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.correo;
+                param4.Value = CAXM.cedula;
 
-                param5.ParameterName = "@Estado";
-                param5.DbType = System.Data.DbType.Boolean;
-                param5.Value = CAXM.estado;
+                param5.ParameterName = "@Correo";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = CAXM.correo;
+
+           
+
                 //Abrir Coneccion 
                 comm.Connection = conn;
                 conn.Open();
@@ -376,6 +384,8 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+          
 
                 comm.ExecuteNonQuery();
             }
@@ -403,11 +413,16 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
 
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
                 param1.Value = CAXM.idCliente;
+
+                param2.ParameterName = "@Estado";
+                param2.DbType = System.Data.DbType.Boolean;
+                param2.Value = CAXM.estado;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -416,6 +431,7 @@ namespace DAL.Modapie
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_EliminarCAXM";
                 comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)

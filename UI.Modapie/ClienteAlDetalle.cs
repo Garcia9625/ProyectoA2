@@ -20,7 +20,9 @@ namespace UI.Modapie
 
         public ClienteAlDetalle()
         {
+            
             InitializeComponent();
+            
         }
         private void GetValues()
         {
