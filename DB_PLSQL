@@ -656,3 +656,29 @@ Cantidad = (Cantidad-@Cantidad)
 WHERE       (IdProducto = @IdProducto);
 END
 
+
+
+create PROCEDURE [dbo].[sp_BuscarUsuarioRecuperacion] 
+@username varchar(20)
+AS
+BEGIN
+SET NOCOUNT ON;
+SELECT        dbo.Empleado.Correo
+FROM            dbo.Empleado INNER JOIN
+                         dbo.Usuario ON dbo.Empleado.Dni = dbo.Usuario.IdEmpleado
+WHERE        (dbo.Usuario.Username = @username)
+END
+
+
+create PROCEDURE [dbo].[sp_ModificarContraseñaUsuario] 
+@Password varchar(30),
+@Username varchar(20)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+UPDATE     Usuario
+SET          
+		  Password= @Password
+WHERE       (Username = @Username);
+END
