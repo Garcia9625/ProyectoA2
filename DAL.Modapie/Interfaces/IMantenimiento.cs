@@ -68,7 +68,8 @@ namespace DAL.Modapie
 
         /*Apartados*/
         void InsertarApartado(Apartados apartado);
-        
+        Apartados buscarUltimoApartados();
+
         /*Descripcion venta al por mayor*/
 
         void InsertarDescripcionApartado(DescripcionApartados descripcionApartado);

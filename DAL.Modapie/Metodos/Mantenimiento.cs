@@ -2034,6 +2034,11 @@ namespace DAL.Modapie
                     comm.Parameters.Add(param1);
                     comm.Parameters.Add(param2);
                     comm.Parameters.Add(param3);
+                    comm.Parameters.Add(param4);
+                    comm.Parameters.Add(param5);
+                    comm.Parameters.Add(param6);
+                    comm.Parameters.Add(param7);
+                    comm.Parameters.Add(param8);
                     comm.ExecuteNonQuery();
                 }
                 catch (Exception ee)
@@ -2110,6 +2115,46 @@ namespace DAL.Modapie
                 comm.Dispose();
                 conn.Dispose();
             }
+        }
+
+        public Apartados buscarUltimoApartados()
+        {
+                Apartados apartados = new Apartados();
+                DbConnection conn = null;
+                DbCommand comm = null;
+                try
+                {
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                    //Creacion de la connection
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    //Abrir connection
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecuta SP
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_UltimoApartado";
+
+                    using (IDataReader dataReader = comm.ExecuteReader())
+                    {
+                        dataReader.Read();
+                        apartados = new Apartados
+                        {
+                            IdApartado = Convert.ToInt32(dataReader["IDapartado"].ToString())
+                        };
+                    }
+
+                    return apartados;
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+            
         }
         #endregion
 
@@ -2434,7 +2479,7 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
-
+        
         #endregion
     }
 

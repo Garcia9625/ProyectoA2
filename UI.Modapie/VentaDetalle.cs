@@ -18,6 +18,7 @@ namespace UI.Modapie
         double precio; double total;
         int idEmpledo; int numFact;
         DO.Modapie.VentaAlDetalle venta;
+        DO.Modapie.Apartados apartados;
         InventarioAlDetalle inve;
         Mantenimiento procesar = new Mantenimiento();
         SqlConnection cnn;
@@ -158,7 +159,8 @@ namespace UI.Modapie
 
         private void VentaDetalle_Load(object sender, EventArgs e)
         {
-            
+            comboBox1.SelectedIndex = 0;
+
             venta = procesar.buscarUltimaVentaDetalle();
 
             if (venta != null)
@@ -285,13 +287,19 @@ namespace UI.Modapie
                     {
                         try
                         {
+                            Double saldo = total - Convert.ToDouble(txtPago.Text);
                             DO.Modapie.Apartados apartados;
                             apartados = new DO.Modapie.Apartados
                             {
                                 IdClienteDetalle = txtCedula.Text,
                                 IdEmpleado = idEmpledo.ToString(),
-                                Total = total
-                            };
+                                Total = total,
+                                Saldo = saldo,
+                                Cancelado = false,
+                                Vencimiento = false,
+                                Ingreso = DateTime.Now.Date,
+                                FechaVencimiento = DateTime.Now.AddMonths(3)
+                        };
                             procesar.InsertarApartado(apartados);
                             for (int i = 0; i < dataGridView1.Rows.Count; i++)
                             {
@@ -313,7 +321,7 @@ namespace UI.Modapie
                                     break;
                                 }
                             }
-                            MessageBox.Show("Compra realizada satisfactoriamente", "Compra exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Apartado realizado satisfactoriamente", "Apartado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiar();
                             venta = procesar.buscarUltimaVentaDetalle();
                             numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
@@ -374,6 +382,7 @@ namespace UI.Modapie
         public void limpiar() {
             dataGridView1.Rows.Clear();
             lst.Clear();
+            comboBox1.SelectedIndex = 0;
             btnRegistro.Enabled = false;
             Program.IdClienteDetalle = "";
             Program.Nombre = "";
@@ -395,7 +404,7 @@ namespace UI.Modapie
             txtColor.Text = "";
             rtxDescripcion.Text = "";
             cmbEmpleados.SelectedIndex = -1;
-            txtPago.Text = "¢ ";
+            txtPago.Text = "";
         }
 
         public void limpiarProducto()
@@ -456,6 +465,42 @@ namespace UI.Modapie
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                venta = procesar.buscarUltimaVentaDetalle();
+
+                if (venta != null)
+                {
+                    numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+                }
+                else
+                {
+                    numFact = 1;
+                }
+
+                lblNumFact.Text = numFact.ToString();
+            }
+            else if(comboBox1.SelectedIndex == 1)
+            {
+                apartados = procesar.buscarUltimoApartado();
+
+                if (apartados != null)
+                {
+                    numFact = Convert.ToInt32(apartados.IdApartado) + 1;
+                }
+                else
+                {
+                    numFact = 1;
+                }
+
+                lblNumFact.Text = "";
+                lblNumFact.Text = numFact.ToString();
+            }
+            
         }
     }
 

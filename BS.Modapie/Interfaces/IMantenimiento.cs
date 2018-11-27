@@ -51,6 +51,7 @@ namespace BS.Modapie
 
         /*Venta Apartado*/
         void InsertarApartado(Apartados apartado);
+        Apartados buscarUltimoApartado();
 
         /*Descripcion Apartados*/
         void InsertarDescripcionApartado(DescripcionApartados descripcionApartado);

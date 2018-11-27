@@ -697,6 +697,25 @@ namespace BS.Modapie
                 throw;
             }
         }
+
+        public Apartados buscarUltimoApartado()
+        {
+            Apartados apartados = new Apartados();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    apartados = DAL.Modapie.Mantenimiento.Instancia.buscarUltimoApartados();
+                    scope.Complete();
+                    return apartados;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
         #endregion
 
     }
