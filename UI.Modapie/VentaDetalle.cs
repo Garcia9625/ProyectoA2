@@ -117,7 +117,7 @@ namespace UI.Modapie
                 if (!string.IsNullOrEmpty(txtCodigo.Text))
                 {
                     if (!string.IsNullOrEmpty(txtCantidad.Text))
-                    {
+                    { 
                         if (Convert.ToInt32(txtCantidad.Text) > Program.Cantidad)
                         {
                             
@@ -160,6 +160,7 @@ namespace UI.Modapie
         {
             
             venta = procesar.buscarUltimaVentaDetalle();
+
             if (venta != null)
             {
                 numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
@@ -199,46 +200,141 @@ namespace UI.Modapie
             limpiar();
         }
 
+        private void GuardarDetalleApartado(Int32 objIdApartado, Int32 objIdProducto, Int32 objCantidad, Double objPUnitario, Double objTotal)
+        {
+            DescripcionApartados descripcionApartado;
+            descripcionApartado = new DescripcionApartados
+            {
+                IdApartado = objIdApartado,
+                IdProducto = objIdProducto,
+                Cantidad = objCantidad,
+                PrecioUnitario = objPUnitario,
+                Total = objTotal
+            };
+            procesar.InsertarDescripcionApartado(descripcionApartado);
+            limpiar();
+        }
+
+
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            
-            try
+            if (comboBox1.SelectedIndex == 0)
             {
-                DO.Modapie.VentaAlDetalle ventaDetalle;
-                ventaDetalle = new DO.Modapie.VentaAlDetalle
+                if (!string.IsNullOrEmpty(txtPago.Text))
                 {
-                    IdClienteDetalle = txtCedula.Text,
-                    IdEmpleado = idEmpledo.ToString(),
-                    Total = total
-                };
-                procesar.InsertarVentaDetalle(ventaDetalle);
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    int idVentaD = Convert.ToInt32(lblNumFact.Text);
-                    Double Tot = 0;
-                    if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) != "")
+                    if (Convert.ToInt32(txtPago.Text) >= total)
                     {
-                        Tot += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
-                        GuardarDetalleVenta(
-                        idVentaD,
-                        Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),
-                        Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
-                        Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
-                        Tot
-                        );                       
+                        try
+                        {
+                            DO.Modapie.VentaAlDetalle ventaDetalle;
+                            ventaDetalle = new DO.Modapie.VentaAlDetalle
+                            {
+                                IdClienteDetalle = txtCedula.Text,
+                                IdEmpleado = idEmpledo.ToString(),
+                                Total = total
+                            };
+                            procesar.InsertarVentaDetalle(ventaDetalle);
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+                                int idVentaD = Convert.ToInt32(lblNumFact.Text);
+                                Double Tot = 0;
+                                if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) != "")
+                                {
+                                    Tot += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+                                    GuardarDetalleVenta(
+                                    idVentaD,
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                                    Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
+                                    Tot
+                                    );
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                            MessageBox.Show("Compra realizada satisfactoriamente", "Compra exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            limpiar();
+                            venta = procesar.buscarUltimaVentaDetalle();
+                            numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+                            lblNumFact.Text = numFact.ToString();
+                        }
+                        catch (Exception ee)
+                        {
+                            throw;
+                        }
                     }
-                    else {
-                        break;
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la compra, dinero insuficiente", "Error en el pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                MessageBox.Show("Compra realizada satisfactoriamente","Compra exitosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                limpiar();
+                else
+                {
+                    MessageBox.Show("Debe indicar el monto con el que desea cancelar ", "Campo de pago vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
-            catch (Exception ee)
+            else if(comboBox1.SelectedIndex==1)
             {
-                throw;
+                //Codigo para apartado
+                if (!string.IsNullOrEmpty(txtPago.Text))
+                {
+                    if ((Convert.ToInt32(txtPago.Text) >= (total / 3)) && (Convert.ToInt32(txtPago.Text) < total))
+                    {
+                        try
+                        {
+                            DO.Modapie.Apartados apartados;
+                            apartados = new DO.Modapie.Apartados
+                            {
+                                IdClienteDetalle = txtCedula.Text,
+                                IdEmpleado = idEmpledo.ToString(),
+                                Total = total
+                            };
+                            procesar.InsertarApartado(apartados);
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+                                int idApartado = Convert.ToInt32(lblNumFact.Text);
+                                Double Tot = 0;
+                                if (Convert.ToString(dataGridView1.Rows[i].Cells[2].Value) != "")
+                                {
+                                    Tot += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+                                    GuardarDetalleApartado(
+                                    idApartado,
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value),
+                                    Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value),
+                                    Tot
+                                    );
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                            MessageBox.Show("Compra realizada satisfactoriamente", "Compra exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            limpiar();
+                            venta = procesar.buscarUltimaVentaDetalle();
+                            numFact = Convert.ToInt32(venta.IdVentaDetalle) + 1;
+                            lblNumFact.Text = numFact.ToString();
+                        }
+                        catch (Exception ee)
+                        {
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo realizar la compra, dinero insuficiente", "Error en el pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe indicar el monto con el que desea cancelar ", "Campo de pago vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -299,6 +395,7 @@ namespace UI.Modapie
             txtColor.Text = "";
             rtxDescripcion.Text = "";
             cmbEmpleados.SelectedIndex = -1;
+            txtPago.Text = "¢ ";
         }
 
         public void limpiarProducto()

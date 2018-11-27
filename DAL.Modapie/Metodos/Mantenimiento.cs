@@ -1967,8 +1967,154 @@ namespace DAL.Modapie
         }
         #endregion
 
+        #region Apartados
+        public void InsertarApartado(Apartados apartado)
+        {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+                DbConnection conn = null;
+                DbCommand comm = null;
+
+                try
+                {
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    DbParameter param1 = factory.CreateParameter();
+                    DbParameter param2 = factory.CreateParameter();
+                    DbParameter param3 = factory.CreateParameter();
+                    DbParameter param4 = factory.CreateParameter();
+                    DbParameter param5 = factory.CreateParameter();
+                    DbParameter param6 = factory.CreateParameter();
+                    DbParameter param7 = factory.CreateParameter();
+                    DbParameter param8 = factory.CreateParameter();
+                    DbParameter param9 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                    param1.ParameterName = "@IdClienteD";
+                    param1.DbType = System.Data.DbType.String;
+                    param1.Value = apartado.IdClienteDetalle;
+
+                    param2.ParameterName = "@IdEmpleado";
+                    param2.DbType = System.Data.DbType.String;
+                    param2.Value = apartado.IdEmpleado;
+                
+                    param3.ParameterName = "@Total";
+                    param3.DbType = System.Data.DbType.Double;
+                    param3.Value = apartado.Total;
+
+                    param4.ParameterName = "@Saldo";
+                    param4.DbType = System.Data.DbType.Double;
+                    param4.Value = apartado.Saldo;
+
+                    param5.ParameterName = "@Cancelado";
+                    param5.DbType = System.Data.DbType.Boolean;
+                    param5.Value = apartado.Cancelado;
+
+                    param6.ParameterName = "@Vencimiento";
+                    param6.DbType = System.Data.DbType.Boolean;
+                    param6.Value = apartado.Vencimiento;
+
+                    param7.ParameterName = "@Ingreso";
+                    param7.DbType = System.Data.DbType.Date;
+                    param7.Value = apartado.Ingreso;
+
+                    param8.ParameterName = "@FechaVencimiento";
+                    param8.DbType = System.Data.DbType.Date;
+                    param8.Value = apartado.FechaVencimiento;
+
+                    //Abrir Coneccion 
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecutar Store Procedure
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_InsertarApartado";
+                    comm.Parameters.Add(param1);
+                    comm.Parameters.Add(param2);
+                    comm.Parameters.Add(param3);
+                    comm.ExecuteNonQuery();
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+                finally
+                {
+                    comm.Dispose();
+                    conn.Dispose();
+                }
+            
+        }
+
+        public void InsertarDescripcionApartado(DescripcionApartados descripcionApartado)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdApartado";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = descripcionApartado.IdApartado;
+
+                param2.ParameterName = "@IdProducto";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = descripcionApartado.IdProducto;
+
+                param3.ParameterName = "@Cantidad";
+                param3.DbType = System.Data.DbType.Int32;
+                param3.Value = descripcionApartado.Cantidad;
+
+                param4.ParameterName = "@Precio";
+                param4.DbType = System.Data.DbType.Double;
+                param4.Value = descripcionApartado.PrecioUnitario;
+
+                param5.ParameterName = "@Tot";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = descripcionApartado.Total;
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarDescripcionApartado";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+        #endregion
+
         #region ProductosDetalle
-        
+
         public void InsertarProductoDetalle(ProductoDetalle productoDetalle)
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);

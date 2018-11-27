@@ -1,6 +1,4 @@
-﻿using BS.Modapie;
-using DO.Modapie;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,156 +12,86 @@ namespace UI.Modapie
 {
     public partial class MenuAdmin : Form
     {
-        string user;
-        public MenuAdmin(string username)
-        {
-            InitializeComponent();
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.user = username;
-            //lblUsername.Text = "Bienvenido: " + usuario.username;
-        }
         public MenuAdmin()
         {
             InitializeComponent();
-            //lblUsername.Text = "Bienvenido: " + usuario.username;
+            tltCerrar.SetToolTip(this.pictureBox13, "Cerrar Sesión");
         }
-        private void MenuAdmin_Load(object sender, EventArgs e)
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-
+            Form formulario;
+            formulario = panelMenu.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+            //si el formulario/instancia no existe
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelMenu.Controls.Add(formulario);
+                panelMenu.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
+            }
         }
 
-
-        private void btnClientesPMa_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            ClienteAlPorMayor cpm = new ClienteAlPorMayor();
-            cpm.Show();
+            AbrirFormulario<frmVentas>();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            ImportarExcel1 PI = new ImportarExcel1();
-            PI.Show();
+            AbrirFormulario<frmMantenimientos>();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            VentaAlxMayor GIAM = new VentaAlxMayor();
-            GIAM.Show();
+            AbrirFormulario<frmEmpleados>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            GestionEmpleado GE = new GestionEmpleado();
-            GE.Show();
+            AbrirFormulario<frmConfiguracion>();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void pictureBox13_MouseLeave(object sender, EventArgs e)
         {
-            this.Dispose();
-            ClienteAlDetalle CAD = new ClienteAlDetalle();
-            CAD.Show();
+            pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox13.Size = new Size(42, 42);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void pictureBox13_MouseHover(object sender, EventArgs e)
         {
-            VentaDetalle vd = new VentaDetalle();
-            this.Dispose();
-            vd.Show();
+            pictureBox13.Size = new Size(54, 54);
+            pictureBox13.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
-        private void btnInformes_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            InformeDeCuentas info = new InformeDeCuentas();
-            info.Show();
-        }
-
-        private void btn_GIAXM_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            GestionInventarioAlxMayor GIAXM = new GestionInventarioAlxMayor();
-            GIAXM.Show();
-        }
-
-        private void btn_NuevoUsuario_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            RegistroUsuario registrousuario = new RegistroUsuario();
-            registrousuario.Show();
-
-        }
-
-        private void btnVentasAlXM_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            VentaAlxMayor ventaxMayor = new VentaAlxMayor();
-            ventaxMayor.Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_xDetalle_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            ClientesXDetalle xdetalle = new ClientesXDetalle();
-            xdetalle.Show();
-        }
-        
-        private void InsertarUser_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            RegistroUsuario RU = new RegistroUsuario();
-            RU.Show();
-        }
-
-        private void Productos_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Productos Pr = new Productos();
-            Pr.Show();
-        }
-
-        private void button5_Click_2(object sender, EventArgs e)
-        {
-            this.Dispose();
-            GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
-            gpd.Show();
-        }
-
-        private void MenuAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        private void pictureBox13_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {
-                this.Dispose();
                 Login lo = new Login();
+                this.Dispose();
                 lo.Show();
             }
-            else {
-                e.Cancel = true;
-            }
+            else { }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmReportes>();
+        }
+        public void CerrarForm()
+        {
+            this.Dispose();
         }
     }
 }

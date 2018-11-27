@@ -665,5 +665,39 @@ namespace BS.Modapie
 
         #endregion
 
+        #region Apartados
+        public void InsertarApartado(Apartados apartado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarApartado(apartado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public void InsertarDescripcionApartado(DescripcionApartados descripcionApartado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarDescripcionApartado(descripcionApartado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+        #endregion
+
     }
 }

@@ -27,13 +27,13 @@ namespace UI.Modapie
         private void btnVentasDet_Click(object sender, EventArgs e)
         {
             VentaDetalle vd = new VentaDetalle();
-            MenuInterfaz.ActiveForm.Dispose();
+            MenuAdmin.ActiveForm.Dispose();
             vd.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MenuInterfaz.ActiveForm.Dispose();
+            MenuAdmin.ActiveForm.Dispose();
             VentaAlxMayor GIAM = new VentaAlxMayor();
             GIAM.Show();
         }
