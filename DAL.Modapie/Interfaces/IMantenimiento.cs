@@ -79,11 +79,16 @@ namespace DAL.Modapie
         Usuario BuscarUsuario(string idEmpleado);
         void ModificarUsuario(Usuario user);
 
+        string BuscarCorreo(string username);
+
+        void ModificarUsuarioContrasena(string user, string password);
+
         /*Producto detalle*/
         void InsertarProductoDetalle(ProductoDetalle productoDetalle);
         List<ProductoDetalle> MostrarproductoDetalle();
         ProductoDetalle buscarproductoDetalle(string codigo);
         void EditarproductoDetalle(ProductoDetalle productoDetalle);
         ProductoDetalle MostrarUnproductoDetalle(int idProducto);
+        
     }
 }

@@ -65,6 +65,9 @@ namespace BS.Modapie
         List<Usuario> MostrarUsuario();
         Usuario BuscarUsuario(string idEmpleado);
         void ModificarUsuario(Usuario user);
+        string BuscarCorreo(string username);
+
+        void ModificarUsuarioContrasena(string user, string password);
 
         /*Producto detalle*/
         void InsertarProductoDetalle(ProductoDetalle productoDetalle);

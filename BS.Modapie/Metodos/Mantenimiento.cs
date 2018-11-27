@@ -571,6 +571,41 @@ namespace BS.Modapie
 
         }
 
+        public string BuscarCorreo(string username)
+        {
+            string correo;
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    correo = DAL.Modapie.Mantenimiento.Instancia.BuscarCorreo(username);
+                    scope.Complete();
+                    return correo;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+
+        public void ModificarUsuarioContrasena(string user, string password)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.ModificarUsuarioContrasena(user, password);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
         #endregion
 
         #region ProductoDetalle
@@ -662,6 +697,7 @@ namespace BS.Modapie
                 return null;
             }
         }
+
 
         #endregion
 

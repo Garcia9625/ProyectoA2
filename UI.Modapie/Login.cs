@@ -163,5 +163,12 @@ namespace UI.Modapie
             }
 
         }
+
+        private void AbrirRecuperación(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form normal = new RecuperacionContraseña();
+            this.Hide();
+            normal.Show();
+        }
     }
 }
