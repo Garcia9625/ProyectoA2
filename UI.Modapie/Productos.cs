@@ -44,6 +44,7 @@ namespace UI.Modapie
             this.leer_datos("SELECT * FROM InventarioAlDetalle", ref resultados, "InventarioAlDetalle");
             this.mifiltro = ((DataTable)resultados.Tables["InventarioAlDetalle"]).DefaultView;
             this.dataGridView1.DataSource = mifiltro;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
@@ -68,7 +69,9 @@ namespace UI.Modapie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
+            MenuAdmin Pr = new MenuAdmin();
+            Pr.Show();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -81,6 +84,21 @@ namespace UI.Modapie
             Program.Descripcion = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             Program.Cantidad = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value.ToString());
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

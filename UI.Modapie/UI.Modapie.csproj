@@ -92,6 +92,36 @@
     <Compile Include="FacturaVentasAlxMayor.Designer.cs">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracion.Designer.cs">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientos.Designer.cs">
+      <DependentUpon>frmMantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +134,12 @@
     <Compile Include="GestionInventarioAlxMayor.Designer.cs">
       <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionProductosAlDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProductosAlDetalle.Designer.cs">
+      <DependentUpon>GestionProductosAlDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportarExcel1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +151,12 @@
     </Compile>
     <Compile Include="InformeDeCuentas.Designer.cs">
       <DependentUpon>InformeDeCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarProductoAlDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarProductoAlDetalle.Designer.cs">
+      <DependentUpon>IngresarProductoAlDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Insertar_Usuario.cs">
       <SubType>Form</SubType>
@@ -131,7 +173,7 @@
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="MenuAdmin.designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUsuario.cs">
@@ -139,6 +181,12 @@
     </Compile>
     <Compile Include="MenuUsuario.Designer.cs">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProductoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProductoDetalle.Designer.cs">
+      <DependentUpon>ModificarProductoDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
@@ -148,6 +196,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperacionContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperacionContraseña.Designer.cs">
+      <DependentUpon>RecuperacionContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,17 +244,38 @@
     <EmbeddedResource Include="FacturaVentasAlxMayor.resx">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientos.resx">
+      <DependentUpon>frmMantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionEmpleado.resx">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionInventarioAlxMayor.resx">
       <DependentUpon>GestionInventarioAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionProductosAlDetalle.resx">
+      <DependentUpon>GestionProductosAlDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformeDeCuentas.resx">
       <DependentUpon>InformeDeCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarProductoAlDetalle.resx">
+      <DependentUpon>IngresarProductoAlDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insertar_Usuario.resx">
       <DependentUpon>Insertar_Usuario.cs</DependentUpon>
@@ -209,20 +289,21 @@
     <EmbeddedResource Include="MenuUsuario.resx">
       <DependentUpon>MenuUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProductoDetalle.resx">
+      <DependentUpon>ModificarProductoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\ClienteAlxMayor.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="RecuperacionContraseña.resx">
+      <DependentUpon>RecuperacionContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +368,44 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Remove 48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Cash Register 32x32.png" />
+    <Content Include="Resources\Cash Register 48x48.png" />
+    <Content Include="Resources\empleado.png" />
+    <Content Include="Resources\Folder 128x128.png" />
+    <None Include="Resources\Log Out 32x32.png" />
+    <None Include="Resources\Log Out 48x48.png" />
+    <Content Include="Resources\LogoInterfaz.png" />
+    <None Include="Resources\Post Add 48x48.png" />
+    <Content Include="Resources\Productos.png" />
+    <Content Include="Resources\Search 48x48.png" />
+    <Content Include="Resources\Settings 32.png" />
+    <Content Include="Resources\Settings 32x32.png" />
+    <Content Include="Resources\Settings 48.png" />
+    <Content Include="Resources\Settings 48x48.png" />
+    <Content Include="Resources\Shopping Cart 128x128.png" />
+    <Content Include="Resources\User 128x128.png" />
+    <None Include="Resources\User Group 48x48.png" />
+    <Content Include="Resources\VentaPorMayor.png" />
+    <Content Include="Resources\Write 48x48.png" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\Refresh 48x48.png" />
+    <None Include="Resources\Window 48x48.png" />
+    <None Include="Resources\User 32x32.png" />
+    <None Include="Resources\Users Edit 48x48.png" />
+    <None Include="Resources\carro-de-entregas.png" />
+    <None Include="Resources\simbolo-del-dolar-americano.png" />
+    <None Include="Resources\bolsa-de-dinero.png" />
+    <None Include="Resources\Arrow Up 48x48.png" />
+    <Content Include="Resources\cancelar 32x32.png" />
+    <None Include="Resources\Currency 1 256x256.png" />
+    <None Include="Resources\Edit 32x32.png" />
+    <None Include="Resources\Edit 48x48.png" />
+    <None Include="Resources\Folder 24x24.png" />
+    <None Include="Resources\Search 32.png" />
+    <None Include="Resources\User 32.png" />
+    <None Include="Resources\cancelar 32x321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

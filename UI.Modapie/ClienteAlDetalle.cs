@@ -20,7 +20,9 @@ namespace UI.Modapie
 
         public ClienteAlDetalle()
         {
+            
             InitializeComponent();
+            
         }
         private void GetValues()
         {
@@ -119,6 +121,11 @@ namespace UI.Modapie
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCAD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

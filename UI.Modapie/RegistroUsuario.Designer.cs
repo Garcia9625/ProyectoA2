@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnMostraru = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
@@ -42,10 +40,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIE___copia1;
+            this.panel1.BackgroundImage = global::UI.Modapie.Properties.Resources.MODAPIECopia1;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.btnMostraru);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnUsuario);
             this.panel1.Controls.Add(this.txtEmpleado);
@@ -56,38 +53,33 @@
             // 
             // button1
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(695, 18);
+            this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(615, 18);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 42);
+            this.button1.Size = new System.Drawing.Size(133, 57);
             this.button1.TabIndex = 47;
+            this.button1.Text = "Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(97, 279);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 259);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(575, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(704, 207);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // btnMostraru
-            // 
-            this.btnMostraru.Location = new System.Drawing.Point(521, 241);
-            this.btnMostraru.Name = "btnMostraru";
-            this.btnMostraru.Size = new System.Drawing.Size(127, 23);
-            this.btnMostraru.TabIndex = 17;
-            this.btnMostraru.Text = "Modificar Usuario";
-            this.btnMostraru.UseVisualStyleBackColor = true;
-            this.btnMostraru.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(172, 166);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(172, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 1;
@@ -95,9 +87,11 @@
             // 
             // btnUsuario
             // 
-            this.btnUsuario.Location = new System.Drawing.Point(118, 241);
+            this.btnUsuario.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
+            this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuario.Location = new System.Drawing.Point(278, 197);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(121, 23);
+            this.btnUsuario.Size = new System.Drawing.Size(239, 56);
             this.btnUsuario.TabIndex = 8;
             this.btnUsuario.Text = "Insertar Usuario";
             this.btnUsuario.UseVisualStyleBackColor = true;
@@ -105,7 +99,7 @@
             // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(301, 166);
+            this.txtEmpleado.Location = new System.Drawing.Point(301, 124);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(305, 22);
             this.txtEmpleado.TabIndex = 12;
@@ -134,7 +128,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtEmpleado;
-        private System.Windows.Forms.Button btnMostraru;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }

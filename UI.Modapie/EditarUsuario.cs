@@ -8,15 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BS.Modapie;
+using DO.Modapie;
 
 namespace UI.Modapie
 {
     public partial class EditarUsuario : Form
     {
-
+        Mantenimiento procesar = new Mantenimiento();
+        Usuario CAXM;
         SqlConnection cnn;
         SqlCommand cmd;
         SqlDataReader dr;
+
+        private void GetValues()
+        {
+            CAXM = new Usuario
+            {
+                password = txtPass.Text,
+               rol = cmbRol.SelectedIndex+1,
+               idEmpleado = lblCedula.Text
+            
+       
+
+              
+
+            };
+        }
+
+
+
+
+
         public EditarUsuario(string empleado, string nomUsuario, string pass, int rol)
         {
             InitializeComponent();
@@ -87,6 +110,33 @@ namespace UI.Modapie
                 cb.Items.Add(dr["Descripcion"].ToString());
             }
             dr.Close();
+        }
+
+        private void pcbRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetValues();
+                procesar.ModificarUsuario(CAXM);
+                MessageBox.Show("El usuario fue modificado correctamente", "Usuario Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RegistroUsuario ru = new RegistroUsuario();
+                ru.Show();
+                this.Dispose();
+
+
+            }
+            catch (Exception ee)
+            {
+             
+                
+                MessageBox.Show("El usuario no pudo ser modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+        }
+        }
+
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

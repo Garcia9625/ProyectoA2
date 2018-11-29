@@ -1,6 +1,4 @@
-﻿using BS.Modapie;
-using DO.Modapie;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,103 +12,86 @@ namespace UI.Modapie
 {
     public partial class MenuAdmin : Form
     {
-        string user;
-        public MenuAdmin(string username)
-        {
-            InitializeComponent();
-            Usuario usuario = Mantenimiento.Instancia.obtenerUsuarioUser(username);
-            this.user = username;
-            //lblUsername.Text = "Bienvenido: " + usuario.username;
-        }
         public MenuAdmin()
         {
             InitializeComponent();
-            //lblUsername.Text = "Bienvenido: " + usuario.username;
+            tltCerrar.SetToolTip(this.pictureBox13, "Cerrar Sesión");
         }
-        private void MenuAdmin_Load(object sender, EventArgs e)
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-
-        }
-
-        private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            Form formulario;
+            formulario = panelMenu.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+            //si el formulario/instancia no existe
+            if (formulario == null)
             {
-                this.Dispose();
-                Login lo = new Login();
-                lo.Show();
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelMenu.Controls.Add(formulario);
+                panelMenu.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
             }
         }
 
-        private void btnClientesPMa_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            ClienteAlPorMayor cpm = new ClienteAlPorMayor();
-            cpm.Show();
+            AbrirFormulario<frmVentas>();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            ImportarExcel1 PI = new ImportarExcel1();
-            PI.Show();
+            AbrirFormulario<frmMantenimientos>();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            VentaAlxMayor GIAM = new VentaAlxMayor();
-            GIAM.Show();
+            AbrirFormulario<frmEmpleados>();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmConfiguracion>();
+        }
+
+        private void pictureBox13_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox13.Size = new Size(42, 42);
+        }
+
+        private void pictureBox13_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox13.Size = new Size(54, 54);
+            pictureBox13.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea salir?", "CERRAR SESIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Login lo = new Login();
+                this.Dispose();
+                lo.Show();
+            }
+            else { }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            GestionEmpleado GE = new GestionEmpleado();
-            GE.Show();
+            AbrirFormulario<frmReportes>();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        public void CerrarForm()
         {
             this.Dispose();
-            ClienteAlDetalle CAD = new ClienteAlDetalle();
-            CAD.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            VentaDetalle vd = new VentaDetalle();
-            this.Dispose();
-            vd.Show();
-        }
-
-        private void btnInformes_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            InformeDeCuentas info = new InformeDeCuentas();
-            info.Show();
-        }
-
-        private void btn_GIAXM_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            GestionInventarioAlxMayor GIAXM = new GestionInventarioAlxMayor();
-            GIAXM.Show();
-        }
-
-        private void btn_NuevoUsuario_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            RegistroUsuario registrousuario = new RegistroUsuario();
-            registrousuario.Show();
-
-        }
-
-        private void btnVentasAlXM_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            VentaAlxMayor ventaxMayor = new VentaAlxMayor();
-            ventaxMayor.Show();
         }
     }
 }

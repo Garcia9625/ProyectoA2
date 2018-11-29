@@ -215,3 +215,34 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+CREATE TABLE [dbo].[Apartados](
+	[IdApartado] [int] IDENTITY(1,1) NOT NULL,
+	[IdClienteDetalle] [varchar](30) NULL,
+	[IdEmpleado] [varchar](30) NULL,
+	[Total] [float] NULL,
+	[Saldo] [float] NULL,
+	[Cancelado] [bit] NULL,
+	[Vencimiento] [bit] NULL,
+	[Ingreso] [date] NULL,
+	[FechaVencimiento] [date] NULL,
+ CONSTRAINT [PK_Apartados] PRIMARY KEY NONCLUSTERED 
+(
+	[IdApartado] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[DescripcionApartados](
+	[IdDescripcionApartado] [int] IDENTITY(1,1) NOT NULL,
+	[IdApartado] [int] Not NULL,
+	[IdProducto] [int] Not NULL,
+	[Cantidad] [int] NULL,
+	[PrecioUnitario] [float] NULL,
+	[Total] [float] NULL,
+ CONSTRAINT [PK_DescripcionApartados] PRIMARY KEY NONCLUSTERED 
+(
+	[IdDescripcionApartado] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]

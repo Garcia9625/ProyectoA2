@@ -265,6 +265,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
 
                 comm.ExecuteNonQuery();
             }
@@ -309,7 +310,14 @@ namespace DAL.Modapie
                         CAXM = new ClientePorMayor
                         {
                             idCliente = Convert.ToInt32(dataReader["IdCliente"].ToString()),
-                            nombre = dataReader["Nombre"].ToString()
+                            nombre = dataReader["Nombre"].ToString(),
+                            telefono= dataReader["Telefono"].ToString(),
+                            cedula= dataReader["Cedula"].ToString(),
+                            correo= dataReader["Correo"].ToString(),
+                            estado= Convert.ToBoolean(dataReader["Estado"].ToString())
+                            
+
+                           
                         };
                         lista.Add(CAXM);
                     }
@@ -340,31 +348,32 @@ namespace DAL.Modapie
                 DbParameter param3 = factory.CreateParameter();
                 DbParameter param4 = factory.CreateParameter();
                 DbParameter param5 = factory.CreateParameter();
-
+                DbParameter param6 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-
-
-                param1.ParameterName = "@Nombre";
+                param1.ParameterName = "IdCliente";
                 param1.DbType = System.Data.DbType.String;
-                param1.Value = CAXM.nombre;
+                param1.Value = CAXM.idCliente;
 
-                param2.ParameterName = "@Telefono";
+                param2.ParameterName = "@Nombre";
                 param2.DbType = System.Data.DbType.String;
-                param2.Value = CAXM.telefono;
+                param2.Value = CAXM.nombre;
 
-                param3.ParameterName = "@Cedula";
+                param3.ParameterName = "@Telefono";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value = CAXM.cedula;
+                param3.Value = CAXM.telefono;
 
-                param4.ParameterName = "@Correo";
+                param4.ParameterName = "@Cedula";
                 param4.DbType = System.Data.DbType.String;
-                param4.Value = CAXM.correo;
+                param4.Value = CAXM.cedula;
 
-                param5.ParameterName = "@Estado";
-                param5.DbType = System.Data.DbType.Boolean;
-                param5.Value = CAXM.estado;
+                param5.ParameterName = "@Correo";
+                param5.DbType = System.Data.DbType.String;
+                param5.Value = CAXM.correo;
+
+           
+
                 //Abrir Coneccion 
                 comm.Connection = conn;
                 conn.Open();
@@ -376,6 +385,8 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+          
 
                 comm.ExecuteNonQuery();
             }
@@ -403,11 +414,16 @@ namespace DAL.Modapie
                 comm = factory.CreateCommand();
 
                 DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
 
                 //Carga de Parametros
                 param1.ParameterName = "@IdCliente";
                 param1.DbType = System.Data.DbType.Int32;
                 param1.Value = CAXM.idCliente;
+
+                param2.ParameterName = "@Estado";
+                param2.DbType = System.Data.DbType.Boolean;
+                param2.Value = CAXM.estado;
 
                 //Abrir Coneccion 
                 comm.Connection = conn;
@@ -416,6 +432,7 @@ namespace DAL.Modapie
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "sp_EliminarCAXM";
                 comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -428,7 +445,6 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
-
 
         public ClientePorMayor buscarClienteAlxMayor(string nombre)
         {
@@ -477,9 +493,11 @@ namespace DAL.Modapie
                 throw;
             }
         }
-
-
-
+       
+        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        {
+            throw new NotImplementedException();
+        } 
         #endregion
 
         #region Empleado
@@ -1011,7 +1029,6 @@ namespace DAL.Modapie
 
         #endregion
 
-
         #region ClienteAlDetalle
 
         public void InsertarClienteAlDetalle(ClienteAlDetalle clienteAlDetalle)
@@ -1364,55 +1381,6 @@ namespace DAL.Modapie
             }
         }
 
-        #endregion
-
-        #region InventarioAlDetalle
-        public void ModificarCantidadProd(int id,int canti)
-        {
-            DbConnection conn = null;
-            DbCommand comm = null;
-            try
-            {
-
-                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
-
-                //Creacion de la connection
-                conn = factory.CreateConnection();
-                conn.ConnectionString = Conexion.Default.connection;
-                comm = factory.CreateCommand();
-
-                //Creacion de parametros
-                DbParameter param1 = factory.CreateParameter();
-                DbParameter param2 = factory.CreateParameter();
-
-                //Carga de parametros
-                param1.ParameterName = "@IdProd";
-                param1.DbType = System.Data.DbType.Int32;
-                param1.Value = id;
-
-                param2.ParameterName = "@Canti";
-                param2.DbType = System.Data.DbType.Int32;
-                param2.Value = canti;
-
-                //Abrir connection
-                comm.Connection = conn;
-                conn.Open();
-
-                //Ejecuta SP
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_ModificarCantidad";
-                comm.Parameters.Add(param1);
-
-
-                comm.ExecuteNonQuery();
-            }
-            catch (Exception ee)
-            {
-                DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
-
-
-            }
-        }
         #endregion
 
         #region VentaAlxMayor
@@ -1955,32 +1923,24 @@ namespace DAL.Modapie
                 DbParameter param1 = factory.CreateParameter();
                 DbParameter param2 = factory.CreateParameter();
                 DbParameter param3 = factory.CreateParameter();
-                DbParameter param4 = factory.CreateParameter();
-                DbParameter param5 = factory.CreateParameter();
-                DbParameter param6 = factory.CreateParameter();
-                DbParameter param7 = factory.CreateParameter();
-                DbParameter param8 = factory.CreateParameter();
-                DbParameter param9 = factory.CreateParameter();
-                DbParameter param10 = factory.CreateParameter();
-                DbParameter param11 = factory.CreateParameter();
 
                 //Carga de Parametros
 
-                param1.ParameterName = "@Username";
+
+
+                param1.ParameterName = "@Password";
                 param1.DbType = System.Data.DbType.String;
-                param1.Value = user.username;
+                param1.Value = user.password;
 
-                param2.ParameterName = "@Empleado";
-                param2.DbType = System.Data.DbType.String;
-                param2.Value = user.idEmpleado;
+                param2.ParameterName = "@Rol";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = user.rol;
 
-                param3.ParameterName = "@Password";
+                param3.ParameterName = "@IdEmpleado";
                 param3.DbType = System.Data.DbType.String;
-                param3.Value = user.password;
+                param3.Value = user.idEmpleado;
 
-                param4.ParameterName = "@Rol";
-                param4.DbType = System.Data.DbType.String;
-                param4.Value = user.rol;
+
 
 
 
@@ -1990,12 +1950,161 @@ namespace DAL.Modapie
 
                 //Ejecutar Store Procedure
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.CommandText = "sp_ActualizarUsuario";
+                comm.CommandText = "sp_ModificarUsuario";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+        #endregion
+
+        #region Apartados
+        public void InsertarApartado(Apartados apartado)
+        {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+                DbConnection conn = null;
+                DbCommand comm = null;
+
+                try
+                {
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    DbParameter param1 = factory.CreateParameter();
+                    DbParameter param2 = factory.CreateParameter();
+                    DbParameter param3 = factory.CreateParameter();
+                    DbParameter param4 = factory.CreateParameter();
+                    DbParameter param5 = factory.CreateParameter();
+                    DbParameter param6 = factory.CreateParameter();
+                    DbParameter param7 = factory.CreateParameter();
+                    DbParameter param8 = factory.CreateParameter();
+                    DbParameter param9 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                    param1.ParameterName = "@IdClienteD";
+                    param1.DbType = System.Data.DbType.String;
+                    param1.Value = apartado.IdClienteDetalle;
+
+                    param2.ParameterName = "@IdEmpleado";
+                    param2.DbType = System.Data.DbType.String;
+                    param2.Value = apartado.IdEmpleado;
+                
+                    param3.ParameterName = "@Total";
+                    param3.DbType = System.Data.DbType.Double;
+                    param3.Value = apartado.Total;
+
+                    param4.ParameterName = "@Saldo";
+                    param4.DbType = System.Data.DbType.Double;
+                    param4.Value = apartado.Saldo;
+
+                    param5.ParameterName = "@Cancelado";
+                    param5.DbType = System.Data.DbType.Boolean;
+                    param5.Value = apartado.Cancelado;
+
+                    param6.ParameterName = "@Vencimiento";
+                    param6.DbType = System.Data.DbType.Boolean;
+                    param6.Value = apartado.Vencimiento;
+
+                    param7.ParameterName = "@Ingreso";
+                    param7.DbType = System.Data.DbType.Date;
+                    param7.Value = apartado.Ingreso;
+
+                    param8.ParameterName = "@FechaVencimiento";
+                    param8.DbType = System.Data.DbType.Date;
+                    param8.Value = apartado.FechaVencimiento;
+
+                    //Abrir Coneccion 
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecutar Store Procedure
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_InsertarApartado";
+                    comm.Parameters.Add(param1);
+                    comm.Parameters.Add(param2);
+                    comm.Parameters.Add(param3);
+                    comm.Parameters.Add(param4);
+                    comm.Parameters.Add(param5);
+                    comm.Parameters.Add(param6);
+                    comm.Parameters.Add(param7);
+                    comm.Parameters.Add(param8);
+                    comm.ExecuteNonQuery();
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+                finally
+                {
+                    comm.Dispose();
+                    conn.Dispose();
+                }
+            
+        }
+
+        public void InsertarDescripcionApartado(DescripcionApartados descripcionApartado)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdApartado";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = descripcionApartado.IdApartado;
+
+                param2.ParameterName = "@IdProducto";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = descripcionApartado.IdProducto;
+
+                param3.ParameterName = "@Cantidad";
+                param3.DbType = System.Data.DbType.Int32;
+                param3.Value = descripcionApartado.Cantidad;
+
+                param4.ParameterName = "@Precio";
+                param4.DbType = System.Data.DbType.Double;
+                param4.Value = descripcionApartado.PrecioUnitario;
+
+                param5.ParameterName = "@Tot";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = descripcionApartado.Total;
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarDescripcionApartado";
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
-
+                comm.Parameters.Add(param5);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -2009,11 +2118,369 @@ namespace DAL.Modapie
             }
         }
 
-        public void InsertarCAlxMayor(ClientePorMayor CAXM)
+        public Apartados buscarUltimoApartados()
         {
-            throw new NotImplementedException();
+                Apartados apartados = new Apartados();
+                DbConnection conn = null;
+                DbCommand comm = null;
+                try
+                {
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                    //Creacion de la connection
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    //Abrir connection
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecuta SP
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_UltimoApartado";
+
+                    using (IDataReader dataReader = comm.ExecuteReader())
+                    {
+                        dataReader.Read();
+                        apartados = new Apartados
+                        {
+                            IdApartado = Convert.ToInt32(dataReader["IDapartado"].ToString())
+                        };
+                    }
+
+                    return apartados;
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+            
+        }
+        #endregion
+
+        #region ProductosDetalle
+
+        public void InsertarProductoDetalle(ProductoDetalle productoDetalle)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+               
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+                DbParameter param8 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                
+
+                param2.ParameterName = "@Codigo";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = productoDetalle.Codigo;
+
+                param4.ParameterName = "@Color";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = productoDetalle.Color;
+
+                param5.ParameterName = "@Talla";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = productoDetalle.Talla;
+
+                param3.ParameterName = "@PrecioUnitario";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = productoDetalle.PrecioUnitario;
+
+                param6.ParameterName = "@Descripcion";
+                param6.DbType = System.Data.DbType.String;
+                param6.Value = productoDetalle.Descripcion;
+
+                param7.ParameterName = "@Cantidad";
+                param7.DbType = System.Data.DbType.Int32;
+                param7.Value = productoDetalle.Cantidad;
+
+                param8.ParameterName = "@Estado";
+                param8.DbType = System.Data.DbType.Byte;
+                param8.Value = productoDetalle.Estado;
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarPD";
+             
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.Parameters.Add(param8);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
+        public List<ProductoDetalle> MostrarproductoDetalle()
+        {
+            List<ProductoDetalle> lista = new List<ProductoDetalle>();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "SP_MostrarPD";
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    ProductoDetalle pd;
+                    while (dataReader.Read())
+                    {
+                        pd = new ProductoDetalle
+                        {
+                            IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
+                            Codigo = dataReader["Codigo"].ToString(),
+                            PrecioUnitario = Convert.ToSByte(dataReader["PrecioUnitario"].ToString()),
+                            Color = dataReader["Color"].ToString(),
+                            Talla = Convert.ToSByte(dataReader["Talla"].ToString()),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Cantidad = Convert.ToInt32(dataReader["Cantidad"].ToString()),
+                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
+                        };
+                        lista.Add(pd);
+                    }
+                }
+                return lista;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
+        {
+            ProductoDetalle pd;
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@IdProducto";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = idProducto;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "SP_MostrarPD";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    pd = new ProductoDetalle
+                        {
+                            IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
+                            Codigo = dataReader["Codigo"].ToString(),
+                            PrecioUnitario = Convert.ToInt32(dataReader["PrecioUnitario"].ToString()),
+                            Color = dataReader["Color"].ToString(),
+                            Talla = Convert.ToInt32(dataReader["Talla"].ToString()),
+                            Descripcion = dataReader["Descripcion"].ToString(),
+                            Cantidad = Convert.ToInt32(dataReader["Cantidad"].ToString()),
+                            Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
+                        };
+                }
+                return pd;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public ProductoDetalle buscarproductoDetalle(string codigo)
+        {
+            ProductoDetalle pd = new ProductoDetalle();
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@Codigo";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = codigo;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarPD";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    pd = new ProductoDetalle
+                    {
+                        IdProducto = Convert.ToInt32(dataReader["IdProducto"].ToString()),
+                        Codigo = dataReader["Codigo"].ToString(),
+                        PrecioUnitario = Convert.ToSByte(dataReader["PrecioUnitario"].ToString()),
+                        Color = dataReader["Color"].ToString(),
+                        Talla = Convert.ToSByte(dataReader["Talla"].ToString()),
+                        Descripcion = dataReader["Descripcion"].ToString(),
+                        Cantidad = Convert.ToInt32(dataReader["Cantidad"].ToString()),
+                        Estado = Convert.ToBoolean(dataReader["Estado"].ToString()),
+                    };
+                }
+
+                return pd;
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public void EditarproductoDetalle(ProductoDetalle productoDetalle)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+                DbParameter param6 = factory.CreateParameter();
+                DbParameter param7 = factory.CreateParameter();
+                DbParameter param8 = factory.CreateParameter();
+
+                //Carga de Parametros
+                param1.ParameterName = "@IdProducto";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = productoDetalle.IdProducto;
+
+                param2.ParameterName = "@Codigo";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = productoDetalle.Codigo;
+
+                param3.ParameterName = "@PrecioUnitario";
+                param3.DbType = System.Data.DbType.Double;
+                param3.Value = productoDetalle.PrecioUnitario;
+
+                param4.ParameterName = "@Color";
+                param4.DbType = System.Data.DbType.String;
+                param4.Value = productoDetalle.Color;
+
+                param5.ParameterName = "@Talla";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = productoDetalle.Talla;
+
+                param6.ParameterName = "@Descripcion";
+                param6.DbType = System.Data.DbType.String;
+                param6.Value = productoDetalle.Descripcion;
+
+                param7.ParameterName = "@Cantidad";
+                param7.DbType = System.Data.DbType.Int32;
+                param7.Value = productoDetalle.Cantidad;
+
+                param8.ParameterName = "@Estado";
+                param8.DbType = System.Data.DbType.Byte;
+                param8.Value = productoDetalle.Estado;
+
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_EditarPD";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.Parameters.Add(param6);
+                comm.Parameters.Add(param7);
+                comm.Parameters.Add(param8);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+        
         #endregion
     }
 

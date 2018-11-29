@@ -14,6 +14,8 @@ namespace DO.Modapie
 
         public string Color { get; set; }
 
+        public float PrecioUnitario { get; set; }
+
         public double Talla { get; set; }
 
         public string Descripcion { get; set; }
