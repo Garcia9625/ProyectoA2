@@ -58,6 +58,7 @@
             this.button2.Text = "Gestión de Usuarios";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnVentasDet
             // 
@@ -74,6 +75,7 @@
             this.btnVentasDet.Text = "Gestión de empleados";
             this.btnVentasDet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentasDet.UseVisualStyleBackColor = true;
+            this.btnVentasDet.Click += new System.EventHandler(this.btnVentasDet_Click);
             // 
             // frmEmpleados
             // 

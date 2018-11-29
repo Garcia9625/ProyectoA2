@@ -244,6 +244,9 @@
     <EmbeddedResource Include="FacturaVentasAlxMayor.resx">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>

@@ -265,6 +265,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
 
                 comm.ExecuteNonQuery();
             }

@@ -218,19 +218,11 @@ namespace UI.Modapie
             }
             try
             {
-                FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
-                ReportDocument oRep = new ReportDocument();
-                ParameterField pf = new ParameterField();
-                ParameterFields pfs = new ParameterFields();
-                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                pf.Name = "@Nombre";
-                pfs.Add(pf);
-                pdv.Value = cbCliente.Text;
-                pf.CurrentValues.Add(pdv);
-                form.crystalReportViewer1.ParameterFieldInfo = pfs;
-                oRep.Load(Application.StartupPath + "\\Reportes\\FacturaVentaAlxMayor.rpt");
-                form.crystalReportViewer1.ReportSource = oRep;
-                form.Show();
+                    //FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
+                    //ReportDocument oRep = new ReportDocument();
+                    //oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
+                    //form.crystalReportViewer1.ReportSource = oRep;
+                    //form.Show();
             }
             catch (Exception ee)
             {

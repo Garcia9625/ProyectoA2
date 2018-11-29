@@ -415,6 +415,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestionEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Empleado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionEmpleado_FormClosed);
             this.panel1.ResumeLayout(false);

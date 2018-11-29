@@ -621,6 +621,7 @@
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GestionInventarioAlxMayor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Inventario al por mayor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionInventarioAlxMayor_FormClosed);
             this.panel1.ResumeLayout(false);
