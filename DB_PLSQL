@@ -682,3 +682,23 @@ SET
 		  Password= @Password
 WHERE       (Username = @Username);
 END
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE  [dbo].[sp_UltimoApartado]
+
+AS
+BEGIN
+SET NOCOUNT ON;
+Select MAX(IdApartado) as IDapartado from Apartados
+END
+GO
