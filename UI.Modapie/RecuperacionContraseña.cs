@@ -22,11 +22,6 @@ namespace UI.Modapie
             InitializeComponent();
         }
 
-        //private void btnRecuperar_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
             try
