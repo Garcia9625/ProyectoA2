@@ -22,7 +22,12 @@ namespace UI.Modapie
             InitializeComponent();
         }
 
-        /*private void btnRecuperar_Click(object sender, EventArgs e)
+        //private void btnRecuperar_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void btnRecuperar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -66,12 +71,11 @@ namespace UI.Modapie
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error");
                 throw;
             }
         }
-        */
-        /*private string GenerarContra()
+        private string GenerarContra()
         {
             int longitud = 8;
             Guid miGuid = Guid.NewGuid();
@@ -79,6 +83,6 @@ namespace UI.Modapie
             token = token.Replace("=", "").Replace("+", "").Replace("/", "");
             token = token.Substring(0, longitud);
             return token;
-        }*/
+        }
     }
 }

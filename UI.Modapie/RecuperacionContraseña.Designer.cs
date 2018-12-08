@@ -72,7 +72,7 @@
             // 
             this.txtUsuarioRecuperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtUsuarioRecuperacion.Location = new System.Drawing.Point(151, 231);
-            this.txtUsuarioRecuperacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuarioRecuperacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuarioRecuperacion.Name = "txtUsuarioRecuperacion";
             this.txtUsuarioRecuperacion.Size = new System.Drawing.Size(455, 41);
             this.txtUsuarioRecuperacion.TabIndex = 3;
@@ -81,12 +81,13 @@
             // 
             this.btnRecuperar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRecuperar.Location = new System.Drawing.Point(656, 230);
-            this.btnRecuperar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecuperar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecuperar.Name = "btnRecuperar";
             this.btnRecuperar.Size = new System.Drawing.Size(181, 44);
             this.btnRecuperar.TabIndex = 4;
             this.btnRecuperar.Text = "Recuperar Cuenta";
             this.btnRecuperar.UseVisualStyleBackColor = true;
+            this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
             // 
             // RecuperacionContraseña
             // 
@@ -99,7 +100,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecuperacionContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperacionContraseña";
