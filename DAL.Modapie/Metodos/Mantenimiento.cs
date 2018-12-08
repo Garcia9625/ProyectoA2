@@ -329,6 +329,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void Editar(ClientePorMayor CAXM)
@@ -491,6 +496,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
        
@@ -657,6 +667,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public Empleado buscarEmpleado(string dni)
@@ -715,6 +730,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -885,6 +905,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public InventarioAlxMayor obtenerLote(int id)
@@ -982,6 +1007,11 @@ namespace DAL.Modapie
 
                 return null;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EliminarProdXMayor(int id)
@@ -1024,6 +1054,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
 
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1160,6 +1195,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EditarCAD(ClienteAlDetalle CAXD)
@@ -1288,6 +1328,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         #endregion
@@ -1378,6 +1423,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
 
                 return null;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1504,6 +1554,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1726,6 +1781,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
         #endregion
 
@@ -1802,6 +1862,11 @@ namespace DAL.Modapie
 
 
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public List<Usuario> MostrarUsuario()
@@ -1849,6 +1914,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1904,6 +1974,11 @@ namespace DAL.Modapie
             {
                 throw;
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
 
         }
@@ -2012,6 +2087,11 @@ namespace DAL.Modapie
             {
                 throw;
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -2257,7 +2337,12 @@ namespace DAL.Modapie
                 {
                     throw;
                 }
-            
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+
         }
         #endregion
 
@@ -2391,6 +2476,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
@@ -2442,6 +2532,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -2497,6 +2592,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
