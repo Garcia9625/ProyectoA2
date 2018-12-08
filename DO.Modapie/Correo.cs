@@ -8,8 +8,9 @@ namespace DO.Modapie
 {
     public class Correo
     {
-        public string Destinatarios { get; set; }
-        public string Asunto { get; set; }
-        public string Cuerpo { get; set; }
+            public string Destinatarios { get; set; }
+            public string Asunto { get; set; }
+            public string Cuerpo { get; set; }
+        
     }
 }
