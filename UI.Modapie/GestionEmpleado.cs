@@ -120,5 +120,10 @@ namespace UI.Modapie
         {
 
         }
+
+        private void btnActualizarTabla_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

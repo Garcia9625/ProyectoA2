@@ -25,7 +25,7 @@ namespace UI.Modapie
         {
             try
             {
-                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Admin/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = "+txtPath.Text+";Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
                 OleDbConnection conector = default(OleDbConnection);
                 conector = new OleDbConnection(conexion);
@@ -69,7 +69,7 @@ namespace UI.Modapie
         {
             try
             {
-                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Admin/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = " + txtPath.Text + ";Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
                 OleDbConnection conector = default(OleDbConnection);
                 conector = new OleDbConnection(conexion);
@@ -118,6 +118,17 @@ namespace UI.Modapie
             MenuAdmin ma = new MenuAdmin();
             this.Dispose();
             ma.Show();
+        }
+
+        private void btnBuscarArchivo_Click(object sender, EventArgs e)
+        {
+            string path;
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                path = file.FileName;
+                txtPath.Text = path;
+            }
         }
     }
 }
