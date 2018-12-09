@@ -226,8 +226,13 @@ namespace UI.Modapie
                 {
                     if (Convert.ToInt32(txtPago.Text) >= total)
                     {
+                        double vuelto;
+
+                        vuelto = Convert.ToInt32(txtPago.Text) - total; 
                         try
                         {
+                            label12.Text = "Su vuelto es: ¢" + vuelto;
+                            label12.Visible = true;
                             DO.Modapie.VentaAlDetalle ventaDetalle;
                             ventaDetalle = new DO.Modapie.VentaAlDetalle
                             {
@@ -437,11 +442,6 @@ namespace UI.Modapie
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label13_Click(object sender, EventArgs e)
         {
 
@@ -501,6 +501,12 @@ namespace UI.Modapie
                 lblNumFact.Text = numFact.ToString();
             }
             
+        }
+
+        private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valida.SoloNumeros(e);
+
         }
     }
 

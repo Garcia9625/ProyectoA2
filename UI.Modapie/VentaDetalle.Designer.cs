@@ -496,7 +496,7 @@
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(195, 22);
             this.txtPago.TabIndex = 24;
-            this.txtPago.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
             // 
             // label11
             // 
@@ -512,11 +512,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(192, 654);
+            this.label12.Location = new System.Drawing.Point(214, 652);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(285, 44);
+            this.label12.Size = new System.Drawing.Size(0, 44);
             this.label12.TabIndex = 25;
-            this.label12.Text = "Su vuelto es: ¢";
+            this.label12.Visible = false;
             // 
             // VentaDetalle
             // 
