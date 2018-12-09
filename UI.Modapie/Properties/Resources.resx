@@ -124,8 +124,14 @@
   <data name="Window 48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Window 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Shopping_Cart_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shopping Cart 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UndoRed48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Undo Red 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Post_Add_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Post Add 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add Alt 8 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,20 +142,29 @@
   <data name="MODAPIE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODAPIE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Folder 24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Folder 24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MODAPIECopia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MODAPIE - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="limpiar48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\38 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arrow Up 48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow Up 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Settings_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Currency 1 256x256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Currency 1 256x256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Log_Out_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Log Out 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MODAPIE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODAPIE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +172,26 @@
   <data name="User 32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Search_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Log_Out_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Log Out 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cash_Register_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cash Register 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_Group_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Group 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancelar32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar 32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="limpiar48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\38 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search 32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,17 +202,44 @@
   <data name="Aceptar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aceptar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Write_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Write 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings 48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Folder 24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder 24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="simbolo-del-dolar-americano" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simbolo-del-dolar-americano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VentaPorMayor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VentaPorMayor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User 32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MODAPIECopia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MODAPIE - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoInterfaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoInterfaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bolsa-de-dinero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bolsa-de-dinero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit 32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +253,8 @@
   <data name="Users Edit 48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Users Edit 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Arrow Up 48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Arrow Up 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cash_Register_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cash Register 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Registrar48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,64 +265,7 @@
   <data name="Edit 48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cash_Register_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cash Register 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cash_Register_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cash Register 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Folder_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Folder 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LogoInterfaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoInterfaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings 48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shopping_Cart_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shopping Cart 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User_128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User 128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VentaPorMayor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VentaPorMayor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Write_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Write 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Log_Out_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Log Out 32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Log_Out_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Log Out 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Post_Add_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Post Add 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="User_Group_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User Group 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="branding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\branding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

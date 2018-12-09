@@ -62,8 +62,8 @@ namespace UI.Modapie
 
         private void pictureBox13_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox13.Size = new Size(42, 42);
+                pictureBox13.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox13.Size = new Size(42, 42);
         }
 
         private void pictureBox13_MouseHover(object sender, EventArgs e)
@@ -89,9 +89,6 @@ namespace UI.Modapie
         {
             AbrirFormulario<frmReportes>();
         }
-        public void CerrarForm()
-        {
-            this.Dispose();
-        }
+        
     }
 }
