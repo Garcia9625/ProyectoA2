@@ -69,9 +69,7 @@ namespace UI.Modapie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            MenuAdmin Pr = new MenuAdmin();
-            Pr.Show();
+            this.Close();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
