@@ -32,6 +32,7 @@ namespace UI.Modapie
             dataGridView1.ClearSelection();
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ClearSelection();
         }
         private void Conexion()
         {
