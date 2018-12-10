@@ -25,6 +25,13 @@ namespace UI.Modapie
         {
             try
             {
+                string path;
+                OpenFileDialog file = new OpenFileDialog();
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    path = file.FileName;
+                    txtPath.Text = path;
+                }
                 string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = "+txtPath.Text+";Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
                 OleDbConnection conector = default(OleDbConnection);
@@ -46,7 +53,7 @@ namespace UI.Modapie
                 conector.Close();
             }catch(Exception ee)
             {
-                MessageBox.Show("Ha ocurrido un error en la importanción del excel");
+                MessageBox.Show("Ha ocurrido un error en la importación del excel");
             }
             
             
@@ -58,11 +65,6 @@ namespace UI.Modapie
             Form login = new Login();
             this.Hide();
             login.Show();
-        }
-
-        private void ImportarExcel1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
@@ -104,7 +106,7 @@ namespace UI.Modapie
 
                 exportar.WriteToServer(ds.Tables[0]);
                 conexion_receptora.Close();
-                MessageBox.Show("Importacion exitosa");
+                MessageBox.Show("Importación exitosa");
             }
             catch(Exception ee)
         
@@ -118,17 +120,6 @@ namespace UI.Modapie
             MenuAdmin ma = new MenuAdmin();
             this.Dispose();
             ma.Show();
-        }
-
-        private void btnBuscarArchivo_Click(object sender, EventArgs e)
-        {
-            string path;
-            OpenFileDialog file = new OpenFileDialog();
-            if (file.ShowDialog() == DialogResult.OK)
-            {
-                path = file.FileName;
-                txtPath.Text = path;
-            }
         }
     }
 }
