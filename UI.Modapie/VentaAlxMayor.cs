@@ -218,11 +218,11 @@ namespace UI.Modapie
             }
             try
             {
-                    //FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
-                    //ReportDocument oRep = new ReportDocument();
-                    //oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
-                    //form.crystalReportViewer1.ReportSource = oRep;
-                    //form.Show();
+                    FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
+                    ReportDocument oRep = new ReportDocument();
+                    oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
+                    form.crystalReportViewer1.ReportSource = oRep;
+                    form.Show();
             }
             catch (Exception ee)
             {

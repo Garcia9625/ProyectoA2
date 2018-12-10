@@ -122,6 +122,12 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVentaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentaUsuario.Designer.cs">
+      <DependentUpon>frmVentaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVentaUsuario.resx">
+      <DependentUpon>frmVentaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionEmpleado.resx">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +379,7 @@
     <None Include="Resources\Remove 48x48.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\branding.png" />
     <Content Include="Resources\Cash Register 32x32.png" />
     <Content Include="Resources\Cash Register 48x48.png" />
     <Content Include="Resources\empleado.png" />

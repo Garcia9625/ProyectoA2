@@ -684,16 +684,6 @@ WHERE       (Username = @Username);
 END
 
 
-
-
-
-
-
-
-
-
-
-
 CREATE PROCEDURE  [dbo].[sp_UltimoApartado]
 
 AS

@@ -329,6 +329,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void Editar(ClientePorMayor CAXM)
@@ -491,6 +496,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
        
@@ -657,6 +667,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public Empleado buscarEmpleado(string dni)
@@ -715,6 +730,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -885,6 +905,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public InventarioAlxMayor obtenerLote(int id)
@@ -982,6 +1007,11 @@ namespace DAL.Modapie
 
                 return null;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EliminarProdXMayor(int id)
@@ -1024,6 +1054,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
 
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1160,6 +1195,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EditarCAD(ClienteAlDetalle CAXD)
@@ -1288,6 +1328,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         #endregion
@@ -1378,6 +1423,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
 
                 return null;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1504,6 +1554,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1726,6 +1781,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
         #endregion
 
@@ -1802,6 +1862,11 @@ namespace DAL.Modapie
 
 
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public List<Usuario> MostrarUsuario()
@@ -1849,6 +1914,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1905,6 +1975,11 @@ namespace DAL.Modapie
                 throw;
 
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
 
         }
 
@@ -1954,6 +2029,113 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param1);
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public string BuscarCorreo(string username)
+        {
+            string correo;
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@username";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = username;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarUsuarioRecuperacion";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    correo = dataReader["Correo"].ToString();
+
+
+                }
+
+                return correo;
+            }
+            catch (Exception ee)
+            {
+                throw;
+
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public void ModificarUsuarioContrasena(string user, string password)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+
+
+                param1.ParameterName = "@Password";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = password;
+
+                param2.ParameterName = "@Username";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = user;
+
+
+
+
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_ModificarContraseñaUsuario";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ee)
@@ -2155,7 +2337,12 @@ namespace DAL.Modapie
                 {
                     throw;
                 }
-            
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+
         }
         #endregion
 
@@ -2289,6 +2476,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
@@ -2340,6 +2532,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -2395,6 +2592,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 

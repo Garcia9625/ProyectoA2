@@ -25,7 +25,14 @@ namespace UI.Modapie
         {
             try
             {
-                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Admin/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+                string path;
+                OpenFileDialog file = new OpenFileDialog();
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    path = file.FileName;
+                    txtPath.Text = path;
+                }
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = "+txtPath.Text+";Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
                 OleDbConnection conector = default(OleDbConnection);
                 conector = new OleDbConnection(conexion);
@@ -46,7 +53,7 @@ namespace UI.Modapie
                 conector.Close();
             }catch(Exception ee)
             {
-                MessageBox.Show("Ha ocurrido un error en la importanción del excel");
+                MessageBox.Show("Ha ocurrido un error en la importación del excel");
             }
             
             
@@ -60,16 +67,11 @@ namespace UI.Modapie
             login.Show();
         }
 
-        private void ImportarExcel1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = D:/Users/Admin/Desktop/Prueba.xlsx;Extended Properties = \"Excel 8.0;HDR = Yes\"";
+                string conexion = "Provider = Microsoft.Jet.OleDb.4.0;Data Source = " + txtPath.Text + ";Extended Properties = \"Excel 8.0;HDR = Yes\"";
 
                 OleDbConnection conector = default(OleDbConnection);
                 conector = new OleDbConnection(conexion);
@@ -104,7 +106,7 @@ namespace UI.Modapie
 
                 exportar.WriteToServer(ds.Tables[0]);
                 conexion_receptora.Close();
-                MessageBox.Show("Importacion exitosa");
+                MessageBox.Show("Importación exitosa");
             }
             catch(Exception ee)
         

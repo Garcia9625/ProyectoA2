@@ -571,7 +571,7 @@ namespace BS.Modapie
 
         }
 
-       /* public string BuscarCorreo(string username)
+       public string BuscarCorreo(string username)
         {
             string correo;
             try
@@ -589,8 +589,8 @@ namespace BS.Modapie
                 return null;
             }
         }
-        */
-      /*  public void ModificarUsuarioContrasena(string user, string password)
+        
+      public void ModificarUsuarioContrasena(string user, string password)
         {
             try
             {
@@ -605,7 +605,6 @@ namespace BS.Modapie
                 throw;
             }
         }
-        */
         #endregion
 
         #region ProductoDetalle

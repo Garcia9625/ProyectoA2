@@ -22,7 +22,7 @@ namespace UI.Modapie
             InitializeComponent();
         }
 
-        /*private void btnRecuperar_Click(object sender, EventArgs e)
+        private void btnRecuperar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -58,7 +58,10 @@ namespace UI.Modapie
                         Mantenimiento.Instancia.ModificarUsuarioContrasena(usuario, contra);
                     MessageBox.Show("Contraseña Recuperada");
                     btnRecuperar.Enabled = false;
-                    }
+                    Login lo = new Login();
+                    this.Dispose();
+                    lo.Show();
+                }
                     else
                     {
                     MessageBox.Show("No existe el usuario");
@@ -66,12 +69,11 @@ namespace UI.Modapie
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ocurrio un error");
+                MessageBox.Show("Ocurrio un error");
                 throw;
             }
         }
-        */
-        /*private string GenerarContra()
+        private string GenerarContra()
         {
             int longitud = 8;
             Guid miGuid = Guid.NewGuid();
@@ -79,6 +81,18 @@ namespace UI.Modapie
             token = token.Replace("=", "").Replace("+", "").Replace("/", "");
             token = token.Substring(0, longitud);
             return token;
-        }*/
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Login lo = new Login();
+            this.Dispose();
+            lo.Show();
+        }
     }
 }
