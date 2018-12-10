@@ -21,5 +21,33 @@ namespace UI.Modapie
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ImportarExcel1 ie = new ImportarExcel1();
+            frmMantenimientos.ActiveForm.Dispose();
+            ie.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
+            frmMantenimientos.ActiveForm.Dispose();
+            gpd.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClienteAlPorMayor cam = new ClienteAlPorMayor();
+            frmMantenimientos.ActiveForm.Dispose();
+            cam.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClienteAlDetalle cad = new ClienteAlDetalle();
+            frmMantenimientos.ActiveForm.Dispose();
+            cad.Show();
+        }
     }
 }

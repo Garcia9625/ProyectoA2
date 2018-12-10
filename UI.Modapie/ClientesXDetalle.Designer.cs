@@ -101,6 +101,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientesXDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientesXDetalle";
             this.Load += new System.EventHandler(this.ClientesXDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

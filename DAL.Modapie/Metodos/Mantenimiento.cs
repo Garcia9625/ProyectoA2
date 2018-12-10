@@ -265,6 +265,7 @@ namespace DAL.Modapie
                 comm.Parameters.Add(param2);
                 comm.Parameters.Add(param3);
                 comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
 
                 comm.ExecuteNonQuery();
             }
@@ -327,6 +328,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -490,6 +496,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
        
@@ -656,6 +667,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public Empleado buscarEmpleado(string dni)
@@ -714,6 +730,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -884,6 +905,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public InventarioAlxMayor obtenerLote(int id)
@@ -981,6 +1007,11 @@ namespace DAL.Modapie
 
                 return null;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EliminarProdXMayor(int id)
@@ -1023,6 +1054,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString(), "Error");
 
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1159,6 +1195,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public void EditarCAD(ClienteAlDetalle CAXD)
@@ -1287,6 +1328,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         #endregion
@@ -1377,6 +1423,11 @@ namespace DAL.Modapie
                 DialogResult d = MessageBox.Show(ee.Message.ToString());
 
                 return null;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1503,6 +1554,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1725,6 +1781,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
         #endregion
 
@@ -1801,6 +1862,11 @@ namespace DAL.Modapie
 
 
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public List<Usuario> MostrarUsuario()
@@ -1848,6 +1914,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -1903,6 +1974,11 @@ namespace DAL.Modapie
             {
                 throw;
 
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
 
         }
@@ -1965,10 +2041,313 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
+
+        public string BuscarCorreo(string username)
+        {
+            string correo;
+            DbConnection conn = null;
+            DbCommand comm = null;
+            try
+            {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                //Creacion de la connection
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                //Creacion de parametros
+
+                DbParameter param1 = factory.CreateParameter();
+
+                param1.ParameterName = "@username";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = username;
+
+                //Abrir connection
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecuta SP
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_BuscarUsuarioRecuperacion";
+                comm.Parameters.Add(param1);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
+                {
+                    dataReader.Read();
+                    correo = dataReader["Correo"].ToString();
+
+
+                }
+
+                return correo;
+            }
+            catch (Exception ee)
+            {
+                throw;
+
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public void ModificarUsuarioContrasena(string user, string password)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+
+
+                param1.ParameterName = "@Password";
+                param1.DbType = System.Data.DbType.String;
+                param1.Value = password;
+
+                param2.ParameterName = "@Username";
+                param2.DbType = System.Data.DbType.String;
+                param2.Value = user;
+
+
+
+
+
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_ModificarContraseñaUsuario";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+        #endregion
+
+        #region Apartados
+        public void InsertarApartado(Apartados apartado)
+        {
+                DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+                DbConnection conn = null;
+                DbCommand comm = null;
+
+                try
+                {
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    DbParameter param1 = factory.CreateParameter();
+                    DbParameter param2 = factory.CreateParameter();
+                    DbParameter param3 = factory.CreateParameter();
+                    DbParameter param4 = factory.CreateParameter();
+                    DbParameter param5 = factory.CreateParameter();
+                    DbParameter param6 = factory.CreateParameter();
+                    DbParameter param7 = factory.CreateParameter();
+                    DbParameter param8 = factory.CreateParameter();
+                    DbParameter param9 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                    param1.ParameterName = "@IdClienteD";
+                    param1.DbType = System.Data.DbType.String;
+                    param1.Value = apartado.IdClienteDetalle;
+
+                    param2.ParameterName = "@IdEmpleado";
+                    param2.DbType = System.Data.DbType.String;
+                    param2.Value = apartado.IdEmpleado;
+                
+                    param3.ParameterName = "@Total";
+                    param3.DbType = System.Data.DbType.Double;
+                    param3.Value = apartado.Total;
+
+                    param4.ParameterName = "@Saldo";
+                    param4.DbType = System.Data.DbType.Double;
+                    param4.Value = apartado.Saldo;
+
+                    param5.ParameterName = "@Cancelado";
+                    param5.DbType = System.Data.DbType.Boolean;
+                    param5.Value = apartado.Cancelado;
+
+                    param6.ParameterName = "@Vencimiento";
+                    param6.DbType = System.Data.DbType.Boolean;
+                    param6.Value = apartado.Vencimiento;
+
+                    param7.ParameterName = "@Ingreso";
+                    param7.DbType = System.Data.DbType.Date;
+                    param7.Value = apartado.Ingreso;
+
+                    param8.ParameterName = "@FechaVencimiento";
+                    param8.DbType = System.Data.DbType.Date;
+                    param8.Value = apartado.FechaVencimiento;
+
+                    //Abrir Coneccion 
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecutar Store Procedure
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_InsertarApartado";
+                    comm.Parameters.Add(param1);
+                    comm.Parameters.Add(param2);
+                    comm.Parameters.Add(param3);
+                    comm.Parameters.Add(param4);
+                    comm.Parameters.Add(param5);
+                    comm.Parameters.Add(param6);
+                    comm.Parameters.Add(param7);
+                    comm.Parameters.Add(param8);
+                    comm.ExecuteNonQuery();
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+                finally
+                {
+                    comm.Dispose();
+                    conn.Dispose();
+                }
+            
+        }
+
+        public void InsertarDescripcionApartado(DescripcionApartados descripcionApartado)
+        {
+            DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+            DbConnection conn = null;
+            DbCommand comm = null;
+
+            try
+            {
+                conn = factory.CreateConnection();
+                conn.ConnectionString = Conexion.Default.connection;
+                comm = factory.CreateCommand();
+
+                DbParameter param1 = factory.CreateParameter();
+                DbParameter param2 = factory.CreateParameter();
+                DbParameter param3 = factory.CreateParameter();
+                DbParameter param4 = factory.CreateParameter();
+                DbParameter param5 = factory.CreateParameter();
+
+                //Carga de Parametros
+
+                param1.ParameterName = "@IdApartado";
+                param1.DbType = System.Data.DbType.Int32;
+                param1.Value = descripcionApartado.IdApartado;
+
+                param2.ParameterName = "@IdProducto";
+                param2.DbType = System.Data.DbType.Int32;
+                param2.Value = descripcionApartado.IdProducto;
+
+                param3.ParameterName = "@Cantidad";
+                param3.DbType = System.Data.DbType.Int32;
+                param3.Value = descripcionApartado.Cantidad;
+
+                param4.ParameterName = "@Precio";
+                param4.DbType = System.Data.DbType.Double;
+                param4.Value = descripcionApartado.PrecioUnitario;
+
+                param5.ParameterName = "@Tot";
+                param5.DbType = System.Data.DbType.Double;
+                param5.Value = descripcionApartado.Total;
+                //Abrir Coneccion 
+                comm.Connection = conn;
+                conn.Open();
+
+                //Ejecutar Store Procedure
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertarDescripcionApartado";
+                comm.Parameters.Add(param1);
+                comm.Parameters.Add(param2);
+                comm.Parameters.Add(param3);
+                comm.Parameters.Add(param4);
+                comm.Parameters.Add(param5);
+                comm.ExecuteNonQuery();
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+        }
+
+        public Apartados buscarUltimoApartados()
+        {
+                Apartados apartados = new Apartados();
+                DbConnection conn = null;
+                DbCommand comm = null;
+                try
+                {
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
+
+                    //Creacion de la connection
+                    conn = factory.CreateConnection();
+                    conn.ConnectionString = Conexion.Default.connection;
+                    comm = factory.CreateCommand();
+
+                    //Abrir connection
+                    comm.Connection = conn;
+                    conn.Open();
+
+                    //Ejecuta SP
+                    comm.CommandType = System.Data.CommandType.StoredProcedure;
+                    comm.CommandText = "sp_UltimoApartado";
+
+                    using (IDataReader dataReader = comm.ExecuteReader())
+                    {
+                        dataReader.Read();
+                        apartados = new Apartados
+                        {
+                            IdApartado = Convert.ToInt32(dataReader["IDapartado"].ToString())
+                        };
+                    }
+
+                    return apartados;
+                }
+                catch (Exception ee)
+                {
+                    throw;
+                }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
+
+        }
         #endregion
 
         #region ProductosDetalle
-        
+
         public void InsertarProductoDetalle(ProductoDetalle productoDetalle)
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(Conexion.Default.proveedor);
@@ -2097,6 +2476,11 @@ namespace DAL.Modapie
             {
                 throw;
             }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
+            }
         }
 
         public ProductoDetalle MostrarUnproductoDetalle(int idProducto)
@@ -2148,6 +2532,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -2203,6 +2592,11 @@ namespace DAL.Modapie
             catch (Exception ee)
             {
                 throw;
+            }
+            finally
+            {
+                comm.Dispose();
+                conn.Dispose();
             }
         }
 
@@ -2288,7 +2682,7 @@ namespace DAL.Modapie
                 conn.Dispose();
             }
         }
-
+        
         #endregion
     }
 

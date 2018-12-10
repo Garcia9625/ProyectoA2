@@ -571,6 +571,40 @@ namespace BS.Modapie
 
         }
 
+       public string BuscarCorreo(string username)
+        {
+            string correo;
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    correo = DAL.Modapie.Mantenimiento.Instancia.BuscarCorreo(username);
+                    scope.Complete();
+                    return correo;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
+        
+      public void ModificarUsuarioContrasena(string user, string password)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.ModificarUsuarioContrasena(user, password);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
         #endregion
 
         #region ProductoDetalle
@@ -663,6 +697,60 @@ namespace BS.Modapie
             }
         }
 
+
+        #endregion
+
+        #region Apartados
+        public void InsertarApartado(Apartados apartado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarApartado(apartado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public void InsertarDescripcionApartado(DescripcionApartados descripcionApartado)
+        {
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    DAL.Modapie.Mantenimiento.Instancia.InsertarDescripcionApartado(descripcionApartado);
+                    scope.Complete();
+                }
+            }
+            catch (Exception ee)
+            {
+                throw;
+            }
+        }
+
+        public Apartados buscarUltimoApartado()
+        {
+            Apartados apartados = new Apartados();
+            try
+            {
+                using (TransactionScope scope = new TransactionScope())
+                {
+                    apartados = DAL.Modapie.Mantenimiento.Instancia.buscarUltimoApartados();
+                    scope.Complete();
+                    return apartados;
+                }
+            }
+            catch (Exception ee)
+            {
+                DialogResult d = MessageBox.Show(ee.Message.ToString());
+                return null;
+            }
+        }
         #endregion
 
     }

@@ -62,14 +62,14 @@
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPago = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,6 +91,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(79, 295);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(833, 192);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -435,6 +436,29 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles de venta";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Compra de contado",
+            "Apartado"});
+            this.comboBox1.Location = new System.Drawing.Point(131, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 24);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(5, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(128, 17);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Nombre empleado:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // cmbEmpleados
             // 
             this.cmbEmpleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -473,47 +497,27 @@
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(195, 22);
             this.txtPago.TabIndex = 24;
-            this.txtPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPago.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(639, 510);
+            this.label11.Location = new System.Drawing.Point(633, 509);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
+            this.label11.Size = new System.Drawing.Size(84, 17);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Paga con:";
+            this.label11.Text = "Paga con: ¢";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(192, 654);
+            this.label12.Location = new System.Drawing.Point(214, 652);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(285, 44);
+            this.label12.Size = new System.Drawing.Size(0, 44);
             this.label12.TabIndex = 25;
-            this.label12.Text = "Su vuelto es: ¢";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(5, 77);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(128, 17);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Nombre empleado:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.label12.Visible = false;
             // 
             // VentaDetalle
             // 

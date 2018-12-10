@@ -67,7 +67,7 @@ namespace UI.Modapie
                         }
                         else
                         {
-                            Form normal = new MenuUsuario(usuario.username);
+                            Form normal = new MenuUsuario();
                             this.Hide();
                             normal.Show();
                         }
@@ -133,7 +133,7 @@ namespace UI.Modapie
                             }
                             else
                             {
-                                Form normal = new MenuUsuario(usuario.username);
+                                Form normal = new MenuUsuario();
                                 this.Hide();
                                 normal.Show();
                             }
@@ -162,6 +162,13 @@ namespace UI.Modapie
                 }
             }
 
+        }
+
+        private void AbrirRecuperación(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form normal = new RecuperacionContraseña();
+            this.Hide();
+            normal.Show();
         }
     }
 }

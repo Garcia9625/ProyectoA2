@@ -16,5 +16,19 @@ namespace UI.Modapie
         {
             InitializeComponent();
         }
+
+        private void btnVentasDet_Click(object sender, EventArgs e)
+        {
+            GestionEmpleado ge = new GestionEmpleado();
+            frmEmpleados.ActiveForm.Dispose();
+            ge.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegistroUsuario ru = new RegistroUsuario();
+            frmEmpleados.ActiveForm.Dispose();
+            ru.Show();
+        }
     }
 }

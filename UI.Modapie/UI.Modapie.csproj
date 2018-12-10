@@ -128,6 +128,12 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVentaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentaUsuario.Designer.cs">
+      <DependentUpon>frmVentaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RecuperacionContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperacionContraseña.Designer.cs">
+      <DependentUpon>RecuperacionContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +260,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FacturalAlxMayor.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentaUsuario.resx">
+      <DependentUpon>frmVentaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEmpleado.resx">
       <DependentUpon>GestionEmpleado.cs</DependentUpon>
@@ -302,6 +320,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\ClienteAlxMayor.cs" />
+    <EmbeddedResource Include="RecuperacionContraseña.resx">
+      <DependentUpon>RecuperacionContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +389,7 @@
     <None Include="Resources\Remove 48x48.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\branding.png" />
     <Content Include="Resources\Cash Register 32x32.png" />
     <Content Include="Resources\Cash Register 48x48.png" />
     <Content Include="Resources\empleado.png" />

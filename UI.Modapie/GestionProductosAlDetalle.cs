@@ -41,7 +41,9 @@ namespace UI.Modapie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MenuAdmin ma = new MenuAdmin();
+            this.Dispose();
+            ma.Show();
         }
 
 

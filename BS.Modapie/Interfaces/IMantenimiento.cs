@@ -49,6 +49,13 @@ namespace BS.Modapie
         void InsertarVentaAlxMayor(VentaAlxMayor ventaAlxMayor);
         VentaAlxMayor buscarUltimaVenta();
 
+        /*Venta Apartado*/
+        void InsertarApartado(Apartados apartado);
+        Apartados buscarUltimoApartado();
+
+        /*Descripcion Apartados*/
+        void InsertarDescripcionApartado(DescripcionApartados descripcionApartado);
+
         /*Descripcion venta al por mayor*/
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
 
@@ -65,6 +72,9 @@ namespace BS.Modapie
         List<Usuario> MostrarUsuario();
         Usuario BuscarUsuario(string idEmpleado);
         void ModificarUsuario(Usuario user);
+        //string BuscarCorreo(string username);
+
+        //void ModificarUsuarioContrasena(string user, string password);
 
         /*Producto detalle*/
         void InsertarProductoDetalle(ProductoDetalle productoDetalle);

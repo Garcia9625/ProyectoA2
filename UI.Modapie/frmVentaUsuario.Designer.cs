@@ -1,6 +1,6 @@
 ﻿namespace UI.Modapie
 {
-    partial class frmEmpleados
+    partial class frmVentaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 47);
+            this.label1.Location = new System.Drawing.Point(289, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Menú de Empleados";
+            this.label1.Size = new System.Drawing.Size(200, 29);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Menú de Ventas";
             // 
             // button2
             // 
@@ -50,15 +50,14 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::UI.Modapie.Properties.Resources.User_128x128;
-            this.button2.Location = new System.Drawing.Point(388, 107);
+            this.button2.Image = global::UI.Modapie.Properties.Resources.branding;
+            this.button2.Location = new System.Drawing.Point(409, 166);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(293, 221);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Gestión de Usuarios";
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Manejo de Apartados";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnVentasDet
             // 
@@ -67,34 +66,34 @@
             this.btnVentasDet.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnVentasDet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentasDet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentasDet.Image = global::UI.Modapie.Properties.Resources.empleado;
-            this.btnVentasDet.Location = new System.Drawing.Point(78, 107);
+            this.btnVentasDet.Image = global::UI.Modapie.Properties.Resources.Shopping_Cart_128x128;
+            this.btnVentasDet.Location = new System.Drawing.Point(99, 166);
             this.btnVentasDet.Name = "btnVentasDet";
             this.btnVentasDet.Size = new System.Drawing.Size(293, 221);
-            this.btnVentasDet.TabIndex = 2;
-            this.btnVentasDet.Text = "Gestión de empleados";
+            this.btnVentasDet.TabIndex = 7;
+            this.btnVentasDet.Text = "Venta al Detalle";
             this.btnVentasDet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVentasDet.UseVisualStyleBackColor = true;
-            this.btnVentasDet.Click += new System.EventHandler(this.btnVentasDet_Click);
             // 
-            // frmEmpleados
+            // frmVentaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 382);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnVentasDet);
-            this.Name = "frmEmpleados";
-            this.Text = "frmEmpleados";
+            this.Name = "frmVentaUsuario";
+            this.Text = "frmVentaUsuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnVentasDet;
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVentasDet;
     }
 }

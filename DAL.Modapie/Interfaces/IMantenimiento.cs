@@ -64,7 +64,16 @@ namespace DAL.Modapie
         /*Venta al detalle*/
         void InsertarVentaDetalle(VentaAlDetalle ventaDetalle);
         VentaAlDetalle buscarUltimaVentaDetalle();
-        
+
+
+        /*Apartados*/
+        void InsertarApartado(Apartados apartado);
+        Apartados buscarUltimoApartados();
+
+        /*Descripcion venta al por mayor*/
+
+        void InsertarDescripcionApartado(DescripcionApartados descripcionApartado);
+
         /*Descripcion venta al por mayor*/
 
         void InsertarDescripcionVentaAlxMayor(DescripcionVentaAlxMayor descripcionVentaAlxMayor);
@@ -79,11 +88,16 @@ namespace DAL.Modapie
         Usuario BuscarUsuario(string idEmpleado);
         void ModificarUsuario(Usuario user);
 
+        //string BuscarCorreo(string username);
+
+        //void ModificarUsuarioContrasena(string user, string password);
+
         /*Producto detalle*/
         void InsertarProductoDetalle(ProductoDetalle productoDetalle);
         List<ProductoDetalle> MostrarproductoDetalle();
         ProductoDetalle buscarproductoDetalle(string codigo);
         void EditarproductoDetalle(ProductoDetalle productoDetalle);
         ProductoDetalle MostrarUnproductoDetalle(int idProducto);
+        
     }
 }
