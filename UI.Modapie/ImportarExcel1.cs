@@ -108,7 +108,7 @@ namespace UI.Modapie
                 conexion_receptora.Close();
                 MessageBox.Show("Importación exitosa");
             }
-            catch(Exception ee)
+            catch(Exception)
         
             {
                 MessageBox.Show("No se ha importado, revise si el excel está abierto");

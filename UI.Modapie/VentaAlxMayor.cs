@@ -218,7 +218,7 @@ namespace UI.Modapie
             }
             try
             {
-                    FacturaVentasAlxMayor form = new FacturaVentasAlxMayor();
+                    FacturaAlxMayor form = new FacturaAlxMayor();
                     ReportDocument oRep = new ReportDocument();
                     oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
                     form.crystalReportViewer1.ReportSource = oRep;
