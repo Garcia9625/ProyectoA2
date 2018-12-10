@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI.Modapie
 {
-    public partial class FacturaVentasAlxMayor : Form
+    public partial class FacturaAlxMayor : Form
     {
-        public FacturaVentasAlxMayor()
+        public FacturaAlxMayor()
         {
             InitializeComponent();
         }

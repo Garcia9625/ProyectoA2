@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIdClienteInvisible = new System.Windows.Forms.TextBox();
             this.txtCorreoClienteAlxMayor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.l = new System.Windows.Forms.Label();
             this.txtNombreClientealxMayor = new System.Windows.Forms.TextBox();
-            this.txtIdClienteInvisible = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1225, 738);
             this.panel1.TabIndex = 22;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(1021, 166);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(149, 26);
+            this.txtEstado.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(955, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Estado";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtIdClienteInvisible
+            // 
+            this.txtIdClienteInvisible.Location = new System.Drawing.Point(626, 24);
+            this.txtIdClienteInvisible.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIdClienteInvisible.Name = "txtIdClienteInvisible";
+            this.txtIdClienteInvisible.Size = new System.Drawing.Size(115, 26);
+            this.txtIdClienteInvisible.TabIndex = 24;
+            this.txtIdClienteInvisible.Visible = false;
             // 
             // txtCorreoClienteAlxMayor
             // 
@@ -234,35 +263,6 @@
             this.txtNombreClientealxMayor.Name = "txtNombreClientealxMayor";
             this.txtNombreClientealxMayor.Size = new System.Drawing.Size(276, 26);
             this.txtNombreClientealxMayor.TabIndex = 1;
-            // 
-            // txtIdClienteInvisible
-            // 
-            this.txtIdClienteInvisible.Location = new System.Drawing.Point(855, 75);
-            this.txtIdClienteInvisible.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIdClienteInvisible.Name = "txtIdClienteInvisible";
-            this.txtIdClienteInvisible.Size = new System.Drawing.Size(115, 26);
-            this.txtIdClienteInvisible.TabIndex = 24;
-            this.txtIdClienteInvisible.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(955, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Estado";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(1021, 166);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(149, 26);
-            this.txtEstado.TabIndex = 26;
             // 
             // ClienteAlPorMayor
             // 
