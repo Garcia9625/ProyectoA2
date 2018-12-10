@@ -86,12 +86,6 @@
     <Compile Include="EditarUsuario.Designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacturaAlxMayor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacturaAlxMayor.Designer.cs">
-      <DependentUpon>FacturaAlxMayor.cs</DependentUpon>
-    </Compile>
     <Compile Include="FacturaVentasAlxMayor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacturaAlxMayor.resx">
-      <DependentUpon>FacturaAlxMayor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaVentasAlxMayor.resx">
       <DependentUpon>FacturaVentasAlxMayor.cs</DependentUpon>
