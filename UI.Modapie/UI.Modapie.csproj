@@ -86,12 +86,6 @@
     <Compile Include="EditarUsuario.Designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacturalAlxMayor.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FacturalAlxMayor.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FacturaAlxMayor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,10 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaAlxMayor.resx">
       <DependentUpon>FacturaAlxMayor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FacturalAlxMayor.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>FacturalAlxMayor.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.cs</DependentUpon>
