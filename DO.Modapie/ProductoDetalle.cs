@@ -12,11 +12,11 @@ namespace DO.Modapie
         
         public string Codigo { get; set; }
 
-        public float PrecioUnitario { get; set; }
+        public double PrecioUnitario { get; set; }
 
         public string Color { get; set; }
 
-        public float Talla { get; set; }
+        public double Talla { get; set; }
 
         public string Descripcion { get; set; }
 

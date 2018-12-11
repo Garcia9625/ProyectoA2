@@ -69,19 +69,35 @@ namespace UI.Modapie
             txtCorreoClienteAlxMayor.Text = "";
             txtTelefonoClienteAlxMayor.Text = "";
             txtEstado.Text = "";
+            btnEditarCAXM.Enabled = false;
+            btnBorrar.Enabled = false;
 
-            
+
+            if (!string.IsNullOrEmpty(txtCedulaClienteAlxMayor.Text))
+            {
+                if (!string.IsNullOrEmpty(txtNombreClientealxMayor.Text))
+                {
+                    if (!string.IsNullOrEmpty(txtTelefonoClienteAlxMayor.Text))
+                    {
+                        if (!string.IsNullOrEmpty(txtCorreoClienteAlxMayor.Text))
+                        {
+
+                        }
+                    }
+                }
+            }
 
         }
-        
+
 
         private void ClienteAlPorMayor_Load(object sender, EventArgs e)
         {
+            btnEditarCAXM.Enabled = false;
+            btnBorrar.Enabled = false;
 
         }
 
        
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -98,7 +114,7 @@ namespace UI.Modapie
                 Mantenimiento.Instancia.Borrar(CAXM);
                 dgvData.DataSource = Mantenimiento.Instancia.MostarCAXM();
                 Limpiar();
-
+                button6.Enabled = true;
             }
             catch (Exception ee)
             {
@@ -106,12 +122,16 @@ namespace UI.Modapie
             }
         }
 
+
         private void dgvData_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
                 if (dgvData.SelectedRows.Count > 0)
                 {
+                    button6.Enabled = false;
+                    btnBorrar.Enabled = true;
+                    btnEditarCAXM.Enabled = true;
                     int index = dgvData.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dgvData.Rows[index];
                     txtIdClienteInvisible.Text = Convert.ToString(selectedRow.Cells["idCliente"].Value);
@@ -132,6 +152,7 @@ namespace UI.Modapie
         {
             try
             {
+                button6.Enabled = true;
                 dgvData.DataSource = procesar.MostarCAXM();
 
             }
@@ -147,6 +168,9 @@ namespace UI.Modapie
             {
                 if (e.RowIndex >= 0)
                 {
+                    button6.Enabled = false;
+                    btnBorrar.Enabled = true;
+                    btnEditarCAXM.Enabled = true;
                     DataGridViewRow dgv = dgvData.Rows[e.RowIndex];
                     txtIdClienteInvisible.Text = dgv.Cells["idCliente"].Value.ToString();
                     txtCedulaClienteAlxMayor.Text = dgv.Cells["cedula"].Value.ToString();
@@ -211,6 +235,7 @@ namespace UI.Modapie
                 Mantenimiento.Instancia.Editar(CAXM);
                 dgvData.DataSource = procesar.MostarCAXM();
                 Limpiar();
+                button6.Enabled = true;
             }
             catch (Exception ee)
             {

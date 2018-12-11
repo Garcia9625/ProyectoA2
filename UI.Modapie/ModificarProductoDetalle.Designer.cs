@@ -29,18 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.dgvCAD = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnMostrarCAD = new System.Windows.Forms.Button();
             this.btnEditarproducto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -54,7 +45,14 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCAD)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +64,6 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.dgvCAD);
-            this.panel1.Controls.Add(this.btnMostrarCAD);
             this.panel1.Controls.Add(this.btnEditarproducto);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtCodigo);
@@ -86,6 +83,20 @@
             this.panel1.Size = new System.Drawing.Size(1177, 654);
             this.panel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(914, 37);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 67);
+            this.button2.TabIndex = 58;
+            this.button2.Text = "Regresar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(68, 318);
@@ -97,87 +108,37 @@
             // 
             // dgvCAD
             // 
+            this.dgvCAD.AllowUserToAddRows = false;
+            this.dgvCAD.AllowUserToDeleteRows = false;
+            this.dgvCAD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCAD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCAD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Codigo,
             this.Color,
-            this.Column1,
             this.Talla,
             this.Descripcion,
             this.Cantidad,
             this.PrecioUnitario,
             this.Estado});
-            this.dgvCAD.Location = new System.Drawing.Point(85, 382);
-            this.dgvCAD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCAD.Location = new System.Drawing.Point(52, 382);
+            this.dgvCAD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCAD.Name = "dgvCAD";
-            this.dgvCAD.Size = new System.Drawing.Size(944, 204);
+            this.dgvCAD.ReadOnly = true;
+            this.dgvCAD.Size = new System.Drawing.Size(1028, 204);
             this.dgvCAD.TabIndex = 36;
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "Id Producto";
-            this.IdProducto.Name = "IdProducto";
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Color
-            // 
-            this.Color.HeaderText = "Color";
-            this.Color.Name = "Color";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Talla
-            // 
-            this.Talla.HeaderText = "Talla";
-            this.Talla.Name = "Talla";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.HeaderText = "Precio Unitario";
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // btnMostrarCAD
-            // 
-            this.btnMostrarCAD.Location = new System.Drawing.Point(592, 329);
-            this.btnMostrarCAD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnMostrarCAD.Name = "btnMostrarCAD";
-            this.btnMostrarCAD.Size = new System.Drawing.Size(144, 28);
-            this.btnMostrarCAD.TabIndex = 39;
-            this.btnMostrarCAD.Text = "Mostrar Producto";
-            this.btnMostrarCAD.UseVisualStyleBackColor = true;
-            this.btnMostrarCAD.Click += new System.EventHandler(this.btnMostrarCAD_Click_1);
             // 
             // btnEditarproducto
             // 
-            this.btnEditarproducto.Location = new System.Drawing.Point(300, 329);
-            this.btnEditarproducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditarproducto.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
+            this.btnEditarproducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarproducto.Location = new System.Drawing.Point(431, 309);
+            this.btnEditarproducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarproducto.Name = "btnEditarproducto";
-            this.btnEditarproducto.Size = new System.Drawing.Size(144, 28);
+            this.btnEditarproducto.Size = new System.Drawing.Size(202, 65);
             this.btnEditarproducto.TabIndex = 38;
             this.btnEditarproducto.Text = "Editar Producto";
+            this.btnEditarproducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarproducto.UseVisualStyleBackColor = true;
             this.btnEditarproducto.Click += new System.EventHandler(this.btnEditarproducto_Click);
             // 
@@ -194,7 +155,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(195, 143);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(225, 22);
             this.txtCodigo.TabIndex = 22;
@@ -202,7 +163,7 @@
             // txtTalla
             // 
             this.txtTalla.Location = new System.Drawing.Point(195, 258);
-            this.txtTalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTalla.Margin = new System.Windows.Forms.Padding(4);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(225, 22);
             this.txtTalla.TabIndex = 31;
@@ -220,7 +181,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(645, 263);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(264, 22);
             this.txtCantidad.TabIndex = 34;
@@ -258,7 +219,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(645, 177);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(264, 79);
@@ -267,7 +228,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(195, 177);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(225, 22);
             this.txtPrecio.TabIndex = 29;
@@ -285,24 +246,58 @@
             // txtColor
             // 
             this.txtColor.Location = new System.Drawing.Point(195, 218);
-            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(225, 22);
             this.txtColor.TabIndex = 30;
             // 
-            // button2
+            // IdProducto
             // 
-            this.button2.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(914, 37);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 52);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Regresar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.IdProducto.HeaderText = "Id Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // Talla
+            // 
+            this.Talla.HeaderText = "Talla";
+            this.Talla.Name = "Talla";
+            this.Talla.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // ModificarProductoDetalle
             // 
@@ -326,7 +321,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCAD;
-        private System.Windows.Forms.Button btnMostrarCAD;
         private System.Windows.Forms.Button btnEditarproducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -341,15 +335,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Talla;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button button2;
     }
 }

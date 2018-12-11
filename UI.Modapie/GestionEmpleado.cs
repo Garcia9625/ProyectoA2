@@ -63,17 +63,32 @@ namespace UI.Modapie
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            emp = procesar.BuscarEmpleado(txtDni.Text);
-            txtNombre.Text = emp.Nombre;
-            txtApellido1.Text = emp.Apellido1;
-            txtApellido2.Text = emp.Apellido2;
-            txtCelular.Text = emp.Celular;
-            txtTelefono.Text = emp.Telefono;
-            txtCorreo.Text = emp.Correo;
-            rtbDireccion.Text = emp.DireccionDomicilio;
-            txtSalario.Text = emp.SalarioMensual.ToString();
-            cbEstado.Text = emp.Estado ? "Activo" : "Inactivo";
-            txtDni.Enabled = false;
+            try
+            {
+                if (!string.IsNullOrEmpty(txtDni.Text))
+                {
+                    emp = procesar.BuscarEmpleado(txtDni.Text);
+                    txtNombre.Text = emp.Nombre;
+                    txtApellido1.Text = emp.Apellido1;
+                    txtApellido2.Text = emp.Apellido2;
+                    txtCelular.Text = emp.Celular;
+                    txtTelefono.Text = emp.Telefono;
+                    txtCorreo.Text = emp.Correo;
+                    rtbDireccion.Text = emp.DireccionDomicilio;
+                    txtSalario.Text = emp.SalarioMensual.ToString();
+                    cbEstado.Text = emp.Estado ? "Activo" : "Inactivo";
+                    txtDni.Enabled = false;
+                }
+                else
+                    {
+                    MessageBox.Show("Campo de cédula vacío, debe digitar un valor", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Debe buscar por la cédula del empleado", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -89,20 +104,7 @@ namespace UI.Modapie
                 throw;
             }
         }
-
-        private void btnEstado_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetValues();
-                procesar.ActualizarEmpleado(emp);
-                dgvData.DataSource = procesar.MostrarEmpleado();
-            }
-            catch (Exception ee)
-            {
-                throw;
-            }
-        }
+        
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -123,7 +125,17 @@ namespace UI.Modapie
 
         private void btnActualizarTabla_Click(object sender, EventArgs e)
         {
+            dgvData.DataSource = procesar.MostrarEmpleado();
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valida.SoloNumeros(e);
         }
     }
 }

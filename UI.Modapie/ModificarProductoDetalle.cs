@@ -34,18 +34,13 @@ namespace UI.Modapie
         {
             IAD = new DO.Modapie.ProductoDetalle
             {
-
                 IdProducto = Convert.ToInt32(txtId.Text),
                 Codigo = txtCodigo.Text,
-                PrecioUnitario = Convert.ToInt32(txtPrecio.Text),
+                PrecioUnitario = Convert.ToDouble(txtPrecio.Text),
                 Color= txtColor.Text,
-                Talla= Convert.ToInt32(txtTalla.Text),
+                Talla= Convert.ToDouble(txtTalla.Text),
                 Cantidad= Convert.ToInt32(txtCantidad.Text),
                 Descripcion= txtDescripcion.Text
-
-
-
-
             };
         }
 
@@ -65,12 +60,11 @@ namespace UI.Modapie
                 Mantenimiento.Instancia.EditarproductoDetalle(IAD);
                 IAD = procesar.MostrarUnproductoDetalle(Convert.ToInt32(txtId.Text));
                 dgvCAD.Rows.Add(IAD.IdProducto, IAD.Codigo, IAD.Color, IAD.Talla, IAD.Descripcion,
-            IAD.Cantidad, IAD.PrecioUnitario, IAD.Estado);
+                IAD.Cantidad, IAD.PrecioUnitario, IAD.Estado);
                 MessageBox.Show("Se edito correctamente el producto", "Editar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ee)
             {
-                throw;
                 //MessageBox.Show("No se pudo editar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 

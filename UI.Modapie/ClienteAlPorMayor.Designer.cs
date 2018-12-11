@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(-11, -9);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1089, 590);
+            this.panel1.Size = new System.Drawing.Size(1089, 583);
             this.panel1.TabIndex = 22;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -129,7 +129,7 @@
             // 
             this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(857, 230);
+            this.button1.Location = new System.Drawing.Point(873, 230);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 61);
@@ -143,6 +143,7 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Location = new System.Drawing.Point(35, 295);
@@ -159,10 +160,10 @@
             // 
             this.btnActualizar.Image = global::UI.Modapie.Properties.Resources.Refresh_48x48;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(656, 230);
+            this.btnActualizar.Location = new System.Drawing.Point(663, 230);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(169, 61);
+            this.btnActualizar.Size = new System.Drawing.Size(186, 61);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar tabla";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,10 +174,10 @@
             // 
             this.btnBorrar.Image = global::UI.Modapie.Properties.Resources.cancelar32x32;
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(455, 230);
+            this.btnBorrar.Location = new System.Drawing.Point(466, 230);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(169, 61);
+            this.btnBorrar.Size = new System.Drawing.Size(178, 61);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Cambiar estado";
             this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -195,10 +196,10 @@
             // 
             this.btnEditarCAXM.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
             this.btnEditarCAXM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCAXM.Location = new System.Drawing.Point(253, 230);
+            this.btnEditarCAXM.Location = new System.Drawing.Point(266, 230);
             this.btnEditarCAXM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditarCAXM.Name = "btnEditarCAXM";
-            this.btnEditarCAXM.Size = new System.Drawing.Size(169, 61);
+            this.btnEditarCAXM.Size = new System.Drawing.Size(179, 61);
             this.btnEditarCAXM.TabIndex = 6;
             this.btnEditarCAXM.Text = "Editar Cliente";
             this.btnEditarCAXM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -227,10 +228,10 @@
             // 
             this.button6.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(53, 230);
+            this.button6.Location = new System.Drawing.Point(35, 230);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(169, 61);
+            this.button6.Size = new System.Drawing.Size(202, 61);
             this.button6.TabIndex = 5;
             this.button6.Text = "Registrar Cliente";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
