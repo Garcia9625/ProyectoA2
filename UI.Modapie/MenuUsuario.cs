@@ -62,7 +62,7 @@ namespace DO.Modapie
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario<frmClientesUsuario>();
         }
 
         private void pictureBox13_MouseHover(object sender, EventArgs e)

@@ -92,6 +92,12 @@
     <Compile Include="FacturaAlxMayor.Designer.cs">
       <DependentUpon>FacturaAlxMayor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClientesUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientesUsuario.Designer.cs">
+      <DependentUpon>frmClientesUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaAlxMayor.resx">
       <DependentUpon>FacturaAlxMayor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientesUsuario.resx">
+      <DependentUpon>frmClientesUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracion.resx">
       <DependentUpon>frmConfiguracion.cs</DependentUpon>
