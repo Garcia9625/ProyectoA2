@@ -63,5 +63,12 @@ namespace UI.Modapie
             GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
             gpd.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionProductosAlDetalle gpd = new GestionProductosAlDetalle();
+            gpd.Show();
+        }
     }
 }

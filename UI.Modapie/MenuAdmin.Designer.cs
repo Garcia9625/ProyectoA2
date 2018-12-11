@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.pictureBox13);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button10);
@@ -75,34 +73,13 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 103);
+            this.button1.Location = new System.Drawing.Point(0, 114);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 67);
             this.button1.TabIndex = 31;
             this.button1.Text = "    Reportes";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button9
-            // 
-            this.button9.AutoEllipsis = true;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::UI.Modapie.Properties.Resources.Settings_32x32;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(0, 395);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(219, 67);
-            this.button9.TabIndex = 30;
-            this.button9.Text = "             Configuración";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // pictureBox13
             // 
@@ -143,7 +120,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = global::UI.Modapie.Properties.Resources.Users_Edit_48x48;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(0, 322);
+            this.button10.Location = new System.Drawing.Point(0, 370);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(217, 67);
             this.button10.TabIndex = 29;
@@ -164,7 +141,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = global::UI.Modapie.Properties.Resources.Cash_Register_48x48;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(0, 176);
+            this.button12.Location = new System.Drawing.Point(0, 203);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(219, 67);
             this.button12.TabIndex = 27;
@@ -185,7 +162,7 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = global::UI.Modapie.Properties.Resources.Settings_32;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(0, 249);
+            this.button11.Location = new System.Drawing.Point(0, 286);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(219, 67);
             this.button11.TabIndex = 28;
@@ -228,7 +205,7 @@
             this.tltCerrar.InitialDelay = 100;
             this.tltCerrar.ReshowDelay = 100;
             // 
-            // MenuInterfaz
+            // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,7 +215,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MenuInterfaz";
+            this.Name = "MenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuInterfaz";
             this.panel1.ResumeLayout(false);
@@ -256,7 +233,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;

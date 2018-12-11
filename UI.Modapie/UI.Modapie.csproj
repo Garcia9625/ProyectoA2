@@ -152,12 +152,6 @@
     <Compile Include="ImportarExcel1.Designer.cs">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
     </Compile>
-    <Compile Include="InformeDeCuentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InformeDeCuentas.Designer.cs">
-      <DependentUpon>InformeDeCuentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="IngresarProductoAlDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportarExcel1.resx">
       <DependentUpon>ImportarExcel1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InformeDeCuentas.resx">
-      <DependentUpon>InformeDeCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarProductoAlDetalle.resx">
       <DependentUpon>IngresarProductoAlDetalle.cs</DependentUpon>

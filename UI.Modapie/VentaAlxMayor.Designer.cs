@@ -105,7 +105,7 @@
             // 
             this.cbLote.FormattingEnabled = true;
             this.cbLote.Location = new System.Drawing.Point(139, 171);
-            this.cbLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLote.Margin = new System.Windows.Forms.Padding(4);
             this.cbLote.Name = "cbLote";
             this.cbLote.Size = new System.Drawing.Size(143, 24);
             this.cbLote.TabIndex = 2;
@@ -116,7 +116,7 @@
             this.btnAgregar.Image = global::UI.Modapie.Properties.Resources.Add32x32;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.Location = new System.Drawing.Point(241, 370);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(125, 52);
             this.btnAgregar.TabIndex = 3;
@@ -129,7 +129,7 @@
             this.btnEliminar.Image = global::UI.Modapie.Properties.Resources.Remove48x48;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(399, 370);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(125, 52);
             this.btnEliminar.TabIndex = 5;
@@ -142,7 +142,7 @@
             this.btnCancelar.Image = global::UI.Modapie.Properties.Resources.cancelar32x32;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(559, 370);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 52);
             this.btnCancelar.TabIndex = 6;
@@ -155,7 +155,7 @@
             this.btnVaciar.Image = global::UI.Modapie.Properties.Resources.limpiar48x48;
             this.btnVaciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVaciar.Location = new System.Drawing.Point(712, 370);
-            this.btnVaciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVaciar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVaciar.Name = "btnVaciar";
             this.btnVaciar.Size = new System.Drawing.Size(125, 52);
             this.btnVaciar.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.Pares,
             this.Total});
             this.dgvVenta.Location = new System.Drawing.Point(93, 439);
-            this.dgvVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvVenta.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.Size = new System.Drawing.Size(899, 215);
             this.dgvVenta.TabIndex = 8;
@@ -236,7 +236,7 @@
             this.btnRegistrarVenta.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnRegistrarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrarVenta.Location = new System.Drawing.Point(92, 722);
-            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(147, 64);
             this.btnRegistrarVenta.TabIndex = 9;
@@ -259,7 +259,7 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.dgvDetalle.Location = new System.Drawing.Point(92, 214);
-            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.Size = new System.Drawing.Size(899, 135);
             this.dgvDetalle.TabIndex = 11;
@@ -325,7 +325,7 @@
             // 
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(375, 171);
-            this.cbCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCliente.Margin = new System.Windows.Forms.Padding(4);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(283, 24);
             this.cbCliente.TabIndex = 13;
@@ -346,7 +346,7 @@
             // 
             this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(97, 42);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(212, 22);
             this.txtTotal.TabIndex = 15;
@@ -365,7 +365,7 @@
             // txtPago
             // 
             this.txtPago.Location = new System.Drawing.Point(97, 90);
-            this.txtPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPago.Margin = new System.Windows.Forms.Padding(4);
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(212, 22);
             this.txtPago.TabIndex = 17;
@@ -415,7 +415,7 @@
             // 
             this.cbEmpleado.FormattingEnabled = true;
             this.cbEmpleado.Location = new System.Drawing.Point(783, 172);
-            this.cbEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.cbEmpleado.Name = "cbEmpleado";
             this.cbEmpleado.Size = new System.Drawing.Size(205, 24);
             this.cbEmpleado.TabIndex = 50;
@@ -438,7 +438,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblTipo);
             this.panel2.Location = new System.Drawing.Point(783, 20);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(207, 116);
             this.panel2.TabIndex = 48;
@@ -486,9 +486,9 @@
             this.groupBox1.Controls.Add(this.txtPago);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(648, 677);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(344, 132);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
@@ -500,7 +500,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 839);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VentaAlxMayor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VentaAl por Mayor";

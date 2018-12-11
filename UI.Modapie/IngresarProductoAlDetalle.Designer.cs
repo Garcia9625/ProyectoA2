@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresarProductoAlDetalle));
             this.btnIngresarProducto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -42,13 +41,13 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIngresarProducto
             // 
             this.btnIngresarProducto.Location = new System.Drawing.Point(412, 425);
-            this.btnIngresarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresarProducto.Name = "btnIngresarProducto";
             this.btnIngresarProducto.Size = new System.Drawing.Size(144, 28);
             this.btnIngresarProducto.TabIndex = 54;
@@ -69,7 +68,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(188, 177);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(225, 22);
             this.txtCodigo.TabIndex = 43;
@@ -77,7 +76,7 @@
             // txtTalla
             // 
             this.txtTalla.Location = new System.Drawing.Point(188, 292);
-            this.txtTalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTalla.Margin = new System.Windows.Forms.Padding(4);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(225, 22);
             this.txtTalla.TabIndex = 50;
@@ -95,7 +94,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(639, 298);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(264, 22);
             this.txtCantidad.TabIndex = 53;
@@ -133,7 +132,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(639, 210);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(264, 79);
@@ -142,7 +141,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(188, 210);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(225, 22);
             this.txtPrecio.TabIndex = 48;
@@ -160,28 +159,32 @@
             // txtColor
             // 
             this.txtColor.Location = new System.Drawing.Point(188, 252);
-            this.txtColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtColor.Margin = new System.Windows.Forms.Padding(4);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(225, 22);
             this.txtColor.TabIndex = 49;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(924, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 42);
-            this.button1.TabIndex = 56;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(792, 40);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 52);
+            this.button2.TabIndex = 57;
+            this.button2.Text = "Regresar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // IngresarProductoAlDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 665);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnIngresarProducto);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtTalla);
@@ -194,6 +197,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtColor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "IngresarProductoAlDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,7 +209,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnIngresarProducto;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtTalla;
@@ -218,5 +221,6 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.Button button2;
     }
 }
