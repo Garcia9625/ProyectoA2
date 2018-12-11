@@ -211,22 +211,22 @@ namespace UI.Modapie
                     }
                     MessageBox.Show("Venta Registrada");
                     cargarEnLimpio();
-            }
+                    try
+                    {
+                        FacturaAlxMayor form = new FacturaAlxMayor();
+                        ReportDocument oRep = new ReportDocument();
+                        oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
+                        form.crystalReportViewer1.ReportSource = oRep;
+                        form.Show();
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show("No se puede mostrar la factura en este momento");
+                    }
+                }
             catch (Exception ee)
             {
                 MessageBox.Show("No se pudo registrar la venta");
-            }
-            try
-            {
-                    FacturaAlxMayor form = new FacturaAlxMayor();
-                    ReportDocument oRep = new ReportDocument();
-                    oRep.Load(Application.StartupPath + "/Reportes/FacturalAlxMayor.rpt");
-                    form.crystalReportViewer1.ReportSource = oRep;
-                    form.Show();
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show("No se puede mostrar la factura en este momento");
             }
             }
             else
