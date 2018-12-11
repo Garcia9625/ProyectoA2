@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnVentasDet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,22 +42,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Menú de Ventas";
             // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::UI.Modapie.Properties.Resources.branding;
-            this.button2.Location = new System.Drawing.Point(409, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(293, 221);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Manejo de Apartados";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnVentasDet
             // 
             this.btnVentasDet.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -67,7 +50,7 @@
             this.btnVentasDet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentasDet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentasDet.Image = global::UI.Modapie.Properties.Resources.Shopping_Cart_128x128;
-            this.btnVentasDet.Location = new System.Drawing.Point(99, 166);
+            this.btnVentasDet.Location = new System.Drawing.Point(235, 137);
             this.btnVentasDet.Name = "btnVentasDet";
             this.btnVentasDet.Size = new System.Drawing.Size(293, 221);
             this.btnVentasDet.TabIndex = 7;
@@ -81,7 +64,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnVentasDet);
             this.Name = "frmVentaUsuario";
             this.Text = "frmVentaUsuario";
@@ -93,7 +75,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnVentasDet;
     }
 }

@@ -20,26 +20,26 @@ namespace UI.Modapie
 
         public ClienteAlDetalle()
         {
-            
+
             InitializeComponent();
-            
+
         }
         private void GetValues()
         {
             cad = new DO.Modapie.ClienteAlDetalle
             {
 
-                
-               Dni1=txtCedula.Text,
-               Nombre1 = txtNombre.Text,
-               Apellido11= txtApellido1.Text,
-               Apellido21=txtApellido2.Text,
-               Celular1=txtCelular.Text,
-               Telefono1= txtTelefono.Text,
-               Correo1= txtCorreo.Text
-             
 
-                
+                Dni1 = txtCedula.Text,
+                Nombre1 = txtNombre.Text,
+                Apellido11 = txtApellido1.Text,
+                Apellido21 = txtApellido2.Text,
+                Celular1 = txtCelular.Text,
+                Telefono1 = txtTelefono.Text,
+                Correo1 = txtCorreo.Text
+
+
+
             };
         }
 
@@ -51,6 +51,7 @@ namespace UI.Modapie
                 procesar.InsertarClienteAlDetalle(cad);
                 MessageBox.Show("El cliente fue ingresado al sistema correctamente", "Cliente insertado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvCAD.DataSource = procesar;
+                Limpiar();
             }
             catch (Exception ee)
             {
@@ -78,7 +79,7 @@ namespace UI.Modapie
                 MessageBox.Show("No se puede encontrar el ID digitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -100,6 +101,7 @@ namespace UI.Modapie
                 GetValues();
                 Mantenimiento.Instancia.EditarCAD(cad);
                 dgvCAD.DataSource = procesar.MostrarClienteXDetalle();
+                Limpiar();
             }
             catch (Exception ee)
             {
@@ -117,7 +119,7 @@ namespace UI.Modapie
 
         private void ClienteAlDetalle_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -128,6 +130,17 @@ namespace UI.Modapie
         private void dgvCAD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void Limpiar()
+        {
+            txtNombre.Text = "";
+            txtApellido1.Text = "";
+            txtApellido2.Text = "";
+            txtCedula.Text = "";
+            txtCelular.Text = "";
+            txtCorreo.Text = "";
+            txtTelefono.Text = "";
         }
     }
 }

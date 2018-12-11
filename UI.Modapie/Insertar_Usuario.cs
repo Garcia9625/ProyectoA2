@@ -62,6 +62,8 @@ namespace UI.Modapie
                 cb.Items.Add(dr["Descripcion"].ToString());
             }
             dr.Close();
+
+            cb.SelectedIndex = 0;
         }
         private void pcbRegistrar_MouseHover(object sender, EventArgs e)
         {

@@ -85,10 +85,10 @@
             // 
             this.btn_Buscar.Image = global::UI.Modapie.Properties.Resources.Search32x32;
             this.btn_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Buscar.Location = new System.Drawing.Point(653, 51);
+            this.btn_Buscar.Location = new System.Drawing.Point(653, 46);
             this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(94, 50);
+            this.btn_Buscar.Size = new System.Drawing.Size(102, 55);
             this.btn_Buscar.TabIndex = 2;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -110,10 +110,10 @@
             // 
             this.btnMostrarCAD.Image = global::UI.Modapie.Properties.Resources.Window_48x48;
             this.btnMostrarCAD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarCAD.Location = new System.Drawing.Point(531, 284);
+            this.btnMostrarCAD.Location = new System.Drawing.Point(502, 284);
             this.btnMostrarCAD.Margin = new System.Windows.Forms.Padding(4);
             this.btnMostrarCAD.Name = "btnMostrarCAD";
-            this.btnMostrarCAD.Size = new System.Drawing.Size(174, 60);
+            this.btnMostrarCAD.Size = new System.Drawing.Size(201, 60);
             this.btnMostrarCAD.TabIndex = 19;
             this.btnMostrarCAD.Text = "Mostrar Clientes";
             this.btnMostrarCAD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,10 +124,10 @@
             // 
             this.btnEditarCliente.Image = global::UI.Modapie.Properties.Resources.Edit_48x48;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(304, 284);
+            this.btnEditarCliente.Location = new System.Drawing.Point(295, 284);
             this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.Size = new System.Drawing.Size(174, 59);
+            this.btnEditarCliente.Size = new System.Drawing.Size(188, 59);
             this.btnEditarCliente.TabIndex = 18;
             this.btnEditarCliente.Text = "Editar Cliente";
             this.btnEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,7 +138,7 @@
             // 
             this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(758, 284);
+            this.button1.Location = new System.Drawing.Point(724, 284);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 59);
             this.button1.TabIndex = 20;
@@ -151,10 +151,10 @@
             // 
             this.btnIngresar.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(77, 284);
+            this.btnIngresar.Location = new System.Drawing.Point(83, 284);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(174, 59);
+            this.btnIngresar.Size = new System.Drawing.Size(190, 59);
             this.btnIngresar.TabIndex = 17;
             this.btnIngresar.Text = "Registrar Cliente";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

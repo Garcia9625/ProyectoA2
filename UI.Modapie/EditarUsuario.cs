@@ -110,6 +110,7 @@ namespace UI.Modapie
                 cb.Items.Add(dr["Descripcion"].ToString());
             }
             dr.Close();
+            cb.SelectedIndex = 0;
         }
 
         private void pcbRegistrar_Click(object sender, EventArgs e)

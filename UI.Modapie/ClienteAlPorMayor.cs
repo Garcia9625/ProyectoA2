@@ -71,22 +71,6 @@ namespace UI.Modapie
             txtEstado.Text = "";
             btnEditarCAXM.Enabled = false;
             btnBorrar.Enabled = false;
-
-
-            if (!string.IsNullOrEmpty(txtCedulaClienteAlxMayor.Text))
-            {
-                if (!string.IsNullOrEmpty(txtNombreClientealxMayor.Text))
-                {
-                    if (!string.IsNullOrEmpty(txtTelefonoClienteAlxMayor.Text))
-                    {
-                        if (!string.IsNullOrEmpty(txtCorreoClienteAlxMayor.Text))
-                        {
-
-                        }
-                    }
-                }
-            }
-
         }
 
 

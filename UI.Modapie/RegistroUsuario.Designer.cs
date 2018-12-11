@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnUsuario);
             this.panel1.Controls.Add(this.txtEmpleado);
-            this.panel1.Location = new System.Drawing.Point(-5, -6);
+            this.panel1.Location = new System.Drawing.Point(-5, -10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 508);
             this.panel1.TabIndex = 19;
@@ -55,9 +55,9 @@
             // 
             this.button1.Image = global::UI.Modapie.Properties.Resources.UndoRed48x48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(615, 18);
+            this.button1.Location = new System.Drawing.Point(587, 18);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 57);
+            this.button1.Size = new System.Drawing.Size(161, 57);
             this.button1.TabIndex = 47;
             this.button1.Text = "Regresar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -66,6 +66,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 259);
@@ -89,7 +90,7 @@
             // 
             this.btnUsuario.Image = global::UI.Modapie.Properties.Resources.Registrar48x48;
             this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.Location = new System.Drawing.Point(278, 197);
+            this.btnUsuario.Location = new System.Drawing.Point(281, 185);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(239, 56);
             this.btnUsuario.TabIndex = 8;
